@@ -1,0 +1,374 @@
+.container {
+  border: 1px solid blue;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* image slide CSS 시작*/
+
+.sh-program-img * {
+  /* width: 100%;
+  overflow: hidden; */
+  position: relative;
+  display: inline-block;
+}
+
+.sh-slide-edit-btn {
+  /* 빨간색 버튼 */
+  width: 67px;
+  background-color: #DD1F26;
+  border: none;
+  color: #fff;
+  padding: 5px 0;
+  position: absolute;
+  float: right;
+  bottom: 15px;
+  right: 15px;
+  margin: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 3px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.sh-program-img {
+  width: 100%;
+  border: 1px solid rgb(158, 0, 255);
+  height: 320px;
+}
+
+/************************************************/
+
+.sh-mySlides {
+  display: none
+}
+
+.sh-mySlides img {
+  vertical-align: middle;
+  height: 320px;
+}
+
+/* Slideshow container */
+
+.slideshow-container {
+  /* max-width: 1000px; */
+  position: relative;
+  margin: auto;
+  height: 320px;
+}
+
+/* Next & previous buttons */
+
+.sh-prev, .sh-next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+
+.sh-next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+
+.sh-prev:hover, .sh-next:hover {
+  /* background-color: rgba(0,0,0,0.8); */
+}
+
+/* Caption text */
+
+.sh-imgSlide-text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 118px;
+  height: 55px;
+  width: 98%;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.sh-imgSlide-text h1 {
+  margin-top: 12px;
+  margin-bottom: 0px;
+}
+
+/* Number text (1/3 etc) */
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Fading animation */
+
+.sh-fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: .4
+  }
+  to {
+    opacity: 1
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: .4
+  }
+  to {
+    opacity: 1
+  }
+}
+
+/* On smaller screens, decrease text size */
+
+@media only screen and (max-width: 300px) {
+  .sh-prev, .sh-next, .sh-imgSlide-text {
+    font-size: 11px
+  }
+}
+
+/* image slide CSS 종료*/
+
+#sh-mainContainer {
+  border: 3px solid red;
+  float: none;
+  height: 100%;
+  min-height: 600px;
+  position: relative;
+}
+
+#sh-mainContainer:after {
+  content: "가상이벤트";
+  text-align: center;
+  display: block;
+  clear: both;
+  border: 2px dashed #000;
+}
+
+
+#shClassDiv {
+  border:1px solid black;
+  text-align: center;
+  background-color: #666666;
+  padding: 3px;
+}
+
+/* content CSS 시작*/
+
+#sh-contentCol {
+  top: 27px;
+  left: 27px;
+  border: 1px solid green;
+  float: left;
+  width: 910px;
+  /* min-height: 600px; */
+  min-height: 800px;
+  padding: 0;
+  margin: 27px;
+  /* position: absolute; */
+}
+
+/* content CSS 끝*/
+
+/* right sideMenu CSS 시작*/
+
+#sh-sideMenu {
+  right: 368px;
+  /* height: 55%; */
+  border: 1px solid green;
+  width: 200px;
+  min-height: 300px;
+  /* float:right; */
+  position: fixed;
+  overflow: hidden;
+}
+
+#sh-sideMenu-item {}
+
+/* right sideMenu CSS 끝*/
+
+/* Class-Daily CSS 시작 */
+#sh-class-more {
+  display: none;
+}
+
+
+#sh-Class-Daily {
+  border: 1px solid purple;
+  background-color: #EEEEEE;
+  width: 909px;
+  /* position: fixed; */
+  /* top:0; */
+}
+
+.sh_class_daily_sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+#sh-Class-Daily-item * :not(#shClassDiv) {
+  /* border: 1px solid purple; */
+  margin: 0;
+  padding: 12px;
+}
+
+/* Class-Daily CSS 끝 */
+
+/* 타임라인 시작*/
+
+/* 카드 공통 CSS 시작 */
+.sh-tl-card {
+  border: 1px solid blue;
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  padding: 0;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.sh-tl-card-primary {
+  padding: 16px;
+}
+
+.sh-tl-card-header {
+display: flex;
+-webkit-box-align: center;
+align-items: center;
+cursor: pointer;
+}
+
+.sh-card {
+  height: 160px;
+  margin-bottom: 16px;
+}
+
+.sh-tl-review-hidden {
+	display: flex;
+}
+
+.sh-tl-card-header .sh-tl-card-content {
+  text-overflow: ellipsis;
+overflow: hidden;
+white-space: nowrap;
+}
+
+.sh-tl-card-header .sh-tl-card-content *{
+  text-overflow: ellipsis;
+overflow: hidden;
+white-space: nowrap;
+}
+
+.sh-tl-card-primary {
+  height:50px;
+  border:1px dotted green;
+}
+
+.sh-tl-card-content {
+  height: 80px;
+  /* border: 1px solid red; */
+  -webkit-box-flex: 2;
+flex: 2 1 auto;
+cursor: pointer;
+min-width: 0;
+word-wrap: break-word;
+}
+
+.sh-tl-subtitle {
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 3.25rem;
+  text-decoration: inherit;
+  text-transform: inherit;
+  color: rgba(0, 0, 0, 0.87);
+      margin-left: 15px;
+}
+/* 글작성 히든 CSS 시작 */
+.sh-tl-review-write {
+      width: 100%;
+}
+
+
+.sh-tl-review-title {
+	  font-family: "NanumSquareRound";
+	font-size: 16px;
+font-weight: 500;
+letter-spacing: normal;
+line-height: 3.4rem;
+  resize: none;
+  border: none;
+  width: 100%;
+  overflow-y: hidden;
+
+    margin-left: 11px;
+}
+/* 글작성 히든 CSS 종료 */
+
+
+.sh-tl-card-actions {
+  height: 30px;
+  border: 1px solid black;
+}
+
+.sh-tl-user-circle {
+      color: #666666;
+      font-size: 36px;
+}
+
+
+
+/* 카드 공통 CSS 종료 */
+
+/* 글쓰기 카드 CSS 시작*/
+/* 글쓰기 카드 CSS 종료*/
+
+/* 다른사람 카드 CSS 시작 */
+/* 다른사람 카드 CSS 종료 */
+
+/* 무한스크롤 CSS 시작 */
+/* 무한스크롤 CSS 종료 */
+
+
+
+/* 타임라인 끝*/
+textarea {
+    border: 0 none white;
+    overflow: hidden;
+    padding: 0;
+    outline: none;
+    background-color: #D0D0D0;
+}

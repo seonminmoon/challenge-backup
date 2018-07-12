@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+<title>회원페이지</title>
+<link rel="stylesheet" href="/challenge-project/html7/sm/sm-memberPage.css">
+<link rel="stylesheet" href="/challenge-project/html7/css/common.css">
+<link rel="stylesheet" href="/challenge-project/html7/node_modules/@fortawesome/fontawesome-free/css/all.css">
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web:900" rel="stylesheet">
+<style type="text/css">
+table {
+  text-align: center;
+  /*
+  table-layout:fixed;
+  word-break: break-all;
+  */
+}
+.sm-tabcontent {
+  width: 99.8%;
+}
+
+/* 바디에 있는 탭 메뉴 (트레이너:회원,수익관리/회원:알림,내가쓴글) */
+.sm-tab {overflow: hidden;}
+.sm-tab button {
+    background-color:inherit;
+    height: 49px;
+    border: 1px solid gray;
+    border-bottom: none;
+    float: left;
+    cursor: pointer;
+    padding: 10px 16px;
+    transition: 0.3s;
+    font-size: 15px;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+}
+.sm-tab button:hover {background-color: #1B3453; color:white; transition: 0.3;}
+.sm-tab button.active {background-color: #1B3453; color:white;}
+.sm-tab-down {
+  height: 250px;
+  float: left;
+  align: center;
+  overflow: auto;
+}
+.sm-tabcontent {
+    display: none;
+    border: 1px solid gray;
+    float: left;
+    width: 99.8%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.sm-tabcontent.sm-current {display: inline;}
+
+.sm-tab-down th, td {
+  text-align: center;
+}
+tr {
+  font-size: 14px;
+}
+tr:first-child {
+  color:#1B3453;
+  font-weight: 700;
+  font-size: 16px;
+}
+tr:nth-child(even) {
+  background-color: #f2f2f2
+}
+</style>
+</head>
+<body>
+
+  <div class="sm-top-bar-white">
+    <div class="sm-container">
+      <!-- 헤더 시작 -->
+      <div id="header"></div>
+
+            <!-- 상단 메뉴바 시작 -->
+        <div class="sm-menubar">
+          <ul>
+            <li class="sm_after"><a href="trainer-my.html">마이페이지</a></li>
+            <li class="sm_after"><a href="#" id="sm-current">서비스관리
+              <i class="fas fa-angle-down" style="color:#666666;"></i></a>
+               <ul>
+                 <li><a href="https://kmong.com/">프로젝트 관리</a></li>
+                 <li><a href="https://kmong.com/">프로젝트 등록</a></li>
+               </ul>
+            </li>
+            <li class="sm_after"><a href="#">회원관리</a>
+              <ul>
+                <li><a href="https://kmong.com/">프로젝트</a></li>
+                <li><a href="https://kmong.com/">업체</a></li>
+                <li><a href="https://kmong.com/">리뷰</a></li>
+              </ul>
+            </li>
+            <li class="sm_after"><a href="#">수익관리
+              <i class="fas fa-angle-down" style="color:#666666;"></i></a>
+              <ul>
+                <li><a href="https://kmong.com/">입/출금 내역</a></li>
+                <li><a href="https://kmong.com/">통계</a></li>
+              </ul>
+            </li>
+            <li class="sm_after"><a href="#">메시지</a>
+            </li>
+            <li class="sm_after"><a href="#">계정설정</a></li>
+         </ul>
+      </div><!-- 상단 메뉴바 종료 -->
+    </div><!-- container -->
+  </div><!-- top-bar-white -->
+
+
+
+
+<div id="sm-back">
+<div class="sm-container">
+  <h2><b>마이페이지</b></h2>
+
+<div class="sm-mypage">
+	<div class="sm-profile">
+		<div style="text-align: center;">
+			<img src="../img/img1.jpg" style="margin-left: 30px; border-radius:60px; width:120px; height:120px;">
+      <button id="sm-btn-2" type="button" style="position:relative; top:-10px; right:40px; width:30px; height:30px; border-radius:15px; padding:0px;font-size:14px;"><span>2</span></button>
+      <br>
+			사용자이름<br>
+      <button id="sm-btn-2" type="button" style="margin-top:10px; margin-bottom:20px;">프로필관리</button>
+		</div>
+	</div><!-- .profile -->
+    <div class="sm-mypage-bar">
+    <ul>
+      <li><b>판매 중인 건</b><span>1개</span></li>
+      <li><b>이달의 수익금</b><span>200,000원</span></li>
+      <li><b>구매 중인 건</b><span>3개</span></li>
+    </ul>
+    </div><!-- mypage-bar -->
+
+    <div class="sm-mypage-body">
+      <div class="sm-tab">
+        <button class="sm-tablinks" onclick="openCity(event, 'sm-tab1')">회원관리</button>
+        <button class="sm-tablinks" onclick="openCity(event, 'sm-tab2')" style="border-left:none;">수입관리</button>
+      </div>
+
+      <div id="sm-tab1" class="sm-tabcontent sm-current">
+        <div class="sm-tab-down" style="width:22%; "> <!-- 회원관리1 -->
+          <img src="#" width="120px" height="120px">
+          <img src="#" width="120px" height="120px">
+          <img src="#" width="120px" height="120px">
+        </div>
+        <div class="sm-tab-down" style="width:55%; border-right:1px solid gray; border-left:1px solid gray;"> <!-- 회원관리2 -->
+          <table width="467px" cellspacing="0">
+            <tr>
+              <td width="80px" height="40px">프로필</td><td width="80px">이름</td><td>연락처</td><td width="70px">출석률</td><td width="80px">선택<input type="checkbox" value="#"></td>
+            </tr>
+            <tr>
+              <td><img src="../img/img1.jpg" style="border-radius:20px; width:40px; height:40px;"></td>
+              <td>임꺽정</td>
+              <td>010-2212-2121</td>
+              <td>20%</td>
+              <td><input type="checkbox" value="okok"></td>
+            </tr>
+            <tr>
+              <td><img src="../img/img1.jpg" style="border-radius:20px; width:40px; height:40px;"></td>
+              <td>임꺽정</td>
+              <td>010-2212-2121</td>
+              <td>20%</td>
+              <td><input type="checkbox" value="okok"></td>
+            </tr>
+            <tr>
+              <td><img src="../img/img1.jpg" style="border-radius:20px; width:40px; height:40px;"></td>
+              <td>임꺽정</td>
+              <td>010-2011-1111</td>
+              <td>30%</td>
+              <td><input type="checkbox" value="okok"></td>
+            </tr>
+            <tr>
+              <td><img src="../img/img1.jpg" style="border-radius:20px; width:40px; height:40px;"></td>
+              <td>임꺽정</td>
+              <td>010-2011-1111</td>
+              <td>30%</td>
+              <td><input type="checkbox" value="okok"></td>
+            </tr>
+            <tr>
+              <td><img src="../img/img1.jpg" style="border-radius:20px; width:40px; height:40px;"></td>
+              <td>임꺽정</td>
+              <td>010-2011-1111</td>
+              <td>30%</td>
+              <td><input type="checkbox" value="okok"></td>
+            </tr>
+            <tr>
+              <td><img src="../img/img1.jpg" style="border-radius:20px; width:40px; height:40px;"></td>
+              <td>임꺽정</td>
+              <td>010-2011-1111</td>
+              <td>30%</td>
+              <td><input type="checkbox" value="okok"></td>
+            </tr>
+          </table>
+        </div>
+        <div class="sm-tab-down" style="width:22.3%; text-align:center;"> <!-- 회원관리3 -->
+          <form>
+            <button id="sm-btn-1" type="button" style="margin-top:50px; margin-bottom:10px;">메시지</button><br>
+            <button id="sm-btn-1" type="button" style="margin-bottom:10px;">메모</button><br>
+            <button id="sm-btn-1" type="button" style="margin-bottom:10px;">정보보기</button>
+          </form>
+        </div>
+      </div>
+
+      <div id="sm-tab2" class="sm-tabcontent">
+        <div class="sm-tab-down" style="width:22%; padding-top:10px;"> <!-- 회원관리1 -->
+          <img src="#" width="120px" height="120px">
+          <img src="#" width="120px" height="120px">
+          <img src="#" width="120px" height="120px">
+        </div>
+          <div class="sm-tab-down" style="text-align:center;"> <!-- 수익관리2 -->
+            <h1>수익 관련 그래프 들어가는 자리 </h1>
+          </div>
+      </div>
+
+
+      <h2>타임라인</h2>
+        ㅇㅇ<br>ㅇㅇ<br>ㅇㅇ<br>ㅇㅇ<br>ㅇㅇ<br>ㅇㅇ<br>ㅇㅇ<br>ㅇㅇ<br>ㅇㅇ<br>ㅇㅇ<br>ㅇㅇ<br>
+          ㅇㅇ<br>ㅇㅇ<br>ㅇㅇ<br>ㅇㅇ<br>ㅇㅇ<br>ㅇㅇ<br>ㅇㅇ<br>ㅇㅇ<br>ㅇㅇ<br>ㅇㅇ<br>ㅇㅇ<br>
+    </div><!-- mypage-body -->
+
+
+</div><!-- mypage -->
+</div><!--.container-->
+
+<!-- 푸터 시작 -->
+  <div id="footer"></div>
+<!-- 푸터 종료 -->
+
+
+</div><!-- back -->
+
+
+
+
+
+<script> // 탭 메뉴
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("sm-tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("sm-tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script>
+
+<script src="/challenge-project/html7/node_modules/jquery/dist/jquery.min.js"></script>
+<script src="/challenge-project/html7/header/js/header_white_login.js"></script>
+<script src="/challenge-project/html7/footer/js/footer.js"></script>
+</body>
+</html>

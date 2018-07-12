@@ -1,0 +1,117 @@
+
+/*
+    Note: It is best to use a less version of this file ( see http://css2less.cc
+    For the media queries use @screen-sm-min instead of 768px.
+    For .omb_spanOr use @body-bg instead of white.
+*/
+
+body {
+	font-family: 'NanumSquareRound',sans-serif !important;
+}
+
+@media (min-width: 768px) {
+    .omb_row-sm-offset-3 div:first-child[class*="col-"] {
+        margin-left: 25%;
+    }
+}
+
+a{
+    color:#2E2EFE;
+}
+a:hover {
+    opacity: 0.8;
+    color:#ff5400;
+    /* text-decoration:none; */
+}
+
+.omb_login .omb_authTitle {
+    text-align: center;
+    line-height: 300%;
+}
+    
+.omb_login .omb_socialButtons a {
+    color: white; // In yourUse @body-bg 
+    opacity:0.9;
+}
+.omb_login .omb_socialButtons a:hover {
+    color: white;
+    opacity:1;      
+}
+
+
+/*버튼 부분*/
+
+.omb_login .omb_socialButtons .omb_btn-facebook {background:#3b5998; -webkit-transition: all 0.5s ease-in-out;
+     -moz-transition: all 0.5s ease-in-out;
+       -o-transition: all 0.5s ease-in-out;
+          transition: all 0.5s ease-in-out;}
+.omb_login .omb_socialButtons .omb_btn-facebook:hover {background: #6b1301}
+.omb_login .omb_socialButtons .omb_btn-facebook:focus {background: #fff; color:#3b5998; border-color: #3b5998;}
+
+.omb_login .omb_socialButtons .omb_btn-twitter {background: #00aced; -webkit-transition: all 0.5s ease-in-out;
+     -moz-transition: all 0.5s ease-in-out;
+       -o-transition: all 0.5s ease-in-out;
+          transition: all 0.5s ease-in-out;}
+.omb_login .omb_socialButtons .omb_btn-twitter:hover {background: #6b1301}
+.omb_login .omb_socialButtons .omb_btn-twitter:focus {background: #fff; color:#00aced; border-color: #00aced;}
+
+.omb_login .omb_socialButtons .omb_btn-kakao {background: #F7FE2E; -webkit-transition: all 0.5s ease-in-out;
+     -moz-transition: all 0.5s ease-in-out;
+       -o-transition: all 0.5s ease-in-out;
+          transition: all 0.5s ease-in-out;}
+.omb_login .omb_socialButtons .omb_btn-kakao:hover {background: #6b1301}
+.omb_login .omb_socialButtons .omb_btn-kakao:focus {background: #fff; color: #F7FE2E; border-color: #F7FE2E;}
+
+
+
+.omb_login .omb_loginOr {
+    position: relative;
+    font-size: 1.5em;
+    color: #aaa;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+.omb_login .omb_loginOr .omb_hrOr {
+    background-color: #cdcdcd;
+    height: 1px;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+.omb_login .omb_loginOr .omb_spanOr {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: -0.6em;
+    margin-left: -1.5em;
+    background-color: white;
+    width: 3em;
+    text-align: center;
+}           
+
+.omb_login .omb_loginForm .input-group.i {
+    width: 2em;
+}
+/* .omb_login .omb_loginForm  .help-block {
+    color: red;
+} */
+
+    
+@media (min-width: 768px) {
+    .omb_login .omb_forgotPwd {
+        text-align: right;
+        margin-top:10px;
+    }       
+}
+
+.container {
+	border: solid red;
+	margin: 100px auto;
+	
+}
+
+.omb_login {
+	border: dashed yellow;
+	margin: 50px auto;
+}

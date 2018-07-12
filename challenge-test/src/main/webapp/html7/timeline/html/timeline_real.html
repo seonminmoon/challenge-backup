@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="../../css/common.css">
+  <!-- <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="../css/timeline_real.css">
+  <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+</head>
+
+<body>
+  <!-- 헤더 시작 -->
+  <div id="header"></div>
+  <!-- 헤더 종료 -->
+
+
+
+
+
+  <div class="container">
+    <!-- img 시작 -->
+    <div class="sh-program-img">
+      <div class="sh-slideshow-container">
+
+        <div class="sh-mySlides sh-fade">
+          <img src="../img/fitness-wallpapers-1.jpg" style="width:100%">
+          <button class="sh-slide-edit-btn" type="button" name="button">EDIT</button>
+          <div class="sh-imgSlide-text">
+            <h1>이미지1입니다.</h1></div>
+        </div>
+
+        <div class="sh-mySlides sh-fade">
+          <img src="../img/fitness-wallpapers-2.jpg" style="width:100%">
+          <button class="sh-slide-edit-btn" type="button" name="button">EDIT</button>
+          <div class="sh-imgSlide-text">
+            <h1>이미지2입니다.</h1></div>
+        </div>
+
+        <div class="sh-mySlides sh-fade">
+          <img src="../img/fitness-wallpapers-3.jpg" style="width:100%">
+          <button class="sh-slide-edit-btn" type="button" name="button">EDIT</button>
+          <div class="sh-imgSlide-text">
+            <h1>이미지3입니다.</h1></div>
+        </div>
+
+        <a class="sh-prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="sh-next" onclick="plusSlides(1)">&#10095;</a>
+
+      </div>
+      <br>
+    </div>
+    <!-- img 종료 -->
+
+    <div id="sh-mainContainer">
+
+      <!-- content 시작 -->
+      <div id="sh-contentCol">
+
+        <!-- 강의계획서 시작 -->
+        <div id="sh-Class-Daily">
+          <div id="sh-Class-Daily-item">
+            <div class="sh-Class-Contents">
+
+              <h1>Day-5 하비탈출</h1>
+              <p>1. 물 500ml 마시고 시작합니다<br> 2. 줄넘기 2분씩 5세트<br> 3. 스트레칭<br>
+                <span id="sh-class-dots">...</span>
+                <span id="sh-class-more">
+                1. 물 500ml 마시고 시작합니다<br> 2. 줄넘기 2분씩 5세트<br> 3. 스트레칭<br>
+              </span>
+              </p>
+            </div>
+
+            <div onclick="shClassFunction()" id="shClassDiv">더보기</div>
+          </div>
+        </div>
+        <!-- 강의계획서 종료-->
+
+        <!-- 타임라인 feed 시작-->
+        <div class="sh-tl-feeds">
+
+          <!-- 글쓰기 카드 시작-->
+          <div class="sh-tl-card sh-card">
+            <section class="sh-tl-card-primary sh-tl-card-header">
+              <div class="sh-tl-user">
+                <i class="sh-tl-user-circle fas fa-user-circle"></i>
+                <h2 class="sh-tl-subtitle">리뷰 작성 하기...</h2>
+              </div>
+            </section>
+            <section class="sh-tl-card-primary sh-tl-card-header sh-tl-review-hidden">
+
+              <div class="sh-tl-user">
+                <i class="sh-tl-user-circle fas fa-user-circle"></i>
+                <h1 id="sh-tl-user-name">박수현</h1>
+              </div>
+              <div class="sh-tl-review-write">
+
+                <textarea class="sh-tl-review-title sh-tl-textarea" placeholder="무슨 생각을 하고 계신가요?" style="height: 54px" onkeydown="resize(this)" onkeyup="resize(this)"></textarea>
+              </div>
+
+
+            </section>
+          </div>
+          <!-- 글쓰기 카드 종료-->
+
+          <!-- 무한 스크롤 시작-->
+          <div>
+            <div class="sh-infinite-scroll">
+              <div>
+                <div class="sh-tl-card sh-card">
+                  <section class="sh-tl-card-primary">
+                    <div class="sh-tl-user">
+                      <i class="sh-tl-user-circle fas fa-user-circle"></i>
+                      <h1 id="sh-tl-user-name">박수현</h1>
+                    </div>
+                  </section>
+                  <div class="sh-tl-card-content">
+                    <p>졸려죽겠네? 아니야 할 수 있다! <br> 북극곰 짱</p>
+                  </div>
+                  <section class="sh-tl-card-actions">
+                    <div class="sh-tl-like-count">
+                        <a href="#!"><i class="far fa-thumbs-up"></i></a>
+                        <a href="#!">27명</a>
+                    </div>
+                    <div class="sh-tl-card-bottom">
+                      <div class="sh-tl-like sh-tl-card-bottom-items" style="border: 1px solid black;"> 
+                        <a href="#!"><i class="far fa-thumbs-up"></i>좋아요</a>
+                      </div>
+                      <div class="sh-tl-comment sh-tl-card-bottom-items" style="border: 1px solid black;"> 
+                        <a href="#!"><i class="far fa-comments"></i>댓글달기</a> 
+                        </div>
+                    </div>
+                  </section>
+                  <div style="clear:both;"></div>
+                </div>
+
+               <div class="sh-tl-card sh-card">
+                  <section class="sh-tl-card-primary">
+                    <div class="sh-tl-user">
+                      <i class="sh-tl-user-circle fas fa-user-circle"></i>
+                      <h1 id="sh-tl-user-name">박수현</h1>
+                    </div>
+                  </section>
+                  <div class="sh-tl-card-content">
+                    <p>졸려죽겠네? 아니야 할 수 있다! <br> 북극곰 짱</p>
+                  </div>
+                  <section class="sh-tl-card-actions">
+                    <div class="sh-tl-like-count">
+                        <a href="#!"><i class="far fa-thumbs-up"></i></a>
+                        <a href="#!">27명</a>
+                    </div>
+                    <div class="sh-tl-card-bottom">
+                      <div class="sh-tl-like sh-tl-card-bottom-items" style="border: 1px solid black;"> 
+                        <a href="#!"><i class="far fa-thumbs-up"></i>좋아요</a>
+                      </div>
+                      <div class="sh-tl-comment sh-tl-card-bottom-items" style="border: 1px solid black;"> 
+                        <a href="#!"><i class="far fa-comments"></i>댓글달기</a> 
+                        </div>
+                    </div>
+                  </section>
+                  <div style="clear:both;"></div>
+                </div>
+                
+                
+                    <div class="sh-tl-card sh-card">
+                  <section class="sh-tl-card-primary">
+                    <div class="sh-tl-user">
+                      <i class="sh-tl-user-circle fas fa-user-circle"></i>
+                      <h1 id="sh-tl-user-name">박수현</h1>
+                    </div>
+                  </section>
+                  <div class="sh-tl-card-content">
+                    <p>졸려죽겠네? 아니야 할 수 있다! <br> 북극곰 짱</p>
+                  </div>
+                  <section class="sh-tl-card-actions">
+                    <div class="sh-tl-like-count">
+                        <a href="#!"><i class="far fa-thumbs-up"></i></a>
+                        <a href="#!">27명</a>
+                    </div>
+                    <div class="sh-tl-card-bottom">
+                      <div class="sh-tl-like sh-tl-card-bottom-items" style="border: 1px solid black;"> 
+                        <a href="#!"><i class="far fa-thumbs-up"></i>좋아요</a>
+                      </div>
+                      <div class="sh-tl-comment sh-tl-card-bottom-items" style="border: 1px solid black;"> 
+                        <a href="#!"><i class="far fa-comments"></i>댓글달기</a> 
+                        </div>
+                    </div>
+                  </section>
+                  <div style="clear:both;"></div>
+                </div>
+                
+                    <div class="sh-tl-card sh-card">
+                  <section class="sh-tl-card-primary">
+                    <div class="sh-tl-user">
+                      <i class="sh-tl-user-circle fas fa-user-circle"></i>
+                      <h1 id="sh-tl-user-name">박수현</h1>
+                    </div>
+                  </section>
+                  <div class="sh-tl-card-content">
+                    <p>졸려죽겠네? 아니야 할 수 있다! <br> 북극곰 짱</p>
+                  </div>
+                  <section class="sh-tl-card-actions">
+                    <div class="sh-tl-like-count">
+                        <a href="#!"><i class="far fa-thumbs-up"></i></a>
+                        <a href="#!">27명</a>
+                    </div>
+                    <div class="sh-tl-card-bottom">
+                      <div class="sh-tl-like sh-tl-card-bottom-items" style="border: 1px solid black;"> 
+                        <a href="#!"><i class="far fa-thumbs-up"></i>좋아요</a>
+                      </div>
+                      <div class="sh-tl-comment sh-tl-card-bottom-items" style="border: 1px solid black;"> 
+                        <a href="#!"><i class="far fa-comments"></i>댓글달기</a> 
+                        </div>
+                    </div>
+                  </section>
+                  <div style="clear:both;"></div>
+                </div>
+                
+                    <div class="sh-tl-card sh-card">
+                  <section class="sh-tl-card-primary">
+                    <div class="sh-tl-user">
+                      <i class="sh-tl-user-circle fas fa-user-circle"></i>
+                      <h1 id="sh-tl-user-name">박수현</h1>
+                    </div>
+                  </section>
+                  <div class="sh-tl-card-content">
+                    <p>졸려죽겠네? 아니야 할 수 있다! <br> 북극곰 짱</p>
+                  </div>
+                  <section class="sh-tl-card-actions">
+                    <div class="sh-tl-like-count">
+                        <a href="#!"><i class="far fa-thumbs-up"></i></a>
+                        <a href="#!">27명</a>
+                    </div>
+                    <div class="sh-tl-card-bottom">
+                      <div class="sh-tl-like sh-tl-card-bottom-items" style="border: 1px solid black;"> 
+                        <a href="#!"><i class="far fa-thumbs-up"></i>좋아요</a>
+                      </div>
+                      <div class="sh-tl-comment sh-tl-card-bottom-items" style="border: 1px solid black;"> 
+                        <a href="#!"><i class="far fa-comments"></i>댓글달기</a> 
+                        </div>
+                    </div>
+                  </section>
+                  <div style="clear:both;"></div>
+                </div>
+                
+                    <div class="sh-tl-card sh-card">
+                  <section class="sh-tl-card-primary">
+                    <div class="sh-tl-user">
+                      <i class="sh-tl-user-circle fas fa-user-circle"></i>
+                      <h1 id="sh-tl-user-name">박수현</h1>
+                    </div>
+                  </section>
+                  <div class="sh-tl-card-content">
+                    <p>졸려죽겠네? 아니야 할 수 있다! <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> 북극곰 짱</p>
+                  </div>
+                  <section class="sh-tl-card-actions">
+                    <div class="sh-tl-like-count">
+                        <a href="#!"><i class="far fa-thumbs-up"></i></a>
+                        <a href="#!" >27 명</a>
+                    </div>
+                    <div class="sh-tl-card-bottom">
+                      <div class="sh-tl-like sh-tl-card-bottom-items" style="border: 1px solid black;"> 
+                        <a href="#!"><i class="far fa-thumbs-up"></i>좋아요</a>
+                      </div>
+                      <div class="sh-tl-comment sh-tl-card-bottom-items" style="border: 1px solid black;"> 
+                        <a href="#!"><i class="far fa-comments"></i>댓글달기</a> 
+                        </div>
+                    </div>
+                  </section>
+                  <div style="clear:both;"></div>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+          <!-- 무한 스크롤 종료-->
+
+        </div>
+        <!--타임라인 feed 종료-->
+
+      </div>
+      <!-- content 종료 -->
+
+      <!-- sideMenu 시작 -->
+      <div id="sh-sideMenu">
+
+        <div id="sh-sideMenu-item">
+
+        </div>
+
+      </div>
+      <!-- sideMenu 종료 -->
+
+      <div id="more">
+        <!-- 무한 스크롤 -->
+
+      </div>
+    </div>
+
+  </div>
+  <!-- .container -->
+
+
+
+
+
+  <script>
+    function resize(obj) {
+      obj.style.height = "1px";
+      obj.style.height = (12 + obj.scrollHeight) + "px";
+    }
+  </script>
+  <!-- 푸터 시작 -->
+  <div id="footer"></div>
+  <!-- 푸터 종료 -->
+  <script src="/challenge-project/html7/timeline/js/timeline_real.js"></script>
+  <!-- 헤더/푸터 스크립트 종료-->
+  <script src="../..//header/js/header_white_login.js"></script>
+  <script src="../../footer/js/footer.js"></script>
+  <!-- 헤더/푸터 스크립트 종료-->
+</body>
+
+</html>

@@ -1,0 +1,553 @@
+@charset "UTF-8";
+
+body {
+  margin: 0;
+}
+.sm-container { /* 전체 틀 */
+    width: 1200px;
+    margin: 0 auto;
+}
+.sm-margin-none {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+}
+
+#sh_top_layout {
+  border-bottom: none!important;
+}
+
+#sm-btn-1 { /* 남색 버튼 */
+  width:100px;
+    background-color: #1B3453;
+    border: none;
+    color:#fff;
+    padding: 10px 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    margin: 3px;
+    cursor: pointer;
+    border-radius:10px;
+}
+#sm-btn-2 { /* 빨간색 버튼 */
+  width:100px;
+    background-color: #DD1F26;
+    border: none;
+    color:#fff;
+    padding: 10px 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    margin: 3px;
+    cursor: pointer;
+    border-radius:10px;
+}
+
+
+#sm-back { /* 로고 뒷배경 */
+  padding-top: 130px;
+}
+.sm-profile {
+border:1px solid gray;
+	margin-top: 15px;
+    width: 255px;
+    padding-top: 20px;
+    float:left;
+}
+
+.sm-mypage{
+    overflow:hidden;
+    text-align: center;
+}
+
+.sm-tab-down {
+  height: 250px;
+  float: left;
+  align: center;
+  overflow: auto;
+}
+
+/* 상단 메뉴바 */
+.sm-top-bar-white {
+  top:0px;
+  height: 120px;
+  width: 100%;
+  background-color: white;
+  position:fixed;
+  display: inline-block;
+  border-bottom: 1px solid rgb(102, 102, 102, 0.2);
+  z-index: 999;
+}
+
+.sm-menubar{
+  position: fixed;
+  background-color: white;
+  z-index: 1;
+  top: 70px;
+  border:none;
+  border:0px;
+  margin:0px;
+  padding:0px;
+  font-size:small;
+  font-weight:bold;
+}
+
+.sm-menubar ul{
+  height:50px;
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+.sm-menubar li{
+  float:left;
+  padding:0px;
+}
+.sm-menubar li a{
+  color:black;
+  display:block;
+  font-weight:normal;
+  line-height:50px;
+  margin:0px;
+  padding:0px 25px;
+  text-align:center;
+  text-decoration:none;
+}
+.sm-menubar li a:hover, .sm-menubar ul li:hover {
+  color:black;
+}
+
+.sm_after:after {
+  content: "";
+  transition: 0.2s all ease;
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+    bottom: 0.05em;
+    height: 0.2rem;
+    width: 0;
+    background: #1B3453;
+}
+
+.sm_after:hover:after {
+  width: 110px;
+}
+
+.sm-menubar li ul{
+  display:none; /* 평상시에는 드랍메뉴가 안보이게 하기 */
+  height:auto;
+  padding:0px;
+  margin:0px;
+  border:0px;
+  position:absolute;
+  width:200px;
+  z-index:200;
+  border: 1px solid rgb(102, 102, 102, 0.2);
+  background-color: white;
+}
+.sm-menubar li:hover ul{display:block; /* 마우스 커서 올리면 드랍메뉴 보이게 하기 */}
+.sm-menubar li li {
+
+  display:block;
+  float:none;
+  margin:0px;
+  padding:0px;
+  width:200px;
+}
+.sm-menubar li:hover li a{background:none;}
+.sm-menubar li ul a{
+  display:block;
+  height:50px;
+  font-size:12px;
+  font-style:normal;
+  margin:0px;
+  padding:0px 10px 0px 15px;
+  text-align:left;
+}
+.sm-menubar li ul a:hover, .sm-menubar li ul li:hover a{
+  border:0px;
+  font-weight: 800;
+  text-decoration:none;
+}
+.sm-menubar p{clear:left;}
+
+
+
+/* 마이페이지-회원관리 탭 메뉴 */
+.sm-tab {overflow: hidden;}
+.sm-tab button {
+    background-color: inherit;
+    border: 1px solid gray;
+    border-bottom: none;
+    float: left;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+.sm-tab button:hover {background-color: #ddd;}
+.sm-tab button.active {background-color: #ccc;}
+.sm-tabcontent {
+    display: none;
+    border: 1px solid gray;
+    float: left;
+    width: 97.3%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.sm-tabcontent.sm-current {display: inline;}
+
+.foot_link img {
+  height: 41px;
+}
+
+.sm-tabcontent {
+  padding:10px;
+  text-align: left;
+}
+.sm-profile {
+  padding-bottom: 0px;
+}
+
+.sm-menu {
+  width: 49.28%; height: 100px; border:1px solid gray; padding:0px;
+  display: inline-block;
+  float: left;
+  font-size:small;
+  border-right: white;
+  border-bottom: white;
+}
+.sm-menu:hover {
+  background-color: #EEEEEE;
+}
+
+.sm-menu i {
+  margin: 10px;
+  font-size:50px;
+}
+
+
+
+
+
+
+/* 소영 운동일지 */
+
+.sm-mypage-bar{
+    float:left;
+    width:73%;
+    margin-top:15px;
+    margin-left:5%;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+ul {list-style:none;}
+.sm-mypage-bar ul{margin:0;padding:0;}
+.sm-mypage-bar ul li{ display: inline-block; text-align: center;}
+.sm-mypage-bar ul li b{display:block;}
+
+a {
+  cursor: pointer;
+}
+
+/* 프로젝트 탭 */
+.tabbed {
+  max-width: 880px;
+  margin: 0 auto;
+  margin-left: 0;
+  border-bottom: 4px solid #1B3453;
+  overflow: hidden;
+  transition: border 250ms ease;
+}
+.tabbed ul {
+  overflow: hidden;
+  float: left;
+  list-style-type: none;
+  padding-left: 35px;
+}
+.tabbed ul * {
+  margin: 0px;
+  padding: 0px;
+}
+.tabbed ul li {
+  display: block;
+  float: right;
+  padding: 10px 24px 8px;
+  background-color: #FFF;
+  margin-right: 46px;
+  z-index: 2;
+  position: relative;
+  cursor: pointer;
+  color: #777;
+
+  text-transform: uppercase;
+  font: 600 13px/20px roboto, "Open Sans", Helvetica, sans-serif;
+
+  transition: all 250ms ease;
+}
+.tabbed ul li:before,
+.tabbed ul li:after {
+  display: block;
+  content: " ";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 44px;
+  background-color: #FFF;
+  transition: all 250ms ease;
+}
+.tabbed ul li:before {
+  right: -24px;
+  transform: skew(30deg, 0deg);
+  box-shadow: rgba(0,0,0,.1) 3px 2px 5px, inset rgba(255,255,255,.09) -1px 0;
+}
+.tabbed ul li:after {
+  left: -24px;
+  transform: skew(-30deg, 0deg);
+  box-shadow: rgba(0,0,0,.1) -3px 2px 5px, inset rgba(255,255,255,.09) 1px 0;
+}
+.tabbed ul li:hover,
+.tabbed ul li:hover:before,
+.tabbed ul li:hover:after {
+  background-color: #F4F7F9;
+  color: #444;
+}
+.tabbed ul li.active {
+  z-index: 3;
+}
+.tabbed ul li.active,
+.tabbed ul li.active:before,
+.tabbed ul li.active:after {
+  background-color: #1B3453;
+  color: #fff;
+}
+
+.arrow .fas {
+  color: #1B3453;
+  font-size: 22px;
+}
+
+.arrow {
+  margin-top: 5px;
+  height: 22px;
+}
+.arrowLeft {
+  float: left;
+}
+
+.arrowRight {
+  float: right;
+}
+/* 도전 날자 */
+.topBox {
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.challengeBox1 h3, .challengeBox1 h4, .challengeBox2 h4 {
+  margin: 0;
+}
+
+.challengeBox1 h4 {
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+.challengeBox2 {
+  float: left;
+  margin: 30px 0 5px 13px;
+}
+
+.challengeBox2 h4{
+  font-size: 15px;
+  font-weight: bold;
+}
+
+/* 운동일지 하단 메뉴 */
+.bottomMenu {
+  float: right;
+  margin-top: 12px;
+  margin-right: 18px;
+  margin-bottom: 30px;
+}
+
+.bottomMenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bottomMenu li {
+  float:left;
+  padding: 6px 25px;
+  font-weight: bold;
+  border: 1px solid #DD1F26;
+  border-radius: 5px;
+  background-color: #DD1F26;
+  color: white;
+  font-size: 15px;
+}
+
+.MenuShare {
+  margin: 0 10px;
+}
+
+/* 운동일지 */
+.dayList {
+  display: inline-block;
+}
+.dayList li {
+  box-sizing: border-box;
+  box-shadow: 0 1px 7px 0 gray;
+  width: 260px;
+  float: left;
+  height: 200px;
+  margin: 10px 15px;
+}
+.dayContent {
+  height: 152px;
+  margin: 0 14px;
+}
+.editIcon {
+  float: right;
+  margin-right: 10px;
+}
+
+.dayContent p {
+  text-align: left;
+  font-size: 15px;
+}
+
+.time {
+  font-weight: bold;
+  color: #1B3453;
+  font-size: 19px;
+}
+
+/* 강사일지 or 내 일지 선택 */
+#selectTab {
+    margin-right:20px;
+    border:1px solid #d7d7d7;
+    padding:5px;
+    border-radius:2px;
+    float: right;
+    margin-top: 20px;
+}
+
+#selectTab:hover{
+    background:#cde4f7;
+    border:1px solid #41c9ff;
+}
+
+#selectTab:before{
+    content: "▼";
+}
+#selectTab option {
+  background:#fff;
+}
+
+
+
+
+/* 운동일지 */
+/* .dayList {
+  padding: 50px 0;
+  padding-top: 25px;
+  margin: 0;
+}
+
+.timeline .dayList li {
+  list-style-type: none;
+  position: relative;
+  width: 5px;
+  height: 156px;
+  margin: 0 auto;
+  padding-top: 12px;
+  background: #1B3453;
+}
+
+.timeline .dayList li::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: inherit;
+}
+
+.timeline .dayList li div {
+  position: relative;
+  bottom: 0;
+  width: 375px;
+  height: 122px;
+  padding: 15px;
+  box-shadow: 0 3px 10px 0 gray;
+}
+
+.timeline .dayList li div::before {
+  content: '';
+  position: absolute;
+  bottom: 7px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.timeline .dayList li:nth-child(odd) div {
+  left: 35px;
+}
+
+.timeline .dayList li:nth-child(odd) div::before {
+  left: -15px;
+  border-width: 8px 16px 8px 0;
+  border-color: transparent white transparent transparent;
+}
+
+.timeline .dayList li:nth-child(even) div {
+  left: -433px;
+}
+
+.timeline .dayList li:nth-child(even) div::before {
+  right: -15px;
+  border-width: 8px 0 8px 16px;
+  border-color: transparent transparent transparent white;
+}
+
+.time {
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-top: 12px;
+}
+
+.timeline .dayList li div p {
+  margin: 9px;
+} */
+
+/* 운동일지 페이지 넘기는 탭 */
+.pagination {
+  height: 35px;
+  padding: 0 30%;
+  margin-bottom: 30px;
+}
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+}
+
+.pagination a.pageActive {
+    background-color: dodgerblue;
+    color: white;
+}
+
+.pagination a:hover:not(.pageActive) {background-color: #ddd;}

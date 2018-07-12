@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/common.css">
+<!-- <link rel="stylesheet"
+    href="../node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.css">
+<link rel="stylesheet" href="../form/memberform.css">
+</head>
+
+<body>
+<div class="container">
+<form>
+ <fieldset>
+  <legend>회원가입</legend>
+  
+  <label for="name">이름</label>
+   <input type="text" name="name" placeholder="name"></br>
+   
+   <label for="gender">성별</label>
+   
+   <input type="radio" name="gender" value="m" id="man">
+   <label for="man">남자</label>
+   
+   <input type="radio" name="gender" value="w" id="woman">
+   <label for="woman">여자</label></br>
+   
+   
+    <label for="email">이메일</label>
+   <input type="email" name="email" placeholder="email">@
+   <select>
+   <option>naver.com</option>
+   <option>daum.net</option>
+   <option>nate.com</option>
+   <option>gmail.com</option>
+   
+   </select>
+   </br>
+   
+   
+   <label for="password">비밀번호</label>
+   <input type="password" name="password" placeholder="password"></br>
+   
+   
+   <label for="password">비밀번호확인</label>
+   <input type="password" name="password" placeholder="password"></br>
+   
+   <label for="file">사진</label>
+   <input type="file" name="file" placeholder="file"></br>
+   
+   
+   <label for="tel">전화</label>
+ <input type="tel" name="tel" id="tel"
+ placeholder="000-0000-0000" pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{3,4}" maxlength="13">
+  <!--  <input type="tel" id="tel" size="3">-
+   <input type="tel" id="tel" size="4">-
+   <input type="tel" id="tel" size="3"> --><br>
+
+
+   
+   <label for="name">약관체크</label>
+   <input type="checkbox" name="ckeckbox" value="check"></br>
+   
+   
+   <label for="name">회원가입</label>
+   <input type="submit" name="name" value="회원가입"></br>
+   
+   
+   <label for="name">가입취소</label>
+   <input type="reset" name="name" value="가입취소"></br>
+ </fieldset>
+</form>
+</div>
+
+</body>
+</html>

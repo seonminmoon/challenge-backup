@@ -1,0 +1,130 @@
+@charset "UTF-8";
+
+.sm-mypage-body {
+  box-sizing: border-box;
+  margin-bottom: 100px;
+}
+
+/* 수입 통계 서브 메뉴 */
+.uploadSubMenu h3 {
+  margin: 0;
+  border-bottom: 1px solid #666666;
+  height: 35px;
+  font-size: 21px;
+  font-weight: 400;
+}
+
+/* 통계 본문 */
+.statsContent {
+  margin-top: 25px;
+}
+
+.dateSelect {
+  margin-bottom: 30px;
+}
+.dateSelect input {
+  border:1px solid #d7d7d7;
+  padding: 8px;
+  border-radius:2px;
+  width: 120px;
+}
+
+/* 그래프 */
+#graph {
+  margin-left: 170px;
+}
+
+.statsText {
+  float: right;
+  margin-right: 207px;
+  font-size: 14px;
+}
+
+/* 테이블 */
+.statsTable {
+  margin-top: 45px;
+}
+
+.statsTable table {
+  border: 1px solid #e0e0e0;
+  border-collapse: collapse;
+  margin-left: 25px;
+}
+
+.statsTable th, .statsTable td {
+  border: 1px solid #e0e0e0;
+  padding: 13px 75px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/

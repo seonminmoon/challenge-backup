@@ -1,0 +1,114 @@
+*	{	margin: 0; padding: 0;
+	/* do: inherit; */
+}
+a {
+	 text-decoration: none;
+	 color: inherit;
+}
+.card {
+	height: 320px;
+	width: 250px;
+	display: inline-block;
+	box-sizing: border-box;
+	/* margin-top: 30px;
+	margin-left: 30px;
+	margin-bottom : 30px; */
+	/* position: relative; */
+	border-radius: 5px;
+}
+
+.card-header {
+	width: 100%;
+	height: 170px;
+	background-image: url("../img/man.jpg");
+	background-size: 100% 170px;
+	background-repeat: no-repeat;
+	border-radius: 5px 5px 0 0;
+	position: relative;
+}
+.ribbon {
+  position: absolute;
+  left: -5px; top: -5px;
+  z-index: 1;
+  overflow: hidden;
+  width: 75px; height: 75px;
+  text-align: right;
+}
+.ribbon span {
+  font-size: 12px;
+  font-weight: bold;
+  color: #FFF;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 20px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  width: 100px;
+  display: block;
+  /* background: #79A70A; */
+  background: linear-gradient(#F70505 0%, #8F0808 100%);
+  box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+  position: absolute;
+  top: 19px; left: -21px;
+}
+.ribbon span::before {
+  content: "";
+  position: absolute; left: 0px; top: 100%;
+  z-index: -1;
+  border-left: 3px solid #8F0808;
+  border-right: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid #8F0808;
+}
+.ribbon span::after {
+  content: "";
+  position: absolute; right: 0px; top: 100%;
+  z-index: -1;
+  border-left: 3px solid transparent;
+  border-right: 3px solid #8F0808;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid #8F0808;
+}
+.card-trainer {
+	position: absolute;
+	top: 120px; right: 10px;
+	height: 60px; width: 60px;
+	border: 1px solid #eeeeee;
+	background-image: url("../img/man.jpg");
+	background-size: 60px 100%;
+	border-radius: 50%;
+}
+.card-body {
+	box-sizing: border-box;
+	height: 150px;
+	padding: 10px;
+	line-height: 22px;
+	border: 1px solid #eeeeee;
+	border-radius: 0 0 5px 5px;
+}
+.card-body-title {
+	font-weight: 700;
+	font-size: 1.2em;
+	margin-right: 5px;
+}
+.card-body-local {margin-right: 10px;}
+.card-body-numger {}
+.card-body-score {color: gold; line-height: 27px;}
+.card-footer {
+	box-sizing: border-box;
+	margin-top: 10px;
+	padding-top: 5px;
+	border-top: 1px solid #eeeeee;
+	height: 40px;
+	width: 100%;
+  overflow: hidden;
+}
+.card-footer-review {
+	float: left;
+}
+.card-footer-date {
+	float: right;
+}
+.card:hover {
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

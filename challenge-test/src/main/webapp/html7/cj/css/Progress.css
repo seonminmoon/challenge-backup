@@ -1,0 +1,37 @@
+@charset "UTF-8";
+.progress-title{
+    font-size: 17px;
+    font-weight: 700;
+    color: #000;
+    margin: 0 0 20px;
+}
+.progress{
+    height: 7px;
+    background: #fff;
+    border-radius: 0;
+    box-shadow: none;
+    border: 1px solid #000;
+    margin-bottom: 40px;
+    overflow: visible;
+}
+.progress .progress-bar{
+    box-shadow: none;
+    border-radius: 0;
+    position: relative;
+    animation: animate-positive 2s;
+}
+.progress .progress-bar:before,
+.progress .progress-bar:after{
+    content: "";
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    outline: 1px solid #000;
+    position: absolute;
+    top: -7px;
+    left: -1px;
+}
+.progress .progress-bar:after{
+    left: auto;
+    right: 0;
+}

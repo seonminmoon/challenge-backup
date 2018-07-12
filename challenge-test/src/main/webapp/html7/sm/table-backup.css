@@ -1,0 +1,49 @@
+
+  .sm-msgBox {
+    display:block;
+    margin-bottom:50px;
+    width:97.5%;
+    height: 430px;
+  }
+  
+  .sm-msgBox select {
+    float: right;
+    margin-bottom: 10px;
+    width: 150px;
+    height: 25px;
+  }
+  
+  table {
+    text-align:center;
+    width:100%;
+    border:1px solid #ddd
+    
+  }
+  
+  table th, td {
+    text-align: center;
+    padding: 12px;
+  }
+  
+  tr:first-child {
+    background-color:#1B3453; height:40px; color:white;
+  }
+  tr:nth-child(even) {
+    background-color: #f2f2f2
+  }
+  
+  tr:hover {
+    background-color: #FAF4C0
+  }
+
+  td i {
+    color:#1B3453;
+  }
+
+  table a {
+    color:black;
+  }
+  
+  
+  
+  

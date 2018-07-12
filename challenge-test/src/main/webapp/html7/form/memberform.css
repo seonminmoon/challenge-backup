@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'NanumSquareRound',sans-serif !important;
+    /* text-align: center; */
+    
+}
+
+/* form {
+	border:solid red;
+}
+ */
+ 
+ .button {
+    background-color: #DD1F26;
+     border: none;
+    color: #FFFFFF;
+    padding: 10px 5px;
+    text-align: center;
+    /* text-decoration: none; */
+    /* display: inline-block; */
+    font-size: 16px;
+    margin: 10px 10px;
+    cursor: pointer;
+    border-radius: 6px;
+    width: 250px;
+}
+
+
+input, select, textarea {
+	
+	margin: 10px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+   /*  resize: vertical; */
+
+	}
