@@ -3,25 +3,28 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
   <title>글 본문</title>
   <!-- Bootstrap core CSS -->
-  <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- font core CSS -->
-  <link rel="stylesheet" href="css/common.css?ver=5">
+  <link rel="stylesheet" href="../css/common.css">
   <!-- icon tools-->
-  <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.css">
+  <link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
   <!-- page css-->
-  <link rel="stylesheet" href="css/bd-view.css?ver=5">
-  <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="js/bd-view.js" ></script>
-  <script src="../header/js/header_bg_black.js"></script>
-  <script src="../footer/js/footer.js"></script>
+  <link rel="stylesheet" href="../css/bd-view.css">
+
+
 
 
 </head>
 
 <body>
-<div id="header"></div>
+
+  <div id="header"></div><!-- </div> -->
+  
   <main id="main">
     <div class="hf-wrapper">
 
@@ -32,6 +35,7 @@
           <p style="border:1px solid gray;"></p>
         </div>
       </section>
+      
       <div class="all-form">
         <div class="hf-sidebar">
           <div class="notice-table-form" style="padding: 20px 20px 13px 20px;">
@@ -204,8 +208,8 @@
                     <dd class="opinion">
                       <div class="upDown">
                         <p class="line">
-<a onclick="AddClick();" href="#!"><em class="upDown"><i class="far fa-thumbs-up"></i> 좋아요</em></a>
-                             <a id="CountedClicks">0</a></p>
+                          <a onclick="AddClick();" href="#!"><em class="upDown"><i class="far fa-thumbs-up"></i> 좋아요</em></a>
+                          <a id="CountedClicks">0</a></p>
 
 
                       </div>
@@ -221,25 +225,25 @@
                     <!-- //내용 -->
                   </dl>
                 </div>
-                <div class ="btnPagelink">
+                <div class="btnPagelink">
                   <span class="LF_page_link_current"><b>1</b></span>
 
-                  </div>
-              <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
                 <div class="prev-next" style="text-align:left;">
                   <div>
                     <span>이전글 <i class="fas fa-caret-up"></i></span>
-                    <div id="jh-prev"><a href>이전글 제목 입니다.</a></div>
+                    <div id="jh-prev"><a href="">이전글 제목 입니다.</a></div>
                   </div>
                   <div>
                     <span>다음글 <i class="fas fa-caret-down"></i></span>
-                    <div id="jh-next"><a href>다음글 제목 입니다.</a></div>
+                    <div id="jh-next"><a href="">다음글 제목 입니다.</a></div>
                   </div>
-
+</div>
                 </div>
-
+</div>
               </div>
-
+</div>
             </div>
           </div>
 
@@ -247,14 +251,15 @@
 
   <div id="footer"></div>
 
-  <!-- <script>
-  var Clicks = 0 ;
+ 
+ 
 
-  function AddClick(){
-      Clicks = Clicks + 1;
-      document.getElementById('CountedClicks').innerHTML = Clicks ;
-      };
-  </script>-->
+<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../../js/common.js"></script>
+  <script src="../js/bd-view.js"></script>
+<script src="../../header/js/header_white_login.js"></script>
+<script src="../../footer/js/footer.js"></script>
+
 
 
 </body>

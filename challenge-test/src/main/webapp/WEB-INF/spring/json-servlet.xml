@@ -11,9 +11,9 @@
         http://www.springframework.org/schema/mvc
         http://www.springframework.org/schema/mvc/spring-mvc.xsd">
     
-    <context:component-scan base-package="bitcamp.java106.pms.web">
+    <context:component-scan base-package="challenge.web">
         <context:exclude-filter type="aspectj" 
-        expression="bitcamp.java106.pms.web.*Controller"/>
+        expression="challenge.web.*Controller"/>
     </context:component-scan>
     
     <mvc:annotation-driven enable-matrix-variables="true"/>
@@ -23,7 +23,7 @@
         <mvc:interceptor>
             <mvc:mapping path="/**"/>
             <mvc:exclude-mapping path="/auth/**"/>
-            <bean class="bitcamp.java106.pms.web.interceptor.AuthCheckInterceptor"/>
+            <bean class="challenge.web.interceptor.AuthCheckInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>
     -->

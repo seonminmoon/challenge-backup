@@ -53,8 +53,6 @@ function openNav(evt) {
     }
     evt.currentTarget.className += " active";
 }
-/* 클리상태를 유지하는 이벤트 */
-document.getElementById("defaultNav").click();
 
 
 /* 이미지 슬라이드 이벤트 */

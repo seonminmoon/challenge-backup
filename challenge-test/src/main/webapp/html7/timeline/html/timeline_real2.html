@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="../../css/common.css">
+  <!-- <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="../css/timeline_real2.css">
+  <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="../../js/common.js"></script>
+  <script src="../../header/js/header_bg_black.js"></script>
+  <script src="../../footer/js/footer.js"></script>
+</head>
+
+<body>
+  <!-- 헤더 시작 -->
+  <div id="header"></div>
+  <!-- 헤더 종료 -->
+
+  <div class="container">
+    <!-- img 시작 -->
+    <div class="sh-program-img">
+      <div class="sh-slideshow-container">
+
+        <div class="sh-mySlides sh-fade">
+          <img src="../img/fitness-wallpapers-1.jpg" style="width:100%">
+          <button class="sh-slide-edit-btn" type="button" name="button">EDIT</button>
+          <div class="sh-imgSlide-text">
+            <h1>이미지1입니다.</h1></div>
+        </div>
+
+        <div class="sh-mySlides sh-fade">
+          <img src="../img/fitness-wallpapers-2.jpg" style="width:100%">
+          <button class="sh-slide-edit-btn" type="button" name="button">EDIT</button>
+          <div class="sh-imgSlide-text">
+            <h1>이미지2입니다.</h1></div>
+        </div>
+
+        <div class="sh-mySlides sh-fade">
+          <img src="../img/fitness-wallpapers-3.jpg" style="width:100%">
+          <button class="sh-slide-edit-btn" type="button" name="button">EDIT</button>   
+          <div class="sh-imgSlide-text">
+            <h1>이미지3입니다.</h1></div> 
+        </div>
+
+        <a class="sh-prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="sh-next" onclick="plusSlides(1)">&#10095;</a>
+
+      </div>
+      <br>
+    </div>
+    <!-- img 종료 -->
+
+
+
+
+
+		<!-- 글쓰기 카드 시작-->
+    <div class="sh-tl-card sh-card">
+
+      <!-- HIDE -->
+      <!-- Trigger/Open The Modal -->
+      <section id="myModalBtn" class="sh-tl-card-primary sh-tl-card-header">
+        <div class="sh-tl-user">
+          <i class="sh-tl-user-circle fas fa-user-circle"></i>
+          <h2 class="sh-tl-subtitle">리뷰 작성 하기...</h2>
+        </div>
+      </section>
+      <!-- HIDE -->
+
+      <!-- SHOW & Modal-->
+      <!--The Modal-->
+      <div id="myModal" class="modal">
+
+        <!-- modal content -->
+        <section class="modal-content sh-tl-card-primary sh-tl-card-header sh-tl-review-hidden">
+          <div class="sh-tl-user">
+            <span class="close">&times;</span>    
+            <i class="sh-tl-user-circle fas fa-user-circle"></i>
+            <h1 id="sh-tl-user-name">박수현</h1>
+          </div>
+          <div class="sh-tl-review-write">
+            <textarea class="sh-tl-review-title sh-tl-textarea" placeholder="무슨 생각을 하고 계신가요?" onkeydown="resize(this)" onkeyup="resize(this)"></textarea>
+            <div class="sh-tl-post-img-upload"><label for="sh-tl-upload" style="cursor:pointer"><i class="far fa-images"><input accept="video/*,  video/x-m4v, video/webm, video/x-ms-wmv, video/x-msvideo, video/3gpp, video/flv, video/x-flv, video/mp4, video/quicktime, video/mpeg, video/ogv, .ts, .mkv, image/*"  name="file" title="사진 또는 동영상 첨부" type="file" id="sh-tl-upload" style="display:none"></i></label></div>
+          </div>
+        </section>
+      </div>
+      <!-- SHOW -->
+    </div>
+    <!-- 글쓰기 카드 종료-->
+
+
+
+  </div>
+  <!-- .container -->
+
+
+
+
+  <script>
+    function resize(obj) {
+      obj.style.height = "1px";
+      obj.style.height = (12 + obj.scrollHeight) + "px";
+    }
+  </script>
+  <!-- 푸터 시작 -->
+  <div id="footer"></div>
+  <!-- 푸터 종료 -->
+  <script src="../js/timeline_real2.js"></script>
+  <!-- 헤더/푸터 스크립트 종료-->
+  <!-- 헤더/푸터 스크립트 종료-->
+</body>
+
+</html>

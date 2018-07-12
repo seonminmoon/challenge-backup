@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <title>회원 가입 폼</title>
 <link rel="stylesheet" href="../css/common.css">
+<link rel="stylesheet" href="../form/memberform.css">
 <!-- <link rel="stylesheet"
     href="../node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
 <link rel="stylesheet"
 	href="../node_modules/@fortawesome/fontawesome-free/css/all.css">
-<link rel="stylesheet" href="../form/memberform.css">
 
 </head>
 
@@ -20,58 +20,96 @@
 	<div class="container">
 		<form>
 			<fieldset>
-				<legend align="center">회원가입하기</legend>
-				<label for="name">성명</label> 
-				<input type="text" name="name"
-					placeholder="name"></br>
-					 <label for="gender">성별</label> 
-					 <input
-					type="radio" name="gender" value="m" id="man"> 
-					<label
-					for="man">남자</label> 
-					<input type="radio" name="gender" value="w"
-					id="woman"> 
-					<label for="woman">여자</label></br> 
-					<label for="email">이메일</label> 
-					<input type="email" name="email"
-					placeholder="email">@ <select>
-					<option>naver.com</option>
-					<option>daum.net</option>
-					<option>nate.com</option>
-					<option>gmail.com</option>
+				<legend align="center" style="size: 200px">회원가입</legend>
 
-				</select> </br>
-				 <label for="password">비밀번호</label> 
-				 <input type="password"
-					name="password" placeholder="password"></br> <label
-					for="password">비밀번호확인</label> <input type="password"
-					name="password" placeholder="password"></br> <label for="file">사진</label>
-				<input type="file" name="file" placeholder="file"></br> <label
-					for="tel">전화</label> <input type="tel" name="tel" id="tel"
-					placeholder="000-0000-0000"
-					pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{3,4}" maxlength="13">
-				<input type="tel" id="tel" size="3">- <input type="tel"
-					id="tel" size="4">- <input type="tel" id="tel" size="3"><br>
+				<table style="width: 450px" align="center">
+					<tr>
+						<td><label for="name">성명</label></td>
+						<td><input type="text" name="name" placeholder="name"
+							class="name" required></td>
+					</tr>
+
+					<tr>
+						<td><label for="gender">성별</label></td>
+						<td><label class="gen">남자 <input type="radio"
+								name="radio"> <span class="rcheckmark"></span>
+						</label> <label class="gen">여자 <input type="radio" name="radio">
+								<span class="rcheckmark"></span>
+						</label></td>
+					</tr>
+
+
+					<!-- <tr>
+						<td><label for="gender">성별</label></td>
+						<td><input type="radio" name="gender" value="m" id="man">
+							<label for="man">남자</label> <input type="radio" name="gender"
+							value="w" id="woman"> <label for="woman">여자</label></td>
+					</tr> -->
 
 
 
-				<label for="name">약관체크</label> <input type="checkbox"
-					name="ckeckbox" value="check"></br> 
-					
-				
+					<tr>
+						<td><label for="email">이메일</label></td>
+						<td><input type="email" name="email" placeholder="email"
+							class="email" required></td>
+					</tr>
+
+
+					<tr>
+						<td><label for="password">비밀번호</label></td>
+						<td><input type="password" name="password"
+							placeholder="password" class="password" required></td>
+					</tr>
+					<tr>
+						<td><label for="password">비밀번호확인</label></td>
+
+						<td><input type="password" name="password"
+							placeholder="password" class="password"></td>
+					</tr>
+
+
+					<tr>
+						<td><label for="file">사진</label>
+						<td><input type="file" name="file" placeholder="file"
+							class="file"></td>
+					</tr>
+
+
+					<tr>
+						<td><label for="tel">전화</label></td>
+						<td><input type="tel" name="tel" id="tel"
+							placeholder="000-0000-0000"
+							pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{3,4}" maxlength="13"
+							class="phone" required></td>
+
+
+					</tr>
+
+					<!-- <tr>
+				<td> <input type="checkbox"
+					name="ckeckbox" value="check" required><label for="name">이용약관 동의</label></td>
+					</tr> -->
+
+					<tr>
+						<td><label class="agree">이용약관 동의 <input
+								type="checkbox"> <span class="checkmark"></span>
+						</label></td>
+					</tr>
+				</table>
+
 				<center>
 
-					<input type="submit" name="name"
-					value="회원가입" class="button">
+					<input type="submit" name="submit" value="회원가입" class="button">
 
-			
-					 <input
-					type="reset" name="name" value="가입취소" class="button"></center>
+
+					<input type="reset" name="reset" value="가입취소" class="button">
+				</center>
 
 			</fieldset>
+
+
 		</form>
 	</div>
-
 
 </body>
 </html>

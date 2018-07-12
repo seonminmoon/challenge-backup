@@ -138,7 +138,7 @@ ul {
   width: 650px;
   background: #fafafa;
   margin-bottom: 50px;
-  z-index: 1;
+  z-index: 100;
 }
 
 #navbar .navLink {
@@ -147,7 +147,7 @@ ul {
   color: #999;
   font-weight: bold;
   text-align: center;
-  padding: 14px 46.3px;
+  padding: 14px 46.4px;
   text-decoration: none;
   font-size: 15px;
   border-left: 1px solid #e6e6e6;
@@ -400,11 +400,160 @@ thead {
 }
 
 th, td {
-  padding: 12px 39.8px;
+  padding: 12px 38.8px;
   text-align: center;
 }
+/* 프로그램 평가 댓글 입력창 */
+.commentInput {
+  margin-top: 25px;
+  display: inline-block;
+  border: 1px solid #e0dbdb;
+  box-sizing: border-box;
+  width: 649px;
+}
 
-/* 프로그램 평가 */
+/* 프로그램 평가 댓글 입력창 star */
+.star-input>.input,
+.star-input>.input>label:hover,
+.star-input>.input>input:focus+label,
+.star-input>.input>input:checked+label {
+  display: inline-block;
+  vertical-align:middle;
+  background:url('../img/grade_img.png')no-repeat;
+}
+
+.star-input {
+  display:inline-block;
+  white-space:nowrap;
+  width:225px;
+  line-height:30px;
+  margin: 5px 20px;
+}
+
+.star-input>.input {
+  display:inline-block;
+  width:105px;
+  background-size:100px;
+  height:19px;
+  white-space:nowrap;
+  overflow:hidden;
+  position: relative;
+}
+
+.star-input>.input>input {
+  position:absolute;
+  width:1px;
+  height:1px;
+  opacity:0;
+}
+
+star-input>.input.focus {
+  outline:1px dotted #ddd;
+}
+
+.star-input>.input>label {
+  width:30px;
+  height:0;
+  padding:28px 0 0 0;
+  overflow: hidden;
+  float:left;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.star-input>.input>label:hover,
+.star-input>.input>input:focus+label,
+.star-input>.input>input:checked+label {
+  background-size: 100px;
+  background-position: 0 -20px;
+}
+
+.star-input>.input>label:hover~label {
+  background-image: none;
+}
+
+.star-input>.input>label[for="p1"] {
+  width:20px; z-index:5;
+}
+
+.star-input>.input>label[for="p2"] {
+  width:40px; z-index:4;
+}
+
+.star-input>.input>label[for="p3"] {
+  width:60px; z-index:3;
+}
+
+.star-input>.input>label[for="p4"] {
+  width:80px; z-index:2;
+}
+
+.star-input>.input>label[for="p5"] {
+  width:100px; z-index:1;
+}
+
+.star-input>output {
+  display:inline-block;
+  font-size:14px;
+  vertical-align:middle;
+}
+
+/* 프로그램 평가 댓글 입력창 나머지 */
+.userName {
+  width: 610px;
+  display: inline-block;
+  padding: 18px 0 8px 25px;
+}
+
+.userNameCircle {
+  background: #e6e6e6;
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  float: left;
+}
+
+.userNameContent {
+  float: left;
+  font-size: 14px;
+  padding: 6px 10px;
+}
+
+.userContent {
+  width: 600px;
+  padding-left: 25px;
+}
+
+.userContent textarea {
+  resize: none;
+  border: none;
+}
+
+.formInput {
+  border-top: 1px solid #e0dbdb;
+  height: 32px;
+}
+
+.starInput {
+  float: left;
+}
+
+.commentRegister {
+  float: right;
+  border: none;
+  border-left: 1px solid #e0dbdb;
+  background: none;
+  height: 41px;
+  padding: 5px 20px;
+  cursor: pointer;
+}
+
+
+
+
+/* 프로그램 평가*/
 .six {
   margin-top: 25px;
   width: 649px;
@@ -505,6 +654,8 @@ th, td {
   color: #5e5e5e;
   font-weight: bold;
 }
+
+/* 프로그램 평가 댓글 입력창 */
 
 #more {display: none;}
 

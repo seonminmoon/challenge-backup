@@ -43,9 +43,9 @@
     url("font/NanumSquareRoundEB.woff") format("woff"), /* Modern Browsers */
     url("font/NanumSquareRoundEB.ttf") format("truetype"); /* Safari, Android, iOS */
 }
-a:link { color: red; text-decoration: none;}
+a:link {  text-decoration: none;}
 a:visited { color: black; text-decoration: none;}
-a:hover { color: blue; text-decoration: none;}
+
 
 출처: http://it77.tistory.com/126 [시원한물냉의 사람사는 이야기]
 body {

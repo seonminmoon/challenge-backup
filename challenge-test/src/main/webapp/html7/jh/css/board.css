@@ -4,7 +4,11 @@
 
 * {
   box-sizing: border-box;
-  
+
+}
+
+.chall-tbody > tr > td:nth-child(3) {
+	text-align:left;
 }
 
 .jumbotron-heading {
@@ -24,13 +28,6 @@ main {
     position: relative;
 }
 
-.jh-boarder-layout {
-  width: 95%
-}
-
-.fa-user-circle {
-  font-size: 30px;
-}
 
 .board-form{
   padding:2rem 2rem 0 0; background-color:white;
@@ -38,16 +35,6 @@ main {
  }
 
 
-.btn-danger {
-position: absolute;
-background-color:#DD1F26;
-border-color:#DD1F26;
-
-padding: 0 5px 0 5px;
-height: 32px;
-top: 1390px;
-right: 380px;
-}
 
 #selBtn{
   padding:3px 3px 3px 3px;
@@ -75,36 +62,7 @@ right: 380px;
 }
 
 
-/* 페이지 링크 시작*/
-.btnPagelink{
-  text-align: center;
 
-}
-.LF_page_link_current { /*현재페이지*/
-    color: #f00 !important;
-    background-color: #fff;
-    border: 1px solid #e5e5e5;
-    font-size: 15px;
-      font-weight: bold;
-      line-height: 22px;
-      text-decoration: none;
-
-      vertical-align: middle;
-      margin: 0 2px;
-      padding: 0 5px;
-}
-.LF_page_link {  /*다른페이지*/
-    color: #777 !important;
-    font-size: 15px;
-      font-weight: bold;
-      line-height: 22px;
-      text-decoration: none;
-
-      vertical-align: middle;
-      margin: 0 2px;
-      padding: 0 5px;
-}
-/* 페이지 링크 끝*/
 /* 사이드바 컨텐츠 메뉴 css 시작지점*/
 .hf-sidebar { /* 사이드바 전체*/
   width:300px;
