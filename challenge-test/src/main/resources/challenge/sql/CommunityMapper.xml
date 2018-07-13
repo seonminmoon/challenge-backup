@@ -19,6 +19,10 @@
     <result column="cmu_type" property="type"/>
     <result column="cmu_lk" property="like"/>
     <result column="uno" property="user"/>
+    <association property="person" javaType="User">
+        <id column="uno" property="userNo"/>
+        <result column="uname" property="name"/>
+    </association>
   </resultMap>
   
   
@@ -31,36 +35,29 @@
   <select id="selectList" 
           resultMap="CommunityMap" 
           parameterType="map">
-    select pono, cmu_type, cmut, u.uno, cmu_cnt, podate 
+    select pono, pocont, podate, cmut, cmu_cnt, cmu_type, cmu_lk, u.uno 
     from CMU c 
     inner join USER u on c.uno=u.uno 
     inner join POST p on c.CMUNO=p.PONO
     order by pono desc
     <!-- limit #{startRowNo}, #{pageSize} -->
+    
   </select>
-  
-  <select id="selectListNotice" 
-          resultMap="CommunityMap" 
-          parameterType="map">
-  SELECT pono, cmut 
-  from CMU c inner join POST p on c.CMUNO=p.PONO
-  WHERE CMU_TYPE='notice'
-  order by pono desc
-  </select>
-  
   
   <insert id="insert" parameterType="Community"
-          useGeneratedKeys="true" keyColumn="pono" keyProperty="pono">
-    insert into POST(pocont,podate) 
-    values(#{content},now())
+          useGeneratedKeys="true" keyColumn="cmuno" keyProperty="pono">
+    insert into CMU( cmut, cmu_cnt, cmu_type, cmu_lk, uno) 
+    values (#{title}, 0, #{type}, 0, 1);
   </insert>
   
   <!-- 파라미터의 타입이 primitive type이나 wrapper 클래스, String 클래스인 경우
        값을 꺼낼 때 프로퍼티 이름을 마음대로 해도 된다.
   -->
   <select id="selectOne" parameterType="int" resultMap="CommunityMap">
-    select pono, pocont, podate 
-    from POST 
+    select pono, pocont, podate, cmut, cmu_cnt, cmu_type, cmu_lk, u.uno, u.uname
+    from CMU c
+    inner join USER u on c.uno=u.uno 
+    inner join POST p on c.cmuno=p.pono
     where pono=#{value}
   </select>
   

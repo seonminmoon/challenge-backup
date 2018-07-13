@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+<title>회원페이지</title>
+<link rel="stylesheet" href="../css/template/sm-trainerPage.css">
+<link rel="stylesheet" href="../css/trainerPageChallenge-settings1.css">
+<link rel="stylesheet" href="../../css/common.css">
+<link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
+<!-- 서버에 연결할 때 지울 부분 -->
+<link rel="stylesheet" href="../../header/css/header_white.css">
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web:900" rel="stylesheet">
+  <link rel="stylesheet" href="../../footer/css/footer.css">
+</head>
+<body>
+
+  <div class="sm-top-bar-white">
+    <div class="sm-container">
+    <div id="header"></div>
+            <!-- 상단 메뉴바 시작 -->
+        <div class="sm-menubar">
+          <ul>
+            <li class="sm_after"><a href="#" id="sm-current">서비스관리
+              <i class="fas fa-angle-down" style="color:#666666;"></i></a>
+               <ul>
+                 <li><a href="#">챌린지 관리</a></li>
+                 <li><a href="#">챌린지 등록</a></li>
+                 <li><a href="#">챌린지 운동일지</a></li>
+               </ul>
+            </li>
+            <li class="sm_after"><a href="#">회원관리</a>
+            </li>
+            <li class="sm_after"><a href="#">수익관리
+              <i class="fas fa-angle-down" style="color:#666666;"></i></a>
+              <ul>
+                <li><a href="https://kmong.com/">수입 관리</a></li>
+                <li><a href="https://kmong.com/">통계</a></li>
+              </ul>
+            </li>
+            <li class="sm_after"><a href="#">메시지</a>
+            </li>
+            <li class="sm_after"><a href="#">계정설정</a></li>
+         </ul>
+      </div><!-- 상단 메뉴바 종료 -->
+    </div><!-- container -->
+  </div><!-- top-bar-white -->
+
+
+
+
+<div id="sm-back">
+<div class="sm-container">
+  <h2>계정 설정</h2>
+
+<div class="sm-mypage">
+  <div class="sm-profile" id="cssRemove">
+	</div><!-- .profile -->
+
+
+    <div class="sm-mypage-body">
+      <!-- 프로젝트 등록 서브 메뉴 -->
+      <div class="settingsSubMenu">
+        <ul>
+          <li id="settingsSubMenu-fist"><a>나의 정보</a></li>
+        </ul>
+      </div>
+      <!-- 프로젝트 등록 본문-->
+      <div class="settingsContent">
+      <div class="settingsImg">
+        <div class="originalImg"></div>
+        <div class="changeButton"><button type="button">이미지 수정</button></div>
+      </div>
+      <div class="settingsList">
+      <ul>
+        <li class="ucpEmail">
+          <div class="contentName">이메일</div>
+          <div class="ucContet">
+            <input class="inputText" type="email">
+          <div class="inputCheckbox">
+            <input type="checkbox">수신동의
+          </div>
+          </div>
+        </li>
+        <li class="ucpPassword1">
+          <div class="contentName">비밀번호</div>
+          <div class="ucContet">
+            <input class="inputText" type="password">
+          </div>
+        </li>
+        <li class="ucpPassword2">
+          <div class="contentName">비밀번호 확인</div>
+          <div class="ucContet">
+            <input class="inputText" type="password">
+          </div>
+        </li>
+        <li class="ucpPhone">
+          <div class="contentName">휴대전화</div>
+          <div class="ucContet">
+            <input class="inputText" type="tel">
+            <div class="inputCheckbox">
+            <input type="checkbox">수신동의
+            </div>
+          </div>
+        </li>
+      </ul>
+      </div>
+      </div>
+      <!-- 다음 단계 버튼 -->
+      <div class="nextBox">
+        <button type="button" id="exitButton">계정 탈퇴</button>
+        <button type="button">수정 완료</button>
+      </div>
+    </div><!-- mypage-body -->
+
+
+</div><!-- mypage -->
+</div><!--.container-->
+</div><!-- back -->
+<div id="footer"></div>
+<script src="../../js/common.js"></script>
+<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../../header/js/header_white_login.js"></script>
+<script src="../../footer/js/footer.js"></script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원 가입 폼</title>
+<link rel="stylesheet" href="../../css/common.css">
+<link rel="stylesheet" href="../css/memberform.css">
+<!-- <link rel="stylesheet"
+    href="../node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
+<link rel="stylesheet"
+	href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
+
+</head>
+
+
+
+
+<body>
+<!-- 헤더 시작 -->
+     <header id="header"></header >
+  <!-- 헤더 종료 -->
+
+	<div class="container">
+		<form class="memberform">
+			<fieldset>
+				<legend align="center" style="size: 200px">회원가입</legend>
+
+				<table style="width: 450px" align="center">
+					<tr>
+						<td><label for="name">성명</label></td>
+						<td><input type="text" name="name" placeholder="name"
+							class="name" required></td>
+					</tr>
+
+					<tr>
+						<td><label for="gender">성별</label></td>
+						<td><label class="gen">남자 <input type="radio"
+								name="radio"> <span class="gcheckmark"></span>
+						</label> <label class="gen">여자 <input type="radio" name="radio">
+								<span class="gcheckmark"></span>
+						</label></td>
+					</tr>
+
+
+					<!-- <tr>
+						<td><label for="gender">성별</label></td>
+						<td><input type="radio" name="gender" value="m" id="man">
+							<label for="man">남자</label> <input type="radio" name="gender"
+							value="w" id="woman"> <label for="woman">여자</label></td>
+					</tr> -->
+
+
+
+					<tr>
+						<td><label for="email">이메일</label></td>
+						<td><input type="email" name="email" placeholder="email"
+							class="email" required></td>
+					</tr>
+
+
+					<tr>
+						<td><label for="password">비밀번호</label></td>
+						<td><input type="password" name="password"
+							placeholder="password" class="password" required></td>
+					</tr>
+					<tr>
+						<td><label for="password">비밀번호확인</label></td>
+
+						<td><input type="password" name="password"
+							placeholder="password" class="password"></td>
+					</tr>
+
+
+					<tr>
+						<td><label for="file">사진</label>
+						<td><input type="file" name="file" placeholder="file"
+							class="file"></td>
+					</tr>
+
+
+					<tr>
+						<td><label for="tel">전화</label></td>
+						<td><input type="tel" name="tel" placeholder="00*-000*-0000"
+							pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{3,4}" maxlength="13"
+							class="phone" required></td>
+					</tr>
+
+					<!-- <tr>
+				<td> <input type="checkbox"
+					name="ckeckbox" value="check" required><label for="name">이용약관 동의</label></td>
+					</tr> -->
+
+					<tr>
+						<td><label class="agree">이용약관 동의<input type="checkbox"> <span class="checkmark"></span></label>
+						</td>
+					</tr>
+				</table>
+
+				<center>
+
+					<input type="submit" name="submit" value="회원가입" class="button1">
+
+
+					<input type="reset" name="reset" value="가입취소" class="button2">
+				</center>
+
+			</fieldset>
+
+
+		</form>
+	</div>
+	
+	<!-- 푸터 시작 -->
+     <footer id="footer"></footer >
+  <!-- 푸터 종료 -->
+	
+	 <!-- 헤더 스크립트 -->
+<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../../js/common.js"></script>
+<script src="../../header/js/header_white.js"></script>
+<script src="../../footer/js/footer.js"></script>
+<!-- 헤더 스크립트 -->
+
+</body>
+</html>

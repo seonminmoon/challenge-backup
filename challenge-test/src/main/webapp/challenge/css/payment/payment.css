@@ -1,0 +1,193 @@
+@charset "UTF-8";
+
+img {
+  border: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+.pay-h2 {
+  margin-left: 100px;
+}
+.pay-boarder {
+  width: 1000px;
+  box-sizing: border-box;
+  border: 1px solid #eeeeee;
+  margin-top: 10px;
+  display: block;
+  margin-left: 100px;
+}
+
+.pay-0 {
+  overflow: hidden;
+  padding: 20px;
+}
+
+.pay-0-left {
+  width: 120px;
+  height: 100%;
+  float: left;
+}
+
+.pay-0-right {
+  width: 780px;
+  height: 100%;
+  float: right;
+}
+
+.pay-0-img {
+  width: 120px;
+  height: 90px;
+  background-image: url('../../img/program/man.jpg');
+  border-radius: 10px;
+  background-size: 120px 100%;
+  /* vertical-align: middle; */
+  /* margin-right: 20px; */
+}
+
+.order-title {
+  padding-bottom: 20px;
+}
+
+.pay-nu {
+  display: inline-block;
+  background-color: #eeeeee;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: bold;
+}
+
+.trainer-img {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-image: url('../../img/program/man.jpg');
+  background-size: 30px 100%;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.pay-0-trainer {}
+
+.order-table {
+  clear: both;
+  padding-top: 20px;
+
+}
+.order-table1 {
+  width: 100%;
+  border: 0;
+  height: 70px;
+  border-collapse: collapse;
+}
+.order-th {
+  padding: 0;
+}
+.order-td {
+  text-align: center;
+  padding: 0;
+}
+.order-tr {
+  height: 20px;
+}
+.order-thead {
+  background-color: #eeeeee;
+}
+
+.pay-title {
+  background-color: #eeeeee;
+  padding: 10px;
+}
+
+.auth {
+  overflow: hidden;
+
+}
+
+.pay-1-img {
+  float: left;
+  width: 50%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.pay-1-agr {
+  box-sizing: border-box;
+  float: left;
+  width: 50%;
+  padding: 20px;
+}
+
+.order-price {
+  overflow: hidden;
+}
+
+.pay-2-left {
+  width: 60%;
+  float: left;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.pay-2-right {
+  width: 40%;
+  float: left;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.pay-2-price {
+  color: red;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.pay-3-type {
+  overflow: hidden;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.pay-3-type>ul {
+  width: 100% overflow: hidden;
+}
+
+.pay-3-type>ul>li {
+  display: inline-block;
+  float: left;
+  text-align: center;
+}
+
+li>input {
+  margin: 0 10px;
+}
+
+.pay-2-right>button {
+  margin-left: 100px;
+}
+.btn-payment {
+  border: 0;
+  border-radius: 5px;
+  background-color: #DD1F26;
+  color: #ffffff;
+  width: 250px; height: 50px;
+}
+
+#footer-body>ul>li:nth-child(2n) {
+  width: 30px;
+}
+
+#notice {
+  width: 75%;
+  float: left;
+}
+
+#call {
+  width: 25%;
+  float: left;
+}

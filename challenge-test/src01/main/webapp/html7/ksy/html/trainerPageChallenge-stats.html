@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+<title>트레이너페이지</title>
+<link rel="stylesheet" href="../css/template/sm-trainerPage.css">
+<link rel="stylesheet" href="../css/trainerPageChallenge-stats.css">
+<link rel="stylesheet" href="../../css/common.css">
+<link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
+<!-- 서버에 연결할 때 지울 부분 -->
+<link rel="stylesheet" href="../../header/css/header_white.css">
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web:900" rel="stylesheet">
+  <link rel="stylesheet" href="../../footer/css/footer.css">
+</head>
+<body>
+
+  <div class="sm-top-bar-white">
+    <div class="sm-container">
+    <div id="header"></div>
+            <!-- 상단 메뉴바 시작 -->
+        <div class="sm-menubar">
+          <ul>
+            <li class="sm_after"><a href="#" id="sm-current">서비스관리
+              <i class="fas fa-angle-down" style="color:#666666;"></i></a>
+               <ul>
+                 <li><a href="#">챌린지 관리</a></li>
+                 <li><a href="#">챌린지 등록</a></li>
+                 <li><a href="#">챌린지 운동일지</a></li>
+               </ul>
+            </li>
+            <li class="sm_after"><a href="#">회원관리</a>
+            </li>
+            <li class="sm_after"><a href="#">수익관리
+              <i class="fas fa-angle-down" style="color:#666666;"></i></a>
+              <ul>
+                <li><a href="https://kmong.com/">수입 관리</a></li>
+                <li><a href="https://kmong.com/">통계</a></li>
+              </ul>
+            </li>
+            <li class="sm_after"><a href="#">메시지</a>
+            </li>
+            <li class="sm_after"><a href="#">계정설정</a></li>
+         </ul>
+      </div><!-- 상단 메뉴바 종료 -->
+    </div><!-- container -->
+  </div><!-- top-bar-white -->
+
+
+
+
+<div id="sm-back">
+<div class="sm-container">
+  <h2>수익 관리</h2>
+
+<div class="sm-mypage">
+  <div class="sm-profile">
+		<div style="text-align: center;">
+			<img src="../img/img1.jpg" style="margin-left: 30px; border-radius:60px; width:120px; height:120px;">
+      <button id="sm-btn-2" type="button" style="position:relative; top:-10px; right:40px; width:30px; height:30px; border-radius:15px; padding:0px;font-size:14px;"><span>2</span></button>
+      <br>
+			사용자이름<br>
+      <button id="sm-btn-2" type="button" style="margin-top:10px; margin-bottom:20px;">프로필관리</button>
+		</div>
+    <!-- ************* 이부분만 템플릿에서 다르니까 이것만 짤라서 쓰면된다!!!! ********************************************* -->
+    <div class="sm-menu" style="border-left:none;"><i class="fas fa-hand-holding-usd"></i><br>수입 관리</div>
+    <div class="sm-menu"><i class="far fa-chart-bar"></i><br>통계</div>
+	</div><!-- .profile -->
+
+
+    <div class="sm-mypage-body">
+      <!-- 통계 서브 메뉴 -->
+      <div class="uploadSubMenu">
+        <h3>통계</h3>
+      </div>
+      <!-- 통계 -->
+      <div class="statsContent">
+        <div class="dateSelect">
+          <input type="number" min="2000" max="2018" value="2018">
+        </div>
+        <div class="stats">
+          <canvas id="graph" width="500" height="300" align="center"></canvas></div>
+          <div class="statsText">월 / 결제 건수(개)</div>
+        </div>
+        <div class="statsTable">
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th>월</th>
+                <th>건수</th>
+                <th>금액</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>최저금액</td>
+                <td>12</td>
+                <td>100</td>
+                <td>2,440,000</td>
+              </tr>
+              <tr>
+                <td>최저금액</td>
+                <td>1</td>
+                <td>2200</td>
+                <td>5,000,000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div><!-- mypage-body -->
+
+
+</div><!-- mypage -->
+</div><!--.container-->
+</div><!-- back -->
+<div id="footer"></div>
+<script src="../../js/common.js"></script>
+<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../../header/js/header_white_login.js"></script>
+<script src="../../footer/js/footer.js"></script>
+<script src="../../ksy/js/trainerPageChallenge-stats.js"></script>
+</body>
+</html>

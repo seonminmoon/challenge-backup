@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+}
+/* profile CSS 시작*/
+
+.sm-margin-none {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+}
+.sm-menubar{
+  position: fixed;
+  background-color: white;
+  z-index: 1;
+  top: 70px;
+  border:none;
+  border:0px;
+  margin:0px;
+  padding:0px;
+  font-size:small;
+  font-weight:bold;
+}
+
+.sm-menubar ul{
+  height:50px;
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+.sm-menubar li{
+  float:left;
+  padding:0px;
+}
+.sm-menubar li a{
+  color:black;
+  display:block;
+  font-weight:normal;
+  line-height:50px;
+  margin:0px;
+  padding:0px 25px;
+  text-align:center;
+  text-decoration:none;
+}
+.sm-menubar li a:hover, .sm-menubar ul li:hover {
+  color:black;
+}
+
+.sm_after:after {
+  content: "";
+  transition: 0.2s all ease;
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+    bottom: 0.05em;
+    height: 0.2rem;
+    width: 0;
+    background: #1B3453;
+}
+
+.sm_after:hover:after {
+  width: 110px;
+}
+
+.sm-menubar li ul{
+  display:none; /* 평상시에는 드랍메뉴가 안보이게 하기 */
+  height:auto;
+  padding:0px;
+  margin:0px;
+  border:0px;
+  position:absolute;
+  width:200px;
+  z-index:200;
+  border: 1px solid rgb(102, 102, 102, 0.2);
+  background-color: white;
+}
+.sm-menubar li:hover ul{display:block; /* 마우스 커서 올리면 드랍메뉴 보이게 하기 */}
+.sm-menubar li li {
+
+  display:block;
+  float:none;
+  margin:0px;
+  padding:0px;
+  width:200px;
+}
+.sm-menubar li:hover li a{background:none;}
+.sm-menubar li ul a{
+  display:block;
+  height:50px;
+  font-size:12px;
+  font-style:normal;
+  margin:0px;
+  padding:0px 10px 0px 15px;
+  text-align:left;
+}
+.sm-menubar li ul a:hover, .sm-menubar li ul li:hover a{
+  border:0px;
+  font-weight: 800;
+  text-decoration:none;
+}
+.sm-menubar p{clear:left;}
+
+/* profile CSS 종료*/

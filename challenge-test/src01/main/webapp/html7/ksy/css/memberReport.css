@@ -1,0 +1,275 @@
+@charset "UTF-8";
+
+body {
+  margin: 0;
+}
+
+#header {
+  box-sizing: border-box;
+  border: 1px solid black;
+  text-align: center;
+  height: 100px;
+}
+
+.container {
+  box-sizing: border-box;
+  border: 1px solid black;
+}
+
+#aside {
+  box-sizing: border-box;
+  border: 1px solid black;
+  float: left;
+  width: 220px;
+  height: 550px;
+}
+
+/* 여기서 부터 타임라인 */
+
+#section {
+  box-sizing: border-box;
+  border: 1px solid black;
+  float: left;
+  margin-left: 96px;
+  width: 882px;
+}
+
+a {
+  cursor: pointer;
+}
+
+/* 프로젝트 탭 */
+.tabbed {
+  max-width: 880px;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-left: 0;
+  border-bottom: 4px solid #1B3453;
+  overflow: hidden;
+  transition: border 250ms ease;
+}
+.tabbed ul {
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+  float: left;
+  padding-left: 48px;
+  list-style-type: none;
+}
+.tabbed ul * {
+  margin: 0px;
+  padding: 0px;
+}
+.tabbed ul li {
+  display: block;
+  float: right;
+  padding: 10px 24px 8px;
+  background-color: #FFF;
+  margin-right: 46px;
+  z-index: 2;
+  position: relative;
+  cursor: pointer;
+  color: #777;
+
+  text-transform: uppercase;
+  font: 600 13px/20px roboto, "Open Sans", Helvetica, sans-serif;
+
+  transition: all 250ms ease;
+}
+.tabbed ul li:before,
+.tabbed ul li:after {
+  display: block;
+  content: " ";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 44px;
+  background-color: #FFF;
+  transition: all 250ms ease;
+}
+.tabbed ul li:before {
+  right: -24px;
+  transform: skew(30deg, 0deg);
+  box-shadow: rgba(0,0,0,.1) 3px 2px 5px, inset rgba(255,255,255,.09) -1px 0;
+}
+.tabbed ul li:after {
+  left: -24px;
+  transform: skew(-30deg, 0deg);
+  box-shadow: rgba(0,0,0,.1) -3px 2px 5px, inset rgba(255,255,255,.09) 1px 0;
+}
+.tabbed ul li:hover,
+.tabbed ul li:hover:before,
+.tabbed ul li:hover:after {
+  background-color: #F4F7F9;
+  color: #444;
+}
+.tabbed ul li.active {
+  z-index: 3;
+}
+.tabbed ul li.active,
+.tabbed ul li.active:before,
+.tabbed ul li.active:after {
+  background-color: #1B3453;
+  color: #fff;
+}
+
+.arrow .fas {
+  color: #1B3453;
+  font-size: 22px;
+}
+
+.arrow {
+  margin-top: 5px;
+  height: 22px;
+}
+.arrowLeft {
+  float: left;
+}
+
+.arrowRight {
+  float: right;
+}
+/* 도전 날자 */
+.topBox {
+  overflow: hidden;
+  margin-top: 40px;
+}
+
+.challengeBox {
+  float: left;
+}
+
+.challengeBox h3, .challengeBox h4{
+  margin: 0;
+}
+
+.challengeBox h4 {
+  margin-top: 8px;
+}
+
+/* 운동일지 하단 탭 */
+.bottomMenu {
+  float: right;
+  margin-top: 8px;
+}
+
+.bottomMenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bottomMenu li {
+  float:left;
+  padding: 6px 25px;
+  font-weight: bold;
+  border: 1px solid #DD1F26;
+  border-radius: 5px;
+  background-color: #DD1F26;
+  color: white;
+  font-size: 15px;
+}
+
+.MenuShare {
+  margin: 0 10px;
+}
+
+/* 운동일지 */
+.dayList {
+  padding: 50px 0;
+  padding-top: 25px;
+  margin: 0;
+}
+
+.timeline .dayList li {
+  list-style-type: none;
+  position: relative;
+  width: 5px;
+  height: 156px;
+  margin: 0 auto;
+  padding-top: 12px;
+  background: #1B3453;
+}
+
+.timeline .dayList li::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: inherit;
+}
+
+.timeline .dayList li div {
+  position: relative;
+  bottom: 0;
+  width: 375px;
+  height: 122px;
+  padding: 15px;
+  box-shadow: 0 3px 10px 0 gray;
+}
+
+.timeline .dayList li div::before {
+  content: '';
+  position: absolute;
+  bottom: 7px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.timeline .dayList li:nth-child(odd) div {
+  left: 35px;
+}
+
+.timeline .dayList li:nth-child(odd) div::before {
+  left: -15px;
+  border-width: 8px 16px 8px 0;
+  border-color: transparent white transparent transparent;
+}
+
+.timeline .dayList li:nth-child(even) div {
+  left: -433px;
+}
+
+.timeline .dayList li:nth-child(even) div::before {
+  right: -15px;
+  border-width: 8px 0 8px 16px;
+  border-color: transparent transparent transparent white;
+}
+
+.time {
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-top: 12px;
+}
+
+.timeline .dayList li div p {
+  margin: 9px;
+}
+
+/* 운동일지 페이지 넘기는 탭 */
+.pagination {
+  height: 35px;
+  padding: 0 30%;
+  margin-bottom: 30px;
+}
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+}
+
+.pagination a.pageActive {
+    background-color: dodgerblue;
+    color: white;
+}
+
+.pagination a:hover:not(.pageActive) {background-color: #ddd;}

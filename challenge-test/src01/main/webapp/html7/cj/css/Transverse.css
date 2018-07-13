@@ -1,0 +1,67 @@
+@charset "UTF-8";
+
+.box_Transverse {
+  display: flex;
+  align-items: center;
+  margin: 10px
+   border: 1px solid #00f;
+  box-shadow: 0 1px 2px 2px #ccc;
+  overflow: hidden;
+  width:800px;
+}
+
+
+
+.hover_cont{
+  display: none;
+}
+.container {
+    /* width: 1200px; */
+    height: 1160;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.thumb{
+  /* border: 1px solid #f00; */
+  width:300px;
+  float:left;
+}
+.thumb img {
+  width:100%;
+}
+.thumb {
+  position: relative;
+  display: block;
+}
+
+.text-Transverse {
+  float:left;
+   /*border: 1px solid #0ff;*/
+  width: 300px;
+}
+.text-Transverse div {
+  padding: 10px 30px;
+}
+
+.box {
+  position: relative;
+}
+
+
+.hover_cont pre {
+  margin-top: 30px;
+margin-left: 30px;
+color: #FFFFFF;
+}
+ .box:hover .hover_cont{
+position:absolute; width:300px; height: 271px;
+left:0;top:0;bottom:0; background:#000;
+display:grey;
+opacity: 0.7;
+display:block;
+  }
+
+  .progress.progress-striped.active{
+    float: right;
+  }

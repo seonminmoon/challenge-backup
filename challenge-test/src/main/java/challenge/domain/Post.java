@@ -10,7 +10,6 @@ public class Post implements Serializable {
 
     private int no;
     private String content;
-    
     @JsonFormat(pattern="yyyy-MM-dd")
     private Date createdDate;
     

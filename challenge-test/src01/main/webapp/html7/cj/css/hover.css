@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+.hover_cont{
+  display: none;
+}
+.container {
+    width: 1200px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.box_wrap {
+    overflow: hidden;
+}
+
+.box_wrap .box {
+    position: relative;
+    float: left;
+    width: 30%;
+}
+
+.box_wrap .box.hover{
+  width:auto;
+  padding: 5px;
+}
+.box_wrap .box.hover:hover .hover_cont{
+  position: absolute; width:248px;
+left:0;top:0;height:100%;background:#000;
+display:grey;
+opacity: 0.7;
+display:block;
+}
+.box_wrap .thumb img {
+    display: block;
+    width: 100%;
+}

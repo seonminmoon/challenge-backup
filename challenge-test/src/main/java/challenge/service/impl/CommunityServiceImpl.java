@@ -28,16 +28,6 @@ public class CommunityServiceImpl implements CommunityService {
         return communityDao.selectList();
     }
     
-    
-    public List<Community> noticeList() {
-//      HashMap<String,Object> params = new HashMap<>();
-//      params.put("startRowNo", (pageNo - 1) * pageSize);
-//      params.put("pageSize", pageSize);
-      
-      return communityDao.selectListNotice();
-    }
-    
-    
     @Override
     public int delete(int no) {
         return communityDao.delete(no);

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+<title>트레이너페이지</title>
+<link rel="stylesheet" href="../css/template/sm-trainerPage.css">
+<link rel="stylesheet" href="../css/trainerPageChallenge-importation.css">
+<link rel="stylesheet" href="../../css/common.css">
+<link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
+<!-- 서버에 연결할 때 지울 부분 -->
+<link rel="stylesheet" href="../../header/css/header_white.css">
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web:900" rel="stylesheet">
+  <link rel="stylesheet" href="../../footer/css/footer.css">
+</head>
+<body>
+
+  <div class="sm-top-bar-white">
+    <div class="sm-container">
+    <div id="header"></div>
+            <!-- 상단 메뉴바 시작 -->
+        <div class="sm-menubar">
+          <ul>
+            <li class="sm_after"><a href="#" id="sm-current">서비스관리
+              <i class="fas fa-angle-down" style="color:#666666;"></i></a>
+               <ul>
+                 <li><a href="#">챌린지 관리</a></li>
+                 <li><a href="#">챌린지 등록</a></li>
+                 <li><a href="#">챌린지 운동일지</a></li>
+               </ul>
+            </li>
+            <li class="sm_after"><a href="#">회원관리</a>
+            </li>
+            <li class="sm_after"><a href="#">수익관리
+              <i class="fas fa-angle-down" style="color:#666666;"></i></a>
+              <ul>
+                <li><a href="https://kmong.com/">수입 관리</a></li>
+                <li><a href="https://kmong.com/">통계</a></li>
+              </ul>
+            </li>
+            <li class="sm_after"><a href="#">메시지</a>
+            </li>
+            <li class="sm_after"><a href="#">계정설정</a></li>
+         </ul>
+      </div><!-- 상단 메뉴바 종료 -->
+    </div><!-- container -->
+  </div><!-- top-bar-white -->
+
+
+
+
+<div id="sm-back">
+<div class="sm-container">
+  <h2>수익 관리</h2>
+
+<div class="sm-mypage">
+  <div class="sm-profile">
+		<div style="text-align: center;">
+			<img src="../img/img1.jpg" style="margin-left: 30px; border-radius:60px; width:120px; height:120px;">
+      <button id="sm-btn-2" type="button" style="position:relative; top:-10px; right:40px; width:30px; height:30px; border-radius:15px; padding:0px;font-size:14px;"><span>2</span></button>
+      <br>
+			사용자이름<br>
+      <button id="sm-btn-2" type="button" style="margin-top:10px; margin-bottom:20px;">프로필관리</button>
+		</div>
+    <!-- ************* 이부분만 템플릿에서 다르니까 이것만 짤라서 쓰면된다!!!! ********************************************* -->
+    <div class="sm-menu" style="border-left:none;"><i class="fas fa-hand-holding-usd"></i><br>수입 관리</div>
+    <div class="sm-menu"><i class="far fa-chart-bar"></i><br>통계</div>
+	</div><!-- .profile -->
+
+
+    <div class="sm-mypage-body">
+      <!-- 통계 서브 메뉴 -->
+      <div class="mangeSubMenu">
+        <div class="tabbed">
+          <ul>
+            <li>본격! 식스팩 만들기</li>
+            <li>기초 근력 기르기</li>
+            <li>3주 하비탈출</li>
+            <li class="active">전체</li>
+          </ul>
+        </div>
+        <div class="arrow">
+          <div class="arrowLeft"><i class="fas fa-chevron-circle-left"></i></div>
+          <div class="arrowRight"><i class="fas fa-chevron-circle-right"></i></div>
+        </div>
+      </div>
+      <!-- 회원 관리 -->
+      <div class="manageContent">
+        <div class="dateInput">
+        <div class="leftBox">
+          <input type="date">
+          <button type="button" name="button">검색</button>
+        </div>
+        </div>
+        <div class="memberTable">
+          <table class="demo-table">
+            <thead>
+              <tr>
+                <th>아이디</th>
+                <th>회원이름</th>
+                <th>프로젝트명</th>
+                <th>금액</th>
+                <th>분류</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>abc123</td>
+                <td>홍길동</td>
+                <td>3주 완성! 근력 강화 프로젝트</td>
+                <td>99,000</td>
+                <td>휴대전화</td>
+              </tr>
+              <tr>
+                <td>bbb123</td>
+                <td>김미진</td>
+                <td>비키니를 위한 다이어트 뽀개기</td>
+                <td>89,000</td>
+                <td>카카오페이</td>
+              </tr>
+              <tr>
+                <td>aoa777</td>
+                <td>권혁수</td>
+                <td>본격! 3개월 근육 키우기</td>
+                <td>99,000</td>
+                <td>신용카드</td>
+              </tr>
+              <tr>
+                <td>ksy106</td>
+                <td>이지수</td>
+                <td>요가로 유연성 기르기</td>
+                <td>55,000</td>
+                <td>휴대전화</td>
+              </tr>
+              <tr>
+                <td>ksy106</td>
+                <td>권혁수</td>
+                <td>본격! 3개월 근육 키우기</td>
+                <td>-30,000</td>
+                <td>신용카드</td>
+              </tr>
+              <tr>
+                <td>melong</td>
+                <td>이지수</td>
+                <td>요가로 유연성 기르기</td>
+                <td>-99,000</td>
+                <td>계좌이체</td>
+              </tr>
+              <tr>
+                <td>star1004</td>
+                <td>권혁수</td>
+                <td>본격! 3개월 근육 키우기</td>
+                <td>45,000</td>
+                <td>계좌이체</td>
+              </tr>
+              <tr>
+                <td>abdddc133</td>
+                <td>이지수</td>
+                <td>요가로 유연성 기르기</td>
+                <td>99,000</td>
+                <td>휴대전화</td>
+              </tr>
+              <tr>
+                <td>love999</td>
+                <td>권혁수</td>
+                <td>본격! 3개월 근육 키우기</td>
+                <td>55,000</td>
+                <td>카카오페이</td>
+              </tr>
+              <tr>
+                <td>appleff</td>
+                <td>이지수</td>
+                <td>요가로 유연성 기르기</td>
+                <td>60,000</td>
+                <td>카카오페이</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagination">
+          <a>«</a>
+          <a class="pageActive" href="#">1</a>
+          <a>2</a>
+          <a>3</a>
+          <a>4</a>
+          <a>5</a>
+          <a>6</a>
+          <a>»</a>
+        </div>
+      </div>
+      </div>
+    </div><!-- mypage-body -->
+
+
+</div><!-- mypage -->
+</div><!--.container-->
+</div><!-- back -->
+<div id="footer"></div>
+<script src="../../js/common.js"></script>
+<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../../header/js/header_white_login.js"></script>
+<script src="../../footer/js/footer.js"></script>
+</body>
+</html>

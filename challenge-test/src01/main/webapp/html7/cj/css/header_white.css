@@ -1,0 +1,434 @@
+/* container CSS 시작 */
+
+.container {}
+
+/* container CSS 종료 */
+
+/* MENU Link Hover Effect CSS 시작 */
+
+.top_link li a, .top_link li a:visited, .top_link li a:hover, .top_link li a:active {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: relative;
+  transition: 0.2s color ease;
+  text-decoration: none;
+  color: #DD1F26;
+}
+
+a.after:after {
+  content: "";
+  transition: 0.2s all ease;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+}
+
+a.after:after {
+  bottom: -0.25em;
+}
+
+a.after:after {
+  height: 5px;
+  height: 0.2rem;
+  width: 0;
+  background: #d73444;
+}
+
+a.menu:after {
+  left: 0;
+}
+
+a.after:hover:after {
+  width: 100%;
+}
+
+/* MENU Link Hover Effect CSS 종료 */
+
+/* MENU Sub-Menu 시작 */
+
+.dropdown {
+  position: relative;
+  /* display: inline-block; */
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #FFFFFF;
+  border: 1px solid rgb(102, 102, 102, 0.2);
+  min-width: 160px;
+  z-index: 999;
+  overflow: hidden;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 7px;
+  padding-left: 7px;
+  margin-top: 10px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  color: #666666;
+  padding: 12px 0px;
+  margin: 10px;
+  /* text-decoration: none; */
+  /* display: inline-block; */
+}
+
+.dropdown-content a:hover {
+  background-color: #FFFFFF;
+}
+
+
+
+#sub-menu-ul {
+  padding-left: 0px;
+}
+
+#sub-menu-ul>li a {
+  display: inline-block !important;
+  padding-bottom: 1px;
+  padding-top: 1px;
+  margin-bottom: 8px;
+    margin-top: 8px;
+  color: #666666;
+}
+
+/* .dropdown:hover .drop_menu {background-color: white;} */
+
+/* MENU Sub-Menu 종료 */
+
+/*헤더 CSS 시작*/
+
+.top_menu {
+  padding: 13px 10px 13px 10px;
+}
+
+body {
+  margin: 0;
+}
+
+.top_logo_wrap {
+  float: left;
+  display: inline-block;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+#logo-link {
+  position: relative;
+  z-index: 999;
+  text-decoration: none;
+}
+
+#logo-link:visited {
+  text-decoration: none;
+}
+
+#top_layout {
+  background-color: #fff;
+  border-bottom: solid 1px rgb(102, 102, 102, 0.2);
+  height: 76px;
+}
+
+#logo {
+  height: 42px;
+}
+
+.top_link {
+  float: right;
+  margin-top: 14px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.top_link>li {
+  float: right;
+}
+
+.logo_name {
+  float: left;
+  /* margin:0 auto; */
+}
+
+#logo_h1 {
+  margin-bottom: 0px;
+  margin-top: 12px;
+  color: #DD1F26;
+}
+
+#logo_img {
+  margin: 14px 0px 0px 0px;
+  float: left;
+}
+
+.top_wrap {
+  /* background-color: black; */
+  margin: auto;
+  width: 1200px;
+  height: 76px;
+}
+
+.top_utile_wrap {
+  height: 76px;
+}
+
+.top_utile_wrap>ul {
+  font-weight: bold;
+  font-size: 1em;
+  list-style-type: none;
+  padding: 0;
+}
+
+.top_link>li a {
+  display: block;
+  color: #DD1F26;
+  text-align: center;
+  padding-left: 2px;
+  padding-right: 2px;
+  / text-decoration: none;
+}
+
+.top_link>li a:hover {}
+
+/* 헤더 search button CSS 시작 */
+
+body {
+  color: #fff;
+}
+
+#content {
+  height: 4px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 2px;
+  margin-left: 226px;
+}
+
+#content.on {
+  -webkit-animation-name: in-out;
+  animation-name: in-out;
+  -webkit-animation-duration: 0.7s;
+  animation-duration: 0.7s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+
+.input {
+  margin-top: 11px;
+  box-sizing: border-box;
+  width: 19px;
+  height: 19px;
+  border: 3px solid #DD1F26;
+  border-radius: 50%;
+  background: none;
+  color: #DD1F26;
+  font-size: 12px;
+  font-weight: 400;
+  font-family: Roboto;
+  outline: 0;
+  -webkit-transition: width 0.4s ease-in-out, border-radius 0.8s ease-in-out, padding 0.2s;
+  transition: width 0.4s ease-in-out, border-radius 0.8s ease-in-out, padding 0.2s;
+  -webkit-transition-delay: 0.4s;
+  transition-delay: 0.4s;
+  -webkit-transform: translate(-100%, -50%);
+  -ms-transform: translate(-100%, -50%);
+  transform: translate(-100%, -50%);
+}
+
+.search {
+  background: none;
+  position: absolute;
+  top: 8px;
+  left: 0;
+  height: 37px;
+  width: 50px;
+  padding: 0;
+  border-radius: 100%;
+  outline: 0;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+  -webkit-transform: translate(-100%, -50%);
+  -ms-transform: translate(-100%, -50%);
+  transform: translate(-100%, -50%);
+}
+
+.search:before {
+  content: "";
+  position: absolute;
+  width: 11px;
+  height: 3px;
+  background-color: #DD1F26;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  margin-top: 10px;
+  margin-left: 19px;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+}
+
+.close {
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+  -webkit-transition-delay: 0.4s;
+  transition-delay: 0.4s;
+}
+
+.close:before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 3px;
+  margin-top: 1px;
+  margin-left: -6px;
+  background-color: #DD1F26;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.close:after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 3px;
+  background-color: #DD1F26;
+  margin-top: 1px;
+  margin-left: -6px;
+  cursor: pointer;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.square {
+  margin-top: 11px;
+  box-sizing: border-box;
+  padding: 10px 22px 10px 13px;
+  width: 231px;
+  height: 40px;
+  border: 3px solid #DD1F26;
+  border-radius: 0;
+  background: none;
+  color: #666666;
+  font-size: 14px;
+  font-weight: 400;
+  outline: 0;
+  -webkit-transition: width 0.4s ease-in-out, border-radius 0.4s ease-in-out, padding 0.2s;
+  transition: width 0.4s ease-in-out, border-radius 0.4s ease-in-out, padding 0.2s;
+  -webkit-transition-delay: 0.4s, 0s, 0.4s;
+  transition-delay: 0.4s, 0s, 0.4s;
+  -webkit-transform: translate(-100%, -50%);
+  -ms-transform: translate(-100%, -50%);
+  transform: translate(-100%, -50%);
+}
+
+/* search button CSS 종료*/
+
+/*헤더 CSS 종료*/
+
+/* 메인 이미지 시작 */
+
+.img {
+  z-index: 1;
+  top: 0;
+  position: absolute;
+  width: 100%;
+  margin: auto;
+  float: left;
+  height: 720px;
+}
+
+/* 메인 이미지 종료*/
+
+/* 메인 문구 시작 */
+
+/* 메인 문구 종료 */
+
+/*푸터 CSS 시작*/
+
+#foot_layout {
+  width: 100%;
+  background-color: #1B3453;
+  text-align: center;
+  /* padding: 60px 20px 30px 20px; */
+  display: inline-block;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.foot_wrap {
+  width: 1200px;
+  text-align: left;
+  padding: 10px 170px 10px 170px;
+  display: inline-block;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.foot_utile_wrap {
+  width: 100%;
+  padding: 0;
+  /* margin-bottom: 20px; */
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.foot_link {
+  display: inline-block;
+  padding-left: 0;
+  margin: 10px 0px;
+}
+
+.foot_link li {
+  margin-right: 30px;
+  display: inline-block;
+  float: left;
+}
+
+.foot_link li a {
+  margin-top: 10px;
+  font-weight: 400;
+  font-size: 14px;
+  color: #ffff;
+  line-height: 20px;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.foot_wrap address {
+  width: 100%;
+  font-weight: 100;
+  font-size: 12px;
+  font-style: normal;
+  color: #EBEDF3;
+  line-height: 20px;
+  /* padding: 2px 0; */
+  display: inline-block;
+}
+
+#foot-logo-img {
+  height: 41px;
+}
+
+.copy {
+  font-size: 10px;
+  margin: 2px 0;
+  color: #fff;
+}
+
+/*푸터 CSS 종료*/

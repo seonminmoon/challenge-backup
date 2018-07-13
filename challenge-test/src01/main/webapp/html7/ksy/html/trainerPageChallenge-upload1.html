@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+<title>회원페이지</title>
+<link rel="stylesheet" href="../css/template/sm-trainerPage.css">
+<link rel="stylesheet" href="../css/trainerPageChallenge-upload1.css">
+<link rel="stylesheet" href="../../css/common.css">
+<link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
+<!-- 서버에 연결할 때 지울 부분 -->
+<link rel="stylesheet" href="../../header/css/header_white.css">
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web:900" rel="stylesheet">
+  <link rel="stylesheet" href="../../footer/css/footer.css">
+</head>
+<body>
+
+  <div class="sm-top-bar-white">
+    <div class="sm-container">
+      <div id="header"></div>
+            <!-- 상단 메뉴바 시작 -->
+        <div class="sm-menubar">
+          <ul>
+            <li class="sm_after"><a href="#" id="sm-current">서비스관리
+              <i class="fas fa-angle-down" style="color:#666666;"></i></a>
+               <ul>
+                 <li><a href="#">챌린지 관리</a></li>
+                 <li><a href="#">챌린지 등록</a></li>
+                 <li><a href="#">챌린지 운동일지</a></li>
+               </ul>
+            </li>
+            <li class="sm_after"><a href="#">회원관리</a>
+            </li>
+            <li class="sm_after"><a href="#">수익관리
+              <i class="fas fa-angle-down" style="color:#666666;"></i></a>
+              <ul>
+                <li><a href="https://kmong.com/">수입 관리</a></li>
+                <li><a href="https://kmong.com/">통계</a></li>
+              </ul>
+            </li>
+            <li class="sm_after"><a href="#">메시지</a>
+            </li>
+            <li class="sm_after"><a href="#">계정설정</a></li>
+         </ul>
+      </div><!-- 상단 메뉴바 종료 -->
+    </div><!-- container -->
+  </div><!-- top-bar-white -->
+
+
+
+
+<div id="sm-back">
+<div class="sm-container">
+  <h2>서비스 관리</h2>
+
+<div class="sm-mypage">
+  <div class="sm-profile">
+		<div style="text-align: center;">
+			<img src="../img/img1.jpg" style="margin-left: 30px; border-radius:60px; width:120px; height:120px;">
+      <button id="sm-btn-2" type="button" style="position:relative; top:-10px; right:40px; width:30px; height:30px; border-radius:15px; padding:0px;font-size:14px;"><span>2</span></button>
+      <br>
+			사용자이름<br>
+      <button id="sm-btn-2" type="button" style="margin-top:10px; margin-bottom:20px;">프로필관리</button>
+		</div>
+    <!-- ************* 이부분만 템플릿에서 다르니까 이것만 짤라서 쓰면된다!!!! ********************************************* -->
+    <div class="sm-menu" style="border-left:none;"><i class="fas fa-chalkboard"></i><br>챌린지 관리</div>
+    <div class="sm-menu" style="border-bottom:1px solid gray;"><i class="fas fa-angle-double-up"></i><br>챌린지 등록</div>
+    <div class="sm-menu" style="border-left:none; border-right:1px solid gray;"><i class="fas fa-dumbbell"></i><br>챌린지 운동일지</div>
+	</div><!-- .profile -->
+
+
+    <div class="sm-mypage-body">
+      <!-- 프로젝트 등록 서브 메뉴 -->
+      <div class="uploadSubMenu">
+        <ul>
+          <li id="uploadSubMenu-fist"><a href="trainerPageChallenge-upload1.html">① 기본사항</a></li>
+          <li><a href="trainerPageChallenge-upload2.html">② 가격설정</a></li>
+          <li><a href="trainerPageChallenge-upload3.html">③ 서비스 설명</a></li>
+        </ul>
+      </div>
+      <!-- 프로젝트 등록 본문-->
+      <div class="uploadContent">
+      <ul>
+        <li class="ucChallenge" id="notPadding">
+          <div class="contentName">챌린지 주제</div>
+          <div class="ucContet">
+            <div class="challengeSelect">
+              <select name="subjectSelect" id="selectTab1">
+                <option value="one">4주! 하비탈출</option>
+                <option value="two">3개월 근력강화</option>
+                <option value="three">1년 아침운동</option>
+                <option value="four">6개월 몸짱 만들기!</option>
+              </select>
+            </div>
+          </div>
+        </li>
+        <li class="ucDate">
+          <div class="contentName">챌린지 기간</div>
+          <div class="ucContet">
+            <div class="challengeDate">
+              <input type="date">
+              <div class="fontStyle1"> ~ </div>
+              <input type="date">
+            </div>
+          </div>
+        </li>
+        <li class="ucProgram">
+          <div class="contentName">프로그램 이름</div>
+          <div class="ucContet">
+            <div class="programTurnName">
+              <h5>기수</h5>
+              <div class="programTurnBox">
+                <input type="number" min="1" max="999">
+              </div>
+            </div>
+            <div class="challengeProgram">
+              <h5>이름</h5>
+              <input type="text" placeholder="프로그램 이름을 20자 이내로 입력해 주세요.">
+            </div>
+          </div>
+        </li>
+        <li class="ucProgram">
+          <div class="contentName">종목</div>
+          <div class="ucContet">
+            <div class="typeSelect">
+              <select name="subjectSelect" id="selectTab1">
+                <option value="one">피트니스</option>
+                <option value="two">수영</option>
+                <option value="three">태권도</option>
+
+              </select>
+            </div>
+          </div>
+        </li>
+        <li class="ucTarget">
+          <div class="contentName">목표</div>
+          <div class="ucContet">
+            <div class="targetName">
+              <h5>목표주제</h5>
+              <div class="targetBox">
+                <select name="targetSelect" id="selectTab1">
+                  <option value="one">체충</option>
+                  <option value="two">골격근량</option>
+                  <option value="three">체지방량</option>
+                  <option value="four">기타</option>
+                </select>
+              </div>
+            </div>
+            <div class="targetNum">
+              <h5>수치설정</h5>
+              <div class="targetNumBox">
+                <div class="targetNumInput">
+                  <input type="number" min="1" max="999">
+                </div>
+                <div class="targetNumSelect">
+                  <select name="targeNumtSelect" id="selectTab1">
+                    <option value="one">kg</option>
+                    <option value="two">%</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="ucNum">
+          <div class="contentName">인원</div>
+          <div class="ucContet">
+            <div class="minNum">
+              <h5>최소인원</h5>
+              <div class="maxSelect">
+                <input type="number" min="1" max="9999">
+              </div>
+            </div>
+            <div class="maxNum">
+              <h5>최대인원</h5>
+              <div class="minSelect">
+                <input type="number" min="1" max="9999">
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="ucmainImage">
+          <div class="contentName">메인 이미지</div>
+          <div class="ucContet">
+            <div id="mainImg">
+              <div class="imgIcon"><i class="far fa-image"></i></div>
+              <div class="imgtext">
+                <div class="subText1">
+                  999 * 999px 사이즈의<br>
+                  메인 이미지를 등록해 주세요.
+                </div>
+                <div class="subText2">
+                  (5MB 이하의 jpg.jpeg.png 형식)
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="ucposition">
+          <div class="contentName">장소</div>
+          <div class="ucContet">
+            <div class="positionBox">
+              <div class="positionContent">
+                <!-- 장소 항목 -->
+                <div class="positionList">
+                <div class="positionName1">
+                  <h5>장소</h5>
+                  <div class="ucpSelectBox">
+                    <select name="ucpSelect" id="selectTab1">
+                      <option value="one">온라인</option>
+                      <option value="two">강남</option>
+                      <option value="three">강변</option>
+                      <option value="four">인천</option>
+                      <option value="five">경기도</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="positionName2">
+                  <h5>상세 장소</h5>
+                    <div class="ucpInputBox">
+                      <input type="text" placeholder="상세주소를 입력해 주세요.">
+                    </div>
+                </div>
+              </div>
+              <div class="positionList" id="more">
+              <div class="positionName1">
+                <h5>장소</h5>
+                <div class="ucpSelectBox">
+                  <select name="ucpSelect" id="selectTab1">
+                    <option value="one">온라인</option>
+                    <option value="two">강남</option>
+                    <option value="three">강변</option>
+                    <option value="four">인천</option>
+                    <option value="five">경기도</option>
+                  </select>
+                </div>
+              </div>
+              <div class="positionName2">
+                <h5>상세 장소 <a onclick="lessFunction()" id="lessBtn"><i class="fas fa-times-circle"></i></a></h5>
+                  <div class="ucpInputBox">
+                    <input type="text" placeholder="상세주소를 입력해 주세요.">
+                  </div>
+              </div>
+            </div>
+              </div>
+              <!-- 장소 추가 버튼 -->
+              <div class="positionPlus">
+                <a onclick="moreFunction()" id="moreBtn">+ 장소 추가</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="ucday" id="lastBottom">
+          <div class="contentName">가능일</div>
+          <div class="ucContet" id="lastBottom">
+            <div class="scheduleBox">
+              <div id="weekly-schedule"></div>
+            </div>
+          </div>
+        </li>
+      </ul>
+      </div>
+      <!-- 다음 단계 버튼 -->
+      <div class="nextBox">
+        <button type="button">저장 및 다음단계</button>
+      </div>
+    </div><!-- mypage-body -->
+
+
+</div><!-- mypage -->
+</div><!--.container-->
+</div><!-- back -->
+<div id="footer"></div>
+<script src="../../js/common.js"></script>
+<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../../header/js/header_white_login.js"></script>
+<script src="../../footer/js/footer.js"></script>
+<script src="../../ksy/js/trainerPageChallenge-upload.js"></script>
+<script src="../../ksy/js/dailySchedule.js"></script>
+</body>
+</html>

@@ -39,12 +39,6 @@ public class CommunityController {
         return communityService.list();
     }
     
-    @RequestMapping("noticeList")
-    public Object noticeList(
-            ) {
-        return communityService.noticeList();
-    }
-    
     @RequestMapping("update")
     @ResponseStatus(HttpStatus.OK)
     public void update(Community community) throws Exception {

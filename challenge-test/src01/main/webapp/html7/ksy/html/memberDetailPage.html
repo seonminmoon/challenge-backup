@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>회원 상세페이지</title>
+<link rel="stylesheet" href="../../ksy/css/memberDetailPage.css">
+<link rel="stylesheet" href="../../css/common.css">
+<!-- 서버에 연결할 때 지울 부분 2가지 -->
+<link rel="stylesheet" href="../../header/css/header_white.css">
+<link rel="stylesheet" href="../../footer/css/footer.css">
+
+<link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
+
+<!-- <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
+</head>
+<body>
+
+<!-- <div id="header">
+</div> -->
+<!-- 서버에 연결할 땐 지울 부분 -->
+<!-- 헤더 시작 -->
+<!-- 본문 -->
+<div id="header"></div>
+<div id="container">
+<div class="subject">
+<h2 class="challengeName">본격! 식스팩 만들기</h2>
+<div class="challengeSub">
+  <p>Start D-<span>20</span></p>
+  <p>(<span>2018.06.17</span>)</p>
+  <p>참여인원 <span>25</span>/<span>30</span></p>
+</div>
+</div>
+<div class="column">
+  <div class="middle one">
+  <div class="oneImg">
+  	<img src="../../ksy/img/exam01.PNG" style="width:661px; height:496px">
+  </div>
+  <div class="oneName">
+  	<h3>[2기] 아웃바디 피트니스센터 - 3개월 안에 식스팩을 만들어 드립니다.</h3>
+  	<p><a class="far fa-heart"></a></p>
+  	<p>￦ <span>99,000</span></p>
+  </div>
+  </div>
+  <div class="middle two">
+  <div class="alineCenter">
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <p class="evalNum"><b><span>5</span>점</b></p>
+    <p class="evalEnp">(<span>11</span>개의 평가)</p>
+  </div>
+  </div>
+
+  <!-- 본문 따라다니는 navbar -> name id(#) 잘 활용하기 -->
+  <div id="navbar" class="middle">
+   <a href="#navExam" onclick="openNav(event)" class="navLink">프로그램설명</a>
+   <a href="#navPrice" onclick="openNav(event)" class="navLink">가격정보</a>
+   <a href="#navNum" onclick="openNav(event)" class="navLink">기수정보</a>
+   <a href="#navEval" onclick="openNav(event)" class="navLink">프로그램평가</a>
+  </div>
+  <!-- 프로그램 설명-->
+  <div class="middle three">
+    <div id ="navExam">
+     <h3 class="subH3Font">프로그램 설명</h3>
+    </div>
+    <div id ="examContent"> <!--설명, 수업대상, 종목 수준 -->
+     <div class="pExam exFont"> <!-- 지울 예정 -->
+      &lt;장소 -  역삼역 P.T lounge진행&gt;<br><br>
+      <br>세련된 인테리어의 편리한 시설에서  다양한 기구 선택권과 여러 편의 시설, 골프 시설까지 이용<br><br> 가능하십니다!<br><br>
+      (센터이용권은 별도 등록해주셔야 하며 3개월권 부터 등록가능하십니다.)<br><br>수업은 2가지 방식으로 진행됩니다.
+      <br><br><br>첫째, 1:1 퍼스널 트레이닝<br><br>본인에게 가장 최적화된 운동을 교육 받으실 수 있으며 목표에 근접할 수 있도록
+      <br><br>개인특화 커리큘럼으로 진행이 됩니다.
+     </div>
+
+     <div class="ExamImage">
+       <div class="slideshow-container">
+
+       <div class="mySlides fade">
+         <div class="numbertext">1 / 3</div>
+         <img src="../../ksy/img/inner1.jpg" style="width:100%; height: 365px;">
+       </div>
+
+       <div class="mySlides fade">
+         <div class="numbertext">2 / 3</div>
+         <img src="../../ksy/img/inner2.jpg" style="width:100%; height: 365px;">
+       </div>
+
+       <div class="mySlides fade">
+         <div class="numbertext">3 / 3</div>
+         <img src="../../ksy/img/inner3.jpg" style="width:100%; height: 365px;">
+       </div>
+
+       <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+       <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+       </div>
+       <br>
+     </div>
+
+     <div class="pTarget">
+      <h5>수업대상</h5>
+      <div class="exFont">  <!-- 지울 예정 -->
+       <br>* 인생에 한번 젊은 청춘을 바쳐 몸짱이 되어보고 싶은신 분<br>
+       <br>* 헬스장만 가면 웨이트 트레이닝룸은 민망해서 들어가지 못하고 런닝만 뛰다 오시는분<br>
+       <br>* 남 시선이 부담스러워 혼자만 개인적으로 운동하고 싶으신 분<br>
+       <br>* 다이어트는 항상 도전하지만 실패하시는 분, 요요현상을 겪으시는 분<br>
+      </div>
+     </div>
+     <div class="pType">
+      <h5>종목</h5>
+      <div class="exFont">
+       <ul>
+         <li>퍼스널 트레이닝</li>
+       </ul>
+      </div>
+     </div>
+     <div class="pLevel">
+      <h5>수준</h5>
+      <div class="exFont">
+        <ul>
+          <li>입문</li>
+        </ul>
+      </div>
+     </div>
+    </div>
+  </div>
+  <!-- 가격정보 -->
+  <div class="middle four">
+    <div id ="navPrice" class="navPriceSub">
+      <h3 class="subH3Font">가격정보</h3>
+    </div>
+    <div class="PriceContent">
+      <ul class="PriceContentSub1">
+        <li>
+          <div><strong>[퍼스널트레이닝] 식스팩만들기 3개월권</strong></div>
+          <div class="priceLeft PriceContentSize">성인 남성을 위한 3개월 트레이닝 과정입니다.
+            <br>운동 초보자분들에게 추천 드립니다.</div>
+          <div class="priceRight">
+            <div>
+              <div class="priceSubLeft">
+                <!--<a class="numMinus"><b>↓</b></a>
+                <span><b>1</b></span>
+                <a class="numPlus"><b>↑</b></a>-->
+              </div>
+              <div class="priceSubRight"><b>99,000</b>원</div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="priceLeft">
+            <label><input type="checkbox"> 개인 락커룸 3개월권</label>
+          </div>
+          <div class="priceRight">
+            <div>
+              <div class="priceSubLeft">
+                <a class="numMinus"><b>↓</b></a>
+                <span><b>1</b></span>
+                <a class="numPlus"><b>↑</b></a>
+              </div>
+              <div class="priceSubRight"><b>3,000</b>원</div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="priceLeft">
+            <label><input type="checkbox"> 운동복 대여 3개월권</label>
+          </div>
+          <div class="priceRight">
+            <div>
+              <div class="priceSubLeft">
+                <a class="numMinus"><b>↓</b></a>
+                <span><b>1</b></span>
+                <a class="numPlus"><b>↑</b></a>
+              </div>
+              <div class="priceSubRight"><b>2,000</b>원</div>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div class="PriceContentSub2">
+        <h4 style="font-weight:normal;">
+        <span style="font-size:18px">결제하기 </span><span style="font-size:17px">(
+        </span><span style="font-size: 17px;">99,000</span><span style="font-size:16px">원</span><span style="font-size:17px">
+        )</span>
+      </h4>
+      </div>
+    </div>
+  </div>
+  <!-- 기수 정보 -->
+  <div class="middle five">
+    <div id ="navNum" class="navNumSub">
+      <h3 class="subH3Font">기수정보</h3>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th class="firstNoline">회차</th>
+          <th>기간</th>
+          <th>성공인원</th>
+          <th class="lastNoline">만족도</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="firstNoline">1</td>
+          <td>2017-02-20 ~ 2017-05-14</td>
+          <td>20/25</td>
+          <td class="lastNoline">4.5/5.0</td>
+        </tr>
+        <tr>
+          <td class="firstNoline">2</td>
+          <td>2018-03-20 ~ 2018-05-20</td>
+          <td>22/25</td>
+          <td class="lastNoline">4.5/5.0</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- 서비스 평가 -->
+  <div class="middle six">
+    <div id ="navEval" class="navEvalSub">
+      <h3 class="subH3Font">프로그램 평가</h3>
+    </div>
+    <div>
+      <div class="EvalContent1">
+      <div class="EvalContent1-star">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+      </div>
+      <div class="EvalContent1-score">
+        <p class="evalEnp"><span>11</span>개의 평가</p>
+      </div>
+      </div>
+      <!-- 댓글입력 창 -->
+      <div class="commentInput">
+
+        <div class="userName">
+          <div class="userNameCircle"></div>
+          <div class="userNameContent"><b>홍길동</b></div>
+        </div>
+        <div class="userContent">
+          <textarea rows="5" cols="82" placeholder="정직한 프로그램 후기를 남겨주세요^^"></textarea>
+        </div>
+        <div class="formInput">
+          <div class="starInput">
+            <span class="star-input">
+            <span class="input">
+              <input type="radio" name="star-input" value="1" id="p1">
+              <label for="p1">1</label>
+              <input type="radio" name="star-input" value="2" id="p2">
+              <label for="p2">2</label>
+              <input type="radio" name="star-input" value="3" id="p3">
+              <label for="p3">3</label>
+              <input type="radio" name="star-input" value="4" id="p4">
+              <label for="p4">4</label>
+              <input type="radio" name="star-input" value="5" id="p5">
+              <label for="p5">5</label>
+            </span>
+            <output for="star-input"><b>0</b>점</output>
+            </span>
+          </div>
+            <button class="commentRegister" type="button">등록</button>
+        </div>
+      </div>
+      <!-- 댓글 리스트 -->
+      <div class="EvalContent2">
+        <div>
+          <ul>
+            <li>
+              <div class="commentImg"></div>
+              <div class="commentDate">
+                18.09.20 20:28
+                <span>｜</span>
+              </div>
+              <div class="commentEval">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <div class="commentContent">
+                3개월동안 고생하셨어요 감사합니다~!
+              </div>
+              <div class="commentName">
+                lsl******
+              </div>
+            </li>
+            <li>
+              <div class="commentImg"></div>
+              <div class="commentDate">
+                18.09.20 20:28
+                <span>｜</span>
+              </div>
+              <div class="commentEval">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <div class="commentContent">
+                3개월동안 고생하셨어요 감사합니다~!
+              </div>
+              <div class="commentName">
+                lyk******
+              </div>
+            </li>
+            <li>
+              <div class="commentImg"></div>
+              <div class="commentDate">
+                18.09.20 20:28
+                <span>｜</span>
+              </div>
+              <div class="commentEval">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <div class="commentContent">
+                정말 힘들었습니다. ㅠㅠ
+              </div>
+              <div class="commentName">
+                abc******
+              </div>
+            </li>
+            <!-- 숨겨진 더보기 -->
+            <span id="more">
+            <li>
+              <div class="commentImg"></div>
+              <div class="commentDate">
+                18.09.20 20:28
+                <span>｜</span>
+              </div>
+              <div class="commentEval">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <div class="commentContent">
+                강추하는 수업입니다!
+              </div>
+              <div class="commentName">
+                doc******
+              </div>
+            </li>
+            <li>
+              <div class="commentImg"></div>
+              <div class="commentDate">
+                18.09.20 20:28
+                <span>｜</span>
+              </div>
+              <div class="commentEval">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <div class="commentContent">
+                3개월동안 고생하셨어요 감사합니다~!
+              </div>
+              <div class="commentName">
+                lyk******
+              </div>
+            </li>
+            <li>
+              <div class="commentImg"></div>
+              <div class="commentDate">
+                18.09.20 20:28
+                <span>｜</span>
+              </div>
+              <div class="commentEval">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <div class="commentContent">
+                3개월동안 고생하셨어요 감사합니다~!
+              </div>
+              <div class="commentName">
+                lyk******
+              </div>
+            </li>
+            <li>
+              <div class="commentImg"></div>
+              <div class="commentDate">
+                18.09.20 20:28
+                <span>｜</span>
+              </div>
+              <div class="commentEval">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <div class="commentContent">
+                3개월동안 고생하셨어요 감사합니다~!
+              </div>
+              <div class="commentName">
+                lyk******
+              </div>
+            </li>
+            <li>
+              <div class="commentImg"></div>
+              <div class="commentDate">
+                18.09.20 20:28
+                <span>｜</span>
+              </div>
+              <div class="commentEval">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <div class="commentContent">
+                3개월동안 고생하셨어요 감사합니다~!
+              </div>
+              <div class="commentName">
+                lyk******
+              </div>
+            </li>
+            </span>
+            <!-- 숨겨진 더보기 끝 -->
+          </ul>
+        </div>
+        <div class="commentPlus">
+          <a onclick="moreFunction()" id="moreBtn">+ 더보기</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="aside">
+<!-- 강사 정보 -->
+ <div class="asideProfile">
+  <div class="ProfileDiv">
+    <div class="proImg">
+   	   <div class="imgCircle"></div>
+    </div>
+    <div class="proName">
+     <h2>ksy106</h2>
+     <div></div>
+    </div>
+    <div class="proTime">
+      <h5>연락가능시간 : <span>0</span>시 ~ <span>0</span>시</h5>
+    </div>
+    <div class="proCommuni">
+    <div class="CommuniDiv">
+      <div class="follow box"><a class="fas fa-user-plus redColor" onclick="colorRedFunction();"></a></div>
+      <div class="inq box"><a class="far fa-envelope"></a></div>
+    </div>
+    </div>
+    <div class="proInfo">
+     <div class="left">
+       <h5><span>11</span>건</h5>
+       <h6>총작업개수</h6>
+     </div>
+     <div class="left">
+       <h5><span>100</span>점</h5>
+       <h6>만족도</h6>
+     </div>
+     <div class="left">
+       <h5><span>30</span>분</h5>
+       <h6>평균 응답시간</h6>
+     </div>
+    </div>
+    </div>
+    <div class="prolect">
+     <h3><span>ksy106</span>님의 다른 추천 강좌</h3>
+     <div class="lectBox">
+	  <div class="lectList">
+	   <!-- 이미지 태그 넣을 때 공백 있으면 안됨 -->
+	   <div class="imgBox"></div>
+	   <div class="subjectBox">
+	    <h5>초보자도 쉽게 배우는 하체운동</h5>
+	   </div>
+	   <div class="evalBox">
+	    <div>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+	    </div>
+	    <p><span>5</span>점</p>
+	   </div>
+	   <div class="priceBox">
+	    <p><span>33,000</span>원</p>
+	   </div>
+	  </div>
+
+	  <div class="lectList">
+	   <!-- 이미지 태그 넣을 때 공백 있으면 안됨 -->
+	   <div class="imgBox"></div>
+	   <div class="subjectBox">
+	    <h5>초보자도 쉽게 배우는 하체운동</h5>
+	   </div>
+	   <div class="evalBox">
+	    <div>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+	    </div>
+	    <p><span>5</span>점</p>
+	   </div>
+	   <div class="priceBox">
+	    <p><span>33,000</span>원</p>
+	   </div>
+	  </div>
+
+	  <div class="lectList">
+	   <!-- 이미지 태그 넣을 때 공백 있으면 안됨 -->
+	   <div class="imgBox"></div>
+	   <div class="subjectBox">
+	    <h5>초보자도 쉽게 배우는 하체운동</h5>
+	   </div>
+	   <div class="evalBox">
+	    <div>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+	    </div>
+	    <p><span>5</span>점</p>
+	   </div>
+	   <div class="priceBox">
+	    <p><span>33,000</span>원</p>
+	   </div>
+	  </div>
+     </div>
+    </div>
+  </div>
+ <!-- 결제하기 -->
+ <div class="asideCost">
+ <h2 style="font-weight:normal;">
+ <span style="font-size:22px">결제하기 </span><span style="font-size:20px">(
+ </span><span style="font-size: 20px;">99,000</span><span style="font-size:20px">원</span><span style="font-size:20px">
+ )</span>
+ </h2>
+ </div>
+ <!-- 강의 장소 -->
+<div class="asidePosition">
+  <h4><i class="fas fa-map-marker-alt"></i> 장소</h4>
+  <div class="tab">
+    <button class="tablinks1" onclick="openCity(event, 'cityName1')" id="defaultOpen1">강남</button>
+    <button class="tablinks1" onclick="openCity(event, 'cityName2')">제주</button>
+  </div>
+
+  <div id="cityName1" class="tabcontent1">
+    <h6 class="tapMargin">상세주소</h6>
+    <h5 class="tapMargin">서울 강남 테헤란로 62-1길 비트빌딩</h5>
+  </div>
+
+  <div id="cityName2" class="tabcontent1">
+    <h6 class="tapMargin">상세주소</h6>
+    <h5 class="tapMargin">제주 서귀포시 연무장 9길</h5>
+  </div>
+</div>
+<!-- 강의 일정 -->
+ <div class="asideDate">
+   <h4><i class="far fa-calendar-alt"></i> 일정</h4>
+   <div id="date" class="tab">
+     <button class="tablinks2" onclick="openDay(event, 'day1')" id="defaultOpen2">월</button>
+     <button class="tablinks2" onclick="openDay(event, 'day2')">화</button>
+     <button class="tablinks2" onclick="openDay(event, 'day3')">수</button>
+     <button class="tablinks2" onclick="openDay(event, 'day4')">목</button>
+     <button class="tablinks2" onclick="openDay(event, 'day5')">금</button>
+     <button class="tablinks2" onclick="openDay(event, 'day6')">토</button>
+     <button class="tablinks2" onclick="openDay(event, 'day7')">일</button>
+
+   </div>
+
+   <div id="day1" class="tabcontent2">
+     <h6 class="tapMargin">가능 시간</h6>
+     <h5 class="tapMargin">15:00 ~ 19:00,  22:00 ~ 22:30</h5>
+   </div>
+
+   <div id="day2" class="tabcontent2">
+     <h6 class="tapMargin">가능 시간</h6>
+     <h5 class="tapMargin">22:00 ~ 22:30</h5>
+   </div>
+
+   <div id="day3" class="tabcontent2">
+     <h6 class="tapMargin">가능 시간</h6>
+     <h5 class="tapMargin">15:00 ~ 19:00,  22:00 ~ 22:30</h5>
+   </div>
+
+   <div id="day4" class="tabcontent2">
+     <h6 class="tapMargin">가능 시간</h6>
+     <h5 class="tapMargin">22:00 ~ 22:30</h5>
+   </div>
+
+   <div id="day5" class="tabcontent2">
+     <h6 class="tapMargin">가능 시간</h6>
+     <h5 class="tapMargin">x</h5>
+   </div>
+
+   <div id="day6" class="tabcontent2">
+     <h6 class="tapMargin">가능 시간</h6>
+     <h5 class="tapMargin">15:00 ~ 19:00,  22:00 ~ 22:30</h5>
+   </div>
+
+   <div id="day7" class="tabcontent2">
+     <h6 class="tapMargin">가능 시간</h6>
+     <h5 class="tapMargin">22:00 ~ 22:30</h5>
+   </div>
+ </div>
+</div>
+</div>
+<div id="footer"></div>
+<script src="../../js/common.js"></script>
+<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../../ksy/js/memberDetailPage.js"></script>
+<script src="../../ksy/js/star.js"></script>
+<script src="../../header/js/header_white.js"></script>
+<script src="../../footer/js/footer.js"></script>
+
+</body>
+</html>
