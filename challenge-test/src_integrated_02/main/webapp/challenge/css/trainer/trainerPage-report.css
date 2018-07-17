@@ -1,0 +1,323 @@
+@charset "UTF-8";
+
+.sm-mypage-body {
+  box-sizing: border-box;
+  margin-bottom: 100px;
+}
+
+/* 프로젝트 등록 서브 메뉴 */
+
+/* 이 부분은 임시 나중에 삭제 10~13*/
+#uploadSubMenu-fist a {
+ border-bottom: 1px solid black;
+ border-width: 3px;
+}
+
+.uploadSubMenu a {
+  color: black;
+  text-decoration: none;
+  padding-bottom: 5px;
+}
+
+.uploadSubMenu a:visited {
+ border-bottom: 1px solid black;
+ border-width: 3px;
+}
+
+.uploadSubMenu a:hover {
+  color: #1B3453;
+}
+
+
+.uploadSubMenu ul {
+  box-sizing: border-box;
+  border-bottom: 1px solid #666666;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  height: 35px;
+}
+
+.uploadSubMenu ul li {
+  float: left;
+  margin: 0 25px;
+}
+
+#uploadSubMenu-fist {
+  margin-left: 0;
+}
+
+/* 강사 운동일지 작성 */
+/* 프로젝트 탭 */
+.tabbed {
+  max-width: 880px;
+  margin: 0 auto;
+  margin-left: 0;
+  border-bottom: 4px solid #1B3453;
+  overflow: hidden;
+  transition: border 250ms ease;
+}
+.tabbed ul {
+  overflow: hidden;
+  float: left;
+  list-style-type: none;
+  padding-left: 35px;
+}
+.tabbed ul * {
+  margin: 0px;
+  padding: 0px;
+}
+.tabbed ul li {
+  display: block;
+  float: right;
+  padding: 10px 24px 8px;
+  background-color: #FFF;
+  margin-right: 46px;
+  z-index: 2;
+  position: relative;
+  cursor: pointer;
+  color: #777;
+
+  text-transform: uppercase;
+  font: 600 13px/20px roboto, "Open Sans", Helvetica, sans-serif;
+
+  transition: all 250ms ease;
+}
+.tabbed ul li:before,
+.tabbed ul li:after {
+  display: block;
+  content: " ";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 44px;
+  background-color: #FFF;
+  transition: all 250ms ease;
+}
+.tabbed ul li:before {
+  right: -24px;
+  transform: skew(30deg, 0deg);
+  box-shadow: rgba(0,0,0,.1) 3px 2px 5px, inset rgba(255,255,255,.09) -1px 0;
+}
+.tabbed ul li:after {
+  left: -24px;
+  transform: skew(-30deg, 0deg);
+  box-shadow: rgba(0,0,0,.1) -3px 2px 5px, inset rgba(255,255,255,.09) 1px 0;
+}
+.tabbed ul li:hover,
+.tabbed ul li:hover:before,
+.tabbed ul li:hover:after {
+  background-color: #F4F7F9;
+  color: #444;
+}
+.tabbed ul li.active {
+  z-index: 3;
+}
+.tabbed ul li.active,
+.tabbed ul li.active:before,
+.tabbed ul li.active:after {
+  background-color: #1B3453;
+  color: #fff;
+}
+
+.arrow .fas {
+  color: #1B3453;
+  font-size: 22px;
+}
+
+.arrow {
+  margin-top: 5px;
+  height: 22px;
+}
+.arrowLeft {
+  float: left;
+}
+
+.arrowRight {
+  float: right;
+}
+/* 도전 날자 */
+.topBox {
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.challengeBox1 h3, .challengeBox1 h4, .challengeBox2 h4 {
+  margin: 0;
+}
+
+.challengeBox1 h4 {
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+.challengeBox2 {
+  float: left;
+  margin: 30px 0 5px 13px;
+}
+
+.challengeBox2 h4{
+  font-size: 15px;
+  font-weight: bold;
+}
+
+/* 운동일지 하단 메뉴 */
+.bottomMenu {
+  float: right;
+  margin-top: 12px;
+  margin-right: 18px;
+  margin-bottom: 30px;
+}
+
+.bottomMenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bottomMenu li {
+  float:left;
+  padding: 6px 25px;
+  font-weight: bold;
+  border: 1px solid #DD1F26;
+  border-radius: 5px;
+  background-color: #DD1F26;
+  color: white;
+  font-size: 15px;
+}
+
+.MenuShare {
+  margin: 0 10px;
+}
+
+/* 운동일지 */
+.challengeBox1 {
+  text-align: center;
+}
+.sm-mypage-body ul{
+  margin: 0;
+}
+
+.dayList {
+  padding: 0;
+  display: inline-block;
+}
+
+.dayList li {
+  box-sizing: border-box;
+  box-shadow: 0 1px 7px 0 gray;
+  width: 260px;
+  float: left;
+  height: 200px;
+  margin: 10px 15px;
+}
+.dayContent {
+  height: 152px;
+  margin: 0 14px;
+}
+.editIcon {
+  float: right;
+  margin-right: 10px;
+}
+
+.dayContent p {
+  text-align: left;
+  font-size: 15px;
+}
+
+.time {
+  font-weight: bold;
+  color: #1B3453;
+  font-size: 19px;
+}
+
+/* 운동일지 페이지 넘기는 탭 */
+.pagination {
+  height: 35px;
+  padding: 0 30%;
+  margin-bottom: 30px;
+}
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+}
+
+.pagination a.pageActive {
+    background-color: dodgerblue;
+    color: white;
+}
+
+.pagination a:hover:not(.pageActive) {background-color: #ddd;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/

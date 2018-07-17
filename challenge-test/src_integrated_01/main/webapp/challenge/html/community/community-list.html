@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>자유게시판</title>
+
+<!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+<!-- font core CSS -->
+<link rel="stylesheet" href="../../css/common.css">
+<!-- icon tools-->
+<link rel="stylesheet"
+	href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
+<!-- page css-->
+<link rel="stylesheet" href="../../css/community/community-list.css">
+<link rel="stylesheet" href="../../css/table.css">
+<link rel="stylesheet" href="../../css/pagenation.css">
+
+
+<style>
+.sm-pagination-button {
+	height: 35px;
+	padding: 5px;
+}
+</style>
+
+</head>
+
+<body>
+	<div id="header"></div>
+	<main id="main">
+
+	<div class="hf-wrapper">
+
+		<section class="jumbotron text-left board-form">
+			<div class="hf-header-container">
+				<h3 class="jumbotron-heading">자유게시판</h3>
+				<br>
+				<p style="border: 1px solid gray;"></p>
+			</div>
+		</section>
+		<div class="all-form">
+			<div class="hf-sidebar">
+				<div class="notice-table-form" style="padding: 20px 20px 13px 20px;">
+					<div class="notice-table">
+
+						<h3 style="padding-bottom: 6px;">
+							<span style="font-size: 14px; font-weight: bold;">공지사항</span>
+						</h3>
+						<div class="jh-allview">
+							<a href="경로를 써야합니다"><span
+								style="font-size: 11px; color: #666666;">+ 전체보기</span></a>
+						</div>
+
+						<table id="notice-table">
+							<tbody>
+								<tr>
+									<td><span> <i class="fas fa-bullhorn"
+											style="margin: 0 6px 0 0;"></i>공지사항 제목이 들어갈곳입니다
+									</span></td>
+								</tr>
+								<tr>
+									<td><span> <i class="fas fa-bullhorn"
+											style="margin: 0 6px 0 0;"></i>공지사항 제목이 들어갈곳입니다
+									</span></td>
+								</tr>
+								<tr>
+									<td><span> <i class="fas fa-bullhorn"
+											style="margin: 0 6px 0 0;"></i>공지사항 제목이 들어갈곳입니다
+									</span></td>
+								</tr>
+								<tr>
+									<td><span> <i class="fas fa-bullhorn"
+											style="margin: 0 6px 0 0;"></i>공지사항 제목이 들어갈곳입니다
+									</span></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="jh-allview">
+						<a href="경로를 써야합니다"><span
+							style="font-size: 11px; color: #666666;">+ 전체보기</span></a>
+					</div>
+				</div>
+
+				<div class="notice-table-form" style="padding: 20px 20px 13px 20px;">
+					<div class="rank-list">
+						<div style="padding-bottom: 7px;">
+							<h3>
+								<span style="font-size: 14px; font-weight: bold;">다이어터 랭킹</span>
+							</h3>
+						</div>
+
+						<table id="notice-table">
+							<tbody>
+								<tr>
+									<td><span> <strong style="color: red;">1</strong><i
+											class="fas fa-user" style="margin: 10px"></i>사용자 아이디
+									</span></td>
+								</tr>
+								<tr>
+									<td><span> <strong style="color: red;">2</strong><i
+											class="fas fa-user" style="margin: 10px"></i>사용자 아이디
+									</span></td>
+								</tr>
+								<tr>
+									<td><span> <strong style="color: red;">3</strong><i
+											class="fas fa-user" style="margin: 10px"></i>사용자 아이디
+									</span></td>
+								</tr>
+								<tr>
+									<td><span> <strong>4</strong><i class="fas fa-user"
+											style="margin: 10px"></i>사용자 아이디
+									</span></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+
+
+			<div class="jh-left-board ">
+			    <div id="common-table"></div>
+				<!--테이블-->
+
+				<div class="sm-pagination" style="height: 35px; padding-top: 5px;">
+					<a class="sm-pagination-button sm-pagination-side" href="#"><i
+						class="fas fa-angle-left"></i></a> <a class="sm-pagination-button"
+						href="#">1</a> <a class="sm-pagination-button" href="#">2</a> <a
+						class="sm-pagination-button" href="#">3</a> <a
+						class="sm-pagination-button" href="#">4</a> <a
+						class="sm-pagination-button sm-pagination-button-end" href="#">5</a>
+					<a class="sm-pagination-button sm-pagination-side" href="#"><i
+						class="fas fa-angle-right"></i></a>
+				</div>
+				<!-- pagination -->
+
+				<div class="btnWrap">
+					<button id="writeBtn" type="button" name="write">글쓰기</button>
+				</div>
+				<div id="jh-search-freeboard">
+
+					<div style="text-align: center; margin: 20px auto;">
+						<select class="select" name="sect">
+							<option value="">제목</option>
+							<option value="">내용</option>
+							<option value="">작성자</option>
+						</select> <input type="text">
+						<button type="button" id="selBtn">검색</button>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<!--hf-wrapper-->div> </main>
+	<div id="footer"></div>
+
+	<script src="../../node_modules/handlebars/dist/handlebars.min.js"></script>
+	<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="../../js/common.js"></script>
+	<script src="../../js/table.js"></script>
+	<script id="tr-template" type="text/x-handlebars-template">
+{{#each list}}
+<tr>
+    <td>{{no}}</td>
+    <td>{{type}}</td>
+    <td><a href='bd-view.html?no={{no}}'>{{title}}</a></td>
+    <td>{{user}}</td>
+    <td>{{cnt}}</td>
+    <td>{{createdDate}}</td>
+</tr>
+{{/each}}
+</script>
+	<script>
+    $("#writeBtn").click(() => { location.href="community-write.html"});
+    </script>
+	<script src="../../js/header/header_white.js"></script>
+	<script src="../../js/footer/footer.js"></script>
+	<script src="../../js/community/community-list.js"></script>
+	
+</body>
+
+</html>

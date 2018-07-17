@@ -1,0 +1,100 @@
+/*명예의 전당 페이지 : class 이름 앞에 hf- 붙이기*/
+ @charset "UTF-8";
+
+
+* {
+  box-sizing: border-box;
+
+}
+
+.chall-tbody > tr > td:nth-child(3) {
+	text-align:left;
+}
+
+.jumbotron-heading {
+  font-size: 25px;
+  font-weight: bold;
+  color: #1B3453;
+
+}
+
+.all-form {
+  display: inline-block;
+}
+
+main {
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+
+.board-form{
+  padding:2rem 2rem 0 0; background-color:white;
+
+ }
+
+
+
+#selBtn{
+  padding:3px 3px 3px 3px;
+}
+.btnWrap {
+  text-align: right;
+  margin: 15px 0;
+  height: 28px;
+  line-height: 24px;
+  padding: 0 10px;
+  font-weight: bold;
+  letter-spacing: -1px;
+}
+
+.jh-left-board {
+
+    width:900px;
+    float:left;
+}
+.jh-boarder-index {
+  color:rgb(98, 98, 98);
+}
+.jh-table-margin {
+  margin: 0 auto;
+}
+
+
+
+/* 사이드바 컨텐츠 메뉴 css 시작지점*/
+.hf-sidebar { /* 사이드바 전체*/
+  width:300px;
+  height: 1200px;
+  float: right;
+  padding: 10px;
+  overflow: hidden;
+}
+.rank-list {
+  border: solid 1px rgb(166, 166, 164);
+  padding: 5px 10px 10px 10px;
+}
+.notice-table {
+  border: solid 1px rgb(166, 166, 164);
+  margin-top:20px;
+  padding: 5px 10px 10px 10px;
+}
+#notice-table {
+  width:100%;
+  border-spacing:0;
+  padding:0;
+}
+.jh-allview {
+  position: absolute;
+  top: 195px;
+  right: 50px;
+}
+#notice-table > tbody > tr > td {
+  height:30px;
+  border-bottom:1px dashed #eee;
+}
+#notice-table > tbody > tr > td > span {
+  color: #666; font-size: 13px; letter-spacing: -0.5px; line-height: 1.4;
+}
+/* 사이드바 컨텐츠 메뉴 css 끝지점*/

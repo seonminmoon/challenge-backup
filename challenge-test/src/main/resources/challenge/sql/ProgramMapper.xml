@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="challenge.dao.ProgramDao">
+
+  <resultMap type="Program" id="ProgramMap">
+    <id column="pno" property="no"/>
+    <result column="pstno" property="postNO"/>
+    <result column="bas_addr" property="address"/>
+    <result column="det_addr" property="addDetail"/>
+    <result column="pname" property="name"/>
+    <result column="sdt" property="startDate"/>
+    <result column="edt" property="endDate"/>
+    <result column="minqty" property="minQty"/>
+    <result column="maxqty" property="maxQty"/>
+    <result column="pprice" property="price"/>
+    <result column="pdesc" property="description"/>
+    <result column="ptype" property="proType"/>
+    <result column="pgoal" property="proGoal"/>
+    <result column="pgoal_n" property="proGoalNum"/>
+    <result column="pth" property="proTh"/>
+    <result column="ptover" property="proTurn"/>
+    <result column="pday" property="proDay"/>
+    <result column="ptime" property="proTime"/>
+    <result column="pstate" property="proState"/>
+    <result column="presult" property="proResult"/>
+
+    <result column="cno" property="challengeNo"/>
+    <result column="plno" property="planNo"/>
+
+    <association property="trainerNo" javaType="Trainer">
+      <id column="uno" property="userNo"/>
+      <result column="uname" property="name"/>
+      <result column="upath" property="userPath"/>
+    </association>
+
+    <collection property="medias" ofType="ProgramMedia">
+        <id column="pmedno" property="no"/>
+        <result column="ppath" property="path"/>
+        <result column="pmtype" property="state"/>
+        <result column="pno" property="program"/>
+    </collection>
+  </resultMap>
+
+  <select id="selectListCard"
+          resultMap="ProgramMap" parameterType="map">
+    select p.pno, p.pname, p.pth, p.pprice, p.bas_addr, p.maxqty, p.sdt,
+           m.pmedno, m.ppath, m.pmtype,
+           u.upath, u.uname
+    from PMED m
+         right outer join PROG p on m.pno=p.pno
+         left outer join TRN t on p.trnno=t.trnno
+         left outer join USER u on t.trnno=u.uno
+    <!-- limit #{startRowNo}, #{pageSize} -->
+  </select>
+
+
+  <select id="selectList"
+          resultMap="ProgramMap" parameterType="map">
+    select name, sdt, edt, max_qty
+    from pms2_program
+    <!-- limit #{startRowNo}, #{pageSize} -->
+  </select>
+  <!--
+    ArrayList<Task> list = new new ArrayList<>();
+    while (rs.next()) {
+       Task task = new Task();
+       task.setName(rs.getString("name"));
+       task.setStartDate(rs.getDate("sdt"));
+       task.setEndDate(rs.getDate("edt"));
+       task.setMaxQty(rs.getInt("max_qty"));
+       list.add(task);
+    }
+  -->
+
+  <insert id="insert" parameterType="Program">
+    insert into pms2_program(name,dscrt,max_qty,sdt,edt)
+    values(#{name},#{description},#{maxQty},#{startDate},#{endDate})
+  </insert>
+
+  <select id="selectOne" parameterType="string" resultMap="ProgramMap">
+    select name, dscrt, sdt, edt, max_qty
+    from pms2_program
+    where name=#{value}
+  </select>
+
+  <select id="selectOneWithMembers" parameterType="string" resultMap="ProgramMap">
+    select
+        t.name,
+        t.dscrt,
+        t.sdt,
+        t.edt,
+        t.max_qty,
+        tm.mid,
+        m.email
+    from pms2_program t
+         left outer join pms2_program_member tm on t.name=tm.tnm
+         left outer join pms2_member m on tm.mid=m.mid
+    where t.name=#{value}
+  </select>
+
+  <update id="update" parameterType="Program">
+    update pms2_program set
+      dscrt=#{description},
+      max_qty=#{maxQty},
+      sdt=#{startDate},
+      edt=#{endDate}
+    where name=#{name}
+  </update>
+
+  <delete id="delete" parameterType="string">
+    delete from pms2_program
+    where name=#{value}
+  </delete>
+
+  <update id="updateState" parameterType="map">
+    update pms2_program set
+      stat=#{state}
+    where tano=#{no}
+  </update>
+</mapper>

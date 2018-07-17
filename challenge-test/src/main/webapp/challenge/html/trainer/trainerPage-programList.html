@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+<title>회원페이지</title>
+<link rel="stylesheet" href="../../css/trainer/template/sm-trainerPage.css">
+<link rel="stylesheet" href="../../css/trainer/trainerPage-programList.css">
+<link rel="stylesheet" href="../../css/common.css">
+<link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
+</head>
+<body>
+<div id="subMenu"></div>
+<div id="sm-back">
+<div class="sm-container">
+  <h2>서비스 관리</h2>
+
+<div class="sm-mypage">
+  <div class="sm-profile">
+		<div style="text-align: center;">
+			<a href="trainer.html"><img src="../../img/member/img1.jpg" style="margin-left: 30px; border-radius:60px; width:120px; height:120px;"></a>
+      <button id="sm-btn-2" type="button" style="position:relative; top:-10px; right:40px; width:30px; height:30px; border-radius:15px; padding:0px;font-size:14px;"><span>2</span></button>
+      <br>
+			사용자이름<br>
+      <button id="sm-btn-2" type="button" style="margin-top:10px; margin-bottom:20px;">프로필관리</button>
+		</div>
+    <!-- ************* 이부분만 템플릿에서 다르니까 이것만 짤라서 쓰면된다!!!! ********************************************* -->
+    <div class="sm-menu" style="border-left:none;"><i class="fas fa-chalkboard"></i><br>챌린지 관리</div>
+    <div class="sm-menu" style="border-bottom:1px solid gray;"><i class="fas fa-angle-double-up"></i><br>챌린지 등록</div>
+    <div class="sm-menu" style="border-left:none; border-right:1px solid gray;"><i class="fas fa-dumbbell"></i><br>챌린지 운동일지</div>
+	</div><!-- .profile -->
+
+
+    <div class="sm-mypage-body">
+      <!-- 프로젝트 등록 서브 메뉴 -->
+      <div class="uploadSubMenu">
+        <ul>
+          <li id="uploadSubMenu-fist"><a href="#">전체</a></li>
+          <li><a href="#">모집중</a></li>
+          <li><a href="#">진행중</a></li>
+          <li><a href="#">종료</a></li>
+
+        </ul>
+      </div>
+      <!-- 프로젝트 등록 본문-->
+      <div class="loadContent">
+      </div>
+    </div><!-- mypage-body -->
+
+
+</div><!-- mypage -->
+</div><!--.container-->
+</div><!-- back -->
+<div id="footer"></div>
+<script src="../../js/common.js"></script>
+<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../../js/footer/footer.js"></script>
+<script src="../../js/trainer/trainer-template.js"></script>
+</body>
+</html>

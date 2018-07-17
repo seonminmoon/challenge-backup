@@ -1,0 +1,216 @@
+/*명예의 전당 페이지 : class 이름 앞에 hf- 붙이기*/
+
+@charset "UTF-8";
+/*커뮤니티 통합 css*/
+
+* {
+  box-sizing: border-box;
+}
+
+.clear {
+  clear: both;
+  width: 0;
+  height: 0;
+  font: 0 Arial;
+  line-height: 0;
+}
+
+a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+.jumbotron-heading {
+  font-size: 25px;
+  font-weight: bold;
+  color: #1B3453;
+}
+
+.all-form {
+  display: inline-block;
+}
+
+main {
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.fa-user-circle {
+  font-size: 30px;
+}
+
+.board-form {
+  padding: 2rem 2rem 0 0;
+  background-color: white;
+}
+
+.jh-left-board {
+  width: 900px;
+  float: left;
+}
+
+/* 사이드바 컨텐츠 메뉴 css*/
+
+.hf-sidebar {
+  /* 사이드바 전체*/
+  width: 300px;
+  height: 1200px;
+  float: right;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.notice-table {
+  border: solid 1px rgb(166, 166, 164);
+  margin-top: 20px;
+  padding: 5px 10px 10px 10px;
+}
+
+.rank-list {
+  border: solid 1px rgb(166, 166, 164);
+  padding: 5px 10px 10px 10px;
+}
+
+#notice-table {
+  width: 100%;
+  border-spacing: 0;
+  padding: 0;
+}
+
+.jh-allview {
+  position: absolute;
+  top: 195px;
+  right: 50px;
+}
+
+#notice-table>tbody>tr>td {
+  height: 30px;
+  border-bottom: 1px dashed #eee;
+}
+
+#notice-table>tbody>tr>td>span {
+  color: #666;
+  font-size: 13px;
+  letter-spacing: -0.5px;
+  line-height: 1.4;
+}
+
+/* 사이드바 컨텐츠 메뉴 css*/
+
+/*커뮤니티 통합 css*/
+
+/* 페이지 링크 시작*/
+
+.LF_page_link_current {
+  /*현재페이지*/
+  color: #f00 !important;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 22px;
+  text-decoration: none;
+  vertical-align: middle;
+  margin: 0 2px;
+  padding: 0 5px;
+}
+
+.LF_page_link {
+  /*다른페이지*/
+  color: #777 !important;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 22px;
+  text-decoration: none;
+  vertical-align: middle;
+  margin: 0 2px;
+  padding: 0 5px;
+}
+
+/* 페이지 링크 끝*/
+
+/* table css */
+
+.header h1 {
+  height: 45px;
+  padding: 0 0 0 20px;
+  color: #fff;
+  font-size: 14px;
+  line-height: 45px;
+  background-color: #495164;
+}
+
+.content {
+  padding: 20px;
+  min-height: 270px;
+}
+
+.btnArea {
+
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 0;
+  border-top: 1px solid #d7d5d5;
+  text-align: center;
+  background-color: #fbfafa;
+}
+
+.xans-calendar-write table {
+  table-layout: fixed;
+  border: 1px solid #d7d5d5;
+  line-height: 180%;
+}
+
+.xans-calendar-write th {
+  width: 110px;
+  padding: 10px 0 8px 20px;
+  border-top: 1px solid #e8e8e8;
+  border-right: 1px solid #e8e8e8;
+  background-color: #fbfafa;
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+.xans-calendar-write td {
+  width:700px;
+  padding: 20px 30px 20px 30px;
+  border-top: 1px solid #e8e8e8;
+}
+
+.xans-calendar-write tr.first th, .xans-calendar-write tr.first td {
+  border-top: 0;
+}
+
+.xans-calendar-write td input, .xans-calendar-write td textarea {
+  padding: 2px 2px 2px 4px;
+
+  color: #202020;
+  border: 1px solid #d9d9d9;
+}
+
+.xans-calendar-write td input#date {
+  width: 70px;
+  text-align: center;
+}
+#cmu-content {
+  width: 600px;
+}
+
+.xans-calendar-write td textarea {
+  width: 700px;
+  height: 500px;
+  resize: none;
+
+}
+.xans-calendar-write td button {
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 10px;
+  border-radius:5px;
+  border-style:none;
+background-color:#495164;
+color:white;
+}

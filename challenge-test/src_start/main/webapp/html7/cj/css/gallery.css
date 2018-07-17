@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+/*모든 링크에 밑줄 제거*/
+a {
+	text-decoration:none;
+	display:block;
+	color: #222;
+}
+ul, ol{
+	list-style:none;
+}
+.gallery >.ga-hover:first-child {
+	 border: 1px solid #cccccc;
+}
+
+#gallery >li:first-child {
+	 border: 1px solid #cccccc;
+}
+
+#gallery {
+	width: 250px;
+	margin: auto;
+	z-index: 1000px
+}
+
+
+
+.thumb{
+	position:relative;
+	display:block;
+}
+
+.garlley li  {
+
+	width : 50px;
+	float: left;
+    color: #222;
+}
+
+.garlley a > :hover {
+	width : 50px;
+	background-color: black;
+	float: left;
+    color: #222;
+}
+
+.span{
+	color: #222;
+}
+
+.li{
+	border:10px solid #000000;
+}

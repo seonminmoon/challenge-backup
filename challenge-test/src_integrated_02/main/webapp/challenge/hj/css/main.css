@@ -1,0 +1,100 @@
+@charset "UTF-8";
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+ul {
+  list-style: none;
+}
+
+/* Animation Canvas */
+
+.animation_canvas {
+  overflow: hidden;
+  position: relative;
+  width: 1200px;
+  height: 550px;
+}
+
+/* Slider Panel */
+
+.slider_panel {
+  width: 2400px;
+  position: relative;
+}
+
+.slider_image {
+  float: left;
+  width: 1200px;
+  height: 550px;
+}
+
+/* Slider Text Panel */
+
+.slider_text_panel {
+  position: absolute;
+  top: 400px;
+  left: 50px;
+}
+
+.slider_text {
+  position: absolute;
+  width: 250px;
+  height: 150px;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* Control Panel */
+
+.control_panel {
+  position: absolute;
+  top: 500px;
+  left: 570px;
+  height: 13px;
+  overflow: hidden;
+}
+
+.control_button {
+  width: 12px;
+  height: 46px;
+  position: relative;
+  float: left;
+  cursor: pointer;
+  background: url('../img/point_button.png');
+}
+
+.control_button:hover {
+  top: -16px;
+}
+
+.control_button.active {
+  top: -31px;
+}
+
+.main2-chal {
+  display: flex;
+
+}
+.main-flex-column {
+  flex:1;
+}
+.main1 {
+  background-color: #eeeeee;
+  height: 100px;
+  padding: 20px;
+}
+.main-ul {
+  width: 100%;
+}
+.main1-li {
+  display: inline-block;
+  float: left;
+  width: 170px;
+  text-align: center;
+}
+
+.main4 {
+  height: 150px;
+}
