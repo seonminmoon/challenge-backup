@@ -11,10 +11,10 @@ $setRows.submit(function (e) {
         alert(zeroWarning);
         return;
     }
-    $('#nav').remove();
+    $('.sm-pagination').remove();
     var $products = $('#products');
 
-    $products.after('<div id="nav">');
+    $products.after('<div class="sm-pagination">');
 
 
     var $tr = $($products).find('tbody tr');
@@ -28,14 +28,13 @@ $setRows.submit(function (e) {
         $('<a href="#"></a>')
                 .attr('rel', i)
                 .html(i + 1)
-                .appendTo('#nav');
+                .appendTo('.sm-pagination');
     }
-
     $tr.addClass('off-screen')
             .slice(0, rowPerPage)
             .removeClass('off-screen');
 
-    var $pagingLink = $('#nav a');
+    var $pagingLink = $('.sm-pagination a');
     $pagingLink.on('click', function (evt) {
         evt.preventDefault();
         var $this = $(this);
@@ -69,9 +68,3 @@ $setRows.submit(function (e) {
 
 
 $setRows.submit();
-
-
-//div#pagination 태그에 /html/pagination.html 내용을 삽입한다.
-$.get(serverRoot + "/challenge/seonmin/pagination.html", (data) => {
-	$(".pagination").html(data);
-});
