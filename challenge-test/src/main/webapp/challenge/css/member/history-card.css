@@ -4,6 +4,18 @@ a {
 	 color: inherit;
 }
 
+.card {
+    height: 175px;
+}
+
+.card-trainer {
+    top: 113px;
+}
+
+.ribbon {
+    z-index: 0;
+}
+
 div p {
 	margin:0px;
 	

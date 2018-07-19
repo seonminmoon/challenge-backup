@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>글 본문</title>
+<!-- Bootstrap core CSS -->
+<link href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<!-- font core CSS -->
+<link rel="stylesheet" href="../../css/common.css">
+<!-- icon tools-->
+<link rel="stylesheet"
+	href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
+<!-- page css-->
+<link rel="stylesheet" href="../../css/community/community-view.css">
+
+</head>
+
+<body>
+
+	<div id="header"></div>
+	<!-- </div> -->
+
+	<main id="main">
+	<div class="hf-wrapper">
+
+		<section class="jumbotron text-left board-form">
+			<div class="hf-header-container">
+				<h3 class="jumbotron-heading">자유게시판</h3>
+				<br>
+				<p style="border: 1px solid gray;"></p>
+			</div>
+		</section>
+
+		<div class="all-form">
+			<div class="hf-sidebar">
+				<div class="notice-table-form" style="padding: 20px 20px 13px 20px;">
+					<div class="notice-table">
+
+						<h3 style="padding-bottom: 6px;">
+							<span style="font-size: 14px; font-weight: bold;">공지사항</span>
+						</h3>
+						<div class="jh-allview">
+							<a href="경로를 써야합니다"><span
+								style="font-size: 11px; color: #666666;">+ 전체보기</span></a>
+						</div>
+
+						<table id="notice-table">
+							<tbody>
+								<tr>
+									<td><span> <i class="fas fa-bullhorn"
+											style="margin: 0 6px 0 0;"></i>공지사항 제목이 들어갈곳입니다
+									</span></td>
+								</tr>
+								<tr>
+									<td><span> <i class="fas fa-bullhorn"
+											style="margin: 0 6px 0 0;"></i>공지사항 제목이 들어갈곳입니다
+									</span></td>
+								</tr>
+								<tr>
+									<td><span> <i class="fas fa-bullhorn"
+											style="margin: 0 6px 0 0;"></i>공지사항 제목이 들어갈곳입니다
+									</span></td>
+								</tr>
+								<tr>
+									<td><span> <i class="fas fa-bullhorn"
+											style="margin: 0 6px 0 0;"></i>공지사항 제목이 들어갈곳입니다
+									</span></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="jh-allview">
+						<a href="경로를 써야합니다"><span
+							style="font-size: 11px; color: #666666;">+ 전체보기</span></a>
+					</div>
+				</div>
+				<div class="notice-table-form" style="padding: 20px 20px 13px 20px;">
+					<div class="rank-list">
+						<div style="padding-bottom: 7px;">
+							<h3>
+								<span style="font-size: 14px; font-weight: bold;">다이어터 랭킹</span>
+							</h3>
+						</div>
+
+						<table id="notice-table">
+							<tbody>
+								<tr>
+									<td><span> <strong style="color: red;">1</strong><i
+											class="fas fa-user" style="margin: 10px"></i>사용자 아이디
+									</span></td>
+								</tr>
+								<tr>
+									<td><span> <strong style="color: red;">2</strong><i
+											class="fas fa-user" style="margin: 10px"></i>사용자 아이디
+									</span></td>
+								</tr>
+								<tr>
+									<td><span> <strong style="color: red;">3</strong><i
+											class="fas fa-user" style="margin: 10px"></i>사용자 아이디
+									</span></td>
+								</tr>
+								<tr>
+									<td><span> <strong>4</strong><i class="fas fa-user"
+											style="margin: 10px"></i>사용자 아이디
+									</span></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+
+
+			<div class="jh-left-board">
+				<div class="jh-left-content">
+					<div id="content-title">
+						<h5 id="fTitle" style="padding-bottom: 20px;"></h5>
+					</div>
+					<div class="content-info">
+
+						<div class="inner-content">
+							<div id="inner-id">
+								<i class="inner-img fas fa-user-secret"
+									style="float: left; font-size: 30px"></i>
+								<pre id="fPerson" style="margin: 0; padding: 5px;"></pre>
+							</div>
+						</div>
+
+						<div class="tm-vi-re">
+							<ul>
+								<li id="fCreatedDate"><i class="far fa-clock"></i></li>
+								<li id="fCnt"><i class="far fa-eye"></i></li>
+								<li><i class="far fa-comment"></i> 703</li>
+							</ul>
+						</div>
+					</div>
+					<div class="text-content">
+						<img src="http://placehold.it/348x200" alt="업로드 사진"> <img
+							src="http://placehold.it/348x200" alt="업로드 사진"> <img
+							src="http://placehold.it/348x200" alt="업로드 사진"> <img
+							src="http://placehold.it/348x200" alt="업로드 사진">
+						<textarea id='fContent' name="name" rows="20" cols="100">
+
+            </textarea>
+
+						<div class="comentTable-wrapper">
+							<table class="table table-condensed">
+								<thead>
+									<tr>
+										<td style="border: none;"><span style='float: right'>
+												<button type="button" id="listbtn" class="btn btn-default">목록</button>
+												<button type="button" id="modify" class="btn btn-default">수정</button>
+												<button type="button" id="delete" class="btn btn-default">삭제</button>
+												<button type="button" id="write" class="btn btn-default">글쓰기</button>
+										</span></td>
+									</tr>
+								</thead>
+							</table>
+							<table id="comentWrite" class="table table-condensed">
+								<tr>
+									<td style="text-align: left;"><i
+										class="fas fa-angle-right" style="font-size: 20px;"></i> <strong
+										style="font-size: 20px;"> 댓글쓰기 </strong></td>
+								</tr>
+								<tr>
+									<td class="form-inline;"><textarea id="commentParentText"
+											class="form-control col-lg-12"></textarea>
+
+										<button type="button" name="reBtn" class="reBtn">
+											<span>입력</span>
+										</button></td>
+								</tr>
+							</table>
+
+
+							<div id="cmt-list">
+								<dl class="cmt_item">
+									<dt>
+										<span class="nameui"><img
+											src="http://nimg.nate.com/ui/uidev/images/icon/ico_persnal.gif">
+											사용자 ID</span> <span class="date"><em> | </em> 07.06 09:18</span>
+									</dt>
+									<!-- 추천반대 -->
+									<dd class="opinion">
+										<div class="upDown">
+											<p class="line">
+												<a onclick="AddClick();" href="#!"><em class="up"><i
+														class="far fa-thumbs-up"></i> 좋아요</em></a> <a id="CountedClicks">0</a>
+											</p>
+
+
+										</div>
+									</dd>
+									<!-- //추천반대 -->
+
+									<!-- 내용 -->
+									<dd class="usertxt">댓글 내용입니다~~~~~</dd>
+									<!-- //내용 -->
+								</dl>
+							</div>
+							<div class="btnPagelink">
+								<span class="LF_page_link_current"><b>1</b></span>
+
+							</div>
+							<div class="clear"></div>
+							<div class="prev-next" style="text-align: left;">
+								<div>
+									<span>이전글 <i class="fas fa-caret-up"></i></span>
+									<div id="jh-prev">
+										<a href="">이전글 제목 입니다.</a>
+									</div>
+								</div>
+								<div>
+									<span>다음글 <i class="fas fa-caret-down"></i></span>
+									<div id="jh-next">
+										<a href="">다음글 제목 입니다.</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	</main>
+
+	<div id="footer"></div>
+
+
+
+<script src="../../node_modules/handlebars/dist/handlebars.min.js"></script>
+	<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="../../js/common.js"></script>
+	<script>
+		if (location.href.split("?").length > 1) {
+			var no = location.href.split("?")[1].split("=")[1];
+
+			$.getJSON("../../../json/community/" + no, function(data) {
+				$(fContent).val(data.content);
+				$(fTitle).append(data.title);
+				$(fPerson).append(data.person.name);
+				$(fCreatedDate).append(data.createdDate);
+				$(fCnt).append(data.cnt);
+				//$(fLike).append(data.like);
+			});
+		}
+	</script>
+	<script>
+	$("#listbtn").click(() => { location.href="community-list.html"});
+	</script>
+
+	<script src="community-view.js"></script>
+	<script src="../../js/header/header_white.js"></script>
+	<script src="../../js/footer/footer.js"></script>
+
+</body>
+
+</html>

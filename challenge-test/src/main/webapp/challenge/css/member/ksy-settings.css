@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+.sm-container h2 {
+  margin-bottom: 38px;
+}
+
 .sm-mypage-body {
   box-sizing: border-box;
   margin-bottom: 100px;
@@ -55,7 +59,7 @@
   width: 120px;
   height: 120px;
   border-radius: 60px;
-  margin: 0 auto;
+  margin: 0 30px;
   margin-top: 20px;
 }
 
@@ -124,72 +128,3 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-*/

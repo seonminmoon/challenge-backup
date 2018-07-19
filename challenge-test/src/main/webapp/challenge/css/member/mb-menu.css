@@ -1,14 +1,6 @@
-body {
-  margin: 0;
-}
+
 /* profile CSS 시작*/
 
-.sm-margin-none {
-  margin-top: 0px;
-  margin-right: 0px;
-  margin-bottom: 0px;
-  margin-left: 0px;
-}
 .sm-menubar{
   position: fixed;
   background-color: white;
