@@ -48,7 +48,7 @@
   
   <insert id="insert" parameterType="Message"
           useGeneratedKeys="true" keyColumn="pono" keyProperty="pono">
-    insert into POST(pocont, podate) 
+    insert into MSG(pocont, podate) 
     values(#{content}, now());
   </insert>
   
@@ -57,12 +57,12 @@
   -->
   <select id="selectOne" parameterType="int" resultMap="MessageMap">
     select pono, pocont, podate 
-    from POST 
+    from MSG 
     where pono=#{value}
   </select>
 
   <delete id="delete" parameterType="int">
-    delete from POST where pono=#{value}
+    delete from MSG where msgno=#{value}
   </delete>
   
   

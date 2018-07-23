@@ -24,75 +24,91 @@
 
 				<table>
 					<tr>
-						<td><label for="name">성명</label></td>
-						<td><input type="text" name="name" placeholder="name"
-							class="name"></td>
-					</tr>
+                        <td><label for="fName">이름</label></td>
+                        <td><input id="fName" type="text" name="name"
+                            placeholder="name" class="name"></td>
+                    </tr>
 
-					<tr>
-						<td><label for="gender">성별</label></td>
-						<td><label class="gen">남자 <input type="radio"
-								name="radio"> <span class="gcheckmark"></span>
-						</label><label class="gen">여자 <input type="radio" name="radio">
-								<span class="gcheckmark"></span>
-						</label></td>
-					</tr>
+                    <tr>
+                        <td><label for="fGen">성별</label></td>
+                        <td><label for="fGen1" class="gen">남자 <input
+                                id="fGen1" type="radio" name="sex" value="M">
+                                <span class="gcheckmark"></span>
+                        </label><label for="fGen2" class="gen">여자 <input id="fGen2"
+                                type="radio" name="sex" value="F"><span class="gcheckmark"></span>
+                        </label></td>
+                    </tr>
 
+                    <tr>
+                        <td><label>이메일</label></td>
+                        <td><input id="fId" type="text" name="id"
+                            placeholder="email" class="email" style="width: 100px;">
+                             @ <select id="fid2" class="email" name="id" style="width: 100px;">
+                                <option>naver.com</option>
+                                <option>daum.net</option>
+                                <option>nate.com</option>
+                                <option>gmail.com</option>
+                        </select></td>
+                    </tr>
 
-					<tr>
-						<td><label for="password">비밀번호</label></td>
-						<td><input type="password" name="password"
-							placeholder="password" class="password"></td>
-					</tr>
-					<tr>
-						<td><label for="password">비밀번호확인</label></td>
+<tr>
+                        <td><label for="fPassword">비밀번호</label></td>
+                        <td><input id="fPassword" type="password" name="password"
+                            placeholder="password" class="password"></td>
+                    </tr>
 
-						<td><input type="password" name="password"
-							placeholder="password" class="password"></td>
-					</tr>
+				
+                    <tr>
+                        <td><label for=fPhone">전화</label></td>
+                        <td><select id="fPhone1" class="phone" style="width: 70px;">
+                                <option>010</option>
+                                <option>017</option>
+                                <option>011</option>
+                        </select> - <input id="fPhone2" type="tel" name="tel" class="phone"
+                            maxlength="4" size="4" pattern="[0-9]{3,4}[0-9]"
+                            onkeypress="phonedate(event)"> - <input id="fPhone3"
+                            type="text" name="tel" class="phone" maxlength="4" size="4"
+                            pattern="[0-9]{4}" onkeypress="phonedate(event)" title="값을 입력하세요"
+                            required></td>
+                    </tr>
 
-					<tr>
-						<td><label for="email">이메일</label></td>
-						<td><input type="text" name="email" placeholder="email"
-							class="email" style="width: 100px;"> @ <select
-							class="email" style="width: 100px;">
-								<option>naver.com</option>
-								<option>daum.net</option>
-								<option>nate.com</option>
-								<option>gmail.com</option>
-						</select></td>
-					</tr>
-
-					<tr>
-						<td><label for="tel">전화</label></td>
-						<!--
-                            <td><input type="tel" name="tel" placeholder="00*-000*-0000"
-                            pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{3,4}" maxlength="13"
-                            class="phone"></td>-->
-
-						<td><select class="phone" style="width: 70px;">
-								<option>010</option>
-								<option>017</option>
-								<option>011</option>
-						</select> - <input type="tel" name="tel" class="phone" maxlength="4"
-							size="4" pattern="[0-9]{3,4}" onkeypress="phonedate(event)">
-							- <input type="tel" name="tel" class="phone" maxlength="4"
-							size="4" pattern="[0-9]{4}" onkeypress="phonedate(event)">
-						</td>
-					</tr>
-
-					<tr>
-						<td><label for="file">사진</label>
-						<td><input type="file" name="file" placeholder="file"
-							class="file"></td>
-					</tr>
+				
+                    <tr>
+                        <td><label for="fPath">사진</label>
+                        <td><input id="fPath" type="file" name="file"
+                            placeholder="file" class="file"></td>
+                    </tr>
 
 
 					<tr>
-						<td><label for="textarea">소개</label></td>
-						<td><textarea cols="40" rows="5"
-								placeholder="자기소개나 경력을 입력해 주세요." class="txtar"></textarea></td>
+						<td><label for="fTrnint">자기소개</label></td>
+						<td><textarea id="fTrnint" cols="40" rows="5"
+								placeholder="자기소개를 입력해 주세요." class="txtar"></textarea></td>
 					</tr>
+					
+					<tr>
+                        <td><label for="fTrancar">경력사항</label></td>
+                        <td><textarea id="fTrancar" cols="40" rows="5"
+                                placeholder="경력사항을 입력해 주세요." class="txtar"></textarea></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><label for="fTrntime">상담시간</label></td>
+                        <td><input id="fTrntime" type="text"></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><label for="fTrnacnt">계좌번호</label></td>
+                        <td><input id="fTrnacnt" type="text"></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><label for="fTrnbank">은행명</label></td>
+                        <td><input id="fTrnbank" type="text"></td>
+                    </tr>
+                    
+                    
+                    
 
 					<tr>
 						<td><label class="agree">약관 동의 <input type="checkbox">
@@ -113,7 +129,7 @@
 				</table>
 
 				<center>
-					<input type="submit" name="submit" value="회원가입" class="button1">
+					<input id="addBtn" type="submit" name="submit" value="회원가입" class="button1">
 					<input type="reset" name="reset" value="가입취소" class="button2">
 				</center>
 
@@ -131,6 +147,7 @@
 	<script src="../../js/common.js"></script>
 	<script src="../../js/header/header_white.js"></script>
 	<script src="../../js/footer/footer.js"></script>
+	<script src="../../js/login/trainer.js"></script>
 	<!-- 헤더 스크립트 -->
 
 	<script>

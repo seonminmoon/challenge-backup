@@ -13,4 +13,5 @@ public interface CommentService {
     int add(Comment comment);
     int update(Comment comment);
     int delete(int no);
+    List<Comment> listWithNo(int no);
 }

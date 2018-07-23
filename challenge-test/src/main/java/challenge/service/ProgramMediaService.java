@@ -3,14 +3,14 @@ package challenge.service;
 
 import java.util.List;
 
-import challenge.domain.Admin;
+import challenge.domain.ProgramMedia;
 
-public interface AdminService {
+public interface ProgramMediaService {
     // 서비스 컴포넌트에서 메서드명을 지을 때는 
     // 업무 용어를 사용하라!
-    List<Admin> list();
-    Admin get(int no);
-    int add(Admin admin);
-    int update(Admin admin);
+    List<ProgramMedia> list();
+    ProgramMedia get(int no);
+    int add(ProgramMedia programMedia);
+    int update(ProgramMedia programMedia);
     int delete(int no);
 }

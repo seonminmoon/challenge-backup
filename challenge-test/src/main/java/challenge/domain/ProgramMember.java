@@ -11,53 +11,38 @@ public class ProgramMember extends Program implements Serializable {
     
     @JsonFormat(pattern="yyyy-MM-dd")
     private Date paymentDay; // 결제일
-    private String bank; // 환불은행명
-    private String account; // 환불계좌번호
     private double grade; // 평점
     private String review; // 리뷰
     private Date reviewDate; // 리뷰일자
-    private int memberType; // 회원유형
+    private int userType; // 회원유형
     
-    private int uno; // 회원번호
-    private Member members;
-    private Diary diary;
+    private User users;
+    private Diary diarys;
     
     
-    public Member getMembers() {
-        return members;
+    public int getUserType() {
+        return userType;
     }
-    public void setMembers(Member members) {
-        this.members = members;
+    public void setUserType(int userType) {
+        this.userType = userType;
     }
-    public Diary getDiary() {
-        return diary;
+    public User getUsers() {
+        return users;
     }
-    public void setDiary(Diary diary) {
-        this.diary = diary;
+    public void setUsers(User users) {
+        this.users = users;
     }
-    public int getUno() {
-        return uno;
+    public Diary getDiarys() {
+        return diarys;
     }
-    public void setUno(int uno) {
-        this.uno = uno;
+    public void setDiarys(Diary diarys) {
+        this.diarys = diarys;
     }
     public Date getPaymentDay() {
         return paymentDay;
     }
     public void setPaymentDay(Date paymentDay) {
         this.paymentDay = paymentDay;
-    }
-    public String getBank() {
-        return bank;
-    }
-    public void setBank(String bank) {
-        this.bank = bank;
-    }
-    public String getAccount() {
-        return account;
-    }
-    public void setAccount(String account) {
-        this.account = account;
     }
     public double getGrade() {
         return grade;
@@ -76,11 +61,5 @@ public class ProgramMember extends Program implements Serializable {
     }
     public void setReviewDate(Date reviewDate) {
         this.reviewDate = reviewDate;
-    }
-    public int getMemberType() {
-        return memberType;
-    }
-    public void setMemberType(int memberType) {
-        this.memberType = memberType;
     }
 }

@@ -7,47 +7,47 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import challenge.domain.Admin;
-import challenge.service.AdminService;
+import challenge.domain.ProgramMedia;
+import challenge.service.ProgramMediaService;
 
 @RestController
-@RequestMapping("/admin")
-public class AdminController {
+@RequestMapping("/programMedia")
+public class ProgramMediaController {
 
-    AdminService adminService;
+    ProgramMediaService programMediaService;
 
-    public AdminController(AdminService adminService) {
-        this.adminService = adminService;
+    public ProgramMediaController(ProgramMediaService programMediaService) {
+        this.programMediaService = programMediaService;
     }
     
    @RequestMapping("add")
    @ResponseStatus(HttpStatus.CREATED)
-    public void add(Admin admin) throws Exception {
-            adminService.add(admin);
+    public void add(ProgramMedia programMedia) throws Exception {
+            programMediaService.add(programMedia);
     }
     
     @RequestMapping("delete")
     //@ResponseStatus(HttpStatus.OK) // 응답 상태 코드 값의 기본은 "200(OK)" 이다.
     public void delete(
             @RequestParam("no") int no) throws Exception {
-       adminService.delete(no);
+       programMediaService.delete(no);
     }
     
     @RequestMapping("list")
     public Object list(
             ) {
-        return adminService.list();
+        return programMediaService.list();
     }
     
     @RequestMapping("update")
     @ResponseStatus(HttpStatus.OK)
-    public void update(Admin admin) throws Exception {
-        adminService.update(admin);
+    public void update(ProgramMedia programMedia) throws Exception {
+        programMediaService.update(programMedia);
     }
     
     @RequestMapping("{no}")
-    public Admin view(@PathVariable int no) throws Exception {
-        return adminService.get(no);
+    public ProgramMedia view(@PathVariable int no) throws Exception {
+        return programMediaService.get(no);
     }
     
 }

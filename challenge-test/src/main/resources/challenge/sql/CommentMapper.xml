@@ -22,6 +22,13 @@
 		inner join POST p on p.pono = cm.cmtno 
 		order by pono desc
 	</select>
+	
+	<select id="listWithNo" resultMap="CommentMap" parameterType="int">
+              select pono, pocont, podate, tmlno 
+        from CMT cm
+        inner join POST p on p.pono = cm.cmtno
+        where tmlno=#{value}
+    </select>
 
 	<insert id="insert" parameterType="Comment">
 	   insert into CMT(cmtno, tmlno)

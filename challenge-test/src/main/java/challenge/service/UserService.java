@@ -12,5 +12,7 @@ public interface UserService {
     int add(User user);
     int update(User user);
     int delete(int userNo);
+    User getWithId(String id);
+    boolean isExist(String id, String password);
 }
 

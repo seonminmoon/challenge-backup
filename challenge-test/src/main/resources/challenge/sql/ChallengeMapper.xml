@@ -31,10 +31,10 @@
     from CHAL
   </select>
   
-  <insert id="insert" parameterType="Timeline"
-          useGeneratedKeys="true" keyColumn="pono" keyProperty="no">
-    insert into POST(pocont, podate) 
-    values(#{content}, now());
+  <insert id="insert" parameterType="Challenge"
+          useGeneratedKeys="true" keyColumn="chno" keyProperty="no">
+    insert into CHAL(chtitl, chcont, chpath) 
+        values (#{title}, #{cotent}, 0)
   </insert>
   
   <!-- 파라미터의 타입이 primitive type이나 wrapper 클래스, String 클래스인 경우

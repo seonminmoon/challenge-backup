@@ -38,12 +38,6 @@ public class CommentController {
         return commentService.list();
     }
     
-    // Comment 카드 + 좋아요 같이 가져오기 도전 !!!!
-//    @RequestMapping("listWithLike")
-//    public Object listWithLike() {
-//        return commentService.listWithLike();
-//    }
-    
     @RequestMapping("update")
     @ResponseStatus(HttpStatus.OK)
     public void update(Comment comment) throws Exception {
@@ -55,6 +49,9 @@ public class CommentController {
         return commentService.get(no);
     }
     
-    
+    @RequestMapping("listWithNo/{no}")
+    public Object listWithNo(@PathVariable int no) throws Exception {
+        return commentService.listWithNo(no);
+    }
     
 }

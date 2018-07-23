@@ -214,14 +214,11 @@ body:not(#footer) {
 #sh-contentCol {
   top: 27px;
   left: 27px;
-  /*   border: 1px solid green; */
   float: left;
   width: 700px;
-  /* min-height: 600px; */
   min-height: 800px;
   padding: 0;
   margin: 27px;
-  /* position: absolute; */
 }
 
 /* content CSS 끝*/
@@ -229,14 +226,9 @@ body:not(#footer) {
 /* right sideMenu CSS 시작*/
 
 #sh-sideMenu {
-    /* display: flex; */
-    /* float: right; */
-    /* right: 486px; */
-    /* height: 55%; */
     border: 1px solid green;
     width: 200px;
     min-height: 300px;
-    /* float: right; */
     position: fixed;
     overflow: hidden;
     margin-left: 734px;
@@ -298,6 +290,10 @@ body:not(#footer) {
   padding: 7px;
 }
 
+.sh-tl-card-reply-load {
+	border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
 
 
 .sh-tl-card-header {
@@ -349,7 +345,6 @@ body:not(#footer) {
 /* 글작성 히든 CSS 시작 */
 
 .sh-tl-review-write {
-	border: 1px solid green;
   width: 94%;
   position: relative;
   display: inline-block;

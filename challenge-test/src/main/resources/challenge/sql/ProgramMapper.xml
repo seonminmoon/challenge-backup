@@ -7,7 +7,7 @@
 
   <resultMap type="Program" id="ProgramMap">
     <id column="pno" property="no"/>
-    <result column="pstno" property="postNO"/>
+    <result column="pstno" property="postNo"/>
     <result column="bas_addr" property="address"/>
     <result column="det_addr" property="addDetail"/>
     <result column="pname" property="name"/>
@@ -28,7 +28,7 @@
     <result column="presult" property="proResult"/>
 
     <result column="cno" property="challengeNo"/>
-    <result column="plno" property="planNo"/>
+    <!-- <result column="plno" property="planNo"/> -->
 
     <association property="trainerNo" javaType="Trainer">
       <id column="uno" property="userNo"/>
@@ -37,10 +37,10 @@
     </association>
 
     <collection property="medias" ofType="ProgramMedia">
-        <id column="pmedno" property="no"/>
+        <id column="pno" property="no" />
+        <id column="pmedno" property="pmno"/>
         <result column="ppath" property="path"/>
         <result column="pmtype" property="state"/>
-        <result column="pno" property="program"/>
     </collection>
   </resultMap>
 
@@ -59,31 +59,45 @@
 
   <select id="selectList"
           resultMap="ProgramMap" parameterType="map">
-    select name, sdt, edt, max_qty
-    from pms2_program
+    select *
+    from PROG
     <!-- limit #{startRowNo}, #{pageSize} -->
   </select>
-  <!--
-    ArrayList<Task> list = new new ArrayList<>();
-    while (rs.next()) {
-       Task task = new Task();
-       task.setName(rs.getString("name"));
-       task.setStartDate(rs.getDate("sdt"));
-       task.setEndDate(rs.getDate("edt"));
-       task.setMaxQty(rs.getInt("max_qty"));
-       list.add(task);
-    }
-  -->
 
-  <insert id="insert" parameterType="Program">
-    insert into pms2_program(name,dscrt,max_qty,sdt,edt)
-    values(#{name},#{description},#{maxQty},#{startDate},#{endDate})
+  <insert id="insert" parameterType="Object"
+        useGeneratedKeys="true" keyColumn="pno" keyProperty="no">
+    insert into PROG(
+        pstno, bas_addr, det_addr, 
+        sdt, edt, 
+        pname, 
+        minqty, maxqty,
+        pprice, pdesc, ptype, 
+        pgoal, pgoal_N, 
+        pth, ptover, 
+        pday, ptime, 
+        pstate, presult,
+        cno, trnno)
+    values(
+        #{postNo},#{address},#{addDetail},
+        #{startDate},#{endDate}, 
+        #{name},
+        #{minQty}, #{maxQty}, 
+        #{price}, #{description}, #{proType}, 
+        #{proGoal}, #{proGoalNum},
+        #{proTh}, #{proTurn}, 
+        #{proDay}, #{proTime}, 
+        #{proState}, #{proResult},
+        #{challengeNo}, 3)
   </insert>
 
+
+
   <select id="selectOne" parameterType="string" resultMap="ProgramMap">
-    select name, dscrt, sdt, edt, max_qty
-    from pms2_program
-    where name=#{value}
+    select p.PNO,p.PNAME,p.PPRICE,u.uname
+    from PROG p 
+    inner join TRN t on p.TRNNO =  t.TRNNO
+    inner join USER u on t.TRNNO = u.UNO
+    
   </select>
 
   <select id="selectOneWithMembers" parameterType="string" resultMap="ProgramMap">

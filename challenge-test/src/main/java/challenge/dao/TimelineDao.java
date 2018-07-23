@@ -10,4 +10,5 @@ public interface TimelineDao {
     int insert(Timeline timeline);
     int update(Timeline timeline);
     Timeline selectOne(int no);
+    int timelineLike(int no);
 }

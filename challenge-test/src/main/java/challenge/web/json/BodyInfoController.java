@@ -36,6 +36,7 @@ public class BodyInfoController {
     @RequestMapping("list")
     public Object list(
             ) {
+        
         return bodyInfoService.list();
     }
     

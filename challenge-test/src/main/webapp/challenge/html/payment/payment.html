@@ -10,8 +10,11 @@
 
   <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
   <script src="../../js/common.js"></script>
+  <script src="../../js/payment/payment.js"></script>
   <script src="../../js/header/header_white.js"></script>
   <script src="../../js/footer/footer.js"></script>
+  <!-- iamport.payment.js -->
+  <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
 
 </head>
 
@@ -25,8 +28,8 @@
         <div class="pay-0-img"></div>
       </div>
       <div class="pay-0-right">
-        <div class="order-title"><b>3개월 하체단련</b></div>
-        <div><span class="trainer-img"></span><span class="pay-0-trainer">튼튼하체</span></div>
+        <div class="order-title project-title"></div>
+        <div><span class="trainer-img"></span><span class="pay-0-trainer p-trainer"></span></div>
       </div>
       <div class="order-table">
         <table class="order-table1">
@@ -39,13 +42,13 @@
           </thead>
           <tbody>
             <tr class="order-tr">
-              <td class="order-td">3개월 하체단련</td>
-              <td class="order-td">
-                <span class="pay-nu">-</span>
-                <span>1</span>
-                <span class="pay-nu">+</span>
+              <td class="order-td project-title" id="test-name"></td>
+              <td class="order-td" >
+                <a onclick="MinusClick();" href="#!" class="pay-nu">-</a>
+                <span id="p-value">1</span>
+                <a onclick="AddClick();" href="#!" class="pay-nu">+</a>
               </td>
-              <td class="order-td">100,000원</td>
+              <td class="order-td p-price" id="test-price"></td>
             </tr>
           </tbody>
         </table>
@@ -77,7 +80,7 @@
         </div>
         <div class="pay-2-right">
           <div>총 결제금액 (VAT 포함)</div>
-          <span class="pay-2-price">100,000원</span>
+          <span class="pay-2-price p-price"></span>
         </div>
       </div>
     </div>
@@ -100,13 +103,20 @@
         Challenge는 에스크로 결제 서비스를 이용하여 안전한 거래 환경을 제공합니다. Challenge를 통해 결제 진행 시 관련 정책에 의해 보호 받을 수 있습니다.
       </div>
       <div class="pay-2-right">
-        <button type="button" class="btn-payment">결제하기</button>
+        <button onclick="requestPay()" class="btn-payment">결제하기</button>
+        
       </div>
     </div>
   </div>
   <!--container-->
 
-<footer id="footer"></footer >
+<footer id="footer"></footer>
+
+
+
+
+
+
 </body>
 
 </html>

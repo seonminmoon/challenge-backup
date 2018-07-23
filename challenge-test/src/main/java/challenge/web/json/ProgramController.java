@@ -24,6 +24,7 @@ public class ProgramController {
    @RequestMapping("add")
    @ResponseStatus(HttpStatus.CREATED)
     public void add(Program program) throws Exception {
+           System.out.println("컨트롤러는 들어옴");
             programService.add(program);
     }
 

@@ -15,7 +15,9 @@ public class BodyInfo extends Member implements Serializable {
     private Double weight; // 몸무게
     private Double muscle; // 근력량
     private Double fat;
-   
+    
+    
+  
     public int getBno() {
         return bno;
     }

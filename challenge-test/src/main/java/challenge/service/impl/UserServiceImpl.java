@@ -1,6 +1,7 @@
 // 업무로직 구현체 - 고객사 마다 다른 구현을 할 수 있다.
 package challenge.service.impl;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -17,6 +18,25 @@ public class UserServiceImpl implements UserService {
     
     public UserServiceImpl(UserDao userDao) {
         this.userDao = userDao;
+    }
+    
+    @Override
+    public User getWithId(String id) {
+        User user = userDao.selectOneWithId(id);
+        return user;
+    }
+    
+    @Override
+    public boolean isExist(String email, String password) {
+        HashMap<String,Object> params = new HashMap<>();
+        params.put("email", email);
+        params.put("password", password);
+        
+        System.out.println("UserServiceImpl의 아이디 : " + email + ", 비번 : " + password);
+        
+        System.out.println(userDao.count(params));
+        
+        return userDao.count(params) > 0 ? true : false;
     }
     
     @Override

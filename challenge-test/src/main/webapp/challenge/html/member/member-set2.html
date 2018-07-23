@@ -112,7 +112,7 @@ h3 {
                         <p>체지방량</p> 
                         <input type="text"id="setfat" style="display: block;">
                         <div class="nextBox" style="float:left;">
-                            <button id="update">수정 완료</button>
+                            <button id="updBtn">수정 완료</button>
                         </div>
                     </div>
 
@@ -173,15 +173,55 @@ function openCity(evt, cityName) {
     <script src="../../js/footer/footer.js"></script>
     <script src="../../js/member/mb-menu.js"></script>
 <script>
-
-    $.getJSON(serverRoot + "/json/bodyInfo/list", (data) => {
+       /* $.getJSON(serverRoot + "/json/bodyInfo/list", (data) => {
             console.log(data);
             $(setmdate).val(data[0].bdate);
             $(setweight).val(data[0].weight);
             $(setmuscle).val(data[0].muscle);
             $(setfat).val(data[0].fat);
-           });
+           }); */
+     var no = 1;
+   
+    
+    
+        $.getJSON(serverRoot + "/json/bodyInfo/" + no, (data) => {
+            console.log(data);
+            $(setmdate).val(data.bdate);
+            $(setweight).val(data.weight);
+            $(setmuscle).val(data.muscle);
+            $(setfat).val(data.fat);
+        }); 
+        
+        $("#updBtn").click(() => {
+            $.post(serverRoot + "/json/bodyInfo/update", {
+                mdate: $(setmdate).val(),
+                weight: $(setweight).val(),
+                muscle: $(setmuscle).val(),
+                fat: $(setfat).val()
+            }, () => {
+                location.href = "member-set2.html";
+            });
+        });
+        
+        
+        
+     /* else { // 새 글 등록
+        var tags = $(".detail-view");
+        tags.css("display", "none");
+        
+        $("#addBtn").click(() => {
+            $.post(serverRoot + "/json/board/add", {
+                title: $(fTitle).val(),
+                content: $(fContent).val()
+            }, () => {
+                location.href = "list.html";
+            });
+        });
+    } */
+    
 </script>
+
+
   
 
 </body>

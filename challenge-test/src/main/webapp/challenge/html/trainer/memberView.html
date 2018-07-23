@@ -52,7 +52,6 @@
         </div>
         </div>
         <div class="memberTable">
-          <div class="programDate">2018.07.10 ~ 2018.12.10</div>
           <table class="demo-table">
             <thead>
               <tr>
@@ -106,6 +105,14 @@
 			      <div class="contentName">참여 프로그램</div>
 			      <div id="mProgram" class="modalContent"></div>
 			    </li>
+          <li class="modalProgram">
+            <div class="contentName">프로그램 시작일</div>
+            <div id="mDate1" class="modalContent"></div>
+          </li>
+          <li class="modalProgram">
+            <div class="contentName">프로그램 종료일</div>
+            <div id="mDate2" class="modalContent"></div>
+          </li>
 			    <li class="modalTarget">
 			      <div class="contentName">목표</div>
 			      <div id="mTarget" class="modalContent"></div>
@@ -151,13 +158,19 @@
 <script id="tr-template" type="text/x-handlebars-template">
 {{#each list}}
 <tr>
-    <td><a href='memberView.html?uno={{uno}}'>{{members.email}}</a></td>
-    <td><a href='memberView.html?uno={{uno}}'>{{members.name}}</a></td>
-    <td><a href='memberView.html?uno={{uno}}'>{{members.sex}}</a></td>
-    <td><a href='memberView.html?uno={{uno}}'>{{name}}</a></td>
-    <td><a href='memberView.html?uno={{uno}}'>{{diary.dcheck}}</a></td>
+    <td><a href='memberView.html?pno={{no}}&uno={{users.userNo}}'>{{users.email}}</a></td>
+    <td><a href='memberView.html?pno={{no}}&uno={{users.userNo}}'>{{users.name}}</a></td>
+    <td><a href='memberView.html?pno={{no}}&uno={{users.userNo}}'>{{users.sex}}</a></td>
+    <td><a href='memberView.html?pno={{no}}&uno={{users.userNo}}'>{{name}}</a></td>
+    <td><a href='memberView.html?pno={{no}}&uno={{users.userNo}}'>{{diarys.dcheck}}</a></td>
 </tr>
 {{/each}}
+</script>
+<script id="li-template" type="text/x-handlebars-template">
+{{#each list}}
+	<li class="tabSelect">{{name}}</li>
+{{/each}}
+<li class="tabSelect active">전체</li>
 </script>
 <script src="../../js/trainer/memberList.js"></script>
 <script src="../../js/trainer/memberView.js"></script>

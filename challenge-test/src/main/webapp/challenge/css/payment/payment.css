@@ -191,3 +191,9 @@ li>input {
   width: 25%;
   float: left;
 }
+
+.pay-nu {text-decoration: none; color:#000000;}
+.pay-nu:link {text-decoration: none; color:#000000;}
+.pay-nu:visited {text-decoration: none; color:#000000;}
+.pay-nu:active {text-decoration: none; color:#000000;}
+.pay-nu:hover {text-decoration: none; color:#000000;}

@@ -55,5 +55,10 @@ public class CommentServiceImpl implements CommentService {
     public int update(Comment comment) {
         return commentDao.update(comment);
     }
+    
+    @Override
+    public List<Comment> listWithNo(int no) {
+        return commentDao.listWithNo(no);
+    }
 
 }

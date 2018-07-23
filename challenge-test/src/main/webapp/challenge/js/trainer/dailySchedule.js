@@ -321,6 +321,10 @@ $("#weekly-schedule").dayScheduleSelector({
                 '<div>'
 });
 
+$("#weekly-schedule").on('selected.artsy.dayScheduleSelector', function (e, selected) {
+  /* selected is an array of time slots selected this time. */
+});
+
 /*$("#weekly-schedule").data('artsy.dayScheduleSelector').deserialize({
   '0': [['00:30', '01:30']]
 });*/

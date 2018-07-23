@@ -42,7 +42,7 @@
       <div class="manageContent">
         <div class="memberName">
           <div class="rightBox">
-          <input type="text" placeholder="회원명을 입력해 주세요.">
+          <input id="userName" type="text" placeholder="회원명을 입력해 주세요.">
           <button type="button" name="button">검색</button>
         </div>
         </div>
@@ -84,11 +84,11 @@
 <script id="tr-template" type="text/x-handlebars-template">
 {{#each list}}
 <tr>
-    <td><a href='memberView.html?uno={{uno}}'>{{members.email}}</a></td>
-    <td><a href='memberView.html?uno={{uno}}'>{{members.name}}</a></td>
-    <td><a href='memberView.html?uno={{uno}}'>{{members.sex}}</a></td>
-    <td><a href='memberView.html?uno={{uno}}'>{{name}}</a></td>
-    <td><a href='memberView.html?uno={{uno}}'>{{diary.dcheck}}</a></td>
+    <td><a href='memberView.html?pno={{no}}&uno={{users.userNo}}'>{{users.email}}</a></td>
+    <td><a href='memberView.html?pno={{no}}&uno={{users.userNo}}'>{{users.name}}</a></td>
+    <td><a href='memberView.html?pno={{no}}&uno={{users.userNo}}'>{{users.sex}}</a></td>
+    <td><a href='memberView.html?pno={{no}}&uno={{users.userNo}}'>{{name}}</a></td>
+    <td><a href='memberView.html?pno={{no}}&uno={{users.userNo}}'>{{diarys.dcheck}}</a></td>
 </tr>
 {{/each}}
 </script>
@@ -97,7 +97,6 @@
 	<li class="tabSelect">{{name}}</li>
 {{/each}}
 <li class="tabSelect active">전체</li>
-{{toggle}}
 </script>
 <script src="../../js/trainer/memberList.js"></script>
 </body>

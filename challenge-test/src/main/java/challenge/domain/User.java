@@ -14,12 +14,6 @@ public class User implements Serializable {
     private String userPhone;
     private int userType;
     
-    
-    @Override
-    public String toString() {
-        return "User [userNo=" + userNo + ", name=" + name + ", sex=" + sex + ", email=" + email + ", password="
-                + password + ", userPath=" + userPath + ", userPhone=" + userPhone + ", userType=" + userType + "]";
-    }
     public int getUserNo() {
         return userNo;
     }
@@ -68,5 +62,8 @@ public class User implements Serializable {
     public void setUserType(int userType) {
         this.userType = userType;
     }
+    
+
+
     
 }

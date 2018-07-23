@@ -6,8 +6,8 @@
 <!-- namespace 이름은 SQL을 찾을 때 사용하는 그룹명이다.
      따라서 SQL 문을 사용하는 DAO 클래스 이름과 같게 하면
      유지보수할 때 알아보기 쉽다.
-     단순히 알아보기 쉬울 뿐만 아니라 
-     스프링 프레임워크와 연동할 때 DAO 객체를 자동 생성할 수 있다. 
+     단순히 알아보기 쉬울 뿐만 아니라
+     스프링 프레임워크와 연동할 때 DAO 객체를 자동 생성할 수 있다.
 -->
 <mapper namespace="challenge.dao.ProgramMemberDao">
 
@@ -16,14 +16,13 @@
     <result column="pname" property="name"/>
     <result column="sdt" property="startDate"/>
     <result column="edt" property="endDate"/>
-    <result column="uno" property="uno"/>
     <result column="pgoal" property="proGoal"/>
     <result column="pgoal_n" property="proGoalNum"/>
-    <collection property="diary" ofType="Diary">
+    <collection property="diarys" ofType="Diary">
         <id column="dno" property="dno"/>
         <result column="dchek" property="dcheck"/>
     </collection>
-    <collection property="members" ofType="Member">
+    <collection property="users" ofType="User">
         <id column="uno" property="userNo"/>
         <result column="mail" property="email"/>
         <result column="uname" property="name"/>
@@ -31,43 +30,44 @@
         <result column="uphon" property="userPhone"/>
     </collection>
   </resultMap>
-  
+
   <!-- SQL 문 id를 설정할 때 SQL문을 사용하는 메서드 이름과 같게하면
-       유지보수할 때 알아보기 쉽다. 
+       유지보수할 때 알아보기 쉽다.
        알아보기 쉬울 뿐만 아니라
-       스프링 프레임워크와 연동할 때 DAO객체를 자동생성하고 
+       스프링 프레임워크와 연동할 때 DAO객체를 자동생성하고
        그 메서드를 자동생성할 때 사용할 수 있다.
   -->
-  <select id="selectList" 
-          resultMap="ProgramMemberMap">
-	select u.mail, u.uname, u.sex, p.pname, d.dchek, u.uno
-	from PMEMB pm, PROG p, DIARY d, MEMB m, USER u
+  <select id="selectList" resultMap="ProgramMemberMap">
+	select distinct u.mail, u.uname, u.sex, p.pname, d.dchek, u.uno, p.pno
+	from PMEMB pm, PROG p, DIARY d, USER u
 	where pm.pno = p.pno
-	AND u.uno = m.UNO
-	AND m.uno = pm.uno
 	AND pm.pno = d.pno
+	AND u.uno = pm.uno
 	AND pm.uno = d.uno
 <!--     order by pono desc -->
   </select>
   
+  <select id="selectListWithProgram" parameterType="int" resultMap="ProgramMemberMap">
+	select distinct u.mail, u.uname, u.sex, p.pname, d.dchek, u.uno, p.pno
+	from PMEMB pm, PROG p, DIARY d, USER u
+	where pm.pno = p.pno
+	AND pm.pno = d.pno
+	AND u.uno = pm.uno
+	AND pm.uno = d.uno
+	AND p.pno = #{value}
+  </select>
+
   <!-- 파라미터의 타입이 primitive type이나 wrapper 클래스, String 클래스인 경우
        값을 꺼낼 때 프로퍼티 이름을 마음대로 해도 된다.
   -->
-  <select id="selectOne" parameterType="int" resultMap="ProgramMemberMap">
-    select u.uname, u.sex, u.uphon, p.pname, p.pgoal, d.dchek, p.pgoal_n
-	from PMEMB pm, PROG p, DIARY d, MEMB m, USER u
+  <select id="selectOne" parameterType="map" resultMap="ProgramMemberMap">
+  select distinct p.pno, u.uno, d.dno, u.uname, u.sex, u.uphon, p.pname, p.sdt, p.edt, p.pgoal, d.dchek, p.pgoal_n
+	from PMEMB pm, PROG p, DIARY d, USER u
 	where pm.pno = p.pno
-	AND u.uno = m.UNO
-	AND m.uno = pm.uno
 	AND pm.pno = d.pno
-	AND pm.uno = d.UNO
-    AND m.uno=#{value}
+	AND u.uno = pm.uno
+	AND pm.uno = d.uno
+	AND pm.pno=#{arg0} <!-- 프로그램 번호 -->
+    AND u.uno=#{arg1} <!-- 회원 번호 -->
   </select>
 </mapper>
-
-
-
-
-
-
-

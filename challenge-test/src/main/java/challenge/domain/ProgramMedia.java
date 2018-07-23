@@ -2,25 +2,18 @@ package challenge.domain;
 
 import java.io.Serializable;
 
-public class ProgramMedia implements Serializable {
+public class ProgramMedia extends Program implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    private int no;
+    private int pmno;
     private String path;
     private int state;
-    private int program;
-
-    public int getProgram() {
-        return program;
+    
+    public int getPmno() {
+        return pmno;
     }
-    public void setProgram(int program) {
-        this.program = program;
-    }
-    public int getNo() {
-        return no;
-    }
-    public void setNo(int no) {
-        this.no = no;
+    public void setPmno(int pmno) {
+        this.pmno = pmno;
     }
     public String getPath() {
         return path;

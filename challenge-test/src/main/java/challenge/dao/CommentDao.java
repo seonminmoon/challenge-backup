@@ -10,4 +10,5 @@ public interface CommentDao {
     int insert(Comment comment);
     int update(Comment comment);
     Comment selectOne(int no);
+    List<Comment> listWithNo(int no);
 }

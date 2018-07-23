@@ -1,9 +1,12 @@
 package challenge.web.json;
 
+import java.util.List;
+
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import challenge.domain.ProgramMember;
 import challenge.service.ProgramMemberService;
 
 @RestController
@@ -17,14 +20,20 @@ public class ProgramMemberController {
     }
         
     @RequestMapping("list")
-    public Object list(
-            ) {
+    public Object list() {
         return programMemberService.list();
     }
     
-    @RequestMapping("{no}")
-    public Object view(@PathVariable int no) throws Exception {
-        return programMemberService.get(no);
+    @RequestMapping("list/{no}")
+    public Object list(@PathVariable int no) {
+        return programMemberService.list(no);
+    }
+    
+    @RequestMapping("{no}/{userNo}")
+    public List<ProgramMember> view(
+            @PathVariable int no,
+            @PathVariable int userNo) throws Exception {
+        return programMemberService.get(no, userNo);
     }
     
 }

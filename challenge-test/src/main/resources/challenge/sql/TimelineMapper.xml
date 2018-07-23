@@ -53,11 +53,11 @@
 		<choose>
 			<when test="picture != ''">
 				insert into TML(tmlno, pno, uno, tmlpath)
-				values(#{no}, 2, 1, #{picture})
+				values(#{no}, 1, 1, #{picture})
 			</when>
 			<otherwise>
 				insert into TML(tmlno, pno, uno)
-				values(#{no}, 2, 1)
+				values(#{no}, 1, 1)
 			</otherwise>
 		</choose>
 	</insert>
@@ -70,6 +70,13 @@
 		from TML t
 		where pono=#{value}
 	</select>
+    
+    <select id="timelineLike" parameterType="int" resultType="int">
+	     select count(*)
+	     from TML_LK
+	     where pono=#{value}
+    </select>
+
 
 	<update id="update" parameterType="Timeline">
 		update POST set

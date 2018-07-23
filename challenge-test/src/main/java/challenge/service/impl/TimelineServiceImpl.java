@@ -55,5 +55,10 @@ public class TimelineServiceImpl implements TimelineService {
     public int update(Timeline timeline) {
         return timelineDao.update(timeline);
     }
+    
+@Override
+    public int timelineLike(int no) {
+        return timelineDao.timelineLike(no);
+    }
 
 }

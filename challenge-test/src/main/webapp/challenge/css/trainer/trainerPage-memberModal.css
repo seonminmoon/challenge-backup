@@ -129,9 +129,8 @@
 }
 
 /* 회원관리 테이블 */
-.programDate {
-  margin-bottom: 10px;
-  font-weight: bold;
+.memberTable {
+  margin-top: 20px;
 }
 .demo-table {
   border-collapse: collapse;

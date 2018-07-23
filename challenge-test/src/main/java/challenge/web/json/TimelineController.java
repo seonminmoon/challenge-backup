@@ -38,11 +38,6 @@ public class TimelineController {
         return timelineService.list();
     }
     
-    // Timeline 카드 + 좋아요 같이 가져오기 도전 !!!!
-//    @RequestMapping("listWithLike")
-//    public Object listWithLike() {
-//        return timelineService.listWithLike();
-//    }
     
     @RequestMapping("update")
     @ResponseStatus(HttpStatus.OK)
@@ -53,6 +48,11 @@ public class TimelineController {
     @RequestMapping("{no}")
     public Timeline view(@PathVariable int no) throws Exception {
         return timelineService.get(no);
+    }
+    
+    @RequestMapping("timelineLike/{no}")
+    public int timelineLike(@PathVariable int no) throws Exception {
+        return timelineService.timelineLike(no);
     }
     
 }

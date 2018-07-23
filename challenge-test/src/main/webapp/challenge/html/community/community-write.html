@@ -171,16 +171,6 @@
 <script>
 
 $("#addBtn").click(() => {
-	
-	/*
-	$.ajax({
-		type: 'POST',
-		url: '../../../json/post/add',
-	    data: {content:$(fContent).val()},
-	    async: false
-	});
-	*/
-	
 	$.ajax({
 	    type: 'POST',
         url: '../../../json/community/add',
@@ -192,22 +182,6 @@ $("#addBtn").click(() => {
 	}).done(function(){
 		location.href="community-list.html"
 	});
-	
-	/*
-    $.post("../../../json/post/add", {content:$(fContent).val()}, () => {
-        console.log($(fContent).val())});
-    
-    
-    
-    $.post("../../../json/community/add", {
-        title: $(fTitle).val(),
-        type: $(CMU_TYPE).val()
-    }, () => {
-        console.log($(fTitle).val()),
-        console.log($(CMU_TYPE).val())
-        location.href="community-list.html"
-    });
-    */
 });
 console.log("Hey")
 

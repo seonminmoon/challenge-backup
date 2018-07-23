@@ -16,9 +16,7 @@
     <result column="weight" property="weight"/>
     <result column="muscle" property="muscle"/>
     <result column="fat" property="fat"/>
-    <association property="user" javaType="Member">
-        <id column="uno" property="uno"/>
-    </association>
+    
     
   </resultMap>
   
@@ -32,37 +30,39 @@
   <select id="selectList" 
           resultMap="BodyInfoMap" 
           parameterType="map">
-    select bdate, weight, muscle, fat, bno
-    from BINFO
-    order by bno desc
     
+    SELECT u.uno,b.uno,bdate,weight,muscle,fat,bno FROM BINFO b
+    INNER JOIN USER u ON u.uno=b.uno
     <!-- limit #{startRowNo}, #{pageSize} -->
     
   </select>
   
-  <insert id="insert" parameterType="BodyInfo">
+  <!-- <insert id="insert" parameterType="BodyInfo">
     insert into CMU(cmuno, cmut, cmu_cnt, cmu_type, cmu_lk, uno) 
     values (#{no}, #{title}, 0, #{type}, 0, 1);
   </insert>
   
-  <!-- 파라미터의 타입이 primitive type이나 wrapper 클래스, String 클래스인 경우
+  파라미터의 타입이 primitive type이나 wrapper 클래스, String 클래스인 경우
        값을 꺼낼 때 프로퍼티 이름을 마음대로 해도 된다.
-  -->
+ -->
   <select id="selectOne" parameterType="int" resultMap="BodyInfoMap">
-    select bno,bdate,weight,muscle,fat,m.uno
-    from BINFO b
-    inner join MEMB m on b.uno=m.uno 
-    where uno=#{value}
+
+    SELECT u.uno,b.uno,bdate,weight,muscle,fat,bno FROM BINFO b
+    INNER JOIN USER u ON u.uno=b.uno
+    where u.uno=#{uno};
   </select>
   
-  <update id="update" parameterType="BodyInfo">
-    update POST set 
-        pocont=#{content}, 
-        podate=now()
-    where pono=#{no}
+   <update id="update" parameterType="BodyInfo">
+    update BINFO set 
+        mdate=#{bdate}, 
+        weight=#{weight},
+        muscle=#{muscle},
+        muscle=#{muscle},
+        fat=#{fat}
+    where uno=#{no};
   </update>
-  
+  <!--
   <delete id="delete" parameterType="int">
     delete from POST where pono=#{value}
-  </delete>
+  </delete>  -->
 </mapper>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>챌린지 설명</title>
+  <link rel="stylesheet" href="../../css/admin/admin-list2.css">
+  <link rel="stylesheet" href="../../css/program/card2.css">
+  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
+  <script src="../../node_modules/handlebars/dist/handlebars.min.js"></script>
+  <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="../../js/common.js"></script>
+  <script src="../../js/header/header_white.js"></script>
+  <script src="../../js/footer/footer.js"></script>
+  
+</head>
+
+<body>
+<header id="header"></header>
+  <div class="container">
+    <div class="challenge-top">
+      <img class="ch-top-img" src="../../img/challenge/bodybuilding.jpg" width="1200" height="600">
+    </div>
+
+    <div class="chal-ds" >
+     
+      
+    <div class="chal-ds1" id="aaaa"> </div>
+    </div> 
+    </div>
+
+ 
+  <!--container-->
+
+<div class="container-fluid text-center" style="background-color: #eeeeee; padding-left: 300px;padding-right: 300px;">
+        <div class="row text-center sm-f-size sm-white-i">
+          <div class="col-sm-4">
+          <i class="fas fa-burn"></i>
+            <p>현재까지 프로젝트</p>
+            <span>722</span>
+          </div>
+          <div class="col-sm-4">
+          <i class="fas fa-walking"></i>
+            <p>참여중인 챌린저</p>
+            <span>1431</span>
+          </div>
+          <div class="col-sm-4">
+            <i class="far fa-address-card"></i>
+            <p>등록된 리뷰</p>
+            <span>2684</span>
+          </div>
+        </div><br>
+      </div>
+
+  <div class="container">
+    <div class="chal-program">
+
+      <h2 class="chal-title">진행중인 프로그램</h2>
+      <div class="chal-search-filter">
+        <ul>
+          <li class="a"><a href="" class="a">가격순</a></li>
+          <li class="a">|</li>
+          <li class="a"><a href="" class="a">거리순</a></li>
+          <li class="a">|</li>
+          <li class="a"><a href="" class="a">인기순</a></li>
+        </ul>
+
+        <div class="dropdown">
+          <span class="serch-drop-bt">12개씩 보기 <i class="fas fa-angle-down"></i></span>
+          <div class="dropdown-content">
+            <a href="#">24개씩 보기</a>
+            <a href="#">36개씩 보기</a>
+            <a href="#">48개씩 보기</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="chal-row">
+        <div class="chal-column">
+          <div class="card">
+            <!-- 카드 헤더 -->
+            <div class="card-header">
+              <div class="ribbon"><span>성공 98%</span></div>
+              <div class="card-trainer"></div>
+            </div>
+            <!--  카드 바디 -->
+            <div class="card-body">
+              <span class="card-body-title">3개월 상체운동</span>
+              <span class="card-body-degree">[2기]</span>
+              <p class="card-body-price">100,000 원</p>
+              <span class="card-body-local">강남</span>
+              <span class="card-body-number">12/20 명</span>
+              <p class="card-body-score"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i></p>
+              <!--  카드 푸터 -->
+              <div class="card-footer">
+                <span class="card-footer-review table-set">리뷰 90개</span>
+                <span class="card-footer-date table-set">18/08/20 (D-50)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="chal-column">
+          <div class="card">
+            <!-- 카드 헤더 -->
+            <div class="card-header">
+              <div class="ribbon"><span>성공 98%</span></div>
+              <div class="card-trainer"></div>
+            </div>
+            <!--  카드 바디 -->
+            <div class="card-body">
+              <span class="card-body-title">3개월 상체운동</span>
+              <span class="card-body-degree">[2기]</span>
+              <p class="card-body-price">100,000 원</p>
+              <span class="card-body-local">강남</span>
+              <span class="card-body-number">12/20 명</span>
+              <p class="card-body-score"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i></p>
+              <!--  카드 푸터 -->
+              <div class="card-footer">
+                <span class="card-footer-review table-set">리뷰 90개</span>
+                <span class="card-footer-date table-set">18/08/20 (D-50)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="chal-row">
+        <div class="chal-column">
+          <div class="card">
+            <!-- 카드 헤더 -->
+            <div class="card-header">
+              <div class="ribbon"><span>성공 98%</span></div>
+              <div class="card-trainer"></div>
+            </div>
+            <!--  카드 바디 -->
+            <div class="card-body">
+              <span class="card-body-title">3개월 상체운동</span>
+              <span class="card-body-degree">[2기]</span>
+              <p class="card-body-price">100,000 원</p>
+              <span class="card-body-local">강남</span>
+              <span class="card-body-number">12/20 명</span>
+              <p class="card-body-score"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i></p>
+              <!--  카드 푸터 -->
+              <div class="card-footer">
+                <span class="card-footer-review table-set">리뷰 90개</span>
+                <span class="card-footer-date table-set">18/08/20 (D-50)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="chal-column">
+          <div class="card">
+            <!-- 카드 헤더 -->
+            <div class="card-header">
+              <div class="ribbon"><span>성공 98%</span></div>
+              <div class="card-trainer"></div>
+            </div>
+            <!--  카드 바디 -->
+            <div class="card-body">
+              <span class="card-body-title">3개월 상체운동</span>
+              <span class="card-body-degree">[2기]</span>
+              <p class="card-body-price">100,000 원</p>
+              <span class="card-body-local">강남</span>
+              <span class="card-body-number">12/20 명</span>
+              <p class="card-body-score"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i></p>
+              <!--  카드 푸터 -->
+              <div class="card-footer">
+                <span class="card-footer-review table-set">리뷰 90개</span>
+                <span class="card-footer-date table-set">18/08/20 (D-50)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="chal-nav">
+        <nav aria-label="Page navigation">
+          <ul class="pagination">
+            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+          </ul>
+        </nav>
+      </div>
+
+    </div>
+  </div>
+
+<footer id="footer"></footer>
+<script id="adlist2" type="text/x-handlebars-template">
+{{#each list}}
+        <h2 class="chal-title">{{title}}</h2>
+        <p></p>
+      </div>
+      <div class="chal-ds-cont">
+        <p>{{cotent}}</p>
+        
+      </div>
+{{/each}}
+</script>
+
+
+<script src="list.js"></script>
+</body>
+
+</html>

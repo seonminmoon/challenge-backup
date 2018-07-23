@@ -1,18 +1,27 @@
 package challenge.domain;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.List;
 
 public class Trainer extends User implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private String introduce; // 소개
     private String career; // 경력사항
-    private Date time; // 상담시간
+    private String time; // 상담시간
     private String account; // 계좌
+    private List<Program> programs;
     private String bank; // 은행명
     private int coin; // 수익금
-
+    
+    
+    
+    public List<Program> getProgram() {
+        return programs;
+    }
+    public void setProgram(List<Program> program) {
+        this.programs = program;
+    }
     public String getIntroduce() {
         return introduce;
     }
@@ -25,10 +34,10 @@ public class Trainer extends User implements Serializable {
     public void setCareer(String career) {
         this.career = career;
     }
-    public Date getTime() {
+    public String getTime() {
         return time;
     }
-    public void setTime(Date time) {
+    public void setTime(String time) {
         this.time = time;
     }
     public String getAccount() {
@@ -49,4 +58,6 @@ public class Trainer extends User implements Serializable {
     public void setCoin(int coin) {
         this.coin = coin;
     }
+    
+    
 }

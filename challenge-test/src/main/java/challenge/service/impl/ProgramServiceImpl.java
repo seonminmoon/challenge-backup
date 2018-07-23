@@ -7,6 +7,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import challenge.dao.ProgramDao;
+import challenge.dao.ProgramMediaDao;
 import challenge.domain.Program;
 import challenge.service.ProgramService;
 
@@ -15,9 +16,11 @@ import challenge.service.ProgramService;
 public class ProgramServiceImpl implements ProgramService {
 
     ProgramDao programDao;
+    ProgramMediaDao programMediaDao; 
     
-    public ProgramServiceImpl(ProgramDao programDao) {
+    public ProgramServiceImpl(ProgramDao programDao, ProgramMediaDao programMediaDao) {
         this.programDao = programDao;
+        this.programMediaDao = programMediaDao;
     }
     
     @Override

@@ -25,9 +25,14 @@ public class ProgramMemberServiceImpl implements ProgramMemberService {
         
         return programMemberDao.selectList();
     }
+    
+    @Override
+    public List<ProgramMember> list(int no) {
+        return programMemberDao.selectListWithProgram(no);
+    }
 
     @Override
-    public Object get(int no) {
-        return programMemberDao.selectOne(no);
+    public List<ProgramMember> get(int no, int userNo) {
+        return programMemberDao.selectOne(no, userNo);
     }
 }

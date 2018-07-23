@@ -1,10 +1,13 @@
 * {
   box-sizing: border-box;
   text-decoration: none;
-  line-height: 20px;
 }
 a:link {
   color: black;
+}
+
+input {
+	padding: 0 10px;
 }
 
 .omb_login {
