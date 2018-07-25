@@ -1,0 +1,451 @@
+@charset "UTF-8";
+
+.sm-mypage-body {
+  box-sizing: border-box;
+  margin-bottom: 100px;
+}
+
+/* 프로젝트 등록 서브 메뉴 */
+
+/* 이 부분은 임시 나중에 삭제 10~13*/
+#uploadSubMenu-fist a {
+ border-bottom: 1px solid black;
+ border-width: 3px;
+}
+
+.uploadSubMenu a {
+  color: black;
+  text-decoration: none;
+  padding-bottom: 5px;
+}
+
+.uploadSubMenu a:visited {
+ border-bottom: 1px solid black;
+ border-width: 3px;
+}
+
+.uploadSubMenu a:hover {
+  color: #1B3453;
+}
+
+
+.uploadSubMenu ul {
+  box-sizing: border-box;
+  border-bottom: 1px solid #666666;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  height: 35px;
+}
+
+.uploadSubMenu ul li {
+  float: left;
+  margin: 0 25px;
+}
+
+#uploadSubMenu-fist {
+  margin-left: 0;
+}
+
+/* 프로젝트 등록 본문 */
+.uploadContent {
+  box-sizing: border-box;
+  border: 1px solid #e0e0e0;
+  margin-top: 25px;
+}
+
+.uploadContent ul {
+  margin: 25px;
+  padding: 0;
+}
+
+.uploadContent li {
+  clear: both;
+  display: inline-block;
+  box-sizing: border-box;
+  border-bottom: 1px dashed #d7d7d7;
+  padding: 15px 0 20px 0;
+}
+
+#notPadding {
+  padding-top: 0;
+}
+
+.contentName {
+  width: 170px;
+  font-size: 17px;
+  font-weight: bold;
+  float: left;
+}
+
+.ucContet {
+  float: left;
+  width: 658px;
+}
+
+
+
+/* 챌린지 주제, 종목 */
+#selectTab1 {
+    border:1px solid #d7d7d7;
+    padding: 10px;
+    border-radius:2px;
+}
+
+.ucChallenge select, .ucProgram select {
+    width: 200px;
+ }
+
+#selectTab1:hover{
+    background:#cde4f7;
+    border:1px solid #41c9ff;
+}
+
+#selectTab1 option {
+  background:#fff;
+}
+
+/* 챌린지 날짜 */
+
+.challengeDate input {
+  border:1px solid #d7d7d7;
+  padding: 8px;
+  border-radius:2px;
+  width: 180px;
+}
+
+.fontStyle1 {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+/* 챌린지 프로그램 */
+.programTurnBox input {
+  border:1px solid #d7d7d7;
+  height: 32px;
+
+}
+.programTurnName {
+  float: left;
+  margin-right: 25px;
+}
+.challengeProgram {
+  float: left;
+}
+.challengeProgram input {
+    border:1px solid #d7d7d7;
+    width: 350px;
+    padding: 10px;
+}
+
+/* 챌린지 인원 */
+.minNum, .maxNum {
+  float: left;
+  width: 138px;
+}
+
+.ucNum h5, .ucTarget h5, .ucposition h5, .programTurnName h5, .challengeProgram h5 {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 8px;
+}
+
+.ucNum input {
+  border:1px solid #d7d7d7;
+  width: 90px;
+  height: 10px;
+  padding: 10px;
+}
+
+/* 챌린지 메인 이미지 등록 */
+
+#mainImg {
+  border:1px solid #eae8e8;
+  width: 500px;
+  height: 400px;
+  background: #fafafa;
+  text-align: center;
+}
+
+#mainImg .far {
+  font-size: 90px;
+  color: #bbbbbb;
+}
+
+#mainImg .imgIcon {
+  margin-top: 132px;
+}
+
+.subText1 {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.ucContet span{
+  margin-left: 220px;
+}
+
+.subText2 {
+  font-size: 14px;
+  font-weight: bold;
+  color: #757575;
+}
+
+/* 챌린지 목표 */
+.targetName {
+  float: left;
+  margin-right: 25px;
+}
+
+.targetNum {
+  float: left;
+  margin-right: 35px;
+}
+
+.targetName select, .ucpSelectBox select {
+  width: 150px;
+}
+
+.targetNumInput, .targetNumSelect{
+  float: left;
+}
+
+.targetNumInput input {
+  height: 21px;
+  border:1px solid #d7d7d7;
+  padding: 8px;
+  border-radius:2px;
+  width: 85px;
+}
+
+.targetNumSelect select {
+  margin-left: 5px;
+}
+
+/* 장소 */
+.positionBox {
+  display: inline-block;
+  width: 650px;
+}
+
+.positionName1 {
+  float: left;
+  margin-right: 20px;
+}
+
+.positionName2 {
+  float: left;
+}
+
+.positionList {
+  float: left;
+  width: 100%;
+  border-bottom: 1px solid #eae8e8;
+  padding: 20px;
+  width: 611px;
+}
+
+.ucpInputBox input {
+    border:1px solid #d7d7d7;
+    padding: 8px;
+    height: 20px;
+    width: 420px;
+}
+
+.positionContent {
+    background: #fafafa;
+    display: inline-block;
+    border: 1px solid #eae8e8;
+    border-bottom: none;
+}
+
+.positionPlus {
+  border:1px solid #d7d7d7;
+  float: left;
+  width: 651px;
+  margin-top: 10px;
+  height: 42px;
+}
+
+.positionPlus a {
+  display: inherit;
+  text-align: center;
+  padding-top: 13px;
+  font-size: 14px;
+  font-weight: bold;
+  height: 29px;
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.positionName2 .fas {
+  float: right;
+}
+
+#more {
+  display: none;
+  cursor: pointer;
+}
+
+#lessBtn {
+  display: inline-block;
+  margin-left: 370px;
+}
+/* 프로젝트 이미지 등록폼*/
+
+
+#projectfile{
+  /* padding-right: 50px; */
+
+}
+/* .proimg{ */ .ucContet ul{
+  display: inline;
+  margin: 15px -5px;
+  /*
+  width:200px;
+  height: 120px; */
+  /* margin-top: 40px; */
+  /* text-align: center; */
+
+}
+
+.proimg
+ {
+  border:1px solid #eae8e8;
+  width: 320px;
+  height: 200px;
+  background: #fafafa;
+  text-align: center;
+  display: inline-block;
+}
+
+.proimg .far {
+  /* margin-bottom: 30px; */
+  font-size: 70px;
+  color: #bbbbbb;
+  margin-top: 53px;
+}
+
+.projectfile span{
+  margin-left: 300px;
+}
+
+
+/* 가능일 */
+.scheduleBox {
+  height: 500px;
+  overflow: auto;
+}
+.schedule-rows td {
+  width: 61px;
+  height: 20px;
+  margin: 3px;
+  padding: 5px;
+  cursor: pointer;
+  border: 1px solid #c1c1c1;
+}
+
+.schedule-rows td:first-child {
+  padding: 0;
+  border: none;
+}
+
+.schedule-header th {
+  text-align: center;
+}
+
+.schedule-rows td[data-selected],
+.schedule-rows td[data-selecting] { background-color: #a3b1f1; }
+.schedule-rows td[data-disabled] { opacity: 0.2; }
+
+#lastBottom {
+  border-bottom: none;
+}
+
+/* 다음단계 버튼 */
+.nextBox {
+  float: right;
+  margin-top: 20px;
+}
+.nextBox button {
+  background: #DD1F26;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  padding: 13px;
+  width: 180px;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/

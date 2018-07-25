@@ -1,0 +1,428 @@
+/* container CSS 시작 */
+
+/* container CSS 종료 */
+
+/* MENU Link Hover Effect CSS 시작 */
+
+#sh_top_layout {
+	background-color: #000;
+}
+
+#sh-msgbox-msg ul {
+  list-style: none;
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  padding: 0;
+  width: 100%;
+}
+
+#sh-msgbox-msg ul li {
+  color: #666666;
+  border: 1px solid #EEEEEE;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#sh_sub-menu-ul div {
+  margin-top: 0;
+}
+
+#sh-msg-dropdown-content {
+  min-width: 250px;
+  padding: 0;
+}
+
+#sh-msgbox-msg {
+  min-height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#sh-msgbox-more {
+  display: flex;
+  justify-content: space-around;
+  font-size: 12px;
+  padding-top: 5px;
+}
+
+#sh-msgbox-top {
+  padding-bottom: 0px;
+}
+
+#sh-msgbox-top ul {
+  list-style: none;
+  justify-content: space-between;
+  display: flex;
+  padding: 4px;
+}
+
+#sh-msgbox-top ul li {
+  padding: 2px;
+  font-size: 12px;
+}
+
+.sh-msgbox {
+  font-size: 15px;
+  background-color: #EEEEEE;
+  width: 100%;
+  height: 24px;
+}
+
+#sh_top_menu_user {
+  padding-top: 2px;
+}
+
+.sh-user-inline-block {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#sh-user-name {
+  font-size: 15px;
+  color: #EEEEEE;
+}
+
+#sh-user-name-div {
+  margin-left: 6px;
+}
+
+#sh-user-icon {
+  height: 10px;
+  font-size: 36px;
+  color: #EEEEEE;
+}
+
+#sh-user-icon-tri {
+  color: #666666;
+}
+
+#sh-bell-icon:hover {
+  color: #DD1F26;
+}
+
+#sh-bell-icon {
+  height: 10px;
+  font-size: 23px;
+  color: #EEEEEE;;
+  margin-top: -3px;
+}
+
+.sh_top_link li a, .sh_top_link li a:visited, .sh_top_link li a:hover, .sh_top_link li a:active {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: relative;
+  transition: 0.2s color ease;
+  text-decoration: none;
+  color: #fff;
+}
+
+a.sh_after:after {
+  content: "";
+  transition: 0.2s all ease;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+}
+
+a.sh_after:after {
+  bottom: -0.25em;
+}
+
+a.sh_after:after {
+  height: 5px;
+  height: 0.2rem;
+  width: 0;
+  background: #d73444;
+}
+
+a.sh_menu:after {
+  left: 0;
+}
+
+a.sh_after:hover:after {
+  width: 100%;
+}
+
+/* MENU Link Hover Effect CSS 종료 */
+
+/* MENU Sub-Menu 시작 */
+
+.sh_dropdown {
+  position: relative;
+}
+
+.sh_dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #FFFFFF;
+  border: 1px solid rgb(102, 102, 102, 0.2);
+  min-width: 160px;
+  z-index: 999;
+  overflow: hidden;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 7px;
+  padding-left: 7px;
+  margin-top: 10px;
+}
+
+.sh_dropdown:hover .sh_dropdown-content {
+  display: block;
+}
+
+.sh_dropdown-content a {
+  color: #666666;
+  padding: 12px 0px;
+  margin: 10px;
+}
+
+.sh_dropdown-content a:hover {
+  background-color: #FFFFFF;
+}
+
+#sh_sub-menu-ul {
+  padding-left: 0px;
+}
+
+#sh_sub-menu-ul>li a {
+  display: inline-block !important;
+  padding-bottom: 1px;
+  padding-top: 1px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  color: #666666;
+}
+
+/* MENU Sub-Menu 종료 */
+
+/*헤더 CSS 시작*/
+
+.sh_top_menu {
+  padding: 12px 13px;
+}
+
+.sh_top_logo_wrap {
+  float: left;
+  display: inline-block;
+}
+
+#logo-link {
+  position: relative;
+  z-index: 999;
+  text-decoration: none;
+}
+
+#logo-link:visited {
+  text-decoration: none;
+}
+
+#sh_top_layout {
+  
+  height: 76px;
+}
+
+#sh_logo {
+  height: 42px;
+}
+
+.sh_top_link {
+  float: right;
+  margin-top: 14px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.sh_top_link>li {
+  float: right;
+}
+
+.sh_logo_name {
+  float: left;
+}
+
+#sh_logo_h1 {
+  margin-bottom: 0px;
+  margin-top: 12px;
+  color: #fff;
+}
+
+#sh_logo_img {
+  margin: 14px 0px 0px 0px;
+  float: left;
+}
+
+.sh_top_wrap {
+  margin: auto;
+  width: 1200px;
+  height: 76px;
+}
+
+.sh_top_utile_wrap {
+  height: 76px;
+}
+
+.sh_top_utile_wrap>ul {
+  font-weight: bold;
+  font-size: 1em;
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+}
+
+.sh_top_link>li a {
+  display: block;
+  color: #fff;
+  text-align: center;
+  padding-left: 2px;
+  padding-right: 2px;
+  text-decoration: none;
+}
+
+.sh_top_link>li a:hover {}
+
+/* 헤더 search button CSS 시작 */
+
+#sh_content {
+  height: 4px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 2px;
+  margin-left: 226px;
+}
+
+#sh_content.on {
+  -webkit-animation-name: in-out;
+  animation-name: in-out;
+  -webkit-animation-duration: 0.7s;
+  animation-duration: 0.7s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+
+.sh-input {
+  margin-top: 11px;
+  box-sizing: border-box;
+  width: 19px;
+  height: 19px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  background: none;
+  color: #DD1F26;
+  font-size: 12px;
+  font-weight: 400;
+  font-family: Roboto;
+  outline: 0;
+  -webkit-transition: width 0.4s ease-in-out, border-radius 0.8s ease-in-out, padding 0.2s;
+  transition: width 0.4s ease-in-out, border-radius 0.8s ease-in-out, padding 0.2s;
+  -webkit-transition-delay: 0.4s;
+  transition-delay: 0.4s;
+  -webkit-transform: translate(-100%, -50%);
+  -ms-transform: translate(-100%, -50%);
+  transform: translate(-100%, -50%);
+}
+
+.sh-searchBtn {
+  background: none;
+  position: absolute;
+  top: 8px;
+  left: 0;
+  height: 37px;
+  width: 50px;
+  padding: 0;
+  border-radius: 100%;
+  outline: 0;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+  -webkit-transform: translate(-100%, -50%);
+  -ms-transform: translate(-100%, -50%);
+  transform: translate(-100%, -50%);
+}
+
+.sh-searchBtn:before {
+  content: "";
+  position: absolute;
+  width: 11px;
+  height: 3px;
+  background-color: #fff;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  margin-top: 10px;
+  margin-left: 19px;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+}
+
+.sh-close {
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+  -webkit-transition-delay: 0.4s;
+  transition-delay: 0.4s;
+}
+
+.sh-close:before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 3px;
+  margin-top: 1px;
+  margin-left: -6px;
+  background-color: #fff;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.sh-close:after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 3px;
+  background-color: #fff;
+  margin-top: 1px;
+  margin-left: -6px;
+  cursor: pointer;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.sh-square {
+  margin-top: 11px;
+  box-sizing: border-box;
+  padding: 10px 22px 10px 13px;
+  width: 231px;
+  height: 40px;
+  border: 3px solid #fff;
+  border-radius: 0;
+  background: none;
+  color: #666666;
+  font-size: 14px;
+  font-weight: 400;
+  outline: 0;
+  -webkit-transition: width 0.4s ease-in-out, border-radius 0.4s ease-in-out, padding 0.2s;
+  transition: width 0.4s ease-in-out, border-radius 0.4s ease-in-out, padding 0.2s;
+  -webkit-transition-delay: 0.4s, 0s, 0.4s;
+  transition-delay: 0.4s, 0s, 0.4s;
+  -webkit-transform: translate(-100%, -50%);
+  -ms-transform: translate(-100%, -50%);
+  transform: translate(-100%, -50%);
+}
+
+/* search button CSS 종료*/
+
+/*헤더 CSS 종료*/
+
+/* 메인 이미지 시작 */

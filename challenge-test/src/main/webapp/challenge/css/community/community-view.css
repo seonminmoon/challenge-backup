@@ -1,0 +1,310 @@
+/*명예의 전당 페이지 : class 이름 앞에 hf- 붙이기*/
+ @charset "UTF-8";
+
+/*커뮤니티 통합 css*/
+* {
+  box-sizing: border-box;
+
+}
+.clear {
+    clear: both;
+    width: 0;
+    height: 0;
+    font: 0 Arial;
+    line-height: 0;
+}
+
+
+a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+.jumbotron-heading {
+  font-size: 25px;
+  font-weight: bold;
+  color: #1B3453;
+}
+.all-form {
+  display: inline-block;
+}
+main {
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+.fa-user-circle {
+  font-size: 30px;
+}
+.board-form{
+  padding:2rem 2rem 0 0; background-color:white;
+}
+.jh-left-board {
+
+  width:900px;
+  float:left;
+}
+/* 사이드바 컨텐츠 메뉴 css*/
+.hf-sidebar { /* 사이드바 전체*/
+  width:300px;
+  height: 1200px;
+  float: right;
+  padding: 10px;
+  overflow: hidden;
+}
+.notice-table {
+  border: solid 1px rgb(166, 166, 164);
+  margin-top:20px;
+  padding: 5px 10px 10px 10px;
+}
+.rank-list {
+  border: solid 1px rgb(166, 166, 164);
+  padding: 5px 10px 10px 10px;
+}
+#notice-table {
+  width:100%;
+  border-spacing:0;
+  padding:0;
+}
+.jh-allview {
+  position: absolute;
+  top: 195px;
+  right: 50px;
+}
+#notice-table > tbody > tr > td {
+  height:30px;
+  border-bottom:1px dashed #eee;
+}
+#notice-table > tbody > tr > td > span {
+  color: #666; font-size: 13px; letter-spacing: -0.5px; line-height: 1.4;
+}
+/* 사이드바 컨텐츠 메뉴 css*/
+/*커뮤니티 통합 css*/
+
+/* 페이지 링크 시작*/
+.btnPagelink{
+  margin: 10px;
+  text-align: center;
+
+}
+.LF_page_link_current { /*현재페이지*/
+    color: #f00 !important;
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    font-size: 15px;
+      font-weight: bold;
+      line-height: 22px;
+      text-decoration: none;
+
+      vertical-align: middle;
+      margin: 0 2px;
+      padding: 0 5px;
+}
+.LF_page_link {  /*다른페이지*/
+    color: #777 !important;
+    font-size: 15px;
+      font-weight: bold;
+      line-height: 22px;
+      text-decoration: none;
+
+      vertical-align: middle;
+      margin: 0 2px;
+      padding: 0 5px;
+}
+/* 페이지 링크 끝*/
+
+.jh-left-content  {
+
+}
+.content-info {
+  border-top: 1px solid gray;
+  position: relative;
+
+}
+.inner-content {
+  position: relative;
+  width: 150px;
+  height: 50px;
+  padding: 10px;
+  text-align: center;
+  display: inline-block;
+
+}
+.tm-vi-re {
+  text-align: right;
+  width: 600px;
+  display: inline-block;
+  float: right;
+}
+.tm-vi-re>ul{padding:10px;}
+.tm-vi-re>ul>li {
+  display:inline; /* 세로나열을 가로나열로 변경 */
+  border-left:1px solid #999; /* 각 메뉴의 왼쪽에 "|" 표시(분류 표시) */
+  font:bold 12px Dotum; /* 폰트 설정 - 12px의 돋움체 굵은 글씨로 표시 */
+  padding:0 10px; /* 각 메뉴 간격 */ }
+.tm-vi-re>ul>li:first-child{border-left:none;}
+
+.text-content {
+text-align: center;
+padding-top:  80px;
+}
+textarea {
+  display: block;
+  border:none;
+  margin: 20px auto;
+  resize: none;
+
+}
+
+
+.btn-primary {
+  padding-top: 6px;
+  width: 130px;
+  height: 50px;
+}
+.form-control {
+  float: left;
+  width: 700px;
+  height: 80px;
+  display: inline;
+  rows="6";
+  margin: 0;
+}
+.reBtn {
+  height: 80px;
+  width: 130px;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 4px;
+  background-color: #f4511e;
+  color: #FFFFFF;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.reBtn span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.reBtn span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.reBtn:hover span {
+  padding-right: 25px;
+}
+
+.reBtn:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.prev-next {
+  border-top: 1px solid rgba(84, 87, 84, 0.44);
+  border-bottom: 1px solid rgba(84, 87, 84, 0.44);
+}
+#jh-prev{
+  margin: 20px;
+  display: inline-block;
+}
+#jh-next{
+  margin: 20px;
+  display: inline-block;
+}
+dl.cmt_item {
+
+    float: left;
+    position: relative;
+    clear: both;
+    width: 700px;
+    padding: 18px 20px 13px 20px;
+  }
+  dl.cmt_item dt {
+    float: left;
+    color: #666;
+    line-height: 1.5;
+}
+dl.cmt_item dt .nameui {
+      font-size: 9pt;
+    float: left;
+    color: #48688f !important;
+    display: block;
+    line-height: 1.2;
+}
+dl.cmt_item dt span.date {
+    float: left;
+    display: inline-block;
+    font: normal 9px Verdana;
+    color: #999;
+    letter-spacing: -1px;
+    line-height: 1.2;
+    padding-right: 7px;
+}
+.date em {
+  margin: 2px;
+  font-style: normal;
+}
+dd {
+    display: block;
+    -webkit-margin-start: 40px;
+}
+dl.cmt_item dd.opinion .upDown {
+    float: right;
+    width: 85px;
+    margin: -4px 0 0 0;
+}
+dl.cmt_item dd.opinion .upDown .line {
+    height: 18px;
+    padding: 5px 0 0 0;
+    margin: 0;
+}
+dl.cmt_item dd.opinion .upDown .line em.up {
+    color: #ec2000!important;
+    float: left;
+    padding: 0 0 0 12px;
+    color: #666;
+    font: normal 12px 돋움,Dotum,Helvetica, sans-serif;
+    text-align: left;
+}
+dl.cmt_item dd.opinion .upDown .line #CountedClicks {
+    float: right;
+    font: bold 10px Verdana;
+    color: #999;
+}
+dl.cmt_item dd.usertxt {
+  margin: 0;
+    text-align: left;
+    float: left;
+    width: 480px;
+    padding: 20px 0 7px 0;
+    color: #434343;
+    overflow: hidden;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+.cmt_list {
+    clear: both;
+    width: 100%;
+
+}
+#cmt-list {
+  overflow: hidden;
+  border-top: 1px solid #dedede;
+  border-bottom: 1px solid #dedede;
+}
+.jh-profile {
+	float:left;
+	
+}

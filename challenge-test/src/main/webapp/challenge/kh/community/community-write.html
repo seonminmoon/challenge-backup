@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>글 쓰기</title>
+  <!-- Bootstrap core CSS -->
+  <link href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- font core CSS -->
+  <link rel="stylesheet" href="../../css/common.css">
+  <!-- icon tools-->
+  <link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
+  <!-- page css-->
+  <link rel="stylesheet" href="../../css/community/community-write.css">
+  
+
+
+
+</head>
+
+<body>
+  <div id="header"></div>
+  <main id="main">
+    <div class="hf-wrapper">
+
+      <section class="jumbotron text-left board-form">
+        <div class="hf-header-container">
+          <h3 class="jumbotron-heading">자유게시판</h3>
+          <br>
+          <p style="border:1px solid gray;"></p>
+        </div>
+      </section>
+      <div class="all-form">
+        <div class="hf-sidebar">
+          <div class="notice-table-form" style="padding: 20px 20px 13px 20px;">
+            <div class="notice-table">
+
+              <h3 style="padding-bottom:6px;"><span style="font-size:14px;font-weight:bold;">공지사항</span></h3>
+              <div class="jh-allview">
+                <a href="경로를 써야합니다"><span style="font-size:11px;color: #666666;">+ 전체보기</span></a>
+              </div>
+
+              <table id="notice-table">
+                <tbody>
+                  <tr>
+                    <td>
+                      <span>
+                          <i class="fas fa-bullhorn" style="margin:0 6px 0 0;"></i>공지사항 제목이 들어갈곳입니다</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span>
+                          <i class="fas fa-bullhorn" style="margin:0 6px 0 0;"></i>공지사항 제목이 들어갈곳입니다</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span>
+                          <i class="fas fa-bullhorn" style="margin:0 6px 0 0;"></i>공지사항 제목이 들어갈곳입니다</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span>
+                          <i class="fas fa-bullhorn" style="margin:0 6px 0 0;"></i>공지사항 제목이 들어갈곳입니다</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="jh-allview">
+              <a href="경로를 써야합니다"><span style="font-size:11px;color: #666666;">+ 전체보기</span></a>
+            </div>
+          </div>
+          <div class="notice-table-form" style="padding: 20px 20px 13px 20px;">
+            <div class="rank-list">
+              <div style="padding-bottom:7px;">
+                <h3><span style="font-size:14px; font-weight:bold;">다이어터 랭킹</span></h3>
+              </div>
+
+              <table id="notice-table">
+                <tbody>
+                  <tr>
+                    <td>
+                      <span>
+                          <strong style="color:red;">1</strong><i class="fas fa-user" style="margin:10px"></i>사용자 아이디</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span>
+                          <strong style="color:red;">2</strong><i class="fas fa-user" style="margin:10px"></i>사용자 아이디</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span>
+                          <strong style="color:red;">3</strong><i class="fas fa-user" style="margin:10px"></i>사용자 아이디</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span>
+                          <strong>4</strong><i class="fas fa-user" style="margin:10px"></i>사용자 아이디</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="jh-left-board">
+          <div class="jh-left-content">
+          </div>
+          <div module="calendar_Write">
+
+            <div class="header">
+              <h1>글 쓰기</h1>
+            </div>
+            <div class="content">
+              <div class= "xans-calendar-write">
+              <table border="1" summary="">
+
+                <tr>
+                  <th>머리말</th>
+                  <td><select name="category" id="CMU_TYPE">
+                        <option value="">게시판 선택</option>
+                        <option value="1">비포&애프터</option>
+                        <option value="2">자유게시판</option>
+                      </select></td>
+
+                </tr>
+                <tr>
+                  <th>제목</th>
+                  <td><input id="fTitle" type="text" autocomplete="off" class="cmu-content" id="cmu-content" name="title" value=""></td>
+                </tr>
+                <tr>
+                  <th>내용</th>
+                  <td><textarea id="fContent"></textarea></td>
+                </tr>
+                <tr>
+                  <th>이미지</th>
+                  <td><input accept="video/*,  video/x-m4v, video/webm, video/x-ms-wmv, video/x-msvideo, video/3gpp, video/flv, video/x-flv, video/mp4, video/quicktime, video/mpeg, video/ogv, .ts, .mkv, image/*"  name="file" title="사진 또는 동영상 첨부" type="file" id="upload"><button>첨부하기</button></td>
+                </tr>
+
+              </table>
+            </div>
+            </div>
+            <div class="btnArea">
+              <button id="addBtn" type="button" class="input-view">등록</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!--all form-->
+    </div>
+
+  </main>
+
+
+  <div id="footer"></div>
+  <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../../js/common.js"></script>
+<script src="../../js/header/header_white.js"></script>
+<script src="../../js/footer/footer.js"></script>
+<script>
+
+$("#addBtn").click(() => {
+	$.ajax({
+	    type: 'POST',
+        url: '../../../json/community/add',
+        data:{
+            title: $(fTitle).val(),
+            type: $(CMU_TYPE).val(),
+            content:$(fContent).val()
+        }
+	}).done(function(){
+		location.href="community-list.html"
+	});
+});
+console.log("Hey")
+
+</script>
+</body>
+
+</html>

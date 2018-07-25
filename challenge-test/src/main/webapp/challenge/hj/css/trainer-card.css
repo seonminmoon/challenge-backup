@@ -1,0 +1,76 @@
+*	{	margin: 0; padding: 0;
+	/* do: inherit; */
+}
+a {
+	 text-decoration: none;
+	 color: inherit;
+}
+.trainer {
+	height: 190px;
+	width: 350px;
+	display: inline-block;
+	box-sizing: border-box;
+	padding: 20px;
+	/* position: relative; */
+	border-radius: 5px;
+	border: 1px solid red;
+}
+
+.trainer-header {
+	width: 100px;
+	height: 100%;
+	float: left;
+	position: relative;
+	border: 1px solid red;
+}
+
+.trainer-img {
+	position: absolute;
+	top: 0px; right: 0px;
+	height: 70px; width: 70px;
+	border: 1px solid #eeeeee;
+	background-image: url("../img/man.jpg");
+	background-size: 70px 100%;
+	border-radius: 50%;
+}
+.trainer-body {
+	border: 1px solid red;
+	box-sizing: border-box;
+	height: 100%;
+	width: 250px;
+	padding: 10px;
+	line-height: 22px;
+	border: 1px solid #eeeeee;
+	float: right;
+	border-radius: 0 5px 5px 0;
+}
+.trainer-body-title {
+	font-weight: 700;
+	font-size: 1.2em;
+	margin-right: 5px;
+}
+.trainer-body-name {margin-right: 10px;}
+.trainer-body-numger {}
+.trainer-body-score {color: gold; line-height: 27px;}
+.trainer-footer {
+	float: right;
+	width: 270px;
+	box-sizing: border-box;
+	padding-top: 5px;
+	border-top: 1px solid #eeeeee;
+	height: 40px;
+	position: absolute;
+	bottom: 0;
+}
+.table-set {
+	display: table-cell;
+	width: 50%;
+}
+
+.trainer-footer-review {
+}
+.trainer-footer-date {
+}
+.trainer:hover {
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

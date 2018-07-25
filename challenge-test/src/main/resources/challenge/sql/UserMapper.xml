@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="challenge.dao.UserDao">
+	<resultMap type="User" id="UserMap">
+		<id column="uno" property="userNo" />
+		<result column="uname" property="name" />
+		<result column="sex" property="sex" />
+		<result column="mail" property="email" />
+		<result column="pwd" property="password" />
+		<result column="uphon" property="userPhone" />
+		<result column="upath" property="userPath" />
+		<result column="utype" property="userType" />
+	</resultMap>
+
+	<select id="selectList" resultMap="UserMap" parameterType="map">
+		select uno, uname, sex, mail, pwd, uphon, upath, utype
+		from USER
+		order
+		by uno asc
+	</select>
+
+	<insert id="insert" parameterType="Object" useGeneratedKeys="true"
+		keyColumn="uno" keyProperty="userNo">
+		insert into USER(uname, sex, mail, pwd, uphon, upath, utype)
+		values(#{name},#{sex},#{email},password(#{password}),#{userPhone},#{userPath},#{userType})
+	</insert>
+
+	<select id="selectOne" parameterType="int" resultMap="UserMap">
+		select uno,
+		uname, sex, mail, pwd, uphon, upath, utype
+		from USER
+		where uno=#{value}
+	</select>
+
+	<select id="selectOneWithId" parameterType="String"
+		resultMap="UserMap">
+		select uno, uname, sex, mail, pwd, uphon, upath, utype
+		from
+		USER
+		where mail=#{value}
+	</select>
+
+
+	<select id="selectOneWithPassword" parameterType="map"
+		resultMap="UserMap">
+		select uno, uname, sex, mail, pwd, uphon, upath
+		from USER
+		where mail=#{email} and pwd=password(#{password})
+	</select>
+
+	<select id="count" parameterType="map" resultType="int">
+		select
+		count(*)
+		from USER
+		where mail=#{email} and pwd=password(#{password})
+	</select>
+
+
+	<update id="update" parameterType="User">
+		update USER set
+		uname=#{name},
+		sex=#{sex},
+		mail=#{email},
+		pwd=password(#{password}),
+		uphon=#{userPhone},
+		upath=#{userPath},
+		utype=#{userType}
+		where uno=#{userNo}
+	</update>
+
+	<delete id="delete" parameterType="int">
+		delete from USER where
+		uno=#{value}
+	</delete>
+</mapper>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <h1 class="tl-user-name-json sh-tl-user-name">ddd</h1>
+</body>
+<script>
+  var obj;
+  $.ajax({
+      method: "GET",
+      dataType: "json",
+      url: "http://localhost:8888/challenge-project" + "/json/auth/loginUser",
+      async: false
+    })
+    .done(function(data) {
+      obj = data;
+      console.log(data)
+      console.log("데이터는 : " + data)
+    });
+  
+  console.log(obj)
+  console.log(obj.name)
+</script>
+
+</html>

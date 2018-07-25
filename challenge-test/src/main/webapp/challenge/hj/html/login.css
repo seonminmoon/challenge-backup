@@ -1,0 +1,159 @@
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  line-height: 20px;
+}
+a:link {
+  color: black;
+}
+
+.omb_login {
+  margin-left: 400px;
+  margin-top: 100px;
+  margin-bottom: 200px;
+  width: 400px;
+  display: inline-block;
+  text-align: center;
+}
+.form-control {
+  width: 100%;
+  height: 38px;
+  margin: 6px 0;
+  border: 1px solid #666666;
+  border-radius: 3px;
+
+}
+.loginBtn {
+  width: 100%;
+  height: 38px;
+  margin: 10px 0;
+  background-color: #1B3453;
+  border-radius: 3px;
+  border: #1B3453;
+  color: #ffffff;
+}
+
+.loginBtn:hover {
+  background-color: black;
+}
+
+.login-left {
+  float: left;
+}
+.login-right {
+  float: right;
+}
+
+.login-row {
+  overflow: hidden;
+  vertical-align: middle;
+  margin: 5px 0;
+}
+.login-row::befor {
+  clear:both;
+}
+.input-login {
+  margin: 0 auto;
+}
+
+.login-out {
+  width: 70px;
+  height: 50px;
+  border-radius: 3px;
+  vertical-align: middle;
+  position: relative;
+  overflow: hidden;
+}
+
+.naver {
+  background-color: #00c73c;
+  float: left;
+  margin-left: 36px;
+  margin-right: 16px;
+}
+
+.facebook {
+  background-color: #29487d;
+  float: left;
+  color: white;
+  margin-right: 16px;
+}
+
+.google {
+  background-color: #f53e28;
+  float: left;
+  margin-right: 16px;
+}
+
+.kakao {
+  background-color: #f8df00;
+  float: left;
+}
+
+.naverLogo {
+    width: 52px;
+    position: absolute;
+    left: 9px;
+    top: -2px;
+}
+.googleLogo {
+    width: 52px;
+    position: absolute;
+    left: 13px;
+    top: -3px;
+}
+.kakaoLogo {
+    width: 72px;
+    position: absolute;
+    left: 1px;
+    top: -4px;
+}
+.login-out > i {
+    position: absolute;
+    top: 8px;
+    left: 28px;
+    font-size: 30px;
+}
+
+.outLo {
+  position:absolute;
+  margin-top:4px;
+  left:31px;
+  top:6px;
+  color: white;
+}
+
+.oror {
+  margin: 10px 0 20px 0;
+  font-size: 22px;
+}
+
+.join {
+  margin: 9px 0;
+  overflow: hidden;
+}
+.join::after {
+  clear: both;
+}
+
+.joinBtn {
+  display: inline-block;
+  position: relative;
+  background-color: black;
+  width: 185px;
+  height: 40px;
+  border-radius: 3px;
+  overflow: hidden;
+  font-size: 15px;
+}
+.joinBtn:hover {
+  background-color: #1B3453;
+}
+.joinUser {
+	float: left;
+	margin-right: 10px;
+}
+.joinTrainer {
+	float: right;
+}
+
