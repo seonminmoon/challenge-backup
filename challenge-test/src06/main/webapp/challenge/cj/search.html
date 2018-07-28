@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='UTF-8'>
+  <title>검색</title>
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="test.css">
+  <link rel="stylesheet" href="hover.css">
+  <link rel="stylesheet" href="gallery.css">
+  <link rel="stylesheet" href="Progress.css">
+  <link rel="stylesheet" href="header_white.css">
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web:900" rel="stylesheet">
+    <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.css">
+
+
+<!-- 헤더 시작 -->
+  <div id="sh_top_layout">
+    <header class="sh_top_wrap">
+      <a href="#">
+        <div class="sh_top_logo_wrap">
+          <h1 id="sh_logo_img"><img id="sh_logo" src="red-logo.png" alt=""></h1>
+          <div class="sh_logo_name">
+            <h1 id="sh_logo_h1" style="font-family:'Titillium Web';"><i>CHALLENGE</i></h1>
+          </div>
+        </div>
+      </a>
+
+
+      <!-- 드롭다운 서브메뉴 시작-->
+      <div class="sh_top_utile_wrap">
+        <ul class="sh_top_link">
+          <li class="sh_top_menu">
+            <form id="sh_content">
+              <input type="text" name="sh-input" class="sh-input" placeholder="">
+              <button class="sh-searchBtn" type="reset"></button>
+            </form>
+          </li>
+          <li class="sh_top_menu sh_dropdown">
+            <a class="sh_menu sh_after" href="#">커뮤니티</a>
+            <div class="sh_dropdown-content">
+              <ul id="sh_sub-menu-ul">
+                <li><a class="sh_menu sh_after" href="#">명예의전당</a></li>
+                <li><a class="sh_menu sh_after" href="#">비포&애프터</a></li>
+                <li><a class="sh_menu sh_after" href="#">질문과답변</a></li>
+                <li><a class="sh_menu sh_after" href="#">자유게시판</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="sh_top_menu sh_dropdown">
+            <a class="sh_menu sh_after " href="#">프로그램</a>
+            <div class="sh_dropdown-content">
+              <ul id="sh_sub-menu-ul">
+                <li><a class="sh_menu sh_after" href="#">추천프로그램</a></li>
+                <li><a class="sh_menu sh_after" href="#">인기프로그램</a></li>
+                <li><a class="sh_menu sh_after" href="#">진행중인프로그램</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="sh_top_menu sh_dropdown sh_top_menu_user">
+            <a href="#"><i id="sh-bell-icon" class="fas fa-bell"></i></a>
+            <div id="sh-msg-dropdown-content" class="sh_dropdown-content">
+              <ul id="sh_sub-menu-ul">
+                <div id="sh-msgbox-top" class="sh-msgbox">
+                  <ul>
+                    <li>알림(<span>0</span>)</li>
+                  </ul>
+                </div>
+                <div id="sh-msgbox-msg">
+                    <ul>
+                      <li>메세지가 없습니다.</li>
+                    </ul>
+                </div>
+                <div class="sh-msgbox"><span id="sh-msgbox-more">더보기</span></div>
+              </ul>
+            </div>
+          </li>
+          <li id="sh_top_menu_user" class="sh_top_menu sh_dropdown">
+            <a href="#">
+              <div class="sh-user-inline-block">
+                <i id="sh-user-icon" class="fas fa-user-circle"></i>
+              </div>
+              <div id="sh-user-name-div" class="sh-user-inline-block">
+                <span id="sh-user-name">SUHYEON PARK</span>
+              </div>
+              <div class="sh-user-inline-block">
+                <i id="sh-user-icon-tri" class="fas fa-caret-down"></i>
+              </div>
+            </a>
+            <div class="sh_dropdown-content">
+              <ul id="sh_sub-menu-ul">
+                <li><a class="sh_menu sh_after" href="#">마이페이지</a></li>
+                <li><a class="sh_menu sh_after" href="#">운동관리</a></li>
+                <li><a class="sh_menu sh_after" href="#">메시지</a></li>
+                <li><a class="sh_menu sh_after" href="#">운동후기</a></li>
+                <li><a class="sh_menu sh_after" href="#">계정설정</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <!-- 드롭다운 서브메뉴 종료-->
+
+    </header>
+  </div>
+
+
+      <div class="container">
+        <div class="body">
+          <div class="left_menu">
+            <br><br><br>
+            <h2>프로젝트</h2>
+            <div id="title">
+              <br>
+              <h5>운동종목</h5>
+
+              <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action">헬스</a>
+                <a href="#" class="list-group-item list-group-item-action">수영</a>
+                <a href="#" class="list-group-item list-group-item-action">검도</a>
+                <a href="#" class="list-group-item list-group-item-action">태권도</a>
+                <a href="#" class="list-group-item list-group-item-action">요가</a>
+                <a href="#" class="list-group-item list-group-item-action">복싱</a>
+                <a href="#" class="list-group-item list-group-item-action">필라테스</a>
+                <a href="#" class="list-group-item list-group-item-action">댄스</a>
+                <a href="#" class="list-group-item list-group-item-action">기타</a>
+              </div>
+
+            </div>
+
+            <div>
+              <br>
+              <h5>챌린지</h5>
+              <nav id="menu">
+                <h2><a href="#sub1"> 다이어트</a></h2>
+                <ul id="sub1">
+                  <li><a href="#">하비탈출</a></li>
+                  <li><a href="#">상비탈출</a></li>
+                </ul>
+                <h2><a href="#sub2"> 자세교정</a></h2>
+                <ul id="sub2">
+                  <li><a href="#">허리</a></li>
+                  <li><a href="#">목</a></li>
+                </ul>
+
+                <h2><a href="#sub3"> 체력강화</a></h2>
+                <ul id="sub3">
+                  <li><a href="#">달리기</a></li>
+                  <li><a href="#">윗몸일으키기</a></li>
+                  <li><a href="#">팔굽혀펴기</a></li>
+                </ul>
+              </nav>
+            </div>
+
+            <br><br>
+            <h5>가격</h5>
+            <div class="money">
+              <input type="range" class="custom-range" id="customRange" name="points1">
+              <input type="text" id="min_price" name="min_price" data-min="10000" placeholder="Min price" />
+              <input type="text" id="max_price" name="max_price" data-max="1000000" placeholder="Max price" />
+              <button type="submit" class="button">검색</button>
+            </div>
+
+
+            <br><br>
+            <h5>기간</h5>
+            <input type="range" class="custom-range" id="customRange" name="points1">
+            <input type="date" name="date" /> <input type="date" name="date" />
+            <button type="submit" class="button">검색</button>
+
+
+
+          </div>
+          <!--header-->
+
+
+          <div class="content">
+            <div class="sort_list">
+              <span class="popularity">인기순</span>
+              <span class="Distance">거리순</span>
+              <span class="Price">가격순</span>
+            </div>
+            <br><br>
+            <div class="box_wrap">
+              <div class="box hover">
+                <ul class="gallery">
+                  <div class="ga-hover">
+                    <a href="#">
+                      <div class="thumb ">
+                        <div class="img_area">
+                          <img src="pro.PNG" alt="이미지썸네일" class="img-thumbnail" style="border:1px solid #000;
+                              border-radius: 60px;
+                              width:80px;
+                              heigt:80px;">
+                        </div>
+                        <!-- img_area-->
+                        <img src="http://placehold.it/200x180" alt="이미지" class="img-thumbnail">
+                      </div>
+                      <!-- thumb -->
+                      <a href="#">
+                        <div class="text">
+
+                          <div><b>3개월 10kg 감량</b></div>
+                          <div class="therm inner-therm" style="background-color: rgb(243, 128, 61);
+                      height: 20px; width: 80%;">
+                            <span style="padding:0px 80px;">80%
+             </span>
+                          </div>
+                          <div>start D-20 (18.06.07)</div>
+                          <div>100,000원</div>
+                          <div>23 / 30명 강남, 서초</div>
+                          <div>#헬스 #근력운동 #식단관리</div>
+                        </div>
+
+                        <div class="hover_cont">
+<pre>
+       3개월 10kg 감량
+
+    성공률 89%의 프로젝트!!
+개인별 맞춤 상담으로 체계적인진행
+
+      벌써 5회차 프로젝트
+         시작입니다!!
+       ~~~~~~~~~~~~~~
+         ~~~~~~~~~~
+</pre>
+                        </div>
+                        <!--hover_cont-->
+                      </a>
+                    </a>
+                  </div>
+                </ul>
+              </div>
+              <!--  hover  -->
+
+
+              <div class="box hover">
+                <ul class="gallery">
+                  <div class="ga-hover">
+                    <a href="#">
+                      <div class="thumb ">
+                        <div class="img_area">
+                          <img src="pro.PNG" alt="이미지썸네일" class="img-thumbnail" style="border:1px solid #000;
+                              border-radius: 60px;
+                              width:80px;
+                              heigt:80px;">
+                        </div>
+                        <!-- img_area-->
+                        <img src="http://placehold.it/200x180" alt="이미지" class="img-thumbnail">
+                      </div>
+                      <!-- thumb -->
+                      <a href="#">
+                        <div class="text">
+
+                          <div><b>3개월 10kg 감량</b></div>
+                          <div class="therm inner-therm" style="background-color: rgb(243, 128, 61);
+                     height: 20px;width: 60%;">
+                            <span style="padding:0px 80px;">60%
+                     </span>
+                          </div>
+                          <!-- <div class="progress progress-striped active">
+                      <div class="progress-bar progress-bar-danger"
+                       role="progressbar"
+                      aria-valuenow="25"
+                      aria-valuemin="0"
+                      aria-valuemax="50"
+                      style="width: 55%">
+                        <span class="sr-only">45% Complete</span> -->
+
+
+                          <div>start D-20 (18.06.07)</div>
+                          <div>100,000원</div>
+                          <div>23 / 30명 강남, 서초</div>
+                          <div>#헬스 #근력운동 #식단관리</div>
+                        </div>
+
+                        <div class="hover_cont">
+                          <pre>
+       3개월 10kg 감량
+
+   성공률 89%의 프로젝트!!
+개인별 맞춤 상담으로 체계적인진행
+
+     벌써 5회차 프로젝트
+        시작입니다!!
+      ~~~~~~~~~~~~~~
+        ~~~~~~~~~~
+                    </pre>
+                        </div>
+                        <!--hover_cont-->
+                      </a>
+                    </a>
+                  </div>
+                </ul>
+              </div>
+
+
+              <div class="box hover">
+                <ul class="gallery">
+                  <div class="ga-hover">
+                    <a href="#">
+                      <div class="thumb ">
+                        <div class="img_area">
+                          <img src="pro.PNG" alt="이미지썸네일" class="img-thumbnail" style="border:1px solid #000;
+                              border-radius: 60px;
+                              width:80px;
+                              heigt:80px;">
+                        </div>
+                        <!-- img_area-->
+                        <img src="http://placehold.it/200x180" alt="이미지" class="img-thumbnail">
+                      </div>
+                      <!-- thumb -->
+                      <a href="#">
+                        <div class="text">
+
+                          <div><b>3개월 10kg 감량</b></div>
+                          <div class="therm inner-therm" style="background-color: rgb(243, 128, 61);
+                     height: 20px;width: 40%;">
+                            <span style="padding:00px 80px;">40%
+                     </span>
+                          </div>
+                          <!-- <div class="progress progress-striped active">
+                      <div class="progress-bar progress-bar-danger"
+                       role="progressbar"
+                      aria-valuenow="25"
+                      aria-valuemin="0"
+                      aria-valuemax="50"
+                      style="width: 55%">
+                        <span class="sr-only">45% Complete</span> -->
+
+
+                          <div>start D-20 (18.06.07)</div>
+                          <div>100,000원</div>
+                          <div>23 / 30명 강남, 서초</div>
+                          <div>#헬스 #근력운동 #식단관리</div>
+                        </div>
+
+                        <div class="hover_cont">
+                          <pre>
+  3개월 10kg 감량
+
+성공률 89%의 프로젝트!!
+개인별 맞춤 상담으로 체계적인진행
+
+벌써 5회차 프로젝트
+  시작입니다!!
+ ~~~~~~~~~~~~~~
+    ~~~~~~~~~~
+                    </pre>
+                        </div>
+                        <!--hover_cont-->
+                      </a>
+                    </a>
+                  </div>
+                </ul>
+              </div>
+              <br><br><br><br>
+
+
+              <div class="box hover">
+                <ul class="gallery">
+                  <div class="ga-hover">
+                    <a href="#">
+                      <div class="thumb ">
+                        <div class="img_area">
+                          <img src="pro.PNG" alt="이미지썸네일" class="img-thumbnail" style="border:1px solid #000;
+                      border-radius: 60px;
+                      width:80px;
+                      heigt:80px;">
+                        </div>
+                        <!-- img_area-->
+                        <img src="http://placehold.it/200x180" alt="이미지" class="img-thumbnail">
+                      </div>
+                      <!-- thumb -->
+                      <a href="#">
+                        <div class="text">
+
+                          <div><b>3개월 10kg 감량</b></div>
+                          <div class="therm inner-therm" style="background-color: rgb(243, 128, 61);
+             height: 20px; width: 80%;">
+                            <span style="padding:0px 80px;">80%
+             </span>
+                          </div>
+                          <!-- <div class="progress progress-striped active">
+              <div class="progress-bar progress-bar-danger"
+               role="progressbar"
+              aria-valuenow="25"
+              aria-valuemin="0"
+              aria-valuemax="50"
+              style="width: 55%">
+                <span class="sr-only">45% Complete</span> -->
+
+
+                          <div>start D-20 (18.06.07)</div>
+                          <div>100,000원</div>
+                          <div>23 / 30명 강남, 서초</div>
+                          <div>#헬스 #근력운동 #식단관리</div>
+                        </div>
+
+                        <div class="hover_cont">
+                          <pre>
+3개월 10kg 감량
+
+성공률 89%의 프로젝트!!
+개인별 맞춤 상담으로 체계적인진행
+
+벌써 5회차 프로젝트
+시작입니다!!
+~~~~~~~~~~~~~~
+ ~~~~~~~~~~
+            </pre>
+                        </div>
+                        <!--hover_cont-->
+                      </a>
+                    </a>
+                  </div>
+                </ul>
+              </div>
+
+              <div class="box hover">
+                <ul class="gallery">
+                  <div class="ga-hover">
+                    <a href="#">
+                      <div class="thumb ">
+                        <div class="img_area">
+                          <img src="pro.PNG" alt="이미지썸네일" class="img-thumbnail" style="border:1px solid #000;
+                      border-radius: 60px;
+                      width:80px;
+                      heigt:80px;">
+                        </div>
+                        <!-- img_area-->
+                        <img src="http://placehold.it/200x180" alt="이미지" class="img-thumbnail">
+                      </div>
+                      <!-- thumb -->
+                      <a href="#">
+                        <div class="text">
+
+                          <div><b>3개월 10kg 감량</b></div>
+                          <div class="therm inner-therm" style="background-color: rgb(243, 128, 61);
+             height: 20px;width: 40%;">
+                            <span style="padding:00px 80px;">40%
+             </span>
+                          </div>
+                          <!-- <div class="progress progress-striped active">
+              <div class="progress-bar progress-bar-danger"
+               role="progressbar"
+              aria-valuenow="25"
+              aria-valuemin="0"
+              aria-valuemax="50"
+              style="width: 55%">
+                <span class="sr-only">45% Complete</span> -->
+
+
+                          <div>start D-20 (18.06.07)</div>
+                          <div>100,000원</div>
+                          <div>23 / 30명 강남, 서초</div>
+                          <div>#헬스 #근력운동 #식단관리</div>
+                        </div>
+
+                        <div class="hover_cont">
+                          <pre>
+3개월 10kg 감량
+
+성공률 89%의 프로젝트!!
+개인별 맞춤 상담으로 체계적인진행
+
+벌써 5회차 프로젝트
+시작입니다!!
+~~~~~~~~~~~~~~
+ ~~~~~~~~~~
+            </pre>
+                        </div>
+                        <!--hover_cont-->
+                      </a>
+                    </a>
+                  </div>
+                </ul>
+              </div>
+              <div class="box hover">
+                <ul class="gallery">
+                  <div class="ga-hover">
+                    <a href="#">
+                      <div class="thumb ">
+                        <div class="img_area">
+                          <img src="pro.PNG" alt="이미지썸네일" class="img-thumbnail" style="border:1px solid #000;
+                      border-radius: 60px;
+                      width:80px;
+                      heigt:80px;">
+                        </div>
+                        <!-- img_area-->
+                        <img src="http://placehold.it/200x180" alt="이미지" class="img-thumbnail">
+                      </div>
+                      <!-- thumb -->
+                      <a href="#">
+                        <div class="text">
+
+                          <div><b>3개월 10kg 감량</b></div>
+                          <div class="therm inner-therm" style="background-color: rgb(243, 128, 61);
+             height: 20px;width: 10%;">
+                            <span style="padding:0px 80px;">10%
+             </span>
+                          </div>
+                          <!-- <div class="progress progress-striped active">
+              <div class="progress-bar progress-bar-danger"
+               role="progressbar"
+              aria-valuenow="25"
+              aria-valuemin="0"
+              aria-valuemax="50"
+              style="width: 55%">
+                <span class="sr-only">45% Complete</span> -->
+
+
+                          <div>start D-20 (18.06.07)</div>
+                          <div>100,000원</div>
+                          <div>23 / 30명 강남, 서초</div>
+                          <div>#헬스 #근력운동 #식단관리</div>
+                        </div>
+
+                        <div class="hover_cont">
+                          <pre>
+  3개월 10kg 감량
+
+성공률 89%의 프로젝트!!
+개인별 맞춤 상담으로 체계적인진행
+
+벌써 5회차 프로젝트
+  시작입니다!!
+ ~~~~~~~~~~~~~~
+    ~~~~~~~~~~
+            </pre>
+                        </div>
+                        <!--hover_cont-->
+                      </a>
+                    </a>
+                  </div>
+                </ul>
+              </div>
+
+              <div class="box hover">
+                <ul class="gallery">
+                  <div class="ga-hover">
+                    <a href="#">
+                      <div class="thumb ">
+                        <div class="img_area">
+                          <img src="pro.PNG" alt="이미지썸네일" class="img-thumbnail" style="border:1px solid #000;
+                              border-radius: 60px;
+                              width:80px;
+                              heigt:80px;">
+                        </div>
+                        <!-- img_area-->
+                        <img src="http://placehold.it/200x180" alt="이미지" class="img-thumbnail">
+                      </div>
+                      <!-- thumb -->
+                      <a href="#">
+                        <div class="text">
+
+                          <div><b>3개월 10kg 감량</b></div>
+                          <div class="therm inner-therm" style="background-color: rgb(243, 128, 61);
+                      height: 20px; width: 80%;">
+                            <span style="padding:0px 80px;">80%
+              </span>
+                          </div>
+                          <div>start D-20 (18.06.07)</div>
+                          <div>100,000원</div>
+                          <div>23 / 30명 강남, 서초</div>
+                          <div>#헬스 #근력운동 #식단관리</div>
+                        </div>
+
+                        <div class="hover_cont">
+                          <pre>
+  3개월 10kg 감량
+
+  성공률 89%의 프로젝트!!
+개인별 맞춤 상담으로 체계적인진행
+
+벌써 5회차 프로젝트
+  시작입니다!!
+  ~~~~~~~~~~~~~~
+  ~~~~~~~~~~
+                    </pre>
+                        </div>
+                        <!--hover_cont-->
+                      </a>
+                    </a>
+                  </div>
+                </ul>
+              </div>
+              <!--  hover  -->
+
+
+              <div class="box hover">
+                <ul class="gallery">
+                  <div class="ga-hover">
+                    <a href="#">
+                      <div class="thumb ">
+                        <div class="img_area">
+                          <img src="pro.PNG" alt="이미지썸네일" class="img-thumbnail" style="border:1px solid #000;
+                              border-radius: 60px;
+                              width:80px;
+                              heigt:80px;">
+                        </div>
+                        <!-- img_area-->
+                        <img src="http://placehold.it/200x180" alt="이미지" class="img-thumbnail">
+                      </div>
+                      <!-- thumb -->
+                      <a href="#">
+                        <div class="text">
+
+                          <div><b>3개월 10kg 감량</b></div>
+                          <div class="therm inner-therm" style="background-color: rgb(243, 128, 61);
+                     height: 20px;width: 60%;">
+                            <span style="padding:0px 80px;">60%
+                     </span>
+                          </div>
+                          <!-- <div class="progress progress-striped active">
+                      <div class="progress-bar progress-bar-danger"
+                       role="progressbar"
+                      aria-valuenow="25"
+                      aria-valuemin="0"
+                      aria-valuemax="50"
+                      style="width: 55%">
+                        <span class="sr-only">45% Complete</span> -->
+
+
+                          <div>start D-20 (18.06.07)</div>
+                          <div>100,000원</div>
+                          <div>23 / 30명 강남, 서초</div>
+                          <div>#헬스 #근력운동 #식단관리</div>
+                        </div>
+
+                        <div class="hover_cont">
+                          <pre>
+3개월 10kg 감량
+
+성공률 89%의 프로젝트!!
+개인별 맞춤 상담으로 체계적인진행
+
+벌써 5회차 프로젝트
+시작입니다!!
+~~~~~~~~~~~~~~
+~~~~~~~~~~
+                    </pre>
+                        </div>
+                        <!--hover_cont-->
+                      </a>
+                    </a>
+                  </div>
+                </ul>
+              </div>
+
+
+              <div class="box hover">
+                <ul class="gallery">
+                  <div class="ga-hover">
+                    <a href="#">
+                      <div class="thumb ">
+                        <div class="img_area">
+                          <img src="pro.PNG" alt="이미지썸네일" class="img-thumbnail" style="border:1px solid #000;
+                              border-radius: 60px;
+                              width:80px;
+                              heigt:80px;">
+                        </div>
+                        <!-- img_area-->
+                        <img src="http://placehold.it/200x180" alt="이미지" class="img-thumbnail">
+                      </div>
+                      <!-- thumb -->
+                      <a href="#">
+                        <div class="text">
+
+                          <div><b>3개월 10kg 감량</b></div>
+                          <div class="therm inner-therm" style="background-color: rgb(243, 128, 61);
+                     height: 20px;width: 40%;">
+                            <span style="padding:00px 80px;">40%
+                     </span>
+                          </div>
+                          <!-- <div class="progress progress-striped active">
+                      <div class="progress-bar progress-bar-danger"
+                       role="progressbar"
+                      aria-valuenow="25"
+                      aria-valuemin="0"
+                      aria-valuemax="50"
+                      style="width: 55%">
+                        <span class="sr-only">45% Complete</span> -->
+
+
+                          <div>start D-20 (18.06.07)</div>
+                          <div>100,000원</div>
+                          <div>23 / 30명 강남, 서초</div>
+                          <div>#헬스 #근력운동 #식단관리</div>
+                        </div>
+
+                        <div class="hover_cont">
+                          <pre>
+    3개월 10kg 감량
+
+  성공률 89%의 프로젝트!!
+개인별 맞춤 상담으로 체계적인진행
+
+  벌써 5회차 프로젝트
+  시작입니다!!
+~~~~~~~~~~~~~~
+  ~~~~~~~~~~
+                    </pre>
+                        </div>
+                        <!--hover_cont-->
+                      </a>
+                    </a>
+                  </div>
+                </ul>
+              </div>
+
+
+            </div>
+            <ul class="pagination ">
+              <li class="disabled"><a class="page-link" href="#">«</a></li>
+              <!--disabled 클릭할수 없게만듬-->
+              <li class="active">
+                <!-- active는 현재 페이지를 의미-->
+                <span class="page-link">1 <span class="sr-only">(current)</span></span>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">4</a></li>
+              <li class="page-item"><a class="page-link" href="#">5</a></li>
+              <li class="page-item"><a class="page-link" href="#">»</a></li>
+            </ul>
+
+
+
+
+
+          </div>
+        </div>
+        <!-- 푸터 시작 -->
+<div id="sh_foot_layout">
+  <footer class="sh_foot_wrap">
+    <div class="sh_foot_logo">
+
+    </div>
+    <div class="sh_foot_utile_wrap">
+      <ul class="sh_foot_link">
+        <li> <img id="sh_foot-logo-img" src="white-logo.png" alt="sh-footer-logo"> </li>
+        <li><a href="#">직원검색</a></li>
+        <li><a href="#">사이트맵</a></li>
+        <li><a href="#">이메일집단수집거부</a></li>
+        <li><a href="#">개인정보취급방침</a></li>
+      </ul>
+    </div>
+    <address>우) 21990 인천광역시 연수구 송도미래로 26(송도동 213-3)  <span class="tel">Tel: 032)770-8400</span> <span class="fax">Fax: 032)770-8709</span> </address>
+    <p class="copy">COPYRIGHT (C) KOREA POLAR RESEARCH INSTITUTE ALL RIGHT RESERVED</p>
+  </footer>
+</div>
+<!-- 푸터 종료 -->
+          
+          
+          
+          </div> <!-- 컨테이너 -->
+</body>
+
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+<title>회원페이지</title>
+<link rel="stylesheet" href="../../css/common.css">
+<link rel="stylesheet" href="../../css/fileupload.css">
+<link rel="stylesheet" href="../../css/member/ksy-trainerPage.css">
+<link rel="stylesheet" href="../../css/member/ksy-settings.css">
+<link rel="stylesheet" href="../../css/member/sm-memberPage.css">
+<link rel="stylesheet"
+  href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
+<link href="https://fonts.googleapis.com/css?family=Titillium+Web:900"
+  rel="stylesheet">
+</head>
+<body>
+  <div class="sm-top-bar-white">
+    <div class="sm-container">
+      <div id="header"></div>
+      <!-- 헤더 종료-->
+      <div id="mb-menu"></div>
+      <!-- 상단 메뉴바 종료 -->
+    </div>
+    <!-- container -->
+  </div>
+  <!-- top-bar-white -->
+
+
+
+
+
+  <div id="sm-back">
+    <div class="sm-container">
+      <h2>계정 설정</h2>
+      <div class="sm-mypage">
+        <div class="sm-profile" id="cssRemove">
+          <h3>
+            <a href="member-set.html" id="myInfo">나의 정보</a>
+          </h3>
+          <hr style="border: 1px solid gray; width: 150px; float: left;">
+          <br>
+          <h3>
+            <a href="member-set2.html" id="myBody">바디 정보</a>
+          </h3>
+          <hr style="border: 1px solid gray; width: 150px; float: left;">
+          <br>
+        </div>
+        <!-- .profile -->
+
+        <div class="sm-mypage-body">
+          <!-- 프로젝트 등록 서브 메뉴 -->
+          <div class="settingsSubMenu">
+            <ul>
+              <li id="settingsSubMenu-fist"><a>나의 정보</a></li>
+            </ul>
+          </div>
+          <!-- 프로젝트 등록 본문-->
+          <div class="settingsContent">
+            <div class="settingsImg">
+              <!--
+              <img id="images-div" >
+        <div id="imgBox"></div> 
+         -->
+         <div id='images-div' class="originalImg"></div>
+              <div>
+                <input id="fileupload" class="upload-hidden" type="file" name="files" multiple>
+                <button class="sm-btn-2" type="button"
+                  style="margin: 20px 30px;">이미지 수정</button>
+              </div>
+            </div>
+            <div class="settingsList">
+              <ul>
+                <li class="ucpEmail">
+                  <div id="sm-email" class="contentName">이메일</div>
+                  <div class="ucContet">
+                    <input class="inputText" type="email">
+                    <div class="inputCheckbox">
+                      <input type="checkbox">수신동의
+                    </div>
+                  </div>
+                </li>
+                <li class="ucpPassword1">
+                  <div id="sm-pwd" class="contentName">비밀번호</div>
+                  <div class="ucContet">
+                    <input class="inputText" type="password">
+                  </div>
+                </li>
+                <li class="ucpPassword2">
+                  <div class="contentName">비밀번호 확인</div>
+                  <div class="ucContet">
+                    <input class="inputText" type="password">
+                  </div>
+                </li>
+                <li class="ucpPhone">
+                  <div class="contentName">휴대전화</div>
+                  <div class="ucContet">
+                    <input class="inputText" type="tel">
+                    <div class="inputCheckbox">
+                      <input type="checkbox">수신동의
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- 다음 단계 버튼 -->
+          <div class="nextBox">
+            <button type="button" id="exitButton">계정 탈퇴</button>
+            <button id='upload-btn' type='button'>등록</button>
+            
+          </div>
+        </div>
+        <!-- mypage-body -->
+
+
+      </div>
+      <!-- mypage -->
+    </div>
+    <!--.container-->
+
+    <!-- 푸터 시작 -->
+    <div id="footer"></div>
+    <!-- 푸터 종료 -->
+
+
+  </div>
+  <!-- back -->
+
+
+
+
+<script src="../../node_modules/jquery/dist/jquery.js"></script>
+<script src="../../node_modules/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+<script src="../../node_modules/blueimp-load-image/js/load-image.all.min.js"></script>
+<script src="../../node_modules/blueimp-canvas-to-blob/js/canvas-to-blob.js"></script>
+<script src="../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+<script src="../../node_modules/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+<script src="../../node_modules/blueimp-file-upload/js/jquery.fileupload.js"></script>
+<script src="../../node_modules/blueimp-file-upload/js/jquery.fileupload-process.js"></script> 
+<script src="../../node_modules/blueimp-file-upload/js/jquery.fileupload-image.js"></script>  
+  <!-- $().fileupload 라고 파일업로드 함수를 사용할 수 있게 해주는 플러그인 -->
+<script>
+"use strict"
+
+
+$('#fileupload').fileupload({
+  url: '../../../json/fileupload/upload',        // 서버에 요청할 URL
+  dataType: 'json',         // 서버가 보낸 응답이 JSON임을 지정하기
+  sequentialUploads: true,  // 여러 개의 파일을 업로드 할 때 순서대로 요청하기.
+  singleFileUploads: false, // 한 요청에 여러 개의 파일을 전송시키기.
+  autoUpload: false,        // 파일을 추가할 때 자동 업로딩 하지 않도록 설정.
+  disableImageResize: /Android(?!.*Chrome)|Opera/
+        .test(window.navigator && navigator.userAgent), // 안드로이드와 오페라 브라우저는 크기 조정 비활성 시키기
+  previewMaxWidth: 120,   // 미리보기 이미지 너비
+  previewMaxHeight: 120,  // 미리보기 이미지 높이 
+  previewCrop: true,      // 미리보기 이미지를 출력할 때 원본에서 지정된 크기로 자르기
+  processalways: function(e, data) {
+      console.log('fileuploadprocessalways()...');
+      console.log(data.files);
+      var imagesDiv = $('#images-div');
+      imagesDiv.html("");
+      for (var i = 0; i < data.files.length; i++) {
+        try {
+          if (data.files[i].preview.toDataURL) {
+            $("<img>").attr('src', data.files[i].preview.toDataURL()).css('border-radius', '50%').appendTo(imagesDiv);
+          }
+        } catch (err) {}
+      }
+      $('#upload-btn').unbind("click");
+      $('#upload-btn').click(function() {
+          data.submit();
+      });
+  }, 
+  submit: function (e, data) { // 서버에 전송하기 직전에 호출된다.
+    console.log('submit()...');
+    data.formData = {
+        email: $('#sm-email').val(),
+        password: $('#sm-pwd').val()
+    };
+  }, 
+  done: function (e, data) { // 서버에서 응답이 오면 호출된다. 각 파일 별로 호출된다.
+    console.log('done()...');
+    console.log(data.result);
+    $.each(data.result.files, function(index, file) {
+      //$('<p/>').text(file.filename + " : " + file.filesize).appendTo(document.body);
+    });
+  }
+});
+</script>
+
+  <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="../../js/common.js"></script>
+  <script src="../../js/header/header_white.js"></script>
+  <script src="../../js/footer/footer.js"></script>
+  <script src="../../js/member/mb-menu.js"></script>
+  <script>
+$("#myBody").click(() => {
+    $.ajax({
+        type: 'POST',
+        url: '../../../json/community/add',
+        data:{
+            title: $(fTitle).val(),
+            type: $(CMU_TYPE).val(),
+            content:$(fContent).val()
+        }
+    }).done(function(){
+        location.href="community-list.html"
+    });
+    
+    /*
+    $.post("../../../json/post/add", {content:$(fContent).val()}, () => {
+        console.log($(fContent).val())});
+    
+    
+    
+    $.post("../../../json/community/add", {
+        title: $(fTitle).val(),
+        type: $(CMU_TYPE).val()
+    }, () => {
+        console.log($(fTitle).val()),
+        console.log($(CMU_TYPE).val())
+        location.href="community-list.html"
+    });
+    */
+});
+</script>
+</body>
+</html>

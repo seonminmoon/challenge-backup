@@ -1,0 +1,98 @@
+@charset "UTF-8";
+
+/* 바디에 있는 탭 메뉴 (트레이너:회원,수익관리/회원:알림,내가쓴글) */
+.sm-tab {
+  width: 882px;
+  margin: 0 auto;
+  margin-left: 0;
+  border-bottom: 1px solid gray;
+  overflow: hidden;
+  transition: border 250ms ease;
+}
+
+.sm-tab-down {
+  height: 250px;
+  width:105%;
+  float: left;
+  align: center;
+  overflow: auto;
+}
+
+.sm-tab button {
+  display: block;
+  float: left;
+  padding: 10px 24px;
+  background-color: #FFF;
+  margin-right: 46px;
+  z-index: 0;
+  position: relative;
+  cursor: pointer;
+  color: #777;
+  border: none;
+  text-transform: uppercase;
+  font: 600 13px/20px roboto, "Open Sans", Helvetica, sans-serif;
+  transition: all 250ms ease;
+  left: 36px;
+}
+
+.sm-tab button:hover {background-color: #1B3453; color:white; transition: 0.3;}
+
+.sm-tab button:before, .sm-tab button:after {
+  display: block;
+  content: " ";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 44px;
+  background-color: #FFF;
+  transition: all 250ms ease;
+}
+
+.sm-tab button:before {
+  right: -24px;
+  transform: skew(30deg, 0deg);
+  box-shadow: rgba(0, 0, 0, .1) 3px 2px 5px, inset
+    rgba(255, 255, 255, .09) -1px 0;
+}
+
+.sm-tab button:after {
+  left: -24px;
+  transform: skew(-30deg, 0deg);
+  box-shadow: rgba(0, 0, 0, .1) -3px 2px 5px, inset
+    rgba(255, 255, 255, .09) 1px 0;
+}
+
+.sm-tab button:hover, .sm-tab button:hover:before, .sm-tab button:hover:after
+  {
+  background-color: #F4F7F9;
+  color: #444;
+}
+
+.sm-tab button.active {
+  z-index: 1;
+}
+
+.sm-tab button.active, .sm-tab button.active:before, .sm-tab button.active:after
+  {
+  background-color: #1B3453;
+  color: #fff;
+}
+
+.sm-tabcontent {
+    overflow: hidden;
+    padding: 10px;
+    text-align: left;
+    border:none;
+    float: left;
+    width: 98%;
+    text-align: center;
+    margin-bottom: 30px;
+    display: none;
+    border-bottom:1px solid gray;
+}
+.sm-tabcontent.sm-current {display: inline;}
+.sm-tabcontent {
+  padding:10px;
+  text-align: left;
+}
+

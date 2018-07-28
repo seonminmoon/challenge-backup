@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+<title>트레이너페이지</title>
+<link rel="stylesheet" href="../../css/trainer/template/sm-trainerPage.css">
+<link rel="stylesheet" href="../../css/trainer/trainerPage-memberManage.css">
+<link rel="stylesheet" href="../../css/common.css">
+<link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
+<link rel="stylesheet" href="../../css/pagination.css">
+</head>
+<body>
+<div id="subMenu"></div>
+<div id="sm-back">
+<div class="sm-container">
+  <h2>회원 관리</h2>
+
+<div class="sm-mypage">
+  <div class="sm-profile">
+		<div style="text-align: center;">
+			<img src="../../img/member/img1.jpg" style="margin-left: 30px; border-radius:60px; width:120px; height:120px;">
+      <button id="sm-btn-2" type="button" style="position:relative; top:-10px; right:40px; width:30px; height:30px; border-radius:15px; padding:0px;font-size:14px;"><span>2</span></button>
+      <br>
+			사용자이름<br>
+      <button id="sm-btn-2" type="button" style="margin-top:10px; margin-bottom:20px;">프로필관리</button>
+		</div>
+	</div><!-- .profile -->
+
+
+    <div class="sm-mypage-body">
+      <!-- 서브 메뉴 -->
+      <div class="mangeSubMenu">
+        <div class="tabbed">
+          <ul id="programList"></ul>
+        </div>
+        <div class="arrow">
+          <div class="arrowLeft"><i class="fas fa-chevron-circle-left"></i></div>
+          <div class="arrowRight"><i class="fas fa-chevron-circle-right"></i></div>
+        </div>
+      </div>
+      <!-- 회원 관리 -->
+      <div class="manageContent">
+        <div class="memberName">
+          <div class="rightBox">
+          <input id="userName" type="text" placeholder="회원명을 입력해 주세요.">
+          <button type="button" name="button">검색</button>
+        </div>
+        </div>
+        <div class="memberTable">
+          <table class="demo-table">
+            <thead>
+              <tr>
+                <th>이메일</th>
+                <th>회원이름</th>
+                <th>성별</th>
+                <th>프로젝트명</th>
+                <th>출석률</th>
+              </tr>
+            </thead>
+            <tbody id="memberList"></tbody>
+          </table>
+        </div>
+        <!-- pagenation -->
+	    <div class="sm-pagination" id="pagination">
+	      <a class="sm-pagination-button sm-pagination-side" href="#"><i class="fas fa-angle-left"></i></a>
+	      <a class="sm-pagination-button pageActive">1</a>
+	      <a class="sm-pagination-button">2</a>
+	      <a class="sm-pagination-button">3</a>
+	      <a class="sm-pagination-button">4</a>
+	      <a class="sm-pagination-button sm-pagination-button-end" href="#">5</a>
+	      <a class="sm-pagination-button sm-pagination-side" href="#"><i class="fas fa-angle-right"></i></a>
+	    </div>
+      </div>
+    </div><!-- mypage-body -->
+</div><!-- mypage -->
+</div><!--.container-->
+</div><!-- back -->
+<div id="footer"></div>
+<script src="../../node_modules/handlebars/dist/handlebars.min.js"></script>
+<script src="../../js/common.js"></script>
+<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../../js/footer/footer.js"></script>
+<script src="../../js/trainer/trainer-template.js"></script>
+<script id="tr-template" type="text/x-handlebars-template">
+{{#each list}}
+<tr>
+    <td><a href='memberView.html?pno={{no}}&uno={{users.userNo}}'>{{users.email}}</a></td>
+    <td><a href='memberView.html?pno={{no}}&uno={{users.userNo}}'>{{users.name}}</a></td>
+    <td><a href='memberView.html?pno={{no}}&uno={{users.userNo}}'>{{users.sex}}</a></td>
+    <td><a href='memberView.html?pno={{no}}&uno={{users.userNo}}'>{{name}}</a></td>
+    <td><a href='memberView.html?pno={{no}}&uno={{users.userNo}}'>{{diarys.dcheck}}</a></td>
+</tr>
+{{/each}}
+</script>
+<script id="li-template" type="text/x-handlebars-template">
+{{#each list}}
+	<li class="tabSelect">{{name}}</li>
+{{/each}}
+<li class="tabSelect active">전체</li>
+</script>
+<script src="../../js/trainer/memberList.js"></script>
+</body>
+</html>

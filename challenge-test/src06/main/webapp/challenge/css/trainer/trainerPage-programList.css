@@ -1,0 +1,120 @@
+@charset "UTF-8";
+
+.sm-mypage-body {
+  box-sizing: border-box;
+  margin-bottom: 100px;
+}
+
+/* 프로젝트 등록 서브 메뉴 */
+
+/* 이 부분은 임시 나중에 삭제 10~13*/
+#uploadSubMenu-fist a {
+ border-bottom: 1px solid black;
+ border-width: 3px;
+}
+
+.uploadSubMenu a {
+  color: black;
+  text-decoration: none;
+  padding-bottom: 5px;
+}
+
+.uploadSubMenu a:visited {
+ border-bottom: 1px solid black;
+ border-width: 3px;
+}
+
+.uploadSubMenu a:hover {
+  color: #1B3453;
+}
+
+
+.uploadSubMenu ul {
+  box-sizing: border-box;
+  border-bottom: 1px solid #666666;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  height: 35px;
+}
+
+.uploadSubMenu ul li {
+  float: left;
+  margin: 0 25px;
+}
+
+#uploadSubMenu-fist {
+  margin-left: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
