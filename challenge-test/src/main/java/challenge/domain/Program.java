@@ -14,13 +14,13 @@ public class Program implements Serializable {
     private String address; // 기본주소
     private String addDetail; // 상세주소
     private String name; // 프로그램명
-    @JsonFormat(pattern="yyyy-MM-dd")
+    @JsonFormat(pattern="yyyy-MM-dd", timezone = "Asia/Seoul")
     private Date startDate;
-    @JsonFormat(pattern="yyyy-MM-dd")
+    @JsonFormat(pattern="yyyy-MM-dd", timezone = "Asia/Seoul")
     private Date endDate;
     private int minQty;
     private int maxQty;
-    private int price;
+    private String price;
     private String description;
     private String proType; // 종목
     private String proGoal; // 목표
@@ -32,20 +32,10 @@ public class Program implements Serializable {
     private int proState; // 진행상태
     private String proResult; // 진행상태내용
 
-    private String mainImg; // 메인이미지
-    
     private int challengeNo; // 챌린지번호
     private Trainer trainerNo; // 트레이너번호
 
     private List<ProgramMedia> medias; // 프로그램 미디어
-
-    public String getMainImg() {
-        return mainImg;
-    }
-
-    public void setMainImg(String mainImg) {
-        this.mainImg = mainImg;
-    }
 
     public int getNo() {
         return no;
@@ -119,11 +109,11 @@ public class Program implements Serializable {
         this.maxQty = maxQty;
     }
 
-    public int getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 

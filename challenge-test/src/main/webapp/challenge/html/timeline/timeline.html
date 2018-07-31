@@ -7,12 +7,6 @@
   <link rel="stylesheet" href="../../css/common.css">
   <!-- <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
   <link rel="stylesheet" href="../../css/timeline/timeline.css">
-  <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
-  <script src="../../node_modules/handlebars/dist/handlebars.min.js"></script>
-  <script src="../../js/common.js"></script>
-  <script src="../../js/header/header_bg_black.js"></script>
-  <script src="../../js/footer/footer.js"></script>
-
 </head>
 
 <body>
@@ -25,38 +19,6 @@
 
 
   <div class="container">
-    <!-- img 시작 -->
-    <div class="sh-program-img">
-      <div class="sh-slideshow-container">
-
-        <div class="sh-mySlides sh-fade">
-          <img src="../../img/timeline/fitness-wallpapers-1.jpg" style="width:100%">
-          <button class="sh-slide-edit-btn" type="button" name="button">EDIT</button>
-          <div class="sh-imgSlide-text">
-            <h1>이미지1입니다.</h1></div>
-        </div>
-
-        <div class="sh-mySlides sh-fade">
-          <img src="../../img/timeline/fitness-wallpapers-2.jpg" style="width:100%">
-          <button class="sh-slide-edit-btn" type="button" name="button">EDIT</button>
-          <div class="sh-imgSlide-text">
-            <h1>이미지2입니다.</h1></div>
-        </div>
-
-        <div class="sh-mySlides sh-fade">
-          <img src="../../img/timeline/fitness-wallpapers-3.jpg" style="width:100%">
-          <button class="sh-slide-edit-btn" type="button" name="button">EDIT</button>
-          <div class="sh-imgSlide-text">
-            <h1>이미지3입니다.</h1></div>
-        </div>
-
-        <a class="sh-prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="sh-next" onclick="plusSlides(1)">&#10095;</a>
-
-      </div>
-      <br>
-    </div>
-    <!-- img 종료 -->
 
     <div id="sh-mainContainer">
 
@@ -78,7 +40,7 @@
           <div id="sh-Class-Daily-item">
             <div class="sh-Class-Contents">
 
-              <h1>Day-5 하비탈출</h1>
+              <h1 id="sh-Class-Title">Day-5 하비탈출</h1>
               <span id="sh-class-dots"></span>
               <span id="sh-class-more">
                   1. 물 500ml 마시고 시작합니다<br>
@@ -120,52 +82,38 @@
                   <h1 class="tl-user-name-json sh-tl-user-name"></h1>
                 </div>
                 <div class="sh-tl-review-write">
+                  <input id="sh_tl_post_photo" type="hidden"> 
                   <textarea id="sh_tl_post_write" class="sh-tl-review-title sh-tl-textarea" placeholder="무슨 생각을 하고 계신가요?" onkeydown="resize(this)" onkeyup="resize(this)"></textarea>
                 </div>
-                <button id="sh-tl-post-btn" type="submit" name="button">게시</button>
-                <div class="sh-tl-post-img-upload"><label id="sh-tl-post-img-btn" for="sh_tl_upload" style="cursor:pointer"><i class="far fa-images"><input id="sh_tl_upload" accept="video/*,  video/x-m4v, video/webm, video/x-ms-wmv, video/x-msvideo, video/3gpp, video/flv, video/x-flv, video/mp4, video/quicktime, video/mpeg, video/ogv, .ts, .mkv, image/*"  name="file" title="사진 또는 동영상 첨부" type="file" style="display:none" multiple></i></label></div>
+                <div id='images-div'></div>
+                <button id="sh-tl-post-btn" type="submit" name="button" onclick="postBtnClicked()">게시</button>
+                <div class="sh-tl-post-img-upload"><label id="sh-tl-post-img-btn" for="sh_tl_upload" style="cursor:pointer"><i class="far fa-images"><input id="sh_tl_upload" accept="video/*,  video/x-m4v, video/webm, video/x-ms-wmv, video/x-msvideo, video/3gpp, video/flv, video/x-flv, video/mp4, video/quicktime, video/mpeg, video/ogv, .ts, .mkv, image/*"  name="files" title="사진 또는 동영상 첨부" type="file" style="display:none"></i></label></div>
               </section>
             </div><!--The Modal POST 종료-->
             <!-- SHOW -->
           </div>
           <!-- 글쓰기 카드 종료-->
 
-
-
           <!-- 무한 스크롤 시작-->
           <div>
             <div class="sh-infinite-scroll">
               <div>
-
                 <!-- 새로 추가된 글 들어가는 div 시작 -->
                 <div id="sh_tl_card_add"></div>
                 <!-- 새로 추가된 글 들어가는 div 종료 -->
-
-
-
               </div>
-
             </div>
           </div>
           <!-- 무한 스크롤 종료-->
-
         </div>
         <!--타임라인 feed 종료-->
-
       </div>
       <!-- content 종료 -->
-
-
       <div id="more"><!-- 무한 스크롤 시작-->
-
-
       </div><!-- 무한 스크롤 종료-->
     </div><!-- .mainContainer 종료-->
 
   </div><!-- .container 종료-->
-
-
-
 
   <script>
     function resize(obj) {
@@ -182,32 +130,34 @@
 <script id="tr-template" type="text/x-handlebars-template">
 {{#each list}}
 <!-- 타임라인 카드 시작 -->
-<div class="sh-tl-card sh-card">
+<div class="sh-tl-card-modal{{no}} sh-tl-card sh-card">
   <!--글쓴이 시작 -->
   <section class="sh-tl-card-primary">
-    <div class="sh-tl-user">
+    <div onmouseover=showPostMenu(this) onmouseout=hidePostMenu(this)  class="sh-tl-user">
       <img class="sh-tl-user-img" src="../../img/timeline/sh_profile.jpg">
-      <h1 class="sh-tl-user-name">{{progMemb.users.name}}</h1>
+      <h1 class="sh-tl-user-name">{{progMemb.users.name}} @글번호{{no}}</h1>
       <h6 class="sh-tl-post-date">{{createdDate}}</h6>
+      <div onclick=postEdit(this) name={{no}} class="sh-tl-post-edit" ><i class="fas fa-pen">수정</i></div>
+      <div onclick=postDelete(this) name={{no}} class="sh-tl-post-delete"><i class="fas fa-trash-alt">삭제</i></div>
     </div>
   </section>
   <!-- 글쓴이 종료-->
   <!-- 글내용 시작-->
   <div class="sh-tl-card-content">
-    <p>{{content}}</p>
-
+    <p class="sh-tl-card-content-inside">{{content}}</p>
   </div>
+  <div id="img{{no}}"></div>
   <!-- 글내용 종료 -->
   <!-- 좋아요/댓글 시작-->
   <section class="sh-tl-card-actions">
     <div class="sh-tl-like-count">
-      <a class="sh-like-clicked" href="#!"><i class="far fa-thumbs-up"></i></a>
-      <a class="sh-like-clicked" id="sh-tl-CountedClicks" href="#!"><span class="tlLks lk{{no}}">0</span> 명이 좋아합니다.</a>
+      <a class="sh-like-clicked lk-clicked{{no}}" href="#!"><i class="far fa-thumbs-up"></i></a>
+      <a class="sh-like-clicked lk-clicked{{no}}" id="sh-tl-CountedClicks" href="#!"><span data-no="okok" class="lk{{no}} hi" >{{no}}</span> 명이 좋아합니다.</a>
       <a href="#!"></a>
     </div>
     <div class="sh-tl-card-bottom">
       <div class="sh-tl-like sh-tl-card-bottom-items">
-        <a onclick="TlAddClick()" class="sh-like-clicked" href="#!"><i class="far fa-thumbs-up"></i><span>     좋아요</span></a>
+        <a onclick="TlAddClick({{no}})" class="sh-like-clicked lk-thumbs{{no}}" href="#!"><i class="far fa-thumbs-up"></i><span>     좋아요</span></a>
       </div>
       <div class="sh-tl-comment sh-tl-card-bottom-items">
         <a href="#!"><i class="far fa-comments"></i>     댓글달기</a>
@@ -221,14 +171,14 @@
     <div class="sh-tl-reply-user">
       <i class="sh-tl-reply-user-circle fas fa-user-circle"></i>
       <div class="sh-tl-review-write">
-        <textarea id="{{no}}" class="sh-tl-review-title  sh_tl_reply_textarea" placeholder="댓글을 입력하세요" onkeydown="resize(this)" onkeyup="resize(this)"></textarea>
+        <textarea id="{{no}}" class="sh-tl-cmt{{no}} sh-tl-review-title  sh_tl_reply_textarea" placeholder="댓글을 입력하세요" onkeydown="resize(this)" onkeyup="resize(this)"></textarea>
         <div class="sh-tl-img-upload"><button onclick="cmtFunction({{no}})" class="sh-tl-reply-btn" type="submit">게시</button> </div>
       </div>
     </div>
   </section>
   <!-- 댓글쓰기 종료 -->
   <!-- 대댓글 불러오기-->
-    <div style="display:none;" class="tlNo">{{no}}</div>
+    <div class="cm{{no}}">{{no}}</div>
 
   <!-- 대댓글 불러오기 종료-->
   <div style="clear:both;"></div>
@@ -241,20 +191,39 @@
 <!-- 대댓글 Handlebars -->
 <script id="cm-template" type="text/x-handlebars-template">
 {{#each list}}
-  <section class="sh-tl-card-reply-load">
+  <section class="sh-tl-cmt-section{{no}} sh-tl-card-reply-load">
     <div class="sh-tl-reply-user">
       <i class="sh-tl-reply-user-circle fas fa-user-circle"></i>
-      <div class="sh-tl-review-write">
-        <!-- <span class="sh-tl-review-content sh-tl-reply-content" onkeydown="resize(this)" onkeyup="resize(this)"></span> -->
-        <textarea readonly class="sh-tl-review-content  sh-tl-reply-content">{{progMemb.users.name}}  글번호 : {{timelineNo}}, 내용: {{content}}, 날짜 : {{createdDate}}</textarea>
+      <div onmouseover=showCmtMenu(this) onmouseout=hideCmtMenu(this) class="sh-tl-review-write">
+        <div readonly class="sh-tl-review-content  sh-tl-reply-content">
+            <span class="sh-cmt-name" >{{progMemb.users.name}}</span><span class="sh-cmt-content"> {{content}}</span>
+        </div>
+        <div onclick=cmtEdit(this) name={{no}} class="sh-tl-cmt-edit" ><i class="fas fa-pen">수정</i></div>
+        <div onclick=cmtDelete(this) name={{no}} class="sh-tl-cmt-delete"><i class="fas fa-trash-alt">삭제</i></div>
       </div>
+      <span class="sh-cmt-date">{{createdDate}}</span>      
   </section>
 {{/each}}
 </script>
 
 
-  <script src="../../js/timeline/timeline.js"></script>
+
+  <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="../../node_modules/handlebars/dist/handlebars.min.js"></script>
+  <script src="../../node_modules/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+  <script src="../../node_modules/blueimp-load-image/js/load-image.all.min.js"></script>
+  <script src="../../node_modules/blueimp-canvas-to-blob/js/canvas-to-blob.js"></script>
+  <script src="../../node_modules/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+  <script src="../../node_modules/blueimp-file-upload/js/jquery.fileupload.js"></script>
+  <script src="../../node_modules/blueimp-file-upload/js/jquery.fileupload-process.js"></script> 
+  <script src="../../node_modules/blueimp-file-upload/js/jquery.fileupload-image.js"></script> 
+  <script src="../../js/common.js"></script>
   <script src="../../js/timeline/handlebars.js"></script>
+  <script src="../../js/timeline/timeline.js"></script>
+  <script src="../../js/header/header_bg_black.js"></script>
+  <script src="../../js/footer/footer.js"></script>
+  <!-- <script src="../../js/timeline/tlimage.js"></script> -->
+  
 </body>
 
 </html>

@@ -19,16 +19,18 @@
     
         <association property="trainer" javaType="Trainer">
             <id column="trnno" property="userNo" />
+            <result column="utype" property="userType" />
             <!-- "trnno" 메시지 방향에 따라 달라질 수 있음 -->
             <result column="uname" property="name" />
         </association>
         <association property="member" javaType="Member">
             <id column="uno" property="userNo" />
+            <result column="utype" property="userType" />
             <result column="uname" property="name" />
         </association>
     
   </resultMap>
-  
+    
   
   <!-- SQL 문 id를 설정할 때 SQL문을 사용하는 메서드 이름과 같게하면
        유지보수할 때 알아보기 쉽다. 
@@ -39,27 +41,26 @@
   <select id="selectList" 
           resultMap="MessageMap" 
           parameterType="map">
-   select msgno, mstitl, mscont, uname, msdate
+   select msgno, mstitl, u.utype, mscont, uname, msdate, t.trnno, ms.uno
    from USER u, TRN t, MSG ms, MEMB m
    where u.uno = t.trnno 
    AND m.uno = ms.uno
    AND t.trnno = ms.trnno
    order by msgno desc
    limit #{startRowNo}, #{pageSize}
-  
   </select>
   
   <insert id="insert" parameterType="Message"
-          useGeneratedKeys="true" keyColumn="pono" keyProperty="pono">
-    insert into MSG(mscont, msdate) 
-    values(#{content}, now());
+          useGeneratedKeys="true" keyColumn="msgno" keyProperty="msgno">
+    insert into MSG(msgno, mstitl, msdir, mscont, msdate, trnno, uno) 
+    values(#{no}, #{title}, #{direct}, #{content}, now(), ${trainer.userNo}, ${member.userNo});
   </insert>
   
   <!-- 파라미터의 타입이 primitive type이나 wrapper 클래스, String 클래스인 경우
        값을 꺼낼 때 프로퍼티 이름을 마음대로 해도 된다.
   -->
   <select id="selectOne" parameterType="int" resultMap="MessageMap">
-   select msgno, mstitl, mscont, uname, msdate
+   select msgno, mstitl, msdir, mscont, uname, msdate, t.trnno, ms.uno
    from USER u, TRN t, MSG ms, MEMB m
    where u.uno = t.trnno 
    AND m.uno = ms.uno

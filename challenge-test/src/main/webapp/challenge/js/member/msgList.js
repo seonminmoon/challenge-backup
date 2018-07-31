@@ -11,6 +11,7 @@ $.getJSON(serverRoot + "/json/message/list", (data) => {
 
 
 
+
 var $pageClick = $('.sm-pagination a');
 $pageClick.on('click', function (evt) {
     evt.preventDefault();

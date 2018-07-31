@@ -53,7 +53,7 @@
     where chno=#{no}
   </select>
   
-  <update id="update" parameterType="Challenge">
+ <!--  <update id="update" parameterType="Challenge">
     update POST set 
         pocont=#{content}, 
         podate=now()
@@ -62,5 +62,5 @@
   
   <delete id="delete" parameterType="int">
     delete from POST where pono=#{value}
-  </delete>
+  </delete> -->
 </mapper>

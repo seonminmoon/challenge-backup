@@ -10,8 +10,9 @@ public interface ProgramService {
     // 업무 용어를 사용하라!
     List<Program> list(int pageNo, int pageSize);
     List<Program> listCard();
+    List<Program> listProgram(int trainerNo);
     Program get(int no);
-    //Program getWithMembers(String name);
+    Program getWithMedia(int no);
     int add(Program program);
     int update(Program program);
     int delete(int no);

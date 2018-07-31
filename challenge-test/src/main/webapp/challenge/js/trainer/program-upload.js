@@ -1,4 +1,4 @@
-// 챌린지 가져오기
+//챌린지 가져오기
 var chalBody = $("#proInsert").html();
 
 var chalBodyFn = Handlebars.compile(chalBody);
@@ -7,7 +7,32 @@ $.getJSON(serverRoot + "/json/challenge/list", (data) => {
   $(chalTab).html(chalBodyFn({list:data}));
 });
 
+
+
 //탭 메뉴
+document.getElementById("next1").onclick = function() {
+  openCity(event, 'sm-tab1')
+}
+document.getElementById("next2").onclick = function() {
+  openCity(event, 'sm-tab2')
+}
+document.getElementById("next3").onclick = function() {
+  openCity(event, 'sm-tab3')
+}
+document.getElementById("next4").onclick = function() {
+  openCity(event, 'sm-tab2')
+  document.getElementById("next2").style.backgroundColor = "#1B3453";
+}
+document.getElementById("next5").onclick = function() {
+  openCity(event, 'sm-tab1')
+}
+document.getElementById("next6").onclick = function() {
+  openCity(event, 'sm-tab3')
+}
+document.getElementById("next7").onclick = function() {
+  openCity(event, 'sm-tab2')
+}
+
 function openCity(evt, cityName) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("sm-tabcontent");
@@ -23,7 +48,13 @@ function openCity(evt, cityName) {
 }
 
 
+
 //주소검색
+var postSearch = document.getElementById("postSearch");
+postSearch.onclick = function() {
+  sample6_execDaumPostcode()
+}
+
 function sample6_execDaumPostcode() {
   new daum.Postcode({
     oncomplete: function(data) {
@@ -67,27 +98,64 @@ function sample6_execDaumPostcode() {
 }
 
 
-//상세미디어
+// 금액 콤마
+$(".numberic").each(function(){
+  $(this).number(true);
+});
+
+
+
+/* 더보기 임시 */
+function moreFunction() {
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("moreBtn");
+
+  if (moreText.style.display === "none") {
+    moreText.style.display = "inline-block";
+  } else {
+    moreText.style.display = "inline-block";
+  }
+}
+var moreBtn = document.getElementById("moreBtn");
+moreBtn.onclick = function() {
+  moreFunction()
+}
+var lessBtn = document.getElementById("lessBtn");
+lessBtn.onclick = function() {
+  lessFunction()
+}
+/* 줄이기 임시 */
+function lessFunction() {
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("lessBtn");
+
+  if (moreText.style.display === "inline-block") {
+    moreText.style.display = "none";
+  } else {
+    moreText.style.display = "inline-block";
+  }
+}
+
+
+// 프로그램 이미지
 var imgFiles;
-var subImglen;
-var subImg;
 $('#fileupload2').fileupload({
-  url: '../../../json/fileupload2/upload02',        // 서버에 요청할 URL
+  url: serverRoot + '/json/programMedia/add',        // 서버에 요청할 URL
   dataType: 'json',         // 서버가 보낸 응답이 JSON임을 지정하기
   sequentialUploads: true,  // 여러 개의 파일을 업로드 할 때 순서대로 요청하기.
   singleFileUploads: false, // 한 요청에 여러 개의 파일을 전송시키기.
   autoUpload: false,        // 파일을 추가할 때 자동 업로딩 하지 않도록 설정.
   disableImageResize: /Android(?!.*Chrome)|Opera/
-        .test(window.navigator && navigator.userAgent), // 안드로이드와 오페라 브라우저는 크기 조정 비활성 시키기
+    .test(window.navigator && navigator.userAgent), // 안드로이드와 오페라 브라우저는 크기 조정 비활성 시키기
 
-  imageMaxWidth: 800,
-  imageMaxHeight: 800,
-  imageCrop: true, // Force cropped images
-        
-  previewMaxWidth: 100,   // 미리보기 이미지 너비
-  previewMaxHeight: 100,  // 미리보기 이미지 높이 
-  previewCrop: true,      // 미리보기 이미지를 출력할 때 원본에서 지정된 크기로 자르기
-  processalways: function(e, data) {
+    imageMaxWidth: 800,
+    imageMaxHeight: 800,
+    imageCrop: true, // Force cropped images
+
+    previewMaxWidth: 100,   // 미리보기 이미지 너비
+    previewMaxHeight: 100,  // 미리보기 이미지 높이 
+    previewCrop: true,      // 미리보기 이미지를 출력할 때 원본에서 지정된 크기로 자르기
+    processalways: function(e, data) {
       console.log('fileuploadprocessalways()...');
       console.log(data.files);
       imgFiles = data.files;
@@ -101,94 +169,16 @@ $('#fileupload2').fileupload({
             .addClass('ad-adImgs-wrapper')
             .click(delImg)
             .appendTo(imagesDiv);
-    var imgContent = $('<div>')
+            var imgContent = $('<div>')
             .addClass('ad-adImgs-content')
             .appendTo(imgWrapper);
-    var imgCover = $('<div>')
+            var imgCover = $('<div>')
             .addClass('ad-adImgs-cover')
             .appendTo(imgWrapper);
-    $("<img/>").attr('src', data.files[i].preview.toDataURL()).appendTo(imgContent).addClass('ad-adImgs');
+            $("<img/>").attr('src', data.files[i].preview.toDataURL()).appendTo(imgContent).addClass('ad-adImgs');
           }
         } catch (err) {}
       }
-      //$('#addBtn').unbind("click");
-      $('#addBtn').click(function() {
-          data.submit();
-      });
-  }, 
-  submit: function (e, data) { // 서버에 전송하기 직전에 호출된다.
-    console.log('submit2()...');
-  }, 
-  done: function (e, data) { // 서버에서 응답이 오면 호출된다. 각 파일 별로 호출된다.
-    console.log('done2()...');
-    console.log(data.result);
-    subImglen = data.result.files.length
-    subImg = data.result.files
-    console.log(data.result.files[0].filename)
-    
-    
-    /*$.each(data.result.files, function(index, file) {
-      $('<p/>').text(file.filename + " : " + file.filesize).appendTo(document.body);
-    });*/
-  }
-});
-function delImg(event){
-  var wrapperDiv = $(event.currentTarget);
-  wrapperDiv.remove();
-    var fileIndex =wrapperDiv.attr('data-file-index');
-    imgFiles.splice(fileIndex, 1);
-}
-
-
-
-// 메인 이미지 업로드
-$('#fileupload').fileupload({
-    url: '../../../json/fileupload2/upload01',        // 서버에 요청할 URL
-    async: false,
-    dataType: 'json',         // 서버가 보낸 응답이 JSON임을 지정하기
-    sequentialUploads: true,  // 여러 개의 파일을 업로드 할 때 순서대로 요청하기.
-    singleFileUploads: false, // 한 요청에 여러 개의 파일을 전송시키기.
-    autoUpload: false,        // 파일을 추가할 때 자동 업로딩 하지 않도록 설정.
-    disableImageResize: /Android(?!.*Chrome)|Opera/
-          .test(window.navigator && navigator.userAgent), // 안드로이드와 오페라 브라우저는 크기 조정 비활성 시키기
-    
-    imageMaxWidth: 800,
-    imageMaxHeight: 800,
-    imageCrop: true, // Force cropped images
-    
-    previewMaxWidth: 250,   // 미리보기 이미지 너비
-    previewMaxHeight: 250,  // 미리보기 이미지 높이 
-    previewCrop: true,      // 미리보기 이미지를 출력할 때 원본에서 지정된 크기로 자르기
-    processalways: function(e, data) {
-        console.log('fileuploadprocessalways()...');
-        console.log(data.files);
-        var imagesDiv = $('#images-div');
-        imagesDiv.html("");
-        for (var i = 0; i < data.files.length; i++) {
-          try {
-            if (data.files[i].preview.toDataURL) {
-              $(".filebox label").css('background-image', 
-                                      'url(' + data.files[i].preview.toDataURL() + ')')
-              /*$("<img>").attr('src', data.files[i].preview.toDataURL())
-                        .css('width', '250px')
-                        .appendTo(imagesDiv)*/
-            }
-          } catch (err) {}
-        }
-        //$('#addBtn').unbind("click");
-        $('#addBtn').click(function() {
-            data.submit();
-        });
-    }, 
-    submit: function (e, data) { // 서버에 전송하기 직전에 호출된다.
-      console.log('submit()...');
-    }, 
-    done: function (e, data) { // 서버에서 응답이 오면 호출된다. 각 파일 별로 호출된다.
-      console.log('done()...');
-      console.log(data.result)
-      var mainImg = data.result.filename;
-      
-      
       // 요일, 시간
       var selectTime = ['','','','','','',''];
       $(".time-slot[data-selected]").each(function(i, tag) {
@@ -207,111 +197,46 @@ $('#fileupload').fileupload({
           proTime += selectTime[i] + ' ';
         }
       }
-      
-      
-      // 프로그램 DB 입력
-      $.ajax({
-        type: 'POST',
-        async: false,
-        url: serverRoot + '/json/program/add',
-        data: {
-          postNo: $(sample6_postcode).val(),
-          address: $(sample6_address).val(),
-          addDetail: $(sample6_address2).val(),
-          name: $(fname).val(),
-          startDate: $(fStartDate).val(),
-          endDate: $(fEndDate).val(),
-          minQty: $(fminQty).val(),
-          maxQty: $(fmaxQty).val(),
-          price: $(fprice).val(),
-          description: $(fdescription).val(),
-          proType: $(ftype).val(),
-          proGoal: $(fprgoal).val(),
-          proGoalNum: $(fprogoalnum).val(),
-          proTh: $(fth).val(),
-          proTurn: $(fptover).val(),
-          proDay: proDay,
-          proTime: proTime,
-          challengeNo: $(chalTab).val(),
-          "trainerNo.userNo": obj.userNo,
-          mainImg: mainImg
-        }, 
-      }).done(function() {
-        console.log('상세미디어등록전')
-        
-        // 프로그램 미디어
-        for (var i = 0; i < subImglen; i++) {
-          console.log('상세미디어 for문')
-          $.ajax({
-            type: 'POST',
-            url: serverRoot + '/json/programMedia/add',
-            data: {
-              path: subImg[i].filename,
-              pmtype: 1
-            }, 
-          }).done(function() {
-            console.log('머지?')
-          });
+
+      $('#addBtn').unbind("click");
+      $('#addBtn').click(function() {
+
+        // 데이터 입력
+        data.formData = {
+            postNo: $(sample6_postcode).val(),
+            address: $(sample6_address).val(),
+            addDetail: $(sample6_address2).val(),
+            name: $(fname).val(),
+            startDate: $(fStartDate).val(),
+            endDate: $(fEndDate).val(),
+            minQty: $(fminQty).val(),
+            maxQty: $(fmaxQty).val(),
+            price: $(fprice).val(),
+            description: $(fdescription).val(),
+            proType: $(ftype).val(),
+            proGoal: $(fprgoal).val(),
+            proGoalNum: $(fprogoalnum).val(),
+            proTh: $(fth).val(),
+            proTurn: $(fptover).val(),
+            proDay: proDay,
+            proTime: proTime,
+            challengeNo: $(chalTab).val(),
+            "trainerNo.userNo": obj.userNo
         }
-        /*location.href = 'trainerPage-programList.html';*/
+        data.submit();
       });
+    }, 
+    submit: function (e, data) { // 서버에 전송하기 직전에 호출된다.
+      console.log('submit2()...');
+    }, 
+    done: function (e, data) { // 서버에서 응답이 오면 호출된다. 각 파일 별로 호출된다.
+      console.log('done2()...');
+//      location.href = 'programList.html';
     }
 });
-
-/*$("#addBtn").click(() => {
-  var selectTime = ['','','','','','',''];
-  $(".time-slot[data-selected]").each(function(i, tag) {
-    var e = $(tag);
-    for(i = 0; i < selectTime.length; i++) {
-      if (e.attr('data-day') == i) {
-        selectTime[i] += e.attr('data-time') + ',';
-      }
-    }
-  });
-  console.log(selectTime);
-  
-  var proDay = '';
-  var proTime = '';
-  for (i = 0; i < selectTime.length; i++) {
-    if (selectTime[i] !== '') {
-      proDay += i + ' ';
-      proTime += selectTime[i] + ' ';
-    }
-  }
-  console.log(proDay)
-  console.log(proTime)
-  
-  $.ajax({
-    type: 'POST',
-    url: serverRoot + '/json/programMedia/add',
-    data: {
-      postNo: $(sample6_postcode).val(),
-      address: $(sample6_address).val(),
-      addDetail: $(sample6_address2).val(),
-      name: $(fname).val(),
-      startDate: $(fStartDate).val(),
-      endDate: $(fEndDate).val(),
-      minQty: $(fminQty).val(),
-      maxQty: $(fmaxQty).val(),
-      price: $(fprice).val(),
-      description: $(fdescription).val(),
-      proType: $(ftype).val(),
-      proGoal: $(fprgoal).val(),
-      proGoalNum: $(fprogoalnum).val(),
-      proTh: $(fth).val(),
-      proTurn: $(fptover).val(),
-      proDay: proDay,
-      proTime: proTime,
-      challengeNo: $(chalTab).val(),
-      "trainerNo.userNo": obj.userNo,
-      path: mainMedia,
-      state: 1
-    }, 
-  }).done(function() {
-    console.log('입력됨.11');
-    location.href = 'trainerPage-programList.html';
-  });
-});*/
-
-  
-
+function delImg(event){
+  var wrapperDiv = $(event.currentTarget);
+  wrapperDiv.remove();
+  var fileIndex =wrapperDiv.attr('data-file-index');
+  imgFiles.splice(fileIndex, 1);
+}

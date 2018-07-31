@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<span>dddd</span>
+
+
+<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../../js/common.js"></script>
+<script type="text/javascript"> 
+var array = new Array(); 
+$(function(){ 
+$.getJSON("json.js", function(data){ 
+$(data).each(function(i, elem){ 
+array[1] = elem.issue_Title ; //이런식으로 사용? 
+console.log(data.issue_Title);
+alert(data);
+}); 
+}); 
+}); 
+</script> 
+
+
+</body>
+</html>

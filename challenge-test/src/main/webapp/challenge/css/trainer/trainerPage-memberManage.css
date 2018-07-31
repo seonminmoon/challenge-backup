@@ -37,6 +37,7 @@
 }
 .tabbed a {
   text-decoration: none;
+  color: #777;
 }
 
 .tabbed ul li:before,
@@ -74,7 +75,10 @@
 .tabbed ul li.active:before,
 .tabbed ul li.active:after {
   background-color: #1B3453;
-  color: #fff;
+}
+
+.active a {
+	color: #ffffff;
 }
 
 .arrow .fas {
@@ -164,7 +168,7 @@
 }
 
 .demo-table th {
-  padding: 13px 66.3px;
+  padding: 13px 87.7px;
 }
 
 .demo-table td {
@@ -330,6 +334,24 @@
 #memberList a {
 	color: black;
 	text-decoration: none;
+	cursor: pointer;
+}
+.memberButtons ul {
+	display: inline-block;
+	width: 551px;
+	margin: 0;
+	margin-bottom: 20px;
+}
+.memberButtons a {
+  float: right;
+  padding: 6px 25px;
+  font-weight: bold;
+  border: 1px solid #DD1F26;
+  border-radius: 5px;
+  background-color: #DD1F26;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
 }
 
 

@@ -35,6 +35,12 @@ public class ProgramServiceImpl implements ProgramService {
     public List<Program> listCard() {
         return programDao.selectListCard();
     }
+    
+    @Override
+    public List<Program> listProgram(int trainerNo) {
+        return programDao.selectTrainerProgram(trainerNo);
+    }
+    
     @Override
     public List<Program> mainList() {
         return programDao.mainList();
@@ -57,11 +63,11 @@ public class ProgramServiceImpl implements ProgramService {
         return programDao.delete(no);
     }
 
-    /*@Override
-    public Program getWithMembers(String name) {
-        Program program = programDao.selectOneWithMembers(name);
+    @Override
+    public Program getWithMedia(int no) {
+        Program program = programDao.selectOneWithMedia(no);
         return program;
-    }*/
+    }
     
     @Override
     public int add(Program program) {

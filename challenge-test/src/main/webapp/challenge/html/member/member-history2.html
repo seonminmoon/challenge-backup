@@ -125,7 +125,9 @@
 					<!-- 이 부분이 운동일지 부분임! -->
 					<section id="sm-section" class="sm-timeline">
 					<ul>
-					<li id="listbody2" class="in-view"></li>
+					<div id="listbody2"></div>
+					<li id="listbody"></li>
+					<!-- <div id="listbody"></div> -->
 					</ul>
 					
 						<ul>
@@ -212,33 +214,36 @@
 	<script src="../../js/common.js"></script>
 	<script src="../../js/header/header_white.js"></script>
 	<script src="../../js/footer/footer.js"></script>
-	<script src="../../js/member/history.js"></script>
 	<script src="../../js/member/sm-following.js"></script>
 	<script src="../../js/member/mb-menu.js"></script>
 <script id="tr-template2" type="text/x-handlebars-template">
 {{#list}}
+<li class="in-view">
 <div class="sm-time-div">
 <span class="sm-time">{{userNo}}</span>
 <p class="sm-time-p">{{name}}</p>
 <p class="sm-time-p">{{email}}</p>
 </div>
+</li>
 {{/list}}
 </script>
 
-
 <script id="tr-template" type="text/x-handlebars-template">
 {{#cmu}}
+
 <div class="sm-time-div">
 <span class="sm-time">{{createdDate}}</span>
 <p class="sm-time-p">{{title}}</p>
 <p class="sm-time-p">{{content}}</p>
 </div>
+
 {{/cmu}}
 </script>
 
 
 
 	<script src="member-history3.js"></script>
+	<script src="../../js/member/history.js"></script>
 
 
 

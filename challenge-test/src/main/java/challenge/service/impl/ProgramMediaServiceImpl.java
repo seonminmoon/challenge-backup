@@ -1,6 +1,7 @@
 // 업무로직 구현체 - 고객사 마다 다른 구현을 할 수 있다.
 package challenge.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -23,12 +24,12 @@ public class ProgramMediaServiceImpl implements ProgramMediaService {
     }
     
     @Override
-    public List<ProgramMedia> list() {
+    public List<ProgramMedia> list(int no) {
 //        HashMap<String,Object> params = new HashMap<>();
 //        params.put("startRowNo", (pageNo - 1) * pageSize);
 //        params.put("pageSize", pageSize);
         
-        return programMediaDao.selectList();
+        return programMediaDao.selectList(no);
     }
     
     @Override
@@ -43,10 +44,17 @@ public class ProgramMediaServiceImpl implements ProgramMediaService {
     }
     
     @Override
-    public int add(ProgramMedia programMedia) {
+    public int add(ProgramMedia programMedia, ArrayList<String> medias) {
         programDao.insert(programMedia);
-        return programMediaDao.insert(programMedia);
+        
+        for (int i = 0; i < medias.size(); i++) {
+            programMedia.setPath(medias.get(i));
+            programMedia.setState(1);
+            programMediaDao.insert(programMedia);
+        }
+        return medias.size();
     }
+    
     
     public int update(ProgramMedia programMedia) {
         return programMediaDao.update(programMedia);

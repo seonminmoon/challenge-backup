@@ -67,4 +67,13 @@ public class UserServiceImpl implements UserService {
     public int update(User user) {
         return userDao.update(user);
     }
+    public int update2(User user) { // 회원정보 변경
+        return userDao.update2(user);
+    }
+    public int update3(User user) { // 회원정보 비밀번호 변경
+        return userDao.update3(user);
+    }
+    public int updateNotimg(User user) { // 회원정보 비밀번호 변경
+        return userDao.updateNotimg(user);
+    }
 }

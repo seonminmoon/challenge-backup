@@ -8,8 +8,6 @@
 	        password: $("#fPassword").val()
 	    };
 		
-		console.log(data);
-		
 	    if ($(document.body).is("#fSaveId:checked")) {
 	        data.saveId = "true";
 	    }

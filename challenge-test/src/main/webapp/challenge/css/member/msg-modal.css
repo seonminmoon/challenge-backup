@@ -84,10 +84,17 @@
   float: left;
   width: 395px;
 }
+
+.modalContent {
+  display: inline-block;
+  
+}
 .modalContent-titl {
     padding: 10px 10px;
     border: 1px solid #bbb;
     border-radius: 0.5em;
+     width: 95%;
+     font-size: medium;
 }
 .modalContent-cont {
     padding: 10px 10px;
@@ -95,6 +102,9 @@
     height: 230px;
     border: 1px solid #bbb;
     border-radius: 0.5em;
+     width: 95%;
+    font-family: 'NanumSquareRound',sans-serif;
+    font-size: medium;
 }
 
 .originalImg {
@@ -121,13 +131,15 @@
 }
 
 .modal-ok {
-      margin-left: 265px;
+      margin-left: 255px;
 }
+
 .contentName {
+  display: inline-block;
   font-weight: bold;
   float: left;
   margin-right: 15px;
-     width: 50px;
+     width: 80px;
 }
 
 .styleBox {

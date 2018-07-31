@@ -34,7 +34,6 @@
     SELECT u.uno,b.uno,bdate,weight,muscle,fat,bno FROM BINFO b
     INNER JOIN USER u ON u.uno=b.uno
     <!-- limit #{startRowNo}, #{pageSize} -->
-    
   </select>
   
   <!-- <insert id="insert" parameterType="BodyInfo">
@@ -47,9 +46,9 @@
  -->
   <select id="selectOne" parameterType="int" resultMap="BodyInfoMap">
 
-    SELECT u.uno,b.uno,bdate,weight,muscle,fat,bno FROM BINFO b
+    SELECT u.uno,bdate,weight,muscle,fat,bno FROM BINFO b
     INNER JOIN USER u ON u.uno=b.uno
-    where u.uno=#{uno};
+    where u.uno=#{uno}
   </select>
   
    <update id="update" parameterType="BodyInfo">
@@ -59,7 +58,7 @@
         muscle=#{muscle},
         muscle=#{muscle},
         fat=#{fat}
-    where uno=#{no};
+    where uno=#{no}
   </update>
   <!--
   <delete id="delete" parameterType="int">

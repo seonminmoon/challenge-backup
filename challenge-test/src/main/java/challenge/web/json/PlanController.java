@@ -17,9 +17,9 @@ public class PlanController {
         this.planService = planService;
     }
         
-    @RequestMapping("list")
-    public Object list (){
-        return planService.list();
+    @RequestMapping("pList/{trnno}")
+    public Object list (@PathVariable int trnno){
+        return planService.list(trnno);
     }
     
     @RequestMapping("list/{pno}")
@@ -30,20 +30,19 @@ public class PlanController {
     @RequestMapping("add")
     public String add(Plan plan) throws Exception {
         planService.add(plan);
-        return "등록성공!";
+        return "plan add success!";
 
     }
-//    @RequestMapping("{no}")
-//    public Object view(@PathVariable int no) throws Exception {
-//        return planService.get(no);
-//    }
-//    
-//    
-//    @RequestMapping("update")
-//    public String update(Plan plan) throws Exception {
-//        planService.update(plan);
-//        return "redirect:list";
-//    }
+    @RequestMapping("{plno}")
+    public Object view(@PathVariable int plno) throws Exception {
+        return planService.get(plno);
+    }    
+    
+    @RequestMapping("update")
+    public String update(Plan plan) throws Exception {
+        planService.update(plan);
+        return "plan update success!";
+    }
     
 }
 

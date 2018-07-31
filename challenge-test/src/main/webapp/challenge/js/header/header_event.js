@@ -11,25 +11,6 @@ function expand() {
 }
 $('.sh-searchBtn').on('click', expand);
 
-//로그인 여부에 따른 헤더 Nav 메뉴 변경
-/*
-(function () {
-	$.getJSON(serverRoot + "/json/auth/loginUser")
-	.done(function(data) { // 로그인 O
-		$(".login_menu_before").attr("style", "display:none")
-		$("#logoutBtn").click((e) => {
-			e.preventDefault(); // 클릭했을 때 원래 하던 일이 있는데 그것을 하지 말라!
-			$.get(serverRoot + "/json/auth/logout", () => {
-				location.href = serverRoot + "/challenge/html/login/login.html";
-			});
-		});
-	})
-	.fail(function(data) { // 로그인 X
-		$(".login_menu_after").attr("style", "display:none")
-	})
-})();
-*/
-
 
 // USER 객체 정보 저장
 var obj;
@@ -43,7 +24,7 @@ $.ajax({
     obj = data;
     pmembLoader()
   });
-console.log(obj)
+console.log(obj);
 
 //로그인 여부(obj객체 유무에 따라)에 따른 헤더 Nav 메뉴 변경
 if(obj != null) {
@@ -77,16 +58,3 @@ $.ajax({
 
 console.log(objPmemb)
 
-
-//로그인 한 유저 정보 받아오기
-/*
-function loadLoginUser() {
-
-	$.getJSON(serverRoot + "/json/auth/loginUser", (data) => {
-		console.log(data)
-	}).fail(() => {
-		location.href = serverRoot + "/challenge/html/login/login.html";
-	});
-
-}
-*/

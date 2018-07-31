@@ -74,7 +74,7 @@
   .sm-black-top {
       background-color: black;
       color: #fff;
-      height: 680px;
+      height: 600px;
       overflow: hidden;
   }
 
@@ -102,15 +102,17 @@
 
   .sm-f-size {
       color: white;
+    position: relative;
+    top: 20px;
   }
 
   .sm-f-size p {
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 400;
   }
 
   .sm-f-size span {
-      font-size: 40px;
+      font-size: 35px;
       font-weight: bold;
   }
 
@@ -158,9 +160,8 @@
       padding: 20px 50px;
   }
   .sm-white-i div i {
-  padding-top:10px;
   padding-bottom:10px;
-    font-size:50px;
+    font-size:48px;
       color:white;
   }
   .sm-red-i div i {

@@ -11,9 +11,9 @@ input {
 }
 hr {
     border: none;
-    width: 55px;
+    width: 45px;
     height: 2px;
-    background-color: #1B3453;
+    background-color: #DD1F26;
 }
 .omb_login {
   margin-left: 400px;
@@ -22,6 +22,15 @@ hr {
   width: 400px;
   display: inline-block;
   text-align: center;
+}
+
+.omb_authTitle {
+  margin: 10px 0;
+  
+}
+
+.login-aa {
+  margin-top: 20px;
 }
 .form-control {
   width: 100%;

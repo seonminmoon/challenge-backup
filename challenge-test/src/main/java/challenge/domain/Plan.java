@@ -11,7 +11,7 @@ public class Plan implements Serializable {
     
     private int no; // 운동계획서번호
     private int planTurn; // 운동 차수
-    @JsonFormat(pattern="yyyy-MM-dd")
+    @JsonFormat(pattern="yyyy-MM-dd", timezone = "Asia/Seoul")
     private Date planDate; // 운동 날짜
     private String planTitl; // 운동 제목
     private String planContent; //oo,- 운동 내용

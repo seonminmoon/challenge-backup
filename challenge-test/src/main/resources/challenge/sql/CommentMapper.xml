@@ -64,20 +64,22 @@
 		이름을 마음대로 해도 된다. -->
 	<select id="selectOne" parameterType="int"
 		resultMap="CommentMap">
-		select pono, pocont, podate
-		from TML t
-		where pono=#{value}
+		select p.pono, uname, p.pocont, p.podate
+		from CMT cm
+		inner join POST p on p.pono = cm.cmtno 
+		inner join PMEMB pm on pm.uno = cm.uno
+        inner join USER u on pm.uno = u.UNO
+		where cmtno=#{value}
 	</select>
 
 	<update id="update" parameterType="Comment">
 		update POST set
-		pocont=#{content},
-		podate=now()
+		pocont=#{content}
 		where pono=#{no}
 	</update>
 
 	<delete id="delete" parameterType="int">
-		delete from POST where
-		pono=#{value}
+		delete from CMT 
+		where cmtno=#{value}
 	</delete>
 </mapper>

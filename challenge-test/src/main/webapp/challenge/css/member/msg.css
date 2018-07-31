@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+.sm-msgBox {
+  height: 300px;
+}
+
+.sm-allCheck {
+    margin: 0; margin-bottom: 3px;
+}
+
+.sm-allDel {
+    margin: 0; margin-bottom: 3px;
+}
+input[type=checkbox] {
+  transform: scale(1.5);
+}
+
+.chall-table td:nth-child(3) {
+    text-align: left;
+}
+
+h3 a {
+    color:black;
+}
+
+.hr_menu {
+  border: 1px solid gray; width: 150px; float: left;
+}
+
+.hr-body {
+  margin-bottom: 30px;
+}

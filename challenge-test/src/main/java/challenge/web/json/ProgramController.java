@@ -21,18 +21,17 @@ public class ProgramController {
         this.programService = programService;
     }
 
-   @RequestMapping("add")
-   @ResponseStatus(HttpStatus.CREATED)
+    @RequestMapping("add")
+    @ResponseStatus(HttpStatus.CREATED)
     public void add(Program program) throws Exception {
-           System.out.println("컨트롤러는 들어옴");
-            programService.add(program);
+        programService.add(program);
     }
 
     @RequestMapping("delete")
     //@ResponseStatus(HttpStatus.OK) // 응답 상태 코드 값의 기본은 "200(OK)" 이다.
     public void delete(
             @RequestParam("no") int no) throws Exception {
-       programService.delete(no);
+        programService.delete(no);
     }
 
     @RequestMapping("list{page}")
@@ -42,12 +41,18 @@ public class ProgramController {
             @MatrixVariable(defaultValue="3") int pageSize) {
         return programService.list(pageNo, pageSize);
     }
-    
+
     @RequestMapping("listCard")
     public Object list(
             ) {
         return programService.listCard();
     }
+    
+    @RequestMapping("listProgram/{trainerNo}")
+    public Object list(@PathVariable int trainerNo) {
+        return programService.listProgram(trainerNo);
+    }
+    
     @RequestMapping("mainList")
     public Object mainList(
             ) {
@@ -63,7 +68,7 @@ public class ProgramController {
 
     @RequestMapping("{no}")
     public Program view(@PathVariable int no) throws Exception {
-        return programService.get(no);
+        return programService.getWithMedia(no);
     }
 
 }

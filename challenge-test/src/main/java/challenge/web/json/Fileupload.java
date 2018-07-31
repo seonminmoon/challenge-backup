@@ -10,7 +10,6 @@ import java.util.UUID;
 import javax.servlet.ServletContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
@@ -22,22 +21,22 @@ import net.coobird.thumbnailator.Thumbnails;
 public class Fileupload {
 
     @Autowired ServletContext sc;
-    
-    
-    @PostMapping("upload") // 이미지경로 외 다른 데이터들도 같이 저장!
+
+
+    @RequestMapping("upload") // 이미지경로 외 다른 데이터들도 같이 저장!
     public Object upload03(
             String email,
             String pwd,
             MultipartFile[] files) {
         String filesDir = sc.getRealPath("/files");  // 진짜 Real Path (사진이 저장되는 폴더명)
-        
+
         HashMap<String,Object> returnData = new HashMap<>();
         returnData.put("email", email);
         returnData.put("pwd", pwd);
-        
+
         ArrayList<Map<String,Object>> jsonDataList = new ArrayList<>();
         returnData.put("files", jsonDataList);
-        
+
         for (int i = 0; i < files.length; i++) {
             HashMap<String,Object> jsonData = new HashMap<>();
             String filename = UUID.randomUUID().toString();
@@ -49,7 +48,7 @@ public class Fileupload {
                 System.out.println(path);
                 files[i].transferTo(path);
                 jsonDataList.add(jsonData);
-                
+
                 Thumbnails.of(path)
                 .size(50, 50)
                 .outputFormat("jpg")
@@ -58,16 +57,60 @@ public class Fileupload {
                 .size(200,200)
                 .outputFormat("jpg")
                 .toFile(path.getCanonicalFile() + "_200x200");
-                
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
         return returnData;
     }
-    
-    
+
+    @RequestMapping("upload02") // 이미지경로 외 다른 데이터들도 같이 저장!
+    public Object upload02(
+            String email,
+            String pwd,
+            String phone,
+            MultipartFile[] files) {
+        String filesDir = sc.getRealPath("/files");  // 진짜 Real Path (사진이 저장되는 폴더명)
+
+        HashMap<String,Object> returnData = new HashMap<>();
+        returnData.put("email", email);
+        returnData.put("pwd", pwd);
+        returnData.put("phone", phone);
+
+        ArrayList<Map<String,Object>> jsonDataList = new ArrayList<>();
+        returnData.put("files", jsonDataList);
+
+        for (int i = 0; i < files.length; i++) {
+            HashMap<String,Object> jsonData = new HashMap<>();
+            String filename = UUID.randomUUID().toString();
+            jsonData.put("filename", filename);
+            jsonData.put("filesize", files[i].getSize());
+            jsonData.put("originname", files[i].getOriginalFilename());
+            try {
+                File path = new File(filesDir + "/" + filename);
+                System.out.println(path);
+                files[i].transferTo(path);
+                jsonDataList.add(jsonData);
+
+                Thumbnails.of(path)
+                .size(50, 50)
+                .outputFormat("jpg")
+                .toFile(path.getCanonicalFile() + "_50x50");
+                Thumbnails.of(path)
+                .size(200,200)
+                .outputFormat("jpg")
+                .toFile(path.getCanonicalFile() + "_200x200");
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return returnData;
+    }
 }
+
+
 
 /*
     @PostMapping("upload")
@@ -102,7 +145,7 @@ public class Fileupload {
         return jsonData;
     }
  */
-    
+
 
 
 

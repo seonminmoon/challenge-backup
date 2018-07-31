@@ -25,18 +25,19 @@
     
     <result column="pday" property="proDay"/>
     <result column="ptime" property="proTime"/>
-    <result column="ppic" property="mainImg"/>
     
     <result column="pstate" property="proState"/>
     <result column="presult" property="proResult"/>
 
     <result column="cno" property="challengeNo"/>
-    <!-- <result column="plno" property="planNo"/> -->
 
     <association property="trainerNo" javaType="Trainer">
       <id column="uno" property="userNo"/>
       <result column="uname" property="name"/>
       <result column="upath" property="userPath"/>
+      <result column="trnint" property="introduce"/>
+      <result column="trncar" property="career"/>
+      <result column="trntime" property="time"/>
     </association>
 
     <collection property="medias" ofType="ProgramMedia">
@@ -49,7 +50,7 @@
 
   <select id="selectListCard"
           resultMap="ProgramMap" parameterType="map">
-    select p.pno, p.pname, p.pth, p.pprice, p.bas_addr, p.maxqty, p.sdt, p.ppic,
+    select p.pno, p.pname, p.pth, p.pprice, p.bas_addr, p.maxqty, p.sdt,
            m.pmedno, m.ppath, m.pmtype,
            u.upath, u.uname
     from PMED m
@@ -59,6 +60,18 @@
     <!-- limit #{startRowNo}, #{pageSize} -->
   </select>
 
+  <select id="selectTrainerProgram"
+          resultMap="ProgramMap" parameterType="map">
+    select p.pno, p.pname, p.pth, p.pprice, p.bas_addr, p.maxqty, p.sdt,
+           m.pmedno, m.ppath,
+           u.upath, u.uname
+    from PMED m
+         right outer join PROG p on m.pno=p.pno
+         left outer join TRN t on p.trnno=t.trnno
+         left outer join USER u on t.trnno=u.uno
+    where t.trnno=#{value}
+    <!-- limit #{startRowNo}, #{pageSize} -->
+  </select>
 
   <select id="selectList"
           resultMap="ProgramMap" parameterType="map">
@@ -66,6 +79,7 @@
     from PROG
     <!-- limit #{startRowNo}, #{pageSize} -->
   </select>
+  
   <select id="mainList"
           resultMap="ProgramMap" parameterType="map">
     SELECT * FROM PROG limit 0, 2
@@ -84,7 +98,7 @@
         pth, ptover, 
         pday, ptime, 
         pstate, presult,
-        cno, trnno, ppic)
+        cno, trnno)
     values(
         #{postNo},#{address},#{addDetail},
         #{startDate},#{endDate}, 
@@ -95,7 +109,7 @@
         #{proTh}, #{proTurn}, 
         #{proDay}, #{proTime}, 
         #{proState}, #{proResult},
-        #{challengeNo}, #{trainerNo.userNo}, #{mainImg})
+        #{challengeNo}, #{trainerNo.userNo})
   </insert>
 
 
@@ -108,19 +122,17 @@
     
   </select>
 
-  <select id="selectOneWithMembers" parameterType="string" resultMap="ProgramMap">
+  <select id="selectOneWithMedia" parameterType="int" resultMap="ProgramMap">
     select
-        t.name,
-        t.dscrt,
-        t.sdt,
-        t.edt,
-        t.max_qty,
-        tm.mid,
-        m.email
-    from pms2_program t
-         left outer join pms2_program_member tm on t.name=tm.tnm
-         left outer join pms2_member m on tm.mid=m.mid
-    where t.name=#{value}
+        p.*,
+        t.*,
+        u.*,
+        m.*
+    from PMED m 
+         right outer join PROG p on m.pno = p.pno
+         left outer join TRN t on p.TRNNO = t.TRNNO
+         left outer join USER u on t.TRNNO = u.UNO
+    where p.pno=#{value}
   </select>
 
   <update id="update" parameterType="Program">

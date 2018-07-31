@@ -7,7 +7,6 @@
 	유지보수할 때 알아보기 쉽다. 단순히 알아보기 쉬울 뿐만 아니라 스프링 프레임워크와 연동할 때 DAO 객체를 자동 생성할 수 있다. -->
 <mapper namespace="challenge.dao.ProgramMediaDao">
 	<resultMap type="ProgramMedia" id="ProgramMediaMap">
-		<id column="pno" property="no" />
 		<id column="pmedno" property="pmno"/>
         <result column="ppath" property="path"/>
         <result column="pmtype" property="state"/>
@@ -18,30 +17,12 @@
 		아니라 스프링 프레임워크와 연동할 때 DAO객체를 자동생성하고 그 메서드를 자동생성할 때 사용할 수 있다. -->
 	<select id="selectList" resultMap="ProgramMediaMap"
 		parameterType="map">
-		<choose>
-			<when test="picture == ''">
-				select pono, pocont, podate, pro.pno, pro.pname, u.uno, u.uname
-				from TML t
-				inner join POST p on t.tmlno=p.pono
-				inner join PMEMB pm on t.uno = pm.uno
-				inner join PROG pro on pro.pno = pm.pno 
-				inner join USER u on pm.uno = u.uno
-				order by pono desc
-			</when>
-			<otherwise>
-	           select pono, pocont, podate, t.tmlpath, pro.pno, pro.pname, u.uno, u.uname
-                from TML t
-                inner join POST p on t.tmlno=p.pono
-                inner join PMEMB pm on t.uno = pm.uno
-                inner join PROG pro on pro.pno = pm.pno 
-                inner join USER u on pm.uno = u.uno
-                order by pono desc
-			</otherwise>
-		</choose>
+		select pno, pmedno, ppath, pmtype
+        from PMED
+        where pno=#{no}
 	</select>
 
-	<insert id="insert" parameterType="ProgramMedia"
-	   useGeneratedKeys="true" keyColumn="pmedno" keyProperty="no">
+	<insert id="insert" parameterType="ProgramMedia">
 		<if test="path != null">
 		insert into PMED(pno, ppath, pmtype)
 		values(#{no}, #{path}, #{state})
@@ -52,9 +33,9 @@
 		이름을 마음대로 해도 된다. -->
 	<select id="selectOne" parameterType="int"
 		resultMap="ProgramMediaMap">
-		select pono, pocont, podate
-		from TML t
-		where pono=#{value}
+		select pno, pmedno, ppath, pmtype
+		from PMED
+		where pmedno=#{value}
 	</select>
 
 	<update id="update" parameterType="ProgramMedia">

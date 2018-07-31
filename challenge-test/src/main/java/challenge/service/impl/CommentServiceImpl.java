@@ -27,17 +27,14 @@ public class CommentServiceImpl implements CommentService {
     
     @Override
     public List<Comment> list() {
-//        HashMap<String,Object> params = new HashMap<>();
-//        params.put("startRowNo", (pageNo - 1) * pageSize);
-//        params.put("pageSize", pageSize);
         List<Comment> list = commentDao.selectList();
-        
         return commentDao.selectList();
     }
     
     @Override
     public int delete(int no) {
-        return commentDao.delete(no);
+        commentDao.delete(no);
+        return postDao.delete(no);
     }
 
     @Override

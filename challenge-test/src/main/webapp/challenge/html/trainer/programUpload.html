@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset='UTF-8'>
+<title>회원페이지</title>
+<link rel="stylesheet"
+ href="../../css/trainer/template/sm-trainerPage.css">
+<link rel="stylesheet" href="../../css/trainer/progaramUpload.css">
+<link rel="stylesheet" href="../../css/common.css">
+<link rel="stylesheet"
+ href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
+</head>
+
+<body>
+ <div id="subMenu"></div>
+ <div id="sm-back">
+  <div class="sm-container">
+   <h2>서비스 관리</h2>
+
+   <div class="sm-mypage">
+    <div class="sm-profile">
+     <div style="text-align: center;">
+      <img src="../../img/member/img1.jpg"
+       style="margin-left: 30px; border-radius: 60px; width: 120px; height: 120px;">
+      <button id="sm-btn-2" type="button"
+       style="position: relative; top: -10px; right: 40px; width: 30px; height: 30px; border-radius: 15px; padding: 0px; font-size: 14px;">
+       <span>2</span>
+      </button>
+      <br> 사용자이름<br>
+      <button id="sm-btn-2" type="button"
+       style="margin-top: 10px; margin-bottom: 20px;">프로필관리</button>
+     </div>
+     <!-- ************* 이부분만 템플릿에서 다르니까 이것만 짤라서 쓰면된다!!!! ********************************************* -->
+     <div class="sm-menu" style="border-left: none;">
+      <i class="fas fa-chalkboard"></i><br>프로그램 관리
+     </div>
+     <div class="sm-menu" style="border-bottom: 1px solid gray;">
+      <i class="fas fa-angle-double-up"></i><br>프로그램 등록
+     </div>
+     <div class="sm-menu"
+      style="border-left: none; border-right: 1px solid gray;">
+      <i class="fas fa-dumbbell"></i><br>프로그램 운동일지
+     </div>
+    </div>
+    <!-- .profile -->
+
+
+    <div class="sm-mypage-body">
+     <!-- 프로젝트 등록 서브 메뉴 -->
+     <div class="sm-tab">
+      <button id="next1" class="sm-tablinks active">① 기본사항</button>
+      <button id="next2" class="sm-tablinks">② 가격설정</button>
+      <button id="next3" class="sm-tablinks">③ 이미지&설명</button>
+     </div>
+     <!-- 프로젝트 등록 본문-->
+     <div id="sm-tab1" class="sm-tabcontent sm-current">
+      <div class="uploadContent">
+       <ul>
+        <li class="ucChallenge" id="notPadding">
+         <div class="contentName">챌린지 주제</div>
+         <div class="ucContet">
+          <div class="challengeSelect">
+           <select name="subjectSelect" class="selectTab1" id="chalTab"></select>
+          </div>
+         </div>
+        </li>
+        <li class="ucDate">
+         <div class="contentName">프로그램 기간</div>
+         <div class="ucContet">
+          <div class="challengeDate">
+           <input id="fStartDate" type="date">
+           <div class="fontStyle1">~</div>
+           <input id="fEndDate" type="date">
+          </div>
+         </div>
+        </li>
+        <li class="ucProgram">
+         <div class="contentName">프로그램 이름</div>
+         <div class="ucContet">
+          <div class="programTurnName">
+           <h5>기수</h5>
+           <div class="programTurnBox">
+            <input id="fth" type="number" min="1" max="999">
+           </div>
+          </div>
+          <div class="challengeProgram">
+           <h5>이름</h5>
+           <input id="fname" type="text"
+            placeholder="프로그램 이름을 20자 이내로 입력해 주세요.">
+          </div>
+         </div>
+        </li>
+        <li class="ucProgram">
+         <div class="contentName">종목</div>
+         <div class="ucContet">
+          <div class="typeSelect">
+           <select name="subjectSelect" class="selectTab1" id="ftype">
+            <option value="헬스">헬스</option>
+            <option value="수영">수영</option>
+            <option value="수영">에어로빅</option>
+            <option value="수영">댄스</option>
+            <option value="수영">필라테스</option>
+            <option value="수영">검도</option>
+            <option value="태권도">태권도</option>
+           </select>
+          </div>
+         </div>
+        </li>
+        <li class="ucTarget">
+         <div class="contentName">목표</div>
+         <div class="ucContet">
+          <div class="targetName">
+           <h5>목표주제</h5>
+           <div class="targetBox">
+            <select name="targetSelect" class="selectTab1" id="fprgoal">
+             <option value="체충">체충</option>
+             <option value="골격근량">골격근량</option>
+             <option value="체지방량">체지방량</option>
+             <option value="기타">기타</option>
+            </select>
+           </div>
+          </div>
+          <div class="targetNum">
+           <h5>수치설정</h5>
+           <div class="targetNumBox">
+            <div class="targetNumInput">
+             <input id="fprogoalnum" type="number" min="1" max="999">
+            </div>
+            <div class="targetNumSelect">
+             <select name="targeNumtSelect" class="selectTab1">
+              <option value="kg">kg</option>
+              <option value="%">%</option>
+             </select>
+            </div>
+           </div>
+          </div>
+         </div>
+        </li>
+        <li class="ucNum">
+         <div class="contentName">인원</div>
+         <div class="ucContet">
+          <div class="minNum">
+           <h5>최소인원</h5>
+           <div class="maxSelect">
+            <input id="fminQty" type="number" min="1" max="100">
+           </div>
+          </div>
+          <div class="maxNum">
+           <h5>최대인원</h5>
+           <div class="minSelect">
+            <input id="fmaxQty" type="number" min="1" max="100">
+           </div>
+          </div>
+         </div>
+        </li>
+        <li class="ucposition">
+         <div class="contentName">장소</div>
+         <div class="ucContet">
+          <div class="positionBox">
+           <div class="positionContent">
+            <div class="positionList">
+             <input type="text" id="sample6_postcode" placeholder="우편번호">
+             <input id="postSearch" type="button" value="우편번호 찾기"><br>
+             <input type="text" id="sample6_address" placeholder="주소">
+             <input type="text" id="sample6_address2" placeholder="상세주소">
+            </div>
+           </div>
+          </div>
+         </div>
+        </li>
+        <li class="ucTurn">
+         <div class="contentName">수업일수(회차)</div>
+         <div class="ucContet">
+          <div class="">
+           <input id="fptover" type="number" min="1" max="100"> 일
+          </div>
+         </div>
+        </li>
+        <li class="ucday" id="lastBottom">
+         <div class="contentName">요일&시간</div>
+         <div class="ucContet" id="lastBottom">
+          <div class="scheduleBox">
+           <div id="weekly-schedule"></div>
+          </div>
+         </div>
+        </li>
+       </ul>
+      </div>
+      <!-- 다음 단계 버튼 -->
+      <div class="nextBox">
+       <button id="next4">저장 및 다음단계</button>
+      </div>
+     </div>
+
+     <div id="sm-tab2" class="sm-tabcontent">
+      <div class="uploadContent">
+       <ul>
+        <li class="ucpMoney" id="bottomNone">
+         <div class="contentName">금액</div>
+         <div class="ucContet">
+          <div class="moneyBox">
+           <div class="moneyContent">
+            <!-- 금액 항목 -->
+            <div class="moneyList">
+             <div class="moneyName2">
+              <h5>프로그램 금액</h5>
+              <div class="ucpInputBox">
+               <input id="fprice" type="text" class="numberic" 
+               placeholder="금액을 입력해 주세요.">
+              </div>
+             </div>
+            </div>
+            <div class="moneyListBox" id="more">
+             <div class="moneyList">
+              <div class="moneyName2 marginBox">
+               <h5>부가금액 내용</h5>
+               <div class="ucpInputBox">
+                <input type="text" class="numberic" 
+                placeholder="부가항목 내용을 입력해 주세요.">
+               </div>
+              </div>
+              <div class="moneyName2">
+               <h5>
+                부가금액
+                <i id="lessBtn" class="fas fa-times-circle"></i>
+               </h5>
+               <div class="ucpInputBox">
+                <input type="text" class="numberic" 
+                placeholder="부가항목 금액을 입력해 주세요.">
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+           <div class="moneyPlus">
+            <a id="moreBtn">+ 부가금액 추가</a>
+           </div>
+          </div>
+         </div>
+        </li>
+       </ul>
+       <!-- 다음 단계 버튼 -->
+      </div>
+      <div class="nextBox">
+       <button id="next5">뒤로</button>
+       <button id="next6">저장 및 다음단계</button>
+      </div>
+     </div>
+
+     <div id="tab-3" class="tab-content">
+     <div id="sm-tab3" class="sm-tabcontent">
+      <div class="uploadContent">
+       <ul>
+        <li class="ucpImgs">
+         <div class="contentName">프로그램 이미지</div>
+         <div class="ucContet">
+          <div class="filebox2">
+            <label for="fileupload2">업로드</label>
+            <input id="fileupload2" type="file" name="files"
+             multiple>
+            <div id="ad-images-div"></div>
+          </div>
+         </div>
+        </li>
+        <li class="ucpexplain">
+         <div class="contentName">프로그램 설명</div>
+         <div class="ucContet">
+          <textarea id="fdescription" name="name" rows="15" cols="80"></textarea>
+         </div>
+        </li>
+       </ul>
+      </div>
+      <!-- 다음 단계 버튼 -->
+      <div class="nextBox">
+       <button id="next7">뒤로</button>
+       <button id="addBtn" type="button">저장</button>
+      </div>
+     </div>
+
+    </div>
+    <!-- mypage-body -->
+
+   </div>
+   <!-- mypage -->
+  </div>
+  <!--.container-->
+ </div>
+ <!-- back -->
+
+ <script id="proInsert" type="text/x-handlebars-template">
+{{#each list}}
+<option id="fchno" value="{{no}}">{{title}}</option>
+{{/each}}
+</script>
+
+ <div id="footer"></div>
+
+ <script src="../../js/common.js"></script>
+ <script src="../../node_modules/handlebars/dist/handlebars.min.js"></script>
+ <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+ <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+
+ <script
+  src="../../node_modules/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+ <script
+  src="../../node_modules/blueimp-load-image/js/load-image.all.min.js"></script>
+ <script
+  src="../../node_modules/blueimp-canvas-to-blob/js/canvas-to-blob.js"></script>
+ <script
+  src="../../node_modules/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+ <script
+  src="../../node_modules/blueimp-file-upload/js/jquery.fileupload.js"></script>
+ <script
+  src="../../node_modules/blueimp-file-upload/js/jquery.fileupload-process.js"></script>
+ <script
+  src="../../node_modules/blueimp-file-upload/js/jquery.fileupload-image.js"></script>
+
+ <script src="../../js/trainer/dailySchedule.js"></script>
+ <script src="../../js/trainer/jquery.number.js"></script>
+ <script src="../../js/trainer/trainer-template.js"></script>
+ <script src="../../js/trainer/program-upload.js"></script>
+ <script src="../../js/footer/footer.js"></script>
+</body>
+
+</html>

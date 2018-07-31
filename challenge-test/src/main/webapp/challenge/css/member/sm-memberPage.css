@@ -172,3 +172,7 @@ ul {list-style:none;}
   text-decoration: none;
   color:black;
 }
+#images-div img{
+  width: 125px;
+    height: 120px;
+}
