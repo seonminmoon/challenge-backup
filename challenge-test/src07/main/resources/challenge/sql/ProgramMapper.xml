@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="challenge.dao.ProgramDao">
+
+  <resultMap type="Program" id="ProgramMap">
+    <id column="pno" property="no"/>
+    <result column="pstno" property="postNo"/>
+    <result column="bas_addr" property="address"/>
+    <result column="det_addr" property="addDetail"/>
+    <result column="pname" property="name"/>
+    <result column="sdt" property="startDate"/>
+    <result column="edt" property="endDate"/>
+    <result column="minqty" property="minQty"/>
+    <result column="maxqty" property="maxQty"/>
+    <result column="pprice" property="price"/>
+    <result column="pdesc" property="description"/>
+    <result column="ptype" property="proType"/>
+    <result column="pgoal" property="proGoal"/>
+    <result column="pgoal_n" property="proGoalNum"/>
+    <result column="pth" property="proTh"/>
+    <result column="ptover" property="proTurn"/>
+    
+    <result column="pday" property="proDay"/>
+    <result column="ptime" property="proTime"/>
+    
+    <result column="pstate" property="proState"/>
+    <result column="presult" property="proResult"/>
+
+    <result column="cno" property="challengeNo"/>
+
+    <association property="trainerNo" javaType="Trainer">
+      <id column="uno" property="userNo"/>
+      <result column="uname" property="name"/>
+      <result column="upath" property="userPath"/>
+      <result column="trnint" property="introduce"/>
+      <result column="trncar" property="career"/>
+      <result column="trntime" property="time"/>
+    </association>
+
+    <collection property="medias" ofType="ProgramMedia">
+        <id column="pno" property="no" />
+        <id column="pmedno" property="pmno"/>
+        <result column="ppath" property="path"/>
+        <result column="pmtype" property="state"/>
+    </collection>
+  </resultMap>
+
+  <select id="selectListCard"
+          resultMap="ProgramMap" parameterType="map">
+    select p.pno, p.pname, p.pth, p.pprice, p.bas_addr, p.maxqty, p.sdt,
+           m.pmedno, m.ppath, m.pmtype,
+           u.upath, u.uname
+    from PMED m
+         right outer join PROG p on m.pno=p.pno
+         left outer join TRN t on p.trnno=t.trnno
+         left outer join USER u on t.trnno=u.uno
+    <!-- limit #{startRowNo}, #{pageSize} -->
+  </select>
+
+  <select id="selectTrainerProgram"
+          resultMap="ProgramMap" parameterType="map">
+    select p.pno, p.pname, p.pth, p.pprice, p.bas_addr, p.maxqty, p.sdt,
+           m.pmedno, m.ppath,
+           u.upath, u.uname
+    from PMED m
+         right outer join PROG p on m.pno=p.pno
+         left outer join TRN t on p.trnno=t.trnno
+         left outer join USER u on t.trnno=u.uno
+    where t.trnno=#{value}
+    <!-- limit #{startRowNo}, #{pageSize} -->
+  </select>
+
+  <select id="selectList"
+          resultMap="ProgramMap" parameterType="map">
+    select *
+    from PROG
+    <!-- limit #{startRowNo}, #{pageSize} -->
+  </select>
+  
+  <select id="mainList"
+          resultMap="ProgramMap" parameterType="map">
+    SELECT * FROM PROG limit 0, 2
+    <!-- limit #{startRowNo}, #{pageSize} -->
+  </select>
+
+  <insert id="insert" parameterType="Object"
+        useGeneratedKeys="true" keyColumn="pno" keyProperty="no">
+    insert into PROG(
+        pstno, bas_addr, det_addr, 
+        sdt, edt, 
+        pname, 
+        minqty, maxqty,
+        pprice, pdesc, ptype, 
+        pgoal, pgoal_N, 
+        pth, ptover, 
+        pday, ptime, 
+        pstate, presult,
+        cno, trnno)
+    values(
+        #{postNo},#{address},#{addDetail},
+        #{startDate},#{endDate}, 
+        #{name},
+        #{minQty}, #{maxQty}, 
+        #{price}, #{description}, #{proType}, 
+        #{proGoal}, #{proGoalNum},
+        #{proTh}, #{proTurn}, 
+        #{proDay}, #{proTime}, 
+        #{proState}, #{proResult},
+        #{challengeNo}, #{trainerNo.userNo})
+  </insert>
+
+
+
+  <select id="selectOne" parameterType="string" resultMap="ProgramMap">
+    select p.PNO,p.PNAME,p.PPRICE,u.uname
+    from PROG p 
+    inner join TRN t on p.TRNNO =  t.TRNNO
+    inner join USER u on t.TRNNO = u.UNO
+    
+  </select>
+
+  <select id="selectOneWithMedia" parameterType="int" resultMap="ProgramMap">
+    select
+        p.*,
+        t.*,
+        u.*,
+        m.*
+    from PMED m 
+         right outer join PROG p on m.pno = p.pno
+         left outer join TRN t on p.TRNNO = t.TRNNO
+         left outer join USER u on t.TRNNO = u.UNO
+    where p.pno=#{value}
+  </select>
+
+  <update id="update" parameterType="Program">
+    update pms2_program set
+      dscrt=#{description},
+      max_qty=#{maxQty},
+      sdt=#{startDate},
+      edt=#{endDate}
+    where name=#{name}
+  </update>
+
+  <delete id="delete" parameterType="string">
+    delete from pms2_program
+    where name=#{value}
+  </delete>
+
+  <update id="updateState" parameterType="map">
+    update pms2_program set
+      stat=#{state}
+    where tano=#{no}
+  </update>
+</mapper>

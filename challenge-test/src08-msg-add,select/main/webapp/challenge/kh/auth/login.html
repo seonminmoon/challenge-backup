@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>로그인</title>
+<link rel="stylesheet"
+	href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../css/common.css">
+<link rel="stylesheet" href="../css/login.css">
+<link rel="stylesheet"
+	href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
+<link href="https://fonts.googleapis.com/css?family=Titillium+Web:900"
+	rel="stylesheet">
+
+
+</head>
+
+
+<body>
+	<!-- 헤더 시작 -->
+	<header id="header"></header>
+	<!-- 헤더 종료 -->
+
+
+	<div class="container">
+
+		<div class="omb_login">
+
+			<h3 class="omb_authTitle">
+
+				로그인
+				<!-- <a href="#">회원 가입</a> -->
+			</h3>
+
+
+
+
+			<div class="row omb_row-sm-offset-3">
+				<div class="col-xs-12 col-sm-6">
+					<form class="omb_loginForm" action="" autocomplete="off"
+						method="POST">
+
+						<div class="input-group mb-2"
+							style="max-width: 300px; margin: auto">
+							<div for="fId" class="input-group-prepend">
+								<div class="input-group-text">
+									<i class="fa fa-user"></i>
+								</div>
+							</div>
+							<input id="fId" type="text" class="form-control" name="username"
+								placeholder="email" value="aa">
+						</div>
+
+						<div class="input-group mb-2"
+							style="max-width: 300px; margin: auto;">
+							<div class="input-group-prepend">
+								<div class="input-group-text">
+									<i class="fa fa-lock"></i>
+								</div>
+							</div>
+
+							<input id="fPassword" type="password" class="form-control" name="password"
+								placeholder="password" value="bb">
+						</div>
+						
+						&nbsp;
+
+
+						<center>
+							<button id="loginBtn" class="btn" type="submit">
+								<i class="fa fa-sign-in-alt"></i>&nbsp;&nbsp;Login
+							</button>
+						</center>
+					</form>
+				</div>
+			</div>
+
+
+			<div class="row omb_row-sm-offset-3">
+				<div class="col-xs-12 col-sm-4">
+
+					<label for="fSaveId" class="form-check-label"> <input
+						class="form-check-input" type="checkbox">아이디 저장
+					</label>
+				</div>
+				<div class="col-xs-12 col-sm-2" style="text-align:center">
+					<a href="#" class="findpw">패스워드 찾기</a>
+				</div>
+			</div>
+
+<br>
+			<div class="row omb_row-sm-offset-3">
+                <!-- <div class="col-xs-12 col-sm-4"> -->
+
+                     <div class="col-xs-12 col-md-3" style="text-align:center">
+                    <a href="#" class="memberforms" id="input-view">회원으로 가입하기</a>
+                </div>
+                
+                <div class="col-xs-6 col-md-4" style="text-align:left">
+                    <a href="#" class="trainerforms">트레이너로 가입하기</a>
+                </div>
+            </div>
+
+
+
+		<!--     </div> omb_login 첫번째 부분
+        
+        <div class="omb_login"> -->
+
+		<div class="row omb_row-sm-offset-3 omb_loginOr">
+			<div class="col-xs-12 col-sm-6">
+				<hr class="omb_hrOr">
+				<span class="omb_spanOr">or</span>
+			</div>
+		</div>
+		<br>
+
+
+		<div class="row omb_row-sm-offset-3 omb_socialButtons" align="center">
+
+			<div class="col-xs-2 col-sm-2">
+				<a href="#" class="btn btn-lg omb_btn-facebook"
+					data-toggle="tooltip" data-placement="top" title="Facebook">
+					&nbsp;&nbsp;<i class="fab fa-facebook-f fa-2x"></i>&nbsp;&nbsp; <!-- <span class="hidden-xs"></span> -->
+				</a>
+			</div>
+
+			<div class="col-xs-2 col-sm-2">
+				<a href="#" class="btn btn-lg omb_btn-twitter" data-toggle="tooltip"
+					data-placement="top" title="Twitter"> <i
+					class="fab fa-twitter fa-2x"></i> <!-- <span class="hidden-xs"></span> -->
+				</a>
+			</div>
+
+			<div class="col-xs-2 col-sm-2">
+				<a href="#" class="btn btn-lg omb_btn-kakao" data-toggle="tooltip"
+					data-placement="top" title="Kakao">
+	<img src="kakao.png" width="43px" height="47px"> 
+				</a>
+					<!-- <i class="far fa-comments fa-2x"></i> --><!-- <span class="hidden-xs">ddd</span>ddd -->
+			</div>
+
+					
+
+		</div>
+
+
+
+	</div>
+	</div>
+
+	<!-- container -->
+	
+
+
+	<!-- 푸터 시작 -->
+	<footer id="footer"></footer>
+	<!-- 푸터 종료 -->
+
+
+	<!-- 헤더 스크립트 -->
+	<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="../../node_modules/popper.js/dist/umd/popper.min.js"></script>
+	<script src="../../js/common.js"></script>
+	<script src="../../js/header/header_white.js"></script>
+	<script src="../../js/footer/footer.js"></script>
+	<!-- 헤더 스크립트 -->
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery를 이용한 JSON 데이터 구하기</title>
+    </head>
+    
+  <body>
+    <div id="container">    
+    <ul></ul>        
+      <div id="dictionary">
+      </div>
+    </div>
+    
+   <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $.getJSON('http://localhost:8888/challenge-project/json/program/list', function(data) {
+          var html ='';
+          $.each(data, function(Index, entry) {
+              html += '<li>';
+              html += '<div class="sm-time-div">';
+              html += '<span id="aaaa" class="sm-time">' + entry.startDate + '</span>';
+              html += '<p class="sm-time-p">';
+              html += '<div class="part">' + entry.name +'을 시작했습니다.' + '</div>';
+              html += '</p>';
+              html += '</div>';
+              html += '</li>';
+              
+          });
+          console.log(data);
+          $('ul').append(html);
+        });
+        return false;
+    });
+    
+    
+    $(document).ready(function() {
+        $.getJSON('http://localhost:8888/challenge-project/json/program/list', function(data) {
+          var html ='';
+          $.each(data, function(Index, entry) {
+              html += '<li>';
+              html += '<div class="sm-time-div">';
+              html += '<span id="aaaa" class="sm-time">' + entry.endDate + '</span>';
+              html += '<p class="sm-time-p">';
+              html += '<div class="part">' + entry.name +'을 시작했습니다.' + '</div>';
+              html += '</p>';
+              html += '</div>';
+              html += '</li>';
+              
+          });
+          console.log(data);
+          $('ul').append(html);
+        });
+        return false;
+    });
+    </script>
+  
+  </body>
+</html>

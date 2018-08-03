@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace 이름은 SQL을 찾을 때 사용하는 그룹명이다. 따라서 SQL 문을 사용하는 DAO 클래스 이름과 같게 하면 
+	유지보수할 때 알아보기 쉽다. 단순히 알아보기 쉬울 뿐만 아니라 스프링 프레임워크와 연동할 때 DAO 객체를 자동 생성할 수 있다. -->
+<mapper namespace="challenge.dao.CommentDao">
+	<resultMap type="Comment" id="CommentMap">
+		<id column="pono" property="no" />
+		<result column="pocont" property="content" />
+		<result column="podate" property="createdDate" />
+		<result column="tmlno" property="timelineNo"/>
+		<association property="progMemb" javaType="ProgramMember">
+            <id column="pno" property="no"/>
+            <result column="pname" property="name"/>
+            <association property="users" javaType="User">
+                 <id column="uno" property="userNo"/>
+                <result column="mail" property="email"/>
+                <result column="uname" property="name"/>
+                <result column="sex" property="sex"/>
+                <result column="uphon" property="userPhone"/>
+            </association>
+        </association>
+	</resultMap>
+
+
+	<!-- SQL 문 id를 설정할 때 SQL문을 사용하는 메서드 이름과 같게하면 유지보수할 때 알아보기 쉽다. 알아보기 쉬울 뿐만 
+		아니라 스프링 프레임워크와 연동할 때 DAO객체를 자동생성하고 그 메서드를 자동생성할 때 사용할 수 있다. -->
+		
+		
+	<select id="selectList" resultMap="CommentMap">
+		select pono, pocont, podate, tmlno 
+		from CMT cm 
+		inner join POST p on p.pono = cm.cmtno 
+		order by pono desc
+	</select>
+
+	<select id="listWithNo" resultMap="CommentMap" parameterType="int">
+        select pono, uname, cm.pno, pocont, podate 
+        from CMT cm
+        inner join POST p on p.pono = cm.cmtno
+        inner join PMEMB pm on pm.uno = cm.uno
+        inner join USER u on pm.uno = u.UNO
+        where tmlno=#{value}
+    </select>
+    
+    <!-- 
+        <select id="listWithNo" resultMap="CommentMap" parameterType="int">
+        select *
+        from CMT cm
+        inner join POST p on p.pono = cm.cmtno
+        inner join PMEMB pm on pm.uno = cm.uno
+        where tmlno=#{value}
+    </select>
+    -->
+
+	<insert id="insert" parameterType="Comment">
+	   insert into CMT(cmtno, tmlno, pno, uno)
+	   values(#{no}, #{timelineNo}, #{progMemb.no}, #{progMemb.users.userNo})
+	</insert>
+
+	<!-- 파라미터의 타입이 primitive type이나 wrapper 클래스, String 클래스인 경우 값을 꺼낼 때 프로퍼티 
+		이름을 마음대로 해도 된다. -->
+	<select id="selectOne" parameterType="int"
+		resultMap="CommentMap">
+		select p.pono, uname, p.pocont, p.podate
+		from CMT cm
+		inner join POST p on p.pono = cm.cmtno 
+		inner join PMEMB pm on pm.uno = cm.uno
+        inner join USER u on pm.uno = u.UNO
+		where cmtno=#{value}
+	</select>
+
+	<update id="update" parameterType="Comment">
+		update POST set
+		pocont=#{content}
+		where pono=#{no}
+	</update>
+
+	<delete id="delete" parameterType="int">
+		delete from CMT 
+		where cmtno=#{value}
+	</delete>
+</mapper>

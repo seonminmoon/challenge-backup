@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+<title>트레이너페이지</title>
+<link rel="stylesheet" href="../../css/trainer/template/sm-trainerPage.css">
+<link rel="stylesheet" href="../../css/trainer/trainerPage-memberModal.css">
+<link rel="stylesheet" href="../../css/common.css">
+<link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
+<link rel="stylesheet" href="../../css/pagination.css">
+</head>
+<body>
+<div id="subMenu"></div>
+<div id="sm-back">
+<div class="sm-container">
+  <h2>회원 관리</h2>
+
+<div class="sm-mypage">
+  <div class="sm-profile">
+		<div style="text-align: center;">
+			<img src="../../img/member/img1.jpg" style="margin-left: 30px; border-radius:60px; width:120px; height:120px;">
+      <button id="sm-btn-2" type="button" style="position:relative; top:-10px; right:40px; width:30px; height:30px; border-radius:15px; padding:0px;font-size:14px;"><span>2</span></button>
+      <br>
+			사용자이름<br>
+      <button id="sm-btn-2" type="button" style="margin-top:10px; margin-bottom:20px;">프로필관리</button>
+		</div>
+	</div><!-- .profile -->
+
+
+    <div class="sm-mypage-body">
+      <!-- 통계 서브 메뉴 -->
+      <div class="mangeSubMenu">
+        <div class="tabbed">
+          <ul>
+            <li>본격! 식스팩 만들기</li>
+            <li>기초 근력 기르기</li>
+            <li>3주 하비탈출</li>
+            <li class="active">전체</li>
+          </ul>
+        </div>
+        <div class="arrow">
+          <div class="arrowLeft"><i class="fas fa-chevron-circle-left"></i></div>
+          <div class="arrowRight"><i class="fas fa-chevron-circle-right"></i></div>
+        </div>
+      </div>
+      <!-- 회원 관리 -->
+      <div class="manageContent">
+        <div class="memberName">
+          <div class="rightBox">
+          <input type="text" placeholder="회원명을 입력해 주세요.">
+          <button type="button" name="button">검색</button>
+        </div>
+        </div>
+        <div class="memberTable">
+          <table class="demo-table">
+            <thead>
+              <tr>
+                <th>이메일</th>
+                <th>회원이름</th>
+                <th>성별</th>
+                <th>프로젝트명</th>
+                <th>출석률</th>
+              </tr>
+            </thead>
+            <tbody id="memberList"></tbody>
+          </table>
+        </div>
+        <!-- pagenation -->
+	    <div class="sm-pagination" id="pagination">
+	      <a class="sm-pagination-button sm-pagination-side" href="#"><i class="fas fa-angle-left"></i></a>
+	      <a class="sm-pagination-button pageActive">1</a>
+	      <a class="sm-pagination-button">2</a>
+	      <a class="sm-pagination-button">3</a>
+	      <a class="sm-pagination-button">4</a>
+	      <a class="sm-pagination-button sm-pagination-button-end" href="#">5</a>
+	      <a class="sm-pagination-button sm-pagination-side" href="#"><i class="fas fa-angle-right"></i></a>
+	    </div>
+        <!-- 모달창 -->
+        <div id="myModal" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <div class="modal-header">
+              <span class="close"><i class="far fa-times-circle"></i></span>
+            </div>
+            <div class="modal-body">
+   			<div id="topContentBox">
+			  <div class="memberInfo1">
+			    <div class="originalImg"></div>
+			  </div>
+			  <div class="memberInfo2">
+			  <ul class="memberInfoList">
+			    <li class="modalName">
+			      <div class="contentName">이름</div>
+			      <div id="mName" class="modalContent"></div>
+			    </li>
+			    <li class="modalSex">
+			      <div class="contentName">성별</div>
+			      <div id="mSex" class="modalContent"></div>
+			    </li>
+			    <li class="modaPhone">
+			      <div class="contentName">연락처</div>
+			      <div id="mTel" class="modalContent"></div>
+			    </li>
+			    <li class="modalProgram">
+			      <div class="contentName">참여 프로그램</div>
+			      <div id="mProgram" class="modalContent"></div>
+			    </li>
+          <li class="modalProgram">
+            <div class="contentName">프로그램 시작일</div>
+            <div id="mDate1" class="modalContent"></div>
+          </li>
+          <li class="modalProgram">
+            <div class="contentName">프로그램 종료일</div>
+            <div id="mDate2" class="modalContent"></div>
+          </li>
+			    <li class="modalTarget">
+			      <div class="contentName">목표</div>
+			      <div id="mTarget" class="modalContent"></div>
+			    </li>
+			    <li class="attendanceRate">
+			      <div class="contentName styleBox">출석률</div>
+			      <div class="modalContent cssBox">
+			      <div class="skillBox">
+			        <div id="mAttend" class="skills attend"></div>
+			      </div>
+			      </div>
+			    </li>
+			    <li class="targetRate">
+			      <div class="contentName styleBox">목표 달성률</div>
+			      <div class="modalContent cssBox">
+			        <div class="skillBox">
+			          <div id="mTargetPer" class="skills target"></div>
+			        </div>
+			      </div>
+			    </li>
+			  </ul>
+			  </div>
+			<div class="memberButtons">
+	          <ul>
+	            <li><a>메시지</a></li>
+	          </ul>
+	        </div>
+			</div>
+            </div>
+        </div>
+      </div>
+      </div>
+    </div><!-- mypage-body -->
+</div><!-- mypage -->
+</div><!--.container-->
+</div><!-- back -->
+<div id="footer"></div>
+<script src="../../node_modules/handlebars/dist/handlebars.min.js"></script>
+<script src="../../js/common.js"></script>
+<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../../js/footer/footer.js"></script>
+<script src="../../js/trainer/trainer-template.js"></script>
+<script id="tr-template" type="text/x-handlebars-template">
+{{#each list}}
+<tr>
+    <td><a href='memberView.html?pno={{no}}&uno={{users.userNo}}'>{{users.email}}</a></td>
+    <td><a href='memberView.html?pno={{no}}&uno={{users.userNo}}'>{{users.name}}</a></td>
+    <td><a href='memberView.html?pno={{no}}&uno={{users.userNo}}'>{{users.sex}}</a></td>
+    <td><a href='memberView.html?pno={{no}}&uno={{users.userNo}}'>{{name}}</a></td>
+    <td><a href='memberView.html?pno={{no}}&uno={{users.userNo}}'>{{diarys.dcheck}}</a></td>
+</tr>
+{{/each}}
+</script>
+<script id="li-template" type="text/x-handlebars-template">
+{{#each list}}
+	<li class="tabSelect">{{name}}</li>
+{{/each}}
+<li class="tabSelect active">전체</li>
+</script>
+<script src="../../js/trainer/memberList.js"></script>
+<script src="../../js/trainer/memberView.js"></script>
+</body>
+</html>

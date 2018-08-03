@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<body>
+<div id="content1"></div>
+<div id="content2"></div>
+<div></div>
+
+<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+<script>
+$.ajax({
+    type: "GET",
+    url: "test2.js",
+    dataType: "json",
+    cache: true,
+    success: function(data){
+         $.each (data.dataList,function(index){
+        	 console.log(data);
+              $("#content").eq(index).html(data.dataList[index].val);
+          });
+        /*  $.each(data.dataList,function(index){
+             $("#content2").eq(index).html(data.dataList[index].val);
+        }); */
+                       
+},error: function(XMLHttpRequest, textStatus, errorThrown) { 
+    console.log("Status: " + textStatus);
+},timeout: 3000
+});  
+</script>
+</body>
+</html>

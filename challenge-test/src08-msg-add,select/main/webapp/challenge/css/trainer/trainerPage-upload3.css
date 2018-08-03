@@ -1,0 +1,255 @@
+@charset "UTF-8";
+
+.sm-mypage-body {
+  box-sizing: border-box;
+  margin-bottom: 100px;
+}
+
+/* 프로젝트 등록 서브 메뉴 */
+
+/* 이 부분은 임시 나중에 삭제 10~13*/
+#uploadSubMenu-third a {
+ border-bottom: 1px solid black;
+ border-width: 3px;
+}
+
+.uploadSubMenu a {
+  color: black;
+  text-decoration: none;
+  padding-bottom: 5px;
+}
+
+.uploadSubMenu a:visited {
+ border-bottom: 1px solid black;
+ border-width: 3px;
+}
+
+.uploadSubMenu a:hover {
+  color: #1B3453;
+}
+
+
+.uploadSubMenu ul {
+  box-sizing: border-box;
+  border-bottom: 1px solid #666666;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  height: 35px;
+}
+
+.uploadSubMenu ul li {
+  float: left;
+  margin: 0 25px;
+}
+
+#uploadSubMenu-fist {
+  margin-left: 0;
+}
+
+/* 프로젝트 등록 본문 */
+.uploadContent {
+  box-sizing: border-box;
+  border: 1px solid #e0e0e0;
+  margin-top: 25px;
+}
+
+.uploadContent ul {
+  margin: 25px;
+  padding: 0;
+}
+
+.uploadContent li {
+  clear: both;
+  display: inline-block;
+  box-sizing: border-box;
+  border-bottom: 1px dashed #d7d7d7;
+  padding: 15px 0 20px 0;
+}
+
+#notPadding {
+  padding-top: 0;
+}
+
+.contentName {
+  width: 170px;
+  font-size: 17px;
+  font-weight: bold;
+  float: left;
+}
+
+.ucContet {
+  float: left;
+  width: 658px;
+}
+
+/* 프로젝트 설명 */
+.ucContet textarea {
+  overflow: scroll;
+}
+
+/* 상세 이미지 등록 */
+#bottomNone {
+  border-bottom: none;
+}
+
+#subImgMain, .subImg {
+  border:1px solid #eae8e8;
+  width: 250px;
+  height: 200px;
+  background: #fafafa;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#subImgMain .far, .subImg .far {
+  font-size: 60px;
+  color: #bbbbbb;
+}
+
+#subImgMain .imgIcon {
+  margin-top: 68px;
+}
+
+.subImg .plusImg {
+  float: right;
+  margin: 8px 7px;
+}
+
+.subImg .imgIcon {
+  margin-top: 65px;
+}
+
+.subImg {
+  display: none;
+}
+
+.mediaPlus {
+  text-align: center;
+  width: 250px;
+  border:1px solid #d7d7d7;
+  margin-top: 10px;
+  height: 42px;
+}
+
+.mediaPlus a {
+  display: inherit;
+  text-align: center;
+  padding-top: 13px;
+  font-size: 14px;
+  font-weight: bold;
+  height: 29px;
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#lessBtn {
+  display: inline-block;
+  margin-left: 370px;
+}
+
+#lastBottom {
+  border-bottom: none;
+}
+
+/* 이전단계, 다음단계 버튼 */
+.backBox {
+  float: left;
+  margin-top: 20px;
+}
+
+.backBox button {
+  border-radius: 3px;
+  padding: 13px;
+  cursor: pointer;
+  width: 100px;
+  background: white;
+  border: 1px solid #d7d7d7;
+}
+
+.nextBox {
+  float: right;
+  margin-top: 20px;
+}
+.nextBox button {
+  background: #DD1F26;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  padding: 13px;
+  width: 180px;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/

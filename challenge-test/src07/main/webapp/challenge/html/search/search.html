@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>찾기</title>
+
+  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="../../css/pagination.css">
+  <link rel="stylesheet" href="../../css/search/search.css">
+  <link rel="stylesheet" href="../../css/program/card1.css">
+  <link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
+  <link rel="stylesheet" href="../../css/search/multirange.css">
+
+</head>
+
+<body>
+<header id="header"></header>
+
+  <div class="container">
+    <h2>프로그램</h2>
+
+      <div class="sidenav">
+
+      <div class="search-title">지도</div>
+      <div id="map" style="width:100%;height:200px;"></div>
+
+        <div class="search-challenge">
+          <div class="search-title">챌린지</div>
+          <ul class="challenge-ul">
+            <li class="challenge-li"><a href="">근력강화</a>
+              <span class="count">(3)</span></li>
+            <li class="challenge-li"><a href="">다이어트</a>
+              <span class="count">(3)</span></li>
+            <li class="challenge-li"><a href="">지구력강화</a>
+              <span class="count">(3)</span></li>
+            <li class="challenge-li"><a href="">유연성증진</a>
+              <span class="count">(3)</span></li>
+            <li class="challenge-li"><a href="">체형교정</a>
+              <span class="count">(3)</span></li>
+            <li class="challenge-li"><a href="">노인건강</a>
+              <span class="count">(3)</span></li>
+          </ul>
+          <div class="challenge-more">
+            <button class="ch-btn">챌린지 더보기 +</button>
+          </div>
+        </div>
+
+        <div class="search-price">
+          <div class="search-title">가격필터</div>
+          <div><input type="range" multiple value="0,100" /></div>
+          <div class="price-label">
+            <span class="from">30,000원</span>-<span class="to">100,000원</span></div>
+          <button class="ch-btn">Filter</button>
+          <!-- <input type="range" min="1" max="300,000" value="0" step="1"> -->
+        </div>
+
+        <div class="search-price2">
+          <div class="search-title">가격</div>
+          <div class="price-label">
+            <input type="text" class="price-min"> ~ <input type="text" class="price-max"></div>
+          <button class="ch-btn">가격적용</button>
+          <!-- <input type="range" min="1" max="300,000" value="0" step="1"> -->
+        </div>
+
+        <div class="search-cp">
+          <div class="search-title">운동종목</div>
+          <ul>
+            <li class="a"><input type="checkbox" class="cp-base">헬스</li>
+            <li class="a"><input type="checkbox" class="cp-base">수영</li>
+            <li class="a"><input type="checkbox" class="cp-base">필라테스</li>
+            <li class="a"><input type="checkbox" class="cp-base">댄스</li>
+            <li class="a"><input type="checkbox" class="cp-base">복싱</li>
+          </ul>
+          <div class="cp-more">
+            <a><button class="ch-btn">운동종목 더보기 +</button></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="chal-search-filter">
+        <ul>
+          <li class="a"><a href="" class="a">가격순</a></li>
+          <li class="a">|</li>
+          <li class="a"><a href="" class="a">거리순</a></li>
+          <li class="a">|</li>
+          <li class="a"><a href="" class="a">인기순</a></li>
+        </ul>
+
+        <div class="dropdown">
+          <span class="serch-drop-bt">12개씩 보기 <i class="fas fa-angle-down"></i></span>
+          <div class="dropdown-content">
+            <a href="#">24개씩 보기</a>
+            <a href="#">36개씩 보기</a>
+            <a href="#">48개씩 보기</a>
+          </div>
+        </div>
+
+      </div>
+
+        <div class="search-flex">
+          <div class="search-row" id="aaa"></div>
+          
+          <!-- <div class="search-nav">
+            <nav aria-label="Page navigation">
+              <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+              </ul>
+            </nav>
+          </div> -->
+        </div>
+     <div class="sm-pagination">
+      <a class="sm-pagination-button sm-pagination-side" href="#"><i class="fas fa-angle-left"></i></a>
+      <a class="sm-pagination-button pageActive" href="#">1</a>
+      <a class="sm-pagination-button" href="#">2</a>
+      <a class="sm-pagination-button" href="#">3</a>
+      <a class="sm-pagination-button" href="#">4</a>
+      <a class="sm-pagination-button sm-pagination-button-end" href="#">5</a>
+      <a class="sm-pagination-button sm-pagination-side" href="#"><i class="fas fa-angle-right"></i></a>
+    </div>
+
+      </div>
+    </div>
+  <!--container-->
+
+<footer id="footer"></footer >
+
+<script id="cardBody2" type="text/x-handlebars-template">
+{{#each list}}
+
+<div class="card" id="card">
+    <a href="../programDetail/programDetailPage.html">
+    <!-- 카드 헤더 -->
+    <div class="card-header">
+      <img class="card-img" src="../../img/program/{{medias.[0].path}}"/>
+      <div class="ribbon"><span>성공 %</span></div>
+      <div class="card-trainer">
+        <img class="trainer-img" src="../../img/trainer/{{trainerNo.userPath}}"/>
+      </div>
+    </div>
+    <!--  카드 바디 -->
+    <div class="card-body">
+      <span class="card-body-title">{{name}}</span>
+      <span class="card-body-degree">[{{proTh}}기]</span>
+      <p class="card-body-price">{{price}}원</p>
+      <span class="card-body-local">{{address}}</span>
+      <span class="card-body-number">/{{maxQty}}명</span>
+      <p class="card-body-score"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i></p>
+      <!--  카드 바디 푸터 -->
+      <div class="card-footer">
+      <span class="card-footer-review">리뷰 개</span>
+      <span class="card-footer-date">{{startDate}}(D- )</span>
+    </div>
+    </a>
+</div>
+</div>
+
+{{/each}}
+</script>
+  <script src="../../node_modules/handlebars/dist/handlebars.min.js"></script>
+  <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="../../js/common.js"></script>
+  <script src="../../js/trainer/card-test.js"></script>
+  <script src="../../js/header/header_white.js"></script>
+  <script src="../../js/footer/footer.js"></script>
+  <script src="../../js/search/multirange.js"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=952b22a683523a137feaf2c7d49f44e9"></script>
+      <script>
+      var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+      mapOption = {
+          center: new daum.maps.LatLng(37.494675, 127.027881), // 지도의 중심좌표
+          level: 3 // 지도의 확대 레벨
+      };
+      // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+      var map = new daum.maps.Map(mapContainer, mapOption);
+      </script>
+</body>
+
+</html>

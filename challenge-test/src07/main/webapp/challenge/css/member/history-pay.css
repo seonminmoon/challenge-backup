@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+
+.sm-msgBox {
+    display: block;
+    margin-bottom: 180px;
+    width: 97.5%;
+}
+
+.chall-table img {
+    width: 100px;
+    height: 80px;
+    padding-top: 3px;
+}
+
+.sm-msgBox select {
+    float: right;
+    margin-top: 10px;
+    width: 150px;
+    height: 25px;
+}
+
+a {
+    color: black;
+}
+
+span {
+    font-weight: 800;
+    color: #DD1F26;
+}

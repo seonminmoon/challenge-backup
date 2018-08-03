@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+<title>트레이너페이지</title>
+<link rel="stylesheet" href="../../css/common.css">
+<link rel="stylesheet" href="../../css/table.css">
+<link rel="stylesheet" href="../../css/paging.css">
+<link rel="stylesheet" href="../../css/member/sm-memberPage.css">
+<link rel="stylesheet" href="../../css/member/ksy-settings.css">
+<link rel="stylesheet" href="../../css/member/msg-modal.css">
+<link rel="stylesheet"
+  href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
+<link href="https://fonts.googleapis.com/css?family=Titillium+Web:900"
+  rel="stylesheet">
+<style type="text/css">
+.sm-msgBox {
+  height: 400px;
+}
+
+</style>
+</head>
+<body>
+  <div class="sm-top-bar-white">
+    <div class="sm-container">
+      <div id="header"></div>
+      <!-- 헤더-->
+      <div id="mb-menu"></div>
+      <!-- 상단 메뉴바 -->
+    </div>
+    <!-- container -->
+  </div>
+  <!-- top-bar-white -->
+
+
+  <div id="sm-back">
+    <div class="sm-container">
+      <h2>메시지</h2>
+      <br>
+
+      <div class="sm-mypage">
+        <div class="sm-profile" id="cssRemove">
+          <h3>전체메시지</h3>
+          <hr style="border: 1px solid gray; width: 150px; float: left;">
+          <br>
+          <h3>보관메시지</h3>
+          <hr style="border: 1px solid gray; width: 150px; float: left;">
+        </div>
+        <!-- .profile -->
+
+
+    <div class="sm-mypage-body">
+      <!-- 통계 서브 메뉴 -->
+      <h3 class="sm-margin-none" style="color: #666666;">전체메시지</h3>
+          <hr style="margin-bottom: 30px;">
+          <div class="sm-msgBox">
+            <form name="frame" action="" id="setRows">
+              <input class="checkAll sm-btn-1-small" style="margin: 0; margin-bottom: 3px;" type="button" value="전체선택">
+              <input class="sm-btn-1-small" style="margin: 0; margin-bottom: 3px;" type="button" value="삭제하기">
+              <input type="hidden" name="rowPerPage" value="3">
+              <select>
+                <option selected>--정렬 방식--
+                <option>전체메시지
+                <option>안읽은 메시지
+                <option>보관 메시지
+              </select>
+            </form>
+            <div class="sm-msgBox-body">
+              <table id="products" class="chall-table" cellspacing="0">
+                <thead class="chall-thead">
+                  <tr>
+                    <th width="10%">선택</th>
+                    <th width="10%">보관</th>
+                    <th width="40%">내용</th>
+                    <th width="20%">보낸사람</th>
+                    <th width="20%">날짜</th>
+                  </tr>
+                </thead>
+                <tbody id="listbody" class="chall-tbody">
+                </tbody>
+              </table>
+            </div>
+      
+      
+      
+        <!-- 모달창 -->
+            <div id="myModal" class="modal">
+              <!-- Modal content -->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <span class="close"><i
+                    class="far fa-times-circle"></i></span>
+                </div>
+                <div class="modal-body">
+                  <div class="originalImg"></div>
+                  <ul class="memberInfoList">
+                    <li class="modalName">
+                      <div class="contentName">이름</div>
+                      <div id="mName" class="modalContent"></div>
+                    </li>
+                    <li class="modaPhone">
+                      <div class="contentName">날짜</div>
+                      <div id="mDate" class="modalContent"></div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="modal-body2">
+                  <div id="mTitl" class="modalContent-titl"></div>
+                  <div id="mCont" class="modalContent-cont"></div>
+                  <span class="modal-ok">
+                  <button id="msg-ok" class="sm-btn-1">확인</button>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <!-- 모달창 -->
+          </div>
+    </div><!-- mypage-body -->
+</div><!-- mypage -->
+</div><!--.container-->
+</div><!-- back -->
+<div id="footer"></div>
+<script id="tr-template" type="text/x-handlebars-template">
+{{#each list}}
+            <tr>
+              <td><input type="checkbox" name="checkOne"></td>
+              <td><i class="check far fa-star"></i></td>
+              <td><a href='member-msgView.html?{{no}}'>{{title}}</a></td>
+              <td>{{trainer.name}}</td>
+              <td>{{msgDate}}</td>
+            </tr>
+{{/each}}
+</script>
+<script src="../../node_modules/handlebars/dist/handlebars.min.js"></script>
+<script src="../../js/common.js"></script>
+<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="../../js/header/header_white.js"></script>
+  <script src="../../js/footer/footer.js"></script>
+  <script src="../../js/member/mb-menu.js"></script>
+  <script src="../../js/member/msgList.js"></script>
+  <script src="../../js/paging.js"></script>
+<script src="../../js/member/msgView.js"></script>
+</body>
+</html>

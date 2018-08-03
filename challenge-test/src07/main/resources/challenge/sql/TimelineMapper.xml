@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace 이름은 SQL을 찾을 때 사용하는 그룹명이다. 따라서 SQL 문을 사용하는 DAO 클래스 이름과 같게 하면 
+	유지보수할 때 알아보기 쉽다. 단순히 알아보기 쉬울 뿐만 아니라 스프링 프레임워크와 연동할 때 DAO 객체를 자동 생성할 수 있다. -->
+<mapper namespace="challenge.dao.TimelineDao">
+	<resultMap type="Timeline" id="TimelineMap">
+		<id column="pono" property="no" />
+		<result column="pocont" property="content" />
+		<result column="podate" property="createdDate" />
+		<result column="tmlpath" property="picture" />
+		<result column="tlike" property="like"/>
+		<association property="progMemb" javaType="ProgramMember">
+		    <id column="pno" property="no"/>
+		    <result column="pname" property="name"/>
+			<association property="users" javaType="User">
+		         <id column="uno" property="userNo"/>
+		        <result column="mail" property="email"/>
+		        <result column="uname" property="name"/>
+		        <result column="sex" property="sex"/>
+		        <result column="uphon" property="userPhone"/>
+			</association>
+		</association>
+	</resultMap>
+
+
+	<!-- SQL 문 id를 설정할 때 SQL문을 사용하는 메서드 이름과 같게하면 유지보수할 때 알아보기 쉽다. 알아보기 쉬울 뿐만 
+		아니라 스프링 프레임워크와 연동할 때 DAO객체를 자동생성하고 그 메서드를 자동생성할 때 사용할 수 있다. -->
+	<select id="selectList" resultMap="TimelineMap"
+		parameterType="map">
+           select pono, pocont, podate, t.tmlpath, pro.pno, pro.pname, u.uno, u.uname
+               from TML t
+               inner join POST p on t.tmlno=p.pono
+               inner join PMEMB pm on t.uno = pm.uno and t.pno = pm.pno
+               inner join PROG pro on pro.pno = pm.pno 
+               inner join USER u on pm.uno = u.uno
+               order by pono desc
+               limit #{startRowNo}, #{pageSize}
+	</select>
+
+	<insert id="insert" parameterType="Timeline">
+		<choose>
+			<when test="picture != ''">
+				insert into TML(tmlno, pno, uno, tmlpath)
+				values(#{no}, #{progMemb.no}, #{progMemb.users.userNo}, #{picture})
+			</when>
+			<otherwise>
+				insert into TML(tmlno, pno, uno)
+				values(#{no}, #{progMemb.no}, #{progMemb.users.userNo})
+			</otherwise>
+		</choose>
+	</insert>
+	
+ 
+	<!-- 파라미터의 타입이 primitive type이나 wrapper 클래스, String 클래스인 경우 값을 꺼낼 때 프로퍼티 
+		이름을 마음대로 해도 된다. -->
+	<select id="selectOne" parameterType="int"
+		resultMap="TimelineMap">
+		select pono, pocont, podate
+		from TML t
+		where pono=#{value}
+	</select>
+    
+    <!-- 좋아요 개수 카운트 -->
+    <select id="timelineLikeCount" parameterType="int" resultType="int">
+	     select count(*)
+	     from TML_LK
+	     where pono=#{value}
+    </select>
+    
+    <!-- 타임라인 좋아요 눌렀는지 체크 -->
+    <select id="timelineLikeCheck" parameterType="map" resultType="int">
+        select count(*)
+        from TML_LK
+        where pno=#{pno} and pono=#{pono} and uno=#{uno}
+    </select>
+
+    <!-- 좋아요 누르기 -->
+    <insert id="timelineLike" parameterType="map">
+       insert into TML_LK(pno, pono, uno)
+       values (#{pno}, #{pono}, #{uno})
+    </insert>
+    
+    <!-- 좋아요 취소 -->
+    <delete id="timelineLikeCancle" parameterType="map">
+        delete from TML_LK
+        where pno=#{pno} and pono=#{pono} and uno=#{uno}
+    </delete>
+
+	<update id="update" parameterType="Timeline">
+		update POST set
+		pocont=#{content},
+		podate=now()
+		where pono=#{no}
+	</update>
+
+	<delete id="delete" parameterType="int">
+		delete from POST where
+		pono=#{value}
+	</delete>
+</mapper>

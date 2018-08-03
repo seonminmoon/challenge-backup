@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+<title>회원페이지</title>
+<link rel="stylesheet" href="../../css/trainer/template/sm-trainerPage.css">
+<link rel="stylesheet" href="../../css/trainer/programList.css">
+<link rel="stylesheet" href="../../css/common.css">
+<link rel="stylesheet" href="../../css/program/card2.css">
+<link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
+</head>
+<body>
+ <div id="subMenu"></div>
+ <div id="sm-back">
+  <div class="sm-container">
+   <h2>서비스 관리</h2>
+
+   <div class="sm-mypage">
+    <div class="sm-profile">
+     <div style="text-align: center;">
+      <a href="trainer.html"><img src="../../img/member/img1.jpg"
+       style="margin-left: 30px; border-radius: 60px; width: 120px; height: 120px;"></a>
+      <button id="sm-btn-2" type="button"
+       style="position: relative; top: -10px; right: 40px; width: 30px; height: 30px; border-radius: 15px; padding: 0px; font-size: 14px;">
+       <span>2</span>
+      </button>
+      <br> 사용자이름<br>
+      <button id="sm-btn-2" type="button"
+       style="margin-top: 10px; margin-bottom: 20px;">프로필관리</button>
+     </div>
+     <!-- ************* 이부분만 템플릿에서 다르니까 이것만 짤라서 쓰면된다!!!! ********************************************* -->
+     <div class="sm-menu" style="border-left: none;">
+      <i class="fas fa-chalkboard"></i><br>프로그램 관리
+     </div>
+     <div class="sm-menu" style="border-bottom: 1px solid gray;">
+      <i class="fas fa-angle-double-up"></i><br>프로그램 등록
+     </div>
+     <div class="sm-menu"
+      style="border-left: none; border-right: 1px solid gray;">
+      <i class="fas fa-dumbbell"></i><br>프로그램 운동일지
+     </div>
+    </div>
+    <!-- .profile -->
+
+
+    <div class="sm-mypage-body">
+     <!-- 프로젝트 등록 서브 메뉴 -->
+     <div class="uploadSubMenu">
+      <ul>
+       <li id="uploadSubMenu-fist"><a href="#">전체</a></li>
+       <li><a href="#">모집중</a></li>
+       <li><a href="#">진행중</a></li>
+       <li><a href="#">종료</a></li>
+      </ul>
+     </div>
+     <!-- 프로젝트 등록 본문-->
+     <div class="loadContent">
+     <div id="cardWide"></div>
+     </div>
+    </div>
+    <!-- mypage-body -->
+
+
+   </div>
+   <!-- mypage -->
+  </div>
+  <!--.container-->
+ </div>
+ <!-- back -->
+ <div id="footer"></div>
+ 
+ <script id="cardBody1" type="text/x-handlebars-template">
+{{#each list}}
+
+<div class="card" id="card">
+    <a href="../program/DetailPage.html?no={{no}}">
+    <!-- 카드 헤더 -->
+    <div class="card-header">
+      <img class="card-img" src="../../../files/{{medias.[0].path}}_200x200.jpg"/>
+      <div class="ribbon"><span>성공 %</span></div>
+      <div class="card-trainer">
+        <img class="trainer-img" src="../../../files/{{trainerNo.userPath}}_50x50.jpg"/>
+      </div>
+    </div>
+    <!--  카드 바디 -->
+    <div class="card-body">
+      <span class="card-body-title">{{name}}</span>
+      <span class="card-body-degree">[{{proTh}}기]</span>
+      <p class="card-body-price">{{price}}원</p>
+      <span class="card-body-local">{{address}}</span>
+      <span class="card-body-number">/{{maxQty}}명</span>
+      <p class="card-body-score"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i></p>
+      <!--  카드 바디 푸터 -->
+      <div class="card-footer">
+      <span class="card-footer-review">리뷰 개</span>
+      <span class="card-footer-date">{{startDate}} (D<span id="dday-{{@key}}"></span>)</span>
+    </div>
+    </a>
+</div>
+</div>
+
+{{/each}}
+</script>
+ 
+ <script src="../../node_modules/handlebars/dist/handlebars.min.js"></script>
+ <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+ <script src="../../js/common.js"></script>
+ <script src="../../js/trainer/trainer-template.js"></script>
+ <script src="../../js/trainer/programList.js"></script>
+ <script src="../../js/footer/footer.js"></script>
+</body>
+</html>

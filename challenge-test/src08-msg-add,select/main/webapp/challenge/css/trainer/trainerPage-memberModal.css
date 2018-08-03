@@ -1,0 +1,425 @@
+@charset "UTF-8";
+
+.sm-mypage-body {
+  box-sizing: border-box;
+  margin-bottom: 100px;
+}
+
+/* 프로젝트 선택 서브메뉴*/
+.tabbed {
+  max-width: 880px;
+  margin: 0 auto;
+  margin-left: 0;
+  border-bottom: 4px solid #1B3453;
+  overflow: hidden;
+  transition: border 250ms ease;
+}
+.tabbed ul {
+  overflow: hidden;
+  float: left;
+  list-style-type: none;
+  padding-left: 35px;
+  margin: 0;
+}
+.tabbed ul * {
+  margin: 0px;
+  padding: 0px;
+}
+.tabbed ul li {
+  display: block;
+  float: right;
+  padding: 10px 24px 8px;
+  background-color: #FFF;
+  margin-right: 46px;
+  z-index: 2;
+  position: relative;
+  cursor: pointer;
+  color: #777;
+
+  text-transform: uppercase;
+  font: 600 13px/20px roboto, "Open Sans", Helvetica, sans-serif;
+
+  transition: all 250ms ease;
+}
+.tabbed ul li:before,
+.tabbed ul li:after {
+  display: block;
+  content: " ";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 44px;
+  background-color: #FFF;
+  transition: all 250ms ease;
+}
+.tabbed ul li:before {
+  right: -24px;
+  transform: skew(30deg, 0deg);
+  box-shadow: rgba(0,0,0,.1) 3px 2px 5px, inset rgba(255,255,255,.09) -1px 0;
+}
+.tabbed ul li:after {
+  left: -24px;
+  transform: skew(-30deg, 0deg);
+  box-shadow: rgba(0,0,0,.1) -3px 2px 5px, inset rgba(255,255,255,.09) 1px 0;
+}
+.tabbed ul li:hover,
+.tabbed ul li:hover:before,
+.tabbed ul li:hover:after {
+  background-color: #F4F7F9;
+  color: #444;
+}
+.tabbed ul li.active {
+  z-index: 3;
+}
+.tabbed ul li.active,
+.tabbed ul li.active:before,
+.tabbed ul li.active:after {
+  background-color: #1B3453;
+  color: #fff;
+}
+
+.arrow .fas {
+  color: #1B3453;
+  font-size: 22px;
+}
+
+.arrow {
+  margin-top: 5px;
+  height: 22px;
+}
+.arrowLeft {
+  float: left;
+}
+
+.arrowRight {
+  float: right;
+}
+
+
+/* 통계 본문 */
+.manageContent {
+  margin-top: 25px;
+  clear: both;
+}
+
+/* 회원명 검색 */
+.memberName {
+  /* float: right; */
+  height: 40px;
+}
+
+.rightBox {
+  float: right;
+}
+.memberName input {
+  border:1px solid #d7d7d7;
+  width: 160px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.memberName button {
+  height: 34px;
+  width: 50px;
+  background: #1b3453;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+}
+
+/* 회원관리 테이블 */
+.memberTable {
+  margin-top: 20px;
+}
+.demo-table {
+  border-collapse: collapse;
+  font-size: 14px;
+  text-align: center;
+}
+
+.demo-table .title {
+  caption-side: bottom;
+  margin-top: 12px;
+}
+
+/* Table Header */
+.demo-table thead th {
+  background-color: #1b3453;
+  color: #FFFFFF;
+  text-transform: uppercase;
+}
+
+/* Table Body */
+.demo-table tbody td {
+  color: #353535;
+}
+
+.demo-table tbody tr:nth-child(odd) td {
+  background-color: #f4fbff;
+}
+.demo-table tbody tr:hover td {
+  background-color: #ffffa2;
+  border-color: #ffff0f;
+  transition: all .2s;
+}
+
+.demo-table th {
+  padding: 13px 66.3px;
+}
+
+.demo-table td {
+  padding-top: 13px;
+  padding-bottom: 13px;
+}
+
+/* 회원관리 버튼 들 */
+.memberButtons {
+  float: right;
+  margin-top: 5px;
+  margin-bottom: 30px;
+  margin-bottom: 20px;
+}
+
+.memberButtons ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.memberButtons li {
+  padding: 6px 25px;
+  font-weight: bold;
+  border: 1px solid #DD1F26;
+  border-radius: 5px;
+  background-color: #DD1F26;
+  color: white;
+  font-size: 15px;
+}
+
+/* 회원관리 넘기는 탭 */
+#pagination {
+	padding-top: 30px;
+ }
+
+.pagination a:hover:not(.pageActive) {background-color: #ddd;}
+
+/* 모달창 퍼옴 */
+/* The Modal (background) */
+.modal {
+    position: fixed; /* Stay in place */
+    z-index: 99999; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 700px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    float: right;
+    font-size: 20px;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 10px;
+    height: 15px;
+}
+
+.modal-body {
+  padding: 2px 60px;
+  display: inline-block;
+  clear: both;
+}
+
+
+/* 모달창 본문 내용 */
+.memberInfo1 {
+  float: left;
+}
+.memberInfo2 {
+  float: left;
+  width: 458px;
+}
+
+.originalImg {
+  border: 1px solid #dddddd;
+  background: #dddddd;
+  width: 120px;
+  height: 120px;
+  border-radius: 60px;
+  margin: 0 auto;
+}
+
+.memberInfoList {
+  margin: 0;
+  margin-top: 8px;
+}
+
+.memberInfoList li {
+  clear: both;
+  margin-bottom: 20px;
+}
+
+.contentName {
+  font-weight: bold;
+  float: left;
+  margin-right: 15px;
+}
+
+#topContentBox {
+  display: inline-block;
+}
+
+.styleBox {
+  width: 458px;
+  margin-bottom: 10px;
+}
+
+.cssBox {
+  float: left;
+  width: 430px;
+  height: 44px;
+}
+
+.skillBox{
+    width: 97%;
+    background-color: #ddd;
+}
+
+.skills {
+    text-align: right;
+    padding-right: 20px;
+    line-height: 25px;
+    color: white;
+    margin-bottom: 25px;
+}
+
+.attend {
+  width: 80%;
+  background-color: #2196F3;
+  font-size: 15px;
+}
+
+.target {
+  width: 65%;
+  background-color: #f44336;
+  font-size: 15px;
+}
+
+#memberList a {
+	color: black;
+	text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/

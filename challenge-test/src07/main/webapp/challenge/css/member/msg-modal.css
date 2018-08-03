@@ -1,0 +1,188 @@
+@charset "UTF-8";
+.sm-mypage-body {
+  box-sizing: border-box;
+  margin-bottom: 100px;
+}
+
+
+/* 모달창 퍼옴 */
+/* The Modal (background) */
+.modal {
+    position: fixed; /* Stay in place */
+    z-index: 99999; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 700px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    float: right;
+    font-size: 20px;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 10px;
+    height: 15px;
+}
+
+.modal-body {
+  padding: 0px 0px 0px 40px;
+  display: inline-block;
+  clear: both;
+}
+.modal-body2 {
+  padding: 20px 40px;
+  display: block;
+  clear: both;
+}
+
+
+/* 모달창 본문 내용 */
+.memberInfo1 {
+  float: left;
+}
+.memberInfo2 {
+  float: left;
+  width: 395px;
+}
+
+.modalContent {
+  display: inline-block;
+  
+}
+.modalContent-titl {
+    padding: 10px 10px;
+    border: 1px solid #bbb;
+    border-radius: 0.5em;
+     width: 95%;
+     font-size: medium;
+}
+.modalContent-cont {
+    padding: 10px 10px;
+    margin: 15px 0px;
+    height: 230px;
+    border: 1px solid #bbb;
+    border-radius: 0.5em;
+     width: 95%;
+    font-family: 'NanumSquareRound',sans-serif;
+    font-size: medium;
+}
+
+.originalImg {
+  display:inline-block;
+  border: 1px solid #dddddd;
+  background: #dddddd;
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
+  margin: 0 auto;
+}
+
+.memberInfoList {
+  display:inline-block;
+  margin: 0;
+  margin-top: 5px;
+     width: 320px;
+     height:0px;
+}
+
+.memberInfoList li {
+  clear: both;
+  margin-bottom: 20px;
+}
+
+.modal-ok {
+      margin-left: 255px;
+}
+
+.contentName {
+  display: inline-block;
+  font-weight: bold;
+  float: left;
+  margin-right: 15px;
+     width: 80px;
+}
+
+.styleBox {
+  width: 458px;
+  margin-bottom: 10px;
+}
+
+.cssBox {
+  float: left;
+  width: 430px;
+  height: 44px;
+}
+
+.skillBox{
+    width: 97%;
+    background-color: #ddd;
+}
+
+.skills {
+    text-align: right;
+    padding-right: 20px;
+    line-height: 25px;
+    color: white;
+    margin-bottom: 25px;
+}
+
+.attend {
+  width: 80%;
+  background-color: #2196F3;
+  font-size: 15px;
+}
+
+.target {
+  width: 65%;
+  background-color: #f44336;
+  font-size: 15px;
+}
+
+#memberList a {
+    color: black;
+    text-decoration: none;
+}
+
+
+
+

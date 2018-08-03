@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+<title>회원페이지</title>
+<link rel="stylesheet" href="../../css/common.css">
+<link rel="stylesheet" href="../../css/member/history2.css">
+<link rel="stylesheet" href="../../css/member/sm-following.css">
+<link rel="stylesheet" href="../../css/member/ksy-mypage.css">
+<link rel="stylesheet" href="../../css/member/sm-memberPage.css">
+<link rel="stylesheet"
+	href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
+<link href="https://fonts.googleapis.com/css?family=Titillium+Web:900"
+	rel="stylesheet">
+<style type="text/css">
+</style>
+</head>
+<body>
+
+
+	<div class="sm-top-bar-white" style="z-index: 2;">
+		<div class="sm-container">
+
+			<!-- 헤더 시작 -->
+			<div id="header"></div>
+			<!-- 헤더 종료-->
+
+
+			<!-- 상단 메뉴바 시작 -->
+			<div id="mb-menu"></div>
+			<!-- 상단 메뉴바 종료 -->
+		</div>
+		<!-- container -->
+	</div>
+	<!-- top-bar-white -->
+
+
+
+
+	<div id="sm-back">
+		<div class="sm-container">
+			<h2>
+				<b>운동관리</b>
+			</h2>
+
+			<div class="sm-mypage">
+				<!-- profile 시작 -->
+				<div class="sm-profile">
+					<div style="text-align: center;">
+						<img src="../../img/member/img1.jpg"
+							style="margin-left: 30px; border-radius: 60px; width: 120px; height: 120px;">
+						<button class="sm-btn-2" type="button"
+							style="position: relative; top: -10px; right: 40px; width: 30px; height: 30px; border-radius: 15px; padding: 0px; font-size: 14px;">
+							<span>2</span>
+						</button>
+						<br> 사용자이름<br>
+						<button id="myBtn" class="sm-fw-btn"
+							style="margin-top: 10px; margin-bottom: 20px;">나의 팔로잉</button>
+						<div id="myModal" class="modal" style="z-index: 5;">
+
+							<div class="modal-content">
+								<div class="modal-body">
+									<span class="close">×</span>
+									<h3>
+										<b>나의 팔로잉</b>
+									</h3>
+									<div
+										style="display: block; height: 300px; margin-bottom: 50px;">
+										<div class="sm-card sm-c-s">
+											<img class="profile-img" src="../../img/member/user01.jpg"><br>
+											해동검도
+										</div>
+										<div class="sm-card sm-c-s">
+											<img class="profile-img" src="../../img/member/user01.jpg"><br>
+											해동검도
+										</div>
+										<div class="sm-card sm-c-s">
+											<img class="profile-img" src="../../img/member/user02.jpg"><br>
+											해동검도
+										</div>
+										<div class="sm-card sm-c-s">
+											<img class="profile-img" src="../../img/member/user01.jpg"><br>
+											해동검도
+										</div>
+										<div class="sm-card sm-c-s">
+											<img class="profile-img" src="../../img/member/user02.jpg"><br>
+											해동검도
+										</div>
+									</div>
+								</div>
+								<div class="modal-footer">
+									<h3>Modal Footer</h3>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<a class="sm-a-none">
+						<div id="toryBtn" class="sm-menu" style="border-left: none;">
+							<i class="fas fa-history"></i><br>히스토리
+						</div>
+					</a> <a class="sm-a-none" href="member-h-day.html">
+						<div class="sm-menu">
+							<i class="fas fa-edit"></i><br>운동일지 관리
+						</div>
+					</a> <a class="sm-a-none" href="member-h-ing.html">
+						<div class="sm-menu" style="border-left: none;">
+							<i class="fas fa-file-alt"></i><br>진행중인 운동
+						</div>
+					</a> <a class="sm-a-none" href="member-h-pay.html">
+						<div class="sm-menu" style="border-bottom: none;">
+							<i class="far fa-credit-card"></i><br>구매내역
+						</div>
+					</a>
+				</div>
+				<!-- profile 끝 -->
+
+
+
+				<div class="sm-mypage-body">
+					<h3 class="sm-margin-none" style="color: #666666;">히스토리</h3>
+					<hr style="margin-bottom: 30px;">
+
+
+					<!-- 이 부분이 운동일지 부분임! -->
+					<section id="sm-section" class="sm-timeline">
+					
+					
+						<!-- <ul><div id="story"></div></ul> -->
+
+						<!--  <li>
+                 <div id="story" class="sm-time-div">
+                   <span class="sm-time">2011-02-03</span>
+                  <p class="sm-time-p">'3개월 하비탈출!' 결제를 완료했습니다!</p> 
+                </div> 
+              </li> -->
+              <ul><li><div class="sm-time-div">
+                                    <span id="aaaa" class="sm-time"></span>
+                                    <p class="sm-time-p">
+                                        <img class="sm-time-img" src="../../img/member/img1.jpg">
+                                        '1개월만에 다리라인 만들기' 태권도 챌린지를 시작헀습니다!
+                                    </p>
+                                </div>
+                                </li>
+                                <li>
+                                    <div class="sm-time-div">
+                                    <span id="bbbb" class="sm-time"></span>
+                                    <p class="sm-time-p">
+                                        <img class="sm-time-img" src="../../img/member/img1.jpg">
+                                        '1개월만에 다리라인 만들기' 태권도 챌린지를 시작헀습니다!
+                                    </p>
+                                </div>
+                                </li>
+              </ul>
+              
+						<ul id="cccc">
+						<li id="cccc"></li>
+						<li id="dddd">{{>script}}</li>
+						</ul>
+							<!-- <li>
+								<div class="sm-time-div">
+									<span class="sm-time">2011-02-03</span>
+									<p class="sm-time-p">
+										<img class="sm-time-img" src="../../img/member/img1.jpg">
+										'1개월만에 다리라인 만들기' 태권도 챌린지를 시작헀습니다!
+									</p>
+								</div>
+							</li>
+							<li>
+								<div class="sm-time-div">
+									<span class="sm-time">2018-02-03</span>
+									<p class="sm-time-p">'1개월만에 다리라인 만들기' 결제를 완료했습니다!</p>
+								</div>
+							</li>
+							<li>
+								<div class="sm-time-div">
+									<span class="sm-time">2011-02-03</span>
+									<p class="sm-time-p">'3개월 하비탈출!' 챌린지 시작!</p>
+								</div>
+							</li>
+							<li>
+								<div class="sm-time-div">
+									<span class="sm-time">2011-02-03</span>
+									<p class="sm-time-p">
+										<img class="sm-time-img" src="../../img/member/img3.jpg">
+										'비키니 몸매를 위해 3주만 투자하라!' 챌린지를 성공했습니다!
+									</p>
+								</div>
+							</li>
+							<li>
+								<div class="sm-time-div">
+									<span class="sm-time">2011-02-03</span>
+									<p class="sm-time-p">'3개월 하비탈출!' 챌린지 시작!</p>
+								</div>
+							</li>
+							<li>
+								<div class="sm-time-div">
+									<span class="sm-time">2011-02-03</span>
+									<p class="sm-time-p">'3개월 하비탈출!' 챌린지 시작!</p>
+								</div>
+							</li>
+							<li>
+								<div class="sm-time-div">
+									<span class="sm-time">2011-02-03</span>
+									<p class="sm-time-p">'3개월 하비탈출!' 챌린지 시작!</p>
+								</div>
+							</li> -->
+						
+					</section>
+				</div>
+
+			</div>
+			<!-- mypage -->
+		</div>
+		<!--.container-->
+
+		<!-- 푸터 시작 -->
+		<div id="footer"></div>
+		<!-- 푸터 종료 -->
+
+
+	</div>
+	<!-- back -->
+
+
+<script src="../../node_modules/handlebars/dist/handlebars.min.js"></script>
+<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../../js/common.js"></script>
+<!-- <script src="../../js/header/header_white.js"></script>
+<script src="../../js/footer/footer.js"></script>
+<script src="../../js/member/sm-following.js"></script>
+<script src="../../js/member/mb-menu.js"></script> -->
+<script>
+    $("#toryBtn").click(() => { location.href="member-history4.html"});
+    </script>
+<script src="../../js/member/history2.js"></script>
+<script id="tr-template" type="text/x-handlebars-template">
+{{#each list}}
+{{#if @first}}
+<li class="in-view">
+<div class="sm-time-div">
+<span class="sm-time">{{startDate}}</span>
+<p class="sm-time-p">
+<img class="sm-time-img" src="../../img/member/img1.jpg">
+{{name}} 프로그램을 시작했습니다.
+</p>
+</div>
+</li>
+
+<li class="in-view">
+<div class="sm-time-div">
+<span class="sm-time">{{endDate}}</span>
+<p class="sm-time-p">
+<img class="sm-time-img" src="../../img/member/img1.jpg">
+{{name}} 프로그램을 마쳤습니다.
+</p>
+</div>
+</li>
+
+
+{{else if @last}}
+<li class="in-view">
+<div class="sm-time-div">
+<span class="sm-time">{{startDate}}</span>
+<p class="sm-time-p">
+<img class="sm-time-img" src="../../img/member/img1.jpg">
+{{name}} 프로그램을 시작했습니다.
+</p>
+</div>
+</li>
+
+<li class="in-view">
+<div class="sm-time-div">
+<span class="sm-time">{{endDate}}</span>
+<p class="sm-time-p">
+<img class="sm-time-img" src="../../img/member/img1.jpg">
+{{name}} 프로그램을 마쳤습니다.
+</p>
+</div>
+</li>
+
+{{else}}
+<li class="in-view">
+<div class="sm-time-div">
+<span class="sm-time">{{startDate}}</span>
+<p class="sm-time-p">
+<img class="sm-time-img" src="../../img/member/img1.jpg">
+{{name}} 프로그램을 시작했습니다.
+</p>
+</div>
+</li>
+
+<li class="in-view">
+<div class="sm-time-div">
+<span class="sm-time">{{endDate}}</span>
+<p class="sm-time-p">
+<img class="sm-time-img" src="../../img/member/img1.jpg">
+{{name}} 프로그램을 마쳤습니다.
+</p>
+</div>
+</li>
+{{/if}}
+{{/each}}
+</script>
+
+<script id="tr-template2" type="text/x-handlebars-template">
+{{#each list2}}
+<li class="in-view">
+{{#if @first}}
+<div class="sm-time-div">
+<span class="sm-time">{{endDate}}</span>
+<p class="sm-time-p">
+<img class="sm-time-img" src="../../img/member/img1.jpg">
+'1개월만에 다리라인 만들기' 태권도 챌린지를 시작헀습니다!
+</p>
+</div>
+
+{{else if @last}}
+<div class="sm-time-div">
+<span class="sm-time">{{endDate}}</span>
+<p class="sm-time-p">
+<img class="sm-time-img" src="../../img/member/img1.jpg">
+'1개월만에 다리라인 만들기' 태권도 챌린지를 시작헀습니다!
+</p>
+</div>
+
+{{else}}
+<div class="sm-time-div">
+<span class="sm-time">{{endDate}}</span>
+<p class="sm-time-p">
+<img class="sm-time-img" src="../../img/member/img1.jpg">
+'1개월만에 다리라인 만들기' 태권도 챌린지를 시작헀습니다!
+</p>
+</div>
+{{/if}}
+{{/each}}
+</script>
+<script src="member-history4.js"></script> 
+</body>
+</html>

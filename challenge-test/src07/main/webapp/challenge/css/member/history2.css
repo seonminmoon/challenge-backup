@@ -1,0 +1,149 @@
+@charset "UTF-8";
+
+
+
+/* 여기서 부터 본격 타임라인 */
+#sm-section {
+  box-sizing: border-box;
+  float: left;
+  margin-left: 60px;
+  width: 770px;
+}
+
+.sm-timeline ul {
+  padding: 50px 0;
+  margin: 0;
+}
+
+.sm-timeline ul li {
+  list-style-type: none;
+  position: relative;
+  width: 5px;
+  margin: 0 auto;
+  padding-top: 12px;
+  background: #ced6dc;
+}
+
+.sm-timeline ul li::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: inherit;
+}
+
+.sm-timeline ul li div {
+  position: relative;
+  bottom: 0;
+  width: 380px;
+  padding: 15px;
+  border:1px solid #ccc;
+}
+.sm-timeline ul li div:hover {
+  box-shadow: 0px 10px 20px 0px #D5D5D5;
+}
+.sm-timeline ul li div::before {
+  content: '';
+  position: absolute;
+  bottom: 7px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.sm-timeline ul li:nth-child(odd) div {
+  left: 45px;
+}
+
+.sm-timeline ul li:nth-child(odd) div::before {
+  left: -15px;
+  border-width: 8px 16px 8px 0;
+  border-color: transparent #F45B69 transparent transparent;
+}
+
+.sm-timeline ul li:nth-child(even) div {
+  left: -439px;
+}
+
+.sm-timeline ul li:nth-child(even) div::before {
+  right: -15px;
+  border-width: 8px 0 8px 16px;
+  border-color: transparent transparent transparent #F45B69;
+}
+
+.sm-time {
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-top: 12px;
+}
+
+.sm-timeline ul li div p {
+  margin: 9px;
+}
+/* EFFECTS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.sm-timeline ul li::after {
+  transition: background .5s ease-in-out;
+}
+
+.sm-timeline ul li.in-view::after {
+  background: #1B3453;
+}
+
+.sm-timeline ul li div {
+  visibility: hidden;
+  opacity: 0;
+  transition: all .5s ease-in-out;
+}
+
+.sm-timeline ul li:nth-child(odd) div {
+	transform: all;
+  transform: translateX(200px);
+}
+
+.sm-timeline ul li:nth-child(even) div {
+	transform: all;
+  transform: translateX(-200px);
+}
+
+.sm-timeline ul li.in-view div {
+  transform: none;
+  visibility: visible;
+  opacity: 1;
+}
+
+
+/* 따로 추가한 부분 */
+.sm-time {
+  margin: 0;
+  padding: 10px;
+  background-color: #1B3453;
+  color: white;
+  border-bottom: none;
+  display: block;
+  text-align: center;
+  font-weight: 800;
+}
+
+.sm-time-div {
+  padding: 0 !important;
+}
+
+.sm-time-p {
+  padding: 5px 10px;
+}
+
+.sm-time-img {
+  display: block;
+  height: 120px;
+  width: 150px;
+  margin-bottom: 15px;
+  margin-left: 28%;
+}

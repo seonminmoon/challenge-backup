@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+<title>회원페이지</title>
+<link rel="stylesheet" href="../../css/member/sm-memberPage.css">
+<link rel="stylesheet" href="../../css/member/trainerReportList.css">
+<link rel="stylesheet" href="../../css/common.css">
+<link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
+<link rel="stylesheet" href="../../css/pagination.css">
+</head>
+<body>
+
+  <div class="sm-top-bar-white" style="z-index: 9999;">
+    <div class="sm-container">
+      <div id="header"></div><!-- 헤더 종료-->
+      <div id="mb-menu"></div><!-- 상단 메뉴바 종료 -->
+    </div><!-- container -->
+  </div><!-- top-bar-white -->
+
+
+<div id="sm-back">
+<div class="sm-container">
+  <h2 id="subName">프로그램 운동일지</h2>
+
+<div class="sm-mypage">
+  <div class="sm-profile">
+		<div style="text-align: center;">
+            <img src="../../img/member/img1.jpg"
+              style="border-radius: 60px; width: 120px; height: 120px;">
+            <p style="margin: 8px 0px 3px 0px;">사용자이름</p>
+      <button id="myBtn" class="sm-fw-btn" style="margin-top: 10px; 
+      margin-bottom: 20px;">나의  팔로잉</button>
+		</div>
+    <!-- ************* 이부분만 템플릿에서 다르니까 이것만 짤라서 쓰면된다!!!! ********************************************* -->
+          <a class="sm-a-none" href="member-history.html">
+            <div class="sm-menu" style="border-left: none;">
+              <i class="fas fa-history"></i><br>히스토리
+            </div>
+          </a> <a class="sm-a-none" href="member-h-day.html">
+            <div class="sm-menu">
+              <i class="fas fa-edit"></i><br>운동일지 관리
+            </div>
+          </a> <a class="sm-a-none" href="member-h-ing.html">
+            <div class="sm-menu" style="border-left: none;">
+              <i class="fas fa-file-alt"></i><br>진행중인 운동
+            </div>
+          </a> <a class="sm-a-none" href="member-h-pay.html">
+            <div class="sm-menu" style="border-bottom: none;">
+              <i class="far fa-credit-card"></i><br>구매내역
+            </div>
+          </a>
+	</div><!-- .profile -->
+
+
+    <div class="sm-mypage-body">
+      <!-- 챌린지 운동일지 본문-->
+        <div class="tabbed">
+          <ul id="programList"></ul>
+        </div>
+        <div class="arrow">
+          <div class="arrowLeft"><i class="fas fa-chevron-circle-left"></i></div>
+          <div class="arrowRight"><i class="fas fa-chevron-circle-right"></i></div>
+        </div>
+        <div id='programBox'></div>
+        <!-- 
+        <div class="challengeBox1">
+          <h3 id="programName"></h3>
+        </div>
+        <div class="challengeBox2">
+          <h4><span id="sdt"></span><span id="edt"></span></h4>
+        </div>
+        <ul id="planList" class="dayList">
+        </ul>
+        -->
+      </div>
+	  
+	  <div id="myModal" class="modal">
+		  <div class="modal-content">
+		    <span class="close">&times;</span>
+		    <!-- 일지 보기 관련 -->
+		   	<form id="viewForm">
+		    	<div id="modalViewTop">
+		    	<div>
+			    	<h2 id="dayFont"></h2>
+		    	</div>
+		    	<div>
+			    	<div id="dateFont"></div>
+		    	</div>
+		    	</div>
+		    	<div id="modalViewTitle">
+			    	<input type="text">
+				</div>
+		    	<div id="modalViewContent">
+			    	<textarea></textarea>
+		    	</div>
+		    </form>
+		    <!-- 일지 등록 관련 -->
+		    <form id="addForm">
+		    	<div id="modalTitle">
+		    	<div id="addTop1">
+			    	<label for="addDay">Day</label>
+			    	<select id="mTurn" name="addDay"></select>
+		    	</div>
+		    	<div id="addTop2">
+					<label for="addDate">날짜</label>
+			    	<input id="mDate" type="text" name="addDate">
+		    	</div>
+		    	</div>
+		    	<div>
+			    	<label for="addTitle">제목</label>
+			    	<input id="mTitle" type="text" name="addTitle">
+				</div>
+		    	<div class="addContent" id="bottomBox">
+			    	<label for="addContent">내용</label>
+			    	<textarea id="mContent" name="addContent"></textarea>
+		    	</div>
+            	<button type="button" id="registerPlan">등록</button>
+		    </form>
+		  </div>
+	  </div>
+    </div><!-- mypage-body -->
+	  <div class="sm-pagination" id="pagination">
+	      <a class="sm-pagination-button sm-pagination-side" href="#"><i class="fas fa-angle-left"></i></a>
+	      <a class="sm-pagination-button pageActive">1</a>
+	      <a class="sm-pagination-button">2</a>
+	      <a class="sm-pagination-button">3</a>
+	      <a class="sm-pagination-button">4</a>
+	      <a class="sm-pagination-button sm-pagination-button-end" href="#">5</a>
+	      <a class="sm-pagination-button sm-pagination-side" href="#"><i class="fas fa-angle-right"></i></a>
+	  </div>
+
+</div><!-- mypage -->
+<div id="footer"></div>
+</div><!--.container-->
+<script src="../../node_modules/handlebars/dist/handlebars.min.js"></script>
+<script src="../../js/common.js"></script>
+<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../../js/footer/footer.js"></script>
+<script src="../../js/header/header_white.js"></script>
+<script src="../../js/member/mb-menu.js"></script>
+<script id="program-template" type="text/x-handlebars-template">
+<div class="challengeBox1">
+          <h3 id="programName">{{name}}</h3>
+</div>
+<div class="challengeBox2">
+          <h4>기간: <span id="sdt">{{startDate}}</span> ~ <span id="edt">{{endDate}}</span></h4>
+</div>
+<ul id="planList" class="dayList">
+{{#each list}}
+  <li>
+    <div class="dayContent">
+      <h4 class="time">Day{{planTurn}}</h4>
+      <pre>{{planContent}}</pre>
+    </div>
+    <div class="editIcon">
+      <a data-no="{{no}}" data-pno="{{program.no}}" class="viewNum"><i class="fas fa-plus-circle"></i></a>
+    </div>
+  </li>
+{{/each}}
+</ul>
+</script>
+
+<script id="li-template" type="text/x-handlebars-template">
+{{#each list}}
+	{{#if @last}}
+		<li class="programTab tabSelect active">
+			<a data-no='{{program.no}}' data-trnNo='{{program.trainerNo}}'
+			data-sdt='{{program.startDate}}' data-edt='{{program.endDate}}'>
+				{{program.name}}</a></li>
+	{{else}}
+		<li class="programTab tabSelect">
+			<a data-no='{{program.no}}' data-trnNo='{{program.trainerNo}}'
+		data-sdt='{{program.startDate}}' data-edt='{{program.endDate}}'>
+			{{program.name}}</a></li>
+	{{/if}}
+{{/each}}
+</script>
+<script src="../../js/member/trainerReportList.js"></script>
+</body>
+</html>

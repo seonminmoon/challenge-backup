@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace 이름은 SQL을 찾을 때 사용하는 그룹명이다.
+     따라서 SQL 문을 사용하는 DAO 클래스 이름과 같게 하면
+     유지보수할 때 알아보기 쉽다.
+     단순히 알아보기 쉬울 뿐만 아니라
+     스프링 프레임워크와 연동할 때 DAO 객체를 자동 생성할 수 있다.
+-->
+<mapper namespace="challenge.dao.PlanDao">
+
+  <resultMap type="Plan" id="PlanMap">
+    <id column="plno" property="no"/>
+    <result column="pltover" property="planTurn"/>
+    <result column="pldt" property="planDate"/>
+    <result column="pltitl" property="planTitl"/>
+    <result column="plcont" property="planContent"/>
+    <collection property="program" ofType="Program">
+        <id column="pno" property="no"/>
+        <result column="pname" property="name"/>
+        <result column="sdt" property="startDate"/>
+        <result column="edt" property="endDate"/>
+        <result column="pth" property="proTh"/>
+        <result column="ptover" property="proTurn"/>
+        <association property="trainerNo" javaType="Trainer">
+        	<id column="trnno" property="userNo"/>
+        </association>
+    </collection>
+  </resultMap>
+
+  <!-- SQL 문 id를 설정할 때 SQL문을 사용하는 메서드 이름과 같게하면
+       유지보수할 때 알아보기 쉽다.
+       알아보기 쉬울 뿐만 아니라
+       스프링 프레임워크와 연동할 때 DAO객체를 자동생성하고
+       그 메서드를 자동생성할 때 사용할 수 있다.
+  -->
+  <select id="selectList" parameterType="int" resultMap="PlanMap">
+	select p.trnno, p.pno, p.pname, p.sdt, p.edt from PROG p
+	where p.trnno = #{value}
+<!--     order by pono desc -->
+  </select>
+
+  <select id="selectPlanList" parameterType="int" resultMap="PlanMap">
+	select p.pname, p.sdt, p.edt, p.ptover, pl.pno, pl.plno, pl.pltover,
+		   pl.pltitl, pl.plcont, p.trnno
+	from PROG p, PLAN pl
+	where p.pno = pl.pno
+	AND pl.pno = #{value}
+  </select>
+  
+  <insert id="insert" parameterType="Plan" 
+  	useGeneratedKeys="true" keyColumn="plno" keyProperty="no">
+  	insert into PLAN(pltover,pldt,pltitl,plcont, pno)
+  	values(#{planTurn},#{planDate},
+  		   #{planTitl},#{planContent},#{program.no})
+  </insert>
+
+   <select id="selectOne" parameterType="int" resultMap="PlanMap">
+	select pl.pltover, pl.pldt, pl.pltitl, pl.plcont, p.pno 
+	from PLAN pl, PROG p 
+	where p.pno = pl.pno 
+	AND pl.plno = #{value}
+	
+  </select>
+  
+  <update id="update" parameterType="Plan">
+  	update PLAN set
+	pltitl=#{planTitl},
+	plcont=#{planContent}
+	where plno=#{no} 
+  </update>
+  
+</mapper>

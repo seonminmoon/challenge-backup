@@ -1,0 +1,195 @@
+@charset "UTF-8";
+
+.sm-mypage-body {
+  box-sizing: border-box;
+  margin-bottom: 100px;
+}
+
+#cssRemove {
+  padding-top: 0;
+
+  border: none;
+}
+/* 프로젝트 등록 서브 메뉴 */
+.settingsSubMenu {
+  margin-bottom: 20px;
+}
+.settingsSubMenu a {
+  color: black;
+  text-decoration: none;
+  padding-bottom: 5px;
+}
+
+.settingsSubMenu ul {
+  box-sizing: border-box;
+  border-bottom: 1px solid #666666;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  height: 35px;
+}
+
+.settingsSubMenu ul li {
+  float: left;
+  margin: 0 25px;
+}
+
+#settingsSubMenu-fist {
+  margin-left: 0;
+}
+
+/* 계정설정 등록 본문 */
+.settingsImg {
+  float: left;
+  width: 205px;
+}
+
+.settingsList {
+  float: left;
+  width: 676px;
+}
+
+.originalImg {
+  border: 1px solid #dddddd;
+  background: #dddddd;
+  width: 120px;
+  height: 120px;
+  border-radius: 60px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.changeButton {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.changeButton button {
+  border: 1px solid #878787;
+  background: 0;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.contentName {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.settingsList li {
+  margin-bottom: 30px;
+}
+
+.inputText {
+  border: 1px solid #e0e0e0;
+  background: #fafafa;
+  height: 32px;
+  width: 570px;
+}
+
+.inputCheckbox {
+  margin-top: 5px;
+  float: right;
+  margin-right: 63px;
+  font-size: 14px;
+}
+
+.inputCheckbox input {
+  width: 12px;
+  margin-top: 5px;
+}
+
+/* 계정탁퇴, 완료 버튼 */
+.nextBox {
+  float: right;
+  margin-top: 20px;
+}
+
+.nextBox button {
+  background: #DD1F26;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  padding: 10px;
+  width: 120px;
+  cursor: pointer;
+}
+
+#exitButton {
+  margin-right: 10px;
+  background: white;
+  color: black;
+  border: 1px solid #878787;
+  background: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/

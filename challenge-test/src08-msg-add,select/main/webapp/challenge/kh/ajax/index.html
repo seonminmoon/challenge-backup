@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<input type="button" id="btn" value="click">
+	<div id="ajaxValue"></div>
+	
+	
+<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$("#btn").click(function() {
+				var result = document.getElementById('ajaxValue');
+				$.ajax({
+					url : "test.js", // test.jsp 에서 받아옴
+					dataType : "json", // 데이터타입을 json 으로 받아옴
+					success : function(data) {
+						alert(result.innerHTML = data.study.ajax);
+					},
+					error : function(e) {
+						console.log(e.responseText);
+					}
+				});
+			});
+		});
+	</script>
+
+</body>
+</html>
