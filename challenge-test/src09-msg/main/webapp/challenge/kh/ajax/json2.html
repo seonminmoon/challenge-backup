@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+ <div id="aaaa" + 'no'></div>
+<div id="data1"></div>
+ <!-- <div id="aaaa2"></div> -->
+<div id="data2"></div>
+<span></span>
+<ul></ul>
+
+<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../../js/common.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+$.getJSON("json2.js", function(data){
+	 $.each(data, function(key, value) {
+		 $("#aaaa" + value.no).append(value.content);
+		 console.log(data);
+		 $('span').append(data);
+		 /* $(value).append('aaaa' + key); */
+		 /* $("#aaaa" + value.no).append(value.content); */
+		 
+	 });
+});
+});
+	/* $('#content2' + b.no).append(data.content2); */
+
+</script> 
+
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="challenge.dao.TrainerDao">
+	<resultMap type="Trainer" id="TrainerMap">
+		<id column="uno" property="userNo" />
+		<result column="uname" property="name" />
+		<result column="sex" property="sex" />
+		<result column="mail" property="email" />
+		<result column="pwd" property="password" />
+		<result column="uphon" property="userPhone" />
+		<result column="upath" property="userPath" />
+		<result column="utype" property="userType" />
+		
+		<result column="trnint" property="introduce"/>
+		<result column="trncar" property="career"/>
+		<result column="trntime" property="time"/>
+		<result column="trnacnt" property="account"/>
+		<result column="trnbank" property="bank"/>
+		<result column="trncoin" property="coin"/>
+	</resultMap>
+
+	<select id="selectList" resultMap="TrainerMap" parameterType="map">
+		select uno, uname, sex, mail, pwd, uphon, upath, utype, trnno, trnint, trncar,
+		trntime, trnacnt, trnprog, trnbank, trncoin
+		from TRN t
+		inner join USER u on u.uno = t.trnno 
+		order by uno asc
+	</select>
+
+	<insert id="insert" parameterType="Trainer">
+		insert into TRN(trnno, trnint, trncar, trntime, trnacnt, trnbank, trncoin)
+		values(#{userNo},#{introduce},#{career},#{time},#{account},#{bank}, #{coin})
+	</insert>
+
+	<select id="selectOne" parameterType="int" resultMap="TrainerMap">
+		select uno,
+		uname, sex, mail, pwd, uphon, upath, utype
+		from USER
+		where uno=#{value}
+	</select>
+
+	<select id="selectOneWithId" parameterType="String"
+		resultMap="TrainerMap">
+		select uno, uname, sex, mail, pwd, uphon, upath, utype
+		from
+		USER
+		where mail=#{value}
+	</select>
+
+
+	<select id="selectOneWithPassword" parameterType="map"
+		resultMap="TrainerMap">
+		select uno, uname, sex, mail, pwd, uphon, upath
+		from USER
+		where mail=#{id} and pwd=password(#{password})
+	</select>
+
+	<select id="count" parameterType="map" resultType="int">
+		select
+		count(*)
+		from USER
+		where mail=#{id} and pwd=password(#{password})
+	</select>
+
+
+	<update id="update" parameterType="Trainer">
+		update USER set
+		uname=#{name},
+		sex=#{sex},
+		mail=#{id},
+		pwd=password(#{password}),
+		uphon=#{trainerPhone},
+		upath=#{trainerPath},
+		utype=#{trainerType}
+		where uno=#{trainerNo}
+	</update>
+
+	<delete id="delete" parameterType="int">
+		delete from USER where
+		uno=#{value}
+	</delete>
+</mapper>

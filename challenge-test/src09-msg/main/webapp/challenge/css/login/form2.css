@@ -1,0 +1,110 @@
+@charset "UTF-8";
+
+
+.sm-btn-2 { /* 빨간색 버튼 */
+  width:100px;
+    background-color: #DD1F26;
+    border:1px solid #DD1F26;
+    color:#fff;
+    padding: 10px 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    margin: 3px;
+    cursor: pointer;
+    border-radius:10px;
+}
+.sm-btn-2:hover {
+    background-color: white;
+    color:#DD1F26;
+    border:1px solid #DD1F26;
+}
+
+
+.new-title {
+    text-align:center;
+    color:black;
+}
+
+.form-control {
+    width: 370px;
+    height: 33px;
+    margin: 6px 0;
+    padding-left: 10px;
+    border: 1px solid #666666;
+    border-radius: 5px;
+}
+
+.tr-textarea {
+  height:100px;
+}
+
+.form-textarea {
+    width: 385px;
+    height: 100px;
+    margin: 15px 0;
+    border: 1px solid #666;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.form-textarea textarea {
+    width: 400px;
+}
+
+.form-degree {
+    position: relative;
+    left: 82%;
+}
+
+.form-email {
+    width: 145px;
+}
+.form-emailList {
+    width: 200px;
+    height: 38px;
+}
+.form-btn {
+text-align: center;
+    width: 108%;
+    margin: 63px 0px;
+}
+.form-btn input {
+    margin: 0px 10px;
+}
+.phone {
+    width: 109px;
+}
+.
+.signUp-form {
+        display: inline-block;
+    position: relative;
+    left: 30%;
+}
+
+.signUp-form label {
+    
+}
+
+input[type=checkbox], input[type=radio] {
+  transform: scale(1.2);
+}
+
+.signUp-table {
+    margin-top: 15px;
+}
+.signUp-table tr td:first-child {
+  width:120px;
+}
+
+hr {
+    border: none;
+    width: 55px;
+    height: 2px;
+    background-color: #DD1F26;
+}
+
+h2 {
+    margin: 10px 0;
+}

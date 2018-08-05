@@ -1,0 +1,152 @@
+@charset "UTF-8";
+
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+	padding: 5px;
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+/*---------------------------------------- 모달 헤더,푸터 */
+/* Modal Header */
+.modal-header {
+    padding: 2px 16px;
+    background-color: black;
+    color: white;
+    border-bottom: 1px solid gray;
+}
+
+/* Modal Body */
+.modal-body {padding: 2px 24px;}
+
+/* Modal Footer */
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #fff;
+    color: black;
+    border-top: 1px solid gray;
+    text-align:center;
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 515.5px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top: -300px; opacity: 0} 
+    to {top: 0; opacity: 1}
+}
+
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+/* 내가 지정한 css 코드 */
+.sm-logo {
+    margin: 10px;
+    width:50px;
+    display:inline-block;
+    margin-left: 20px;
+}
+table h2 {
+    position: relative;
+    margin:0;
+    top:-20px;
+    left:20px;
+}
+.sm-modal-i {
+    font-family: 'Titillium Web';
+    top: -20px;
+    left: -5px;
+    position: relative;
+    font-size: 25px;
+}
+.profile-img {
+    width: 70px;
+    height: 70px;
+    display: inline-block;
+    border-radius: 50%;
+    margin-bottom: 5px;
+}
+
+.sm-c-s {
+  width: 120px;
+  height: 120px;
+  padding:10px;
+  padding-top:20px;
+}
+.sm-card {
+  border: 1px solid #666;
+
+  display: inline-block;
+  margin: 10px;
+  margin-left: 0;
+  text-align: center;
+}
+.sm-card:hover {
+  box-shadow: 0px 0px 10px 1px #666;
+}
+
+.sm-fw-btn {
+    width:100px;
+    background-color: #DD1F26;
+    border: none;
+    color:#fff;
+    padding: 10px 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    margin: 3px;
+    cursor: pointer;
+    border-radius:10px;
+}

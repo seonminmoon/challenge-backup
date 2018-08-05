@@ -1,0 +1,524 @@
+@charset "UTF-8";
+
+.sm-mypage-body {
+  box-sizing: border-box;
+  margin-bottom: 100px;
+}
+
+/* 프로젝트 등록 서브 메뉴 */
+
+/* 이 부분은 임시 나중에 삭제 10~13*/
+#uploadSubMenu-fist a {
+ border-bottom: 1px solid black;
+ border-width: 3px;
+}
+
+.uploadSubMenu a {
+  color: black;
+  text-decoration: none;
+  padding-bottom: 5px;
+}
+
+.uploadSubMenu a:visited {
+ border-bottom: 1px solid black;
+ border-width: 3px;
+}
+
+.uploadSubMenu a:hover {
+  color: #1B3453;
+}
+
+
+.uploadSubMenu ul {
+  box-sizing: border-box;
+  border-bottom: 1px solid #666666;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  height: 35px;
+}
+
+.uploadSubMenu ul li {
+  float: left;
+  margin: 0 25px;
+}
+
+#uploadSubMenu-fist {
+  margin-left: 0;
+}
+
+/* 강사 운동일지 작성 */
+/* 프로젝트 선택 서브메뉴*/
+.tabbed {
+  max-width: 880px;
+  margin: 0 auto;
+  margin-left: 0;
+  border-bottom: 4px solid #1B3453;
+  overflow: hidden;
+  transition: border 250ms ease;
+}
+.tabbed ul {
+  overflow: hidden;
+  float: left;
+  list-style-type: none;
+  padding-left: 35px;
+  margin: 0;
+}
+.tabbed ul * {
+  margin: 0px;
+  padding: 0px;
+}
+.tabbed ul li {
+  display: block;
+  float: right;
+  padding: 10px 24px 8px;
+  background-color: #FFF;
+  margin-right: 46px;
+  z-index: 2;
+  position: relative;
+  cursor: pointer;
+  color: #777;
+  text-transform: uppercase;
+  font: 600 13px/20px roboto, "Open Sans", Helvetica, sans-serif;
+
+  transition: all 250ms ease;
+}
+.tabbed a {
+  text-decoration: none;
+  color: #777;
+}
+
+.tabbed ul li:before,
+.tabbed ul li:after {
+  display: block;
+  content: " ";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 44px;
+  background-color: #FFF;
+  transition: all 250ms ease;
+}
+.tabbed ul li:before {
+  right: -24px;
+  transform: skew(30deg, 0deg);
+  box-shadow: rgba(0,0,0,.1) 3px 2px 5px, inset rgba(255,255,255,.09) -1px 0;
+}
+.tabbed ul li:after {
+  left: -24px;
+  transform: skew(-30deg, 0deg);
+  box-shadow: rgba(0,0,0,.1) -3px 2px 5px, inset rgba(255,255,255,.09) 1px 0;
+}
+.tabbed ul li:hover,
+.tabbed ul li:hover:before,
+.tabbed ul li:hover:after {
+  background-color: #F4F7F9;
+  color: #444;
+}
+
+.tabbed ul li.active {
+  z-index: 3;
+}
+
+.tabbed ul li.active,
+.tabbed ul li.active:before,
+.tabbed ul li.active:after {
+  background-color: #1B3453;
+}
+
+.active a {
+	color: #fff;
+}
+.arrow .fas {
+  color: #1B3453;
+  font-size: 22px;
+}
+
+.arrow {
+  margin-top: 5px;
+  height: 22px;
+}
+.arrowLeft {
+  float: left;
+}
+
+.arrowRight {
+  float: right;
+}
+/* 도전 날자 */
+.topBox {
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+/* .challengeBox1 h3, .challengeBox1 h4, .challengeBox2 h4 {
+  margin: 0;
+}
+
+.challengeBox1 h4 {
+  margin-top: 8px;
+  font-weight: bold;
+} */
+
+.challengeBox1 h3 {
+  margin: 10px;
+}
+.challengeBox2 {
+  margin: 30px 0 5px 13px;
+}
+
+.challengeBox2 h4{
+  margin: 0;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+/* 운동일지 하단 메뉴 */
+.bottomMenu {
+  float: right;
+  margin-top: 12px;
+  margin-right: 18px;
+  margin-bottom: 30px;
+}
+
+.bottomMenu #addPlan {
+  float:left;
+  padding: 6px 25px;
+  font-weight: bold;
+  border: 1px solid #DD1F26;
+  border-radius: 5px;
+  background-color: #DD1F26;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* 운동일지 */
+.challengeBox1 {
+  text-align: center;
+}
+.sm-mypage-body ul{
+  margin: 0;
+}
+
+.dayList {
+  padding: 0;
+  display: inline-block;
+}
+
+.dayList li {
+  box-sizing: border-box;
+  border: 1px solid gray;
+  width: 260px;
+  float: left;
+  height: 200px;
+  margin: 10px 15px;
+}
+.dayContent {
+  height: 146px;
+  margin: 0 14px;
+}
+
+.dayContent h4 {
+	margin-bottom: 0;
+	text-align: center;
+}
+
+.editIcon {
+  float: right;
+  margin-right: 10px;
+}
+
+.editIcon .far {
+	margin-left: 3px;
+}
+
+.editIcon a {
+	cursor: pointer;
+}
+
+.dayContent pre {
+  text-align: left;
+  font-size: 15px;
+  line-height: 22px;
+}
+
+.time {
+  font-weight: bold;
+  color: #1B3453;
+  font-size: 19px;
+}
+
+#pagination {
+  margin: 0;
+  margin-left: 10%;
+}
+
+/* 일지 등록하는 모달*/
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 9999; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 700px;
+    height: 500px;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#modalTitle {
+	margin-bottom: 0 !important;
+}
+#addForm {
+	margin: 40px 25px;
+	margin-left: 5px;
+	text-align: center;
+}
+
+#addForm div {
+	margin-bottom: 25px;
+}
+
+#addForm label {
+	margin-right: 10px;
+	display: inline-block;
+	width: 50px;
+	font-size: 17px;
+	font-weight: bold;
+}
+
+#addForm input {
+	padding: 5px;
+	border: 1px solid #d7d7d7;
+	font-size: 15px;
+}
+
+#addForm select {
+	padding: 5px;
+	width: 80px;
+	border: 1px solid #d7d7d7;
+	font-size: 15px;
+	height: 35px;
+}
+
+#addTop1, #addTop2 {
+	display: inline-block;
+	margin-bottom: 0;
+}
+
+#addTop2 {
+	margin-left: 150px;
+	
+}
+
+#addTop2 input {
+	width: 203px;
+	height: 25px;
+}
+
+#mDate {
+	height: 22.2px !important; 
+}
+
+[name="addContent"] {
+	border: 1px solid #d7d7d7;
+	height: 250px;
+	resize: none;
+	height: 235px;
+	width: 479px;
+	padding: 15px;
+	line-height: 22px;
+}
+
+[for="addContent"] {
+	margin-bottom: 20px;
+	position: relative;
+	top: -120px;
+}
+
+[name="addTitle"] {
+	width: 480px;
+	height: 15px;
+	padding: 10px 15px !important;
+}
+
+#registerPlan {
+	float: right;
+	margin-right: 45px;
+    padding: 6px 25px;
+    font-weight: bold;
+    border: 1px solid #DD1F26;
+    border-radius: 5px;
+    background-color: #DD1F26;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#viewForm {
+	margin: 30px;
+}
+#bottomBox {
+	margin-bottom: 0 !important;
+}
+
+/*modal View 관련 이벤트*/
+#dayFont {
+	margin: 0;
+	padding-bottom: 5px;
+}
+
+#dateFont {
+	font-weight: bolder;
+}
+
+#modalViewTitle, #modalViewContent {
+	display: inline-block;
+}
+
+#modalViewTitle {
+	margin-top: 20px;
+}
+
+#modalViewContent {
+	margin-top: 10px;
+}
+
+#modalViewTitle input {
+	width: 470px;
+	height: 5px;
+	float: left;
+	border: 1px solid #d7d7d7;
+	font-size: 16px;
+	padding: 15px;
+}
+
+#modalViewContent textarea {
+	width: 469px;
+	height: 270px;
+	resize: none;
+	border: 1px solid #d7d7d7;
+	font-size: 17px;
+	line-height: 22px;
+	padding: 15px;
+}
+
+#updatePlan {
+	width: 570px;
+}
+
+#updatePlan button {
+	float: right;
+	margin-top: 10px;
+    padding: 6px 25px;
+    font-weight: bold;
+    border: 1px solid #DD1F26;
+    border-radius: 5px;
+    background-color: #DD1F26;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#noPlan {
+	text-align: center;
+	font-weight: bold;
+	font-size: 17px;
+	margin-top: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
