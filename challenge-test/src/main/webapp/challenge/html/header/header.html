@@ -5,7 +5,9 @@
   <meta charset="utf-8">
   <title></title>
   <link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
-  <link rel="stylesheet" href="../../css/header/header_bg_black.css">
+
+  <link id="header-type" rel="stylesheet">
+
   <link href="https://fonts.googleapis.com/css?family=Titillium+Web:900" rel="stylesheet">
 </head>
 
@@ -36,31 +38,16 @@
             <a class="sh_menu sh_after" href="../timeline/timeline.html">타임라인</a>
           </li>
           <li class="sh_top_menu sh_dropdown">
-            <a class="sh_menu sh_after " href="#">프로그램</a>
-            <div class="sh_dropdown-content">
-              <ul id="sh_sub-menu-ul">
-                <li><a class="sh_menu sh_after" href="../search/search.html">추천프로그램</a></li>
-                <li><a class="sh_menu sh_after" href="#">인기프로그램</a></li>
-                <li><a class="sh_menu sh_after" href="#">진행중인프로그램</a></li>
-              </ul>
-            </div>
+            <a class="sh_menu sh_after " href="../search/search.html">프로그램</a>
           </li>
           <li class="sh_top_menu sh_dropdown">
-            <a class="sh_menu sh_after" href="#">커뮤니티</a>
-            <div class="sh_dropdown-content">
-              <ul id="sh_sub-menu-ul">
-                <li><a class="sh_menu sh_after" href="#">명예의전당</a></li>
-                <li><a class="sh_menu sh_after" href="#">비포&애프터</a></li>
-                <li><a class="sh_menu sh_after" href="#">질문과답변</a></li>
-                <li><a class="sh_menu sh_after" href="../community/community-list.html">자유게시판</a></li>
-              </ul>
-            </div>
+            <a class="sh_menu sh_after" href="../community/community-list.html">커뮤니티</a>
           </li>
           <li class="login_menu_before sh_top_menu sh_dropdown">
             <a class="sh_menu sh_after " href="../login/login.html">로그인</a>
           </li>
-      
-          <li class="login_menu_after sh_top_menu sh_dropdown sh_top_menu_user">
+
+          <li id="sh-alarm" class="login_menu_after sh_top_menu sh_dropdown sh_top_menu_user">
             <a href="#"><i id="sh-bell-icon" class="fas fa-bell"></i></a>
             <div id="sh-msg-dropdown-content" class="sh_dropdown-content">
               <ul id="sh_sub-menu-ul">
@@ -70,24 +57,23 @@
                   </ul>
                 </div>
                 <div id="sh-msgbox-msg">
-                    <ul>
-                      <li>메세지가 없습니다.</li>
-                    </ul>
+                  <ul>
+                    <li>메세지가 없습니다.</li>
+                  </ul>
                 </div>
                 <div class="sh-msgbox"><span id="sh-msgbox-more">더보기</span></div>
               </ul>
             </div>
           </li>
-          
-          
-          <!-- 회원 드롭다운 메뉴 !!!!! -->    
+
+          <!-- 회원 드롭다운 메뉴 !!!!! -->
           <li id="sh_top_menu_user" class="login_menu_after sh_top_menu sh_dropdown">
             <a href="#">
-                  
+
               <div class="sh-user-inline-block">
-                <img id="sh-user-img">              
+                <img id="sh-user-img">
               </div>
-        
+
               <div id="sh-user-name-div" class="sh-user-inline-block">
                 <span id="sh-user-name"></span>
               </div>
@@ -95,35 +81,40 @@
                 <i id="sh-user-icon-tri" class="fas fa-caret-down"></i>
               </div>
             </a>
-            <div class="sh_dropdown-content">
+
+            <!-- 회원 -->
+            <div id="member-mypage" class="sh_dropdown-content">
               <ul id="sh_sub-menu-ul">
-                <li><a class="sh_menu sh_after" href="../member/member-my.html">회원 마이페이지</a></li>
-                <li><a class="sh_menu sh_after" href="../trainer/programList.html">트레이너 마이페이지</a></li>
-                <li><a class="sh_menu sh_after" href="#">운동관리</a></li>
-                <li><a class="sh_menu sh_after" href="#">메시지</a></li>
-                <li><a class="sh_menu sh_after" href="#">운동후기</a></li>
-                <li><a class="sh_menu sh_after" href="#">계정설정</a></li>
+                <li><a class="sh_menu sh_after" href="../member/member-my.html">마이페이지</a></li>
+                <li><a class="sh_menu sh_after" href="#" onclick=" location.href='../member/member-history.html?no=' + userInfo.userNo; return false;">운동관리</a></li>
+                <li><a class="sh_menu sh_after" href="../member/member-msg.html">메시지</a></li>
+                <li><a class="sh_menu sh_after" href="../member/member-set.html">계정설정</a></li>
+              </ul>
+            </div>
+
+            <!-- 트레이너 -->
+            <div id="trainer-mypage" class="sh_dropdown-content">
+              <ul id="sh_sub-menu-ul">
+                <li><a class="sh_menu sh_after" href="../trainer/programList.html">서비스관리</a></li>
+                <li><a class="sh_menu sh_after" href="../trainer/memberList.html">회원관리</a></li>
+                <li><a class="sh_menu sh_after" href="../trainer/trainerPage-importation.html">수익관리</a></li>
+                <li><a class="sh_menu sh_after" href="../trainer/trainerPage-receiveMsg.html">메세지</a></li>
+                <li><a class="sh_menu sh_after" href="../trainer/trainerPage-settings1.html">계정설정</a></li>
               </ul>
             </div>
           </li>
-          
-          
-          
-          
-          
+
           <li class="login_menu_after sh_top_menu sh_dropdown">
             <a id="logoutBtn" class="sh_menu sh_after" style="cursor:pointer">로그아웃</a>
           </li>
         </ul>
       </div>
       <!-- 드롭다운 서브메뉴 종료-->
-
     </header>
   </div>
 
-
   <!-- 헤더 종료-->
-  
+
 </body>
 
 </html>
