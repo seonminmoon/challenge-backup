@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>관리자 게시판</title>
+
+<!-- Bootstrap core CSS -->
+<link rel="stylesheet"
+	href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+<!-- Jquery -->	
+<link rel="stylesheet"
+    href="../../node_modules/jquery/dist/jquery.min.js">
+	
+<!-- font core CSS -->
+<link rel="stylesheet" href="../../css/common.css">
+<!-- icon tools-->
+<link rel="stylesheet"
+	href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
+<!-- page css-->
+<link rel="stylesheet" href="../../css/admin/admin-list.css">
+<link rel="stylesheet" href="../../css/table.css">
+<link rel="stylesheet" href="../../css/pagination.css">
+
+
+<style>
+.sm-pagination-button {
+	height: 35px;
+	padding: 5px;
+}
+</style>
+
+</head>
+
+<body>
+	<div id="header"></div>
+	<main id="main">
+
+	<div class="hf-wrapper">
+
+		<section class="jumbotron text-left board-form">
+			<div class="hf-header-container">
+				<h3 class="jumbotron-heading">관리자 게시판</h3>
+				<br>
+				<p style="border: 1px solid gray;"></p>
+			</div>
+		</section>
+		<div class="all-form">
+
+			<div class="jh-left-board" style="width: 1100px;">
+				<div id="ad-table">
+					<div class="border-table-wrapper">
+						<table class="chall-table">
+							<thead class="chall-thead">
+								<tr>
+									<th width="10%">번호</th>
+									<th width="40%">제목</th>
+									<th width="50%">사진</th>
+
+								</tr>
+							</thead>
+							<tbody id="bbbb" class="chall-tbody"></tbody>
+						</table>
+					</div>
+				</div>
+
+
+				<div class="pagination"></div>
+				<!-- pagination -->
+
+				<div class="btnWrap">
+					<button id="writeBtn" type="button" name="write">글쓰기</button>
+				</div>
+				<div id="jh-search-freeboard">
+
+					<div style="text-align: center; margin: 20px auto;">
+						<select class="select" name="sect">
+							<option value="">제목</option>
+							<option value="">내용</option>
+							<option value="">작성자</option>
+						</select> <input type="text">
+						<button type="button" id="selBtn">검색</button>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<!--hf-wrapper--> </main>
+	<div id="footer"></div>
+
+	<script src="../../node_modules/handlebars/dist/handlebars.min.js"></script>
+	<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="../../js/common.js"></script>
+	<script src="../../js/table.js"></script>
+	<script id="adlist" type="text/x-handlebars-template">
+{{#each list}}
+<tr>
+    <td>{{no}}</td>
+    <td><a href='admin-add2.html?no={{no}}'>{{title}}</a></td>
+    <td>{{path}}</td>
+</tr>
+{{/each}}
+
+</script>
+	<script src="../../js/pagination.js"></script>
+	<script>
+    $("#writeBtn").click(() => { location.href="admin-add.html"});
+    </script>
+	<script src="../../js/header/header_white.js"></script>
+	<script src="../../js/footer/footer.js"></script>
+	<!-- <script src="../../js/community/community-list.js"></script> 나중에 js옮길때 이형식으로-->
+	<script src="list.js"></script>
+
+</body>
+
+</html>

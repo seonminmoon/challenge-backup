@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>멤버 회원 가입 폼</title>
+<link rel="stylesheet" href="../../css/common.css">
+<link rel="stylesheet" href="../../css/login/form.css">
+<!-- <link rel="stylesheet"
+        href="../node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
+<link rel="stylesheet"
+	href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
+
+</head>
+
+<body>
+	<!-- 헤더 시작 -->
+	<header id="header"></header>
+	<!-- 헤더 종료 -->
+
+	<div class="container">
+		<form>
+			<fieldset>
+				<legend align="center"> 회원가입 </legend>
+
+				<table>
+					<tr>
+						<td><label for="fName">이름</label></td>
+						<td><input id="fName" type="text" name="name"
+							placeholder="name" class="name"></td>
+					</tr>
+
+					<tr>
+						<td><label for="fGen">성별</label></td>
+						<td><label for="fGen1" class="gen">남자 <input
+								id="fGen1" type="radio" name="sex" value="M">
+								<span class="gcheckmark"></span>
+						</label><label for="fGen2" class="gen">여자 <input id="fGen2"
+								type="radio" name="sex" value="F"><span class="gcheckmark"></span>
+						</label></td>
+					</tr>
+
+					<tr>
+						<td><label>이메일</label></td>
+						<td><input id="fId" type="text" name="id"
+							placeholder="email" class="email" style="width: 100px;">
+							 @ <select id="fid2" class="email" name="id" style="width: 100px;">
+								<option>naver.com</option>
+								<option>daum.net</option>
+								<option>nate.com</option>
+								<option>gmail.com</option>
+						</select></td>
+					</tr>
+
+					<tr>
+						<td><label for="fPassword">비밀번호</label></td>
+						<td><input id="fPassword" type="password" name="password"
+							placeholder="password" class="password"></td>
+					</tr>
+
+
+					<tr>
+						<td><label for=fPhone">전화</label></td>
+						<td><select id="fPhone1" class="phone" style="width: 70px;">
+								<option>010</option>
+								<option>017</option>
+								<option>011</option>
+						</select> - <input id="fPhone2" type="tel" name="tel" class="phone"
+							maxlength="4" size="4" pattern="[0-9]{3,4}[0-9]" oninput="this.value=this.value.replace(/[^0-9]/g,'');"> - <input id="fPhone3"
+							type="tel" name="tel" class="phone" maxlength="4" size="4"
+							pattern="[0-9]{4}" oninput="this.value=this.value.replace(/[^0-9]/g,'');"></td>
+					</tr>
+
+					<tr>
+						<td><label for="fPath">사진</label>
+						<td><input id="fPath" type="file" name="file"
+							placeholder="file" class="file"></td>
+					</tr>
+
+					<tr>
+						<td><label class="agree">약관 동의 <input type="checkbox">
+								<span class="checkmark"></span></label></td>
+					</tr>
+					<td>이용약관</td>
+
+					<td><textarea cols="40" rows="7" disabled class="terms">제1조(목적) 이 약관은 〇〇은행(이하 “은행”이라 합니다.)과 이용자 사이의 전자금융거래에 관한 기본적인 사항을 정함으로써, 거래의 신속하고 효율적인 처리를 도모하고 거래당사자 상호간의 이해관계를 합리적으로 조정하는 것을 목적으로 합니다.
+						제2조(용어의 정의)
+① 이 약관에서 사용하는 용어의 의미는 다음 각 호와 같습니다.
+ 1. “전자금융거래”라 함은 은행이 전자적 장치를 통하여 제공하는 금융상품 및 서비스를 이용자가 전자적 장치를 통하여 비대면·자동화된 방식으로 직접 이용하는 거래를 말합니다.
+ 2. “이용자”라 함은 전자금융거래를 위하여 은행과 체결한 계약(이하 "전자금융거래계약"이라 합니다.)에 따라 전자금융거래를 이용하는 고객을 말합니다.
+ 3. “지급인”이라 함은 전자금융거래에 의하여 자금이 출금되는 계좌(이하 “출금계좌”라 합니다.)의 명의인을 말합니다.
+ 4. “수취인”이라 함은 전자금융거래에 의하여 자금이 입금되는 계좌(이하 “입금계좌”라 합니다.)의 명의인을 말합니다.</textarea></td>
+					</tr>
+
+
+				</table>
+
+				<center>
+					<input id="addBtn" type="button" name="button" value="회원가입"
+						class="button1"> <input type="reset" name="reset"
+						value="가입취소" class="button2">
+				</center>
+
+			</fieldset>
+
+		</form>
+	</div>
+
+	<!-- 푸터 시작 -->
+	<footer id="footer" class="footer"></footer>
+	<!-- 푸터 종료 -->
+
+	<!-- 헤더 스크립트 -->
+	<!-- <script src="../../node_modules/handlebars/dist/handlebars.min.js"></script> -->
+	<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="../../js/common.js"></script>
+	<!-- <script>
+		function phonedate() {
+			if (event.keyCode >= 48 && event.keyCode <= 57) {
+				return true;
+			} else {
+				event.returnValue = false;
+			}
+		}
+ -->
+	</script>
+	<script src="../../js/header/header_white.js"></script>
+	<script src="../../js/footer/footer.js"></script>
+	<script src="../../js/login/member.js"></script>
+</body>
+</html>
+
+</body>
+</html>

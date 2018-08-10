@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>연습</title>
+</head>
+
+<body>
+<script src="../../node_modules/handlebars/dist/handlebars.min.js"></script>
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script> 
+<script id="exam-template" type="text/x-handlebars-template">
+<table>
+    <thead> 
+        <th>이름</th> 
+        <th>아이디</th> 
+        <th>메일주소</th> 
+    </thead> 
+    <tbody> 
+        {{#users}}  {{!변수값}} 
+        <tr> 
+            <td>{{name}}</td> 
+            <td>{{id}}</td> 
+            <td><a href="mailto:{{email}}">{{email}}</a></td> 
+        </tr> 
+        {{/users}} 
+    </tbody> 
+</table>
+</script>
+<!-- <script src="handlebars.js"></script> -->
+<script>
+var source = $("#exam-template").html(); 
+
+//핸들바 템플릿 컴파일
+var template = Handlebars.compile(source); 
+
+//핸들바 템플릿에 바인딩할 데이터
+var data = {
+      users: [
+          { name: "홍길동1", id: "aaa1", email: "aaa1@gmail.com" },
+          { name: "홍길동2", id: "aaa2", email: "aaa2@gmail.com" },
+          { name: "홍길동3", id: "aaa3", email: "aaa3@gmail.com" },
+          { name: "홍길동4", id: "aaa4", email: "aaa4@gmail.com" },
+          { name: "홍길동5", id: "aaa5", email: "aaa5@gmail.com" }
+      ]
+}; 
+
+//핸들바 템플릿에 데이터를 바인딩해서 HTML 생성
+var html = template(data);
+
+//생성된 HTML을 DOM에 주입
+$('body').append(html);
+</script>
+</body>
+</html>

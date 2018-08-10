@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery를 이용한 JSON 데이터 구하기</title>
+    </head>
+    
+  <body>
+    <div id="container">            
+      <div id="dictionary">
+      </div>
+    </div>
+    
+   <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $.getJSON('http://localhost:8888/challenge-project/json/program/list', function(data) {
+          var html = '';
+          $.each(data, function(Index, entry) {
+              html += '<div class="entry">';
+              html += '<h3 class="term">' + entry.startDate + '</h3>';
+              html += '<div class="part">' + entry.name +'을 시작했습니다.' + '</div>';
+              html += '<div class="definition">';
+              html += entry.no;
+              html += '</div>';
+              html += '<h3 class="term">' + entry.endDate + '</h3>';
+              html += '<div class="part">' + entry.name +'을 종료했습니다.' + '</div>';
+              html += '<div class="definition">';
+              html += entry.no;
+              html += '</div>';
+              html += '</div>';
+          });
+          console.log(data);
+          $('#dictionary').append(html);
+        });
+        return false;
+    });
+    </script>
+  
+  </body>
+</html>

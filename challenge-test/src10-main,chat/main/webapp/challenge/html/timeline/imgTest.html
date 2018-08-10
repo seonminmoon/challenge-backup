@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+    /* right sideMenu CSS 시작*/
+
+#cj-sideMenu {
+right: 368px;
+/* height: 55%; */
+border: 1px solid grey;
+
+width: 200px;
+min-height: 300px;
+/* float:right; */
+position: fixed;
+overflow: hidden;
+}
+
+
+#cj-sideMenu {
+
+}
+/*이미지 */
+.cj-img {
+position: relative;
+border: 1px solid grey;
+}
+.cj-img-form{
+display: inline;
+border: 1px solid red;
+}
+
+/*이름 */
+
+/*링크이름 검은색 밑줄제거*/
+.cj_name > a:link{
+  color: black;
+  text-decoration: none;
+}
+.user-name > a:link{
+  color: black;
+  text-decoration: none;
+}
+.avatar-name {
+
+display: inline;
+/* margin-top : 20px; */
+}
+
+#cj-sideMenu-item ul li {
+list-style:none;
+}
+.user-form{
+overflow: hidden;
+}
+#cj-sideMenu-item ul {
+padding:7px 0 0 0;
+}
+.user-img{
+float: left;
+}
+.user-name{
+float:left;
+margin-left: 15px;
+}
+/* 스크롤바 표현 위아래*/
+.user-listform{
+height: 250px;
+background-color: #ecf0f1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 200px;
+  flex-direction: column;
+padding-bottom: 50px;
+padding-top: 0px;
+/* border: 1px solid #eeeeee; */
+
+}
+/*스크롤바 이미지표현*/
+#style-1::-webkit-scrollbar
+{
+ background-color: #F5F5F5;
+}
+#style-1::-webkit-scrollbar-thumb
+{
+ border-radius: 10px;
+ -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+ background-color: #555;
+}
+
+/*맨위로 버튼*/
+.user-list-bottom {
+border-top: 1px solid #c0c0c0;
+padding-left: 80px;
+}
+
+a:link{
+color: black;
+text-decoration: none;
+}
+
+.fas{
+color: black;
+}
+
+
+#MOVE_TOP_BTN {
+
+font-size: 35px;
+color : black;
+}
+
+
+.state {
+text-align: center;
+}
+.state p{
+font-size: 14px;
+/* border-bottom: 1px solid grey; */
+/* border: 0.1px solid black; */
+}
+
+
+
+
+.cj-click{
+float: left;
+padding-left: 15px;
+padding-top: 15px;
+}
+
+/*유저네임 링크색깔*/
+.user-name a:link{
+  color: black;
+  text-decoration: none;
+}
+
+#cj-sideMenu-item h4 {
+color: grey;
+}
+
+#cj-sideMenu-item hr {
+opacity: 0.3;
+}
+
+.cj-sidetitle h4 {
+color : grey;
+}
+
+/*내 프로필*/
+body {
+margin: 20px;
+}
+
+#card-user {
+transition: all 0.6s ease;
+display: inline-block;
+cursor: pointer;
+width: 198px;
+height: 130px;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border-radius: 5px;
+background-color: #ecf0f1;
+overflow: hidden;
+/* padding: 20px; */
+
+}
+
+.pure-toggle {
+/* border: 1px solid grey; */
+}
+
+#card-user .header {
+transition: all 0.6s ease;
+display: inline-block;
+width: 100%;
+height: 30px;
+background-color: #2c3e50;
+}
+#card-user .header h4 {
+/* width: 100%; */
+}
+#card-user .avatar {
+transition: all 0.6s ease;
+width: 60px;
+height: 60px;
+border-radius: 50%;
+background-color: #ecf0f1;
+border: 5px solid #ecf0f1;
+display: inline-block;
+margin-top: -5px;
+overflow: hidden;
+
+}
+#card-user .avatar img {
+
+width: 100%;
+}
+#card-user .text {
+padding: 0 8%;
+width: 250px;
+height: 150px;
+}
+#card-user .text h3 {
+
+/* margin: 7px 0; */
+transition: all 0.6s ease;
+/* width: 150px; */
+}
+#card-user .text p {
+padding: 10%;
+line-height: 1.4em;
+text-align: justify;
+margin: 20px 0 30px 0;
+}
+
+#card-user .text span{
+overflow: left;
+/* padding: 0 30%; */
+}
+#card-user .skills {
+display: inline;
+position: relative;
+top: -165px;
+right: -400px;
+transition: all 0.6s ease-out;
+}
+#card-user .social {
+padding: 5% 0;
+background-color: #2c3e50;
+color: #fff;
+}
+#card-user .social i {
+padding: 0 5%;
+font-size: 1.2em;
+}
+#card-user .social i:hover {
+transition: all 0.6s ease-out;
+-moz-transform: rotate(360deg);
+-ms-transform: rotate(360deg);
+-webkit-transform: rotate(360deg);
+transform: rotate(360deg);
+}
+
+#card-user:hover {
+height: 300px;
+transition: all 0.6s ease;
+}
+#card-user:hover .header {
+transition: all 0.6s ease;
+}
+#card-user:hover .avatar {
+background-color: #efefef;
+transition: all 0.6s ease;
+}
+
+.cj-text {
+padding: 20px 0 0 0;
+}
+
+.profile-text p{
+padding: 0px 0 0 40px;
+border-top: 1px solid #efefef;
+}
+
+
+input[type='checkbox']:checked +
+#card-user {
+width: 500px;
+height: 300px;
+transition: all 0.6s ease;
+}
+input[type='checkbox']:checked +
+#card-user .header {
+width: 500px;
+}
+/* input[type='checkbox']:checked +
+#card-user .avatar {
+margin-left: -350px;
+transition: all 0.6s ease;
+} */
+/* input[type='checkbox']:checked +
+#card-user .skills {
+top: -165px;
+right: -150px;
+transition: all 0.6s ease;
+} */
+/* input[type='checkbox']:checked +
+#card-user .text h3 {
+margin-left: -100px;
+transition: all 0.6s ease;
+} */
+/*프로필 끝*/
+
+
+
+/* right sideMenu CSS 끝*/
+    </style>
+  </head>
+  <body>
+    <!-- sideMenu 시작 -->
+      <div id="cj-sideMenu">
+        <div id="cj-sideMenu-item">
+          <ul>
+            <li>
+              <!-- <h4>내 프로필</h4> -->
+              <input type="checkbox" id="pure-toggle" hidden="">
+              <label id="card-user" class="pure-toggle" for="pure-toggle">
+                <div class="header">
+                </div>
+                <div class="avatar">
+                  <img src="http://www.alcoholandyouni.com/wp-content/uploads/2013/01/team4.jpg" alt="...">
+                </div>
+
+                <div class="avatar-name"></div>
+
+                <div class="profile-text">
+                  <p>오늘도 힘내요!</p>
+                </div>
+                <div class="cj-content">
+                  <br><hr>
+                  <p style="padding-left: 60px; margin-bottom: 0px;">오늘할일</p>
+                  <br>
+                  <span>1.알림내용 ㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱ</span><br>
+                  <span>2.알림내용.</span><br>
+                  <span>3.알림내용.</span><br>
+                  <span>4.알림내용.</span><br>
+                  <span>5.ㄱㄱㄱㄱ</span><br>
+                </div>
+
+                <!-- <div class="skills">
+                   <h3>메모장</h3>
+                  <p>1.
+                    2.
+                    3.
+                  </p>
+                </div> -->
+              </label>
+
+            </li>
+          </ul>
+          <div class="cj-sidetitle">
+          <h4>회원 리스트</h4>
+          <!-- <hr> -->
+        </div>
+          <div class="user-listform" id="style-1">
+            <!-- <div class="scrollbar" id="style-1">
+      <div class="force-overflow"></div>
+    </div> -->
+            <ul>
+              <li>
+                <div class="user-form">
+                  <div class="user-img">
+                    <img class="cj-img" src="img/profile1.PNG" alt=" 프로필 사진">
+                  </div>
+
+
+                  <div class="user-name">
+                    <p>홍정호</p>
+                  </div>
+
+                  <div class="cj-click">
+                  <a href="#"><i class="fas fa-envelope"></i></a>
+
+
+                  </div>
+              </div>
+
+                <!--<br><br> <div class="state message">
+                  <p>잘부탁해요</p>
+                </div> -->
+              </li>
+            </ul>
+
+            <ul>
+              <li>
+                <div class="user-form">
+                  <div class="user-img">
+                    <img class="cj-img" src="img/profile2.PNG" alt=" 프로필 사진">
+                  </div>
+
+
+                  <div class="user-name">
+                    <p>홍정호</p>
+                  </div>
+
+                  <div class="cj-click">
+                  <a href="#"><i class="fas fa-envelope"></i></a>
+
+                  </div>
+                  </div>
+
+              </li>
+            </ul>
+
+            <ul>
+              <li>
+                <div class="user-form">
+                  <div class="user-img">
+                    <img class="cj-img" src="img/profile1.PNG" alt=" 프로필 사진">
+                  </div>
+
+
+                  <div class="user-name">
+                    <p>홍정호</p>
+                  </div>
+
+                  <div class="cj-click">
+                  <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+                </div>
+
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <div class="user-form">
+                  <div class="user-img">
+                    <img class="cj-img" src="img/profile1.PNG" alt=" 프로필 사진">
+                  </div>
+
+
+                  <div class="user-name">
+                    <p>홍정호</p>
+                  </div>
+
+                  <div class="cj-click">
+                  <a href="#"><i class="fas fa-envelope"></i></a>
+
+                </div>
+              </div>
+              </li>
+            </ul>
+
+            <ul>
+              <li>
+                <div class="user-form">
+                  <div class="user-img">
+                    <img class="cj-img" src="img/profile2.PNG" alt=" 프로필 사진">
+                  </div>
+
+
+                  <div class="user-name">
+                    <p>홍정호</p>
+                  </div>
+
+                  <div class="cj-click">
+                  <a href="#"><i class="fas fa-envelope"></i></a>
+
+                  </div>
+                </div>
+              </li>
+            </ul>
+
+            <ul>
+              <li>
+                <div class="user-form">
+                  <div class="user-img">
+                    <img class="cj-img" src="img/profile1.PNG" alt=" 프로필 사진">
+                  </div>
+
+
+                  <div class="user-name">
+                    <p>홍정호</p>
+                  </div>
+
+                  <div class="cj-click">
+                  <a href="#"><i class="fas fa-envelope"></i></a>
+
+                </div>
+              </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <ul class="user-list-bottom">
+           <a id="MOVE_TOP_BTN" href="#">
+             <i class="fas fa-arrow-alt-circle-up"></i>
+          </a>
+
+          <!-- <a id="MOVE_DOWN_BTN" href="#">
+            <i class="fas fa-arrow-alt-circle-down"></i>
+          </a> -->
+
+        </ul>
+        </div>
+
+      </div>
+      <!-- sideMenu 종료 -->
+  </body>
+</html>
