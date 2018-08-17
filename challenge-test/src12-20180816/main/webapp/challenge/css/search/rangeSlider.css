@@ -1,0 +1,95 @@
+       
+div#foo {
+    width: 200px !important;
+}       
+.slider .labels {
+  overflow: hidden;
+}
+.slider .labels:first-child {
+  margin-bottom: 15px;
+  width: 100%;
+}
+.slider .from {
+  float: left;
+}
+.slider .to:not(:first-child),
+.slider .to:not(:first-child) input,
+
+.slider .max {
+
+}
+
+#price-input {
+    margin-left: 40px;
+    margin-right: 10px;
+}
+.slider .from label,
+.slider .to label{
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+.slider .from label,
+.slider .from input,
+.slider .to label,
+.slider .to input {
+  display: block;
+}
+.slider .from input,
+.slider .to input {
+  width: 50px;
+  border-radius: 5px;
+  border: 1px solid #a0a0a0;
+  padding: 4px 3px 2px 2px;
+  box-sizing: border-box;
+  text-align: center;
+}
+.slider.error .from input,
+.slider.error .to input {
+  color: #D53636;
+  border-color: #D53636;
+}
+.slider.slider .ui-slider:before {
+  content: '';
+  display: inline-block;
+  background: #ccc;
+  width: 20px;
+  height: 6px;
+  border-radius: 6px;
+  position: absolute;
+  left: -10px;
+  z-index: -1;
+}
+.slider.slider .ui-slider {
+  position: relative;
+  border: none;
+  background: #ccc;
+  height: 6px;
+  border-radius: 6px;
+  margin: 4px 0 0 10px;
+}
+.slider.range .ui-slider {
+  background: -webkit-linear-gradient(left, #ccc calc(var(--from) * 1%), #1B3453 0, #195695 calc(var(--to) * 1%), #ccc 0) !important;
+  background: linear-gradient(to right, #ccc calc(var(--from) * 1%), #1B3453 0, #195695 calc(var(--to) * 1%), #ccc 0) !important;
+}
+.slider.range.error .ui-slider {
+  background: -webkit-linear-gradient(left, #ccc calc(var(--from) * 1%), #1B3453 0, #D53636 calc(var(--to) * 1%), #ccc 0) !important;
+  background: linear-gradient(to right, #ccc calc(var(--from) * 1%), #1B3453 0, #D53636 calc(var(--to) * 1%), #ccc 0) !important;
+}
+.slider .ui-slider .ui-slider-handle {
+  background: #1B3453;
+  border: none;
+  margin-top: 2px;
+  border-radius: 50%;
+  width: 13px;
+  height: 13px;
+  cursor: pointer;
+}
+.slider.slider.error .ui-slider .ui-slider-handle {
+  background: #D53636
+}
+.slider .ui + .labels {
+  margin-top: 8px;
+  font-size: 12px;
+}

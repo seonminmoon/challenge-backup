@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>회원 상세페이지</title>
+<link rel="stylesheet" href="../../css/program/DetailPage.css">
+<link rel="stylesheet" href="../../css/common.css">
+<link rel="stylesheet"
+ href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
+<link rel="stylesheet"
+ href="../../node_modules/sweetalert2/dist/sweetalert2.min.css">
+<link rel="stylesheet" href="../../css/member/msg-modal.css">
+
+</head>
+<body>
+ <div id="header"></div>
+ <div id="container">
+  <div class="subject">
+   <h2 id="fName" class="challengeName"></h2>
+   <div class="challengeSub">
+    <p>
+     <span id="Dday">Start D</span>
+    </p>
+    <p>
+     <span id="fDate">( </span> )
+    </p>
+    <p>
+     <span id="fpmemCount">참여인원 </span><span id="fmaxQty"> / </span>
+    </p>
+   </div>
+  </div>
+  <div class="column">
+   <div class="middle one">
+    <div id="fprogramImg" class="oneImg"></div>
+    <div class="oneName">
+     <h3>
+      <span id="fproTh">[ </span> 기] <span id="fName"></span> <span
+       id="fproType">운동종목: </span>
+     </h3>
+     <p>
+      <span id="fchalName">챌린지:</span> <span id="fproGoal">목표:</span><span
+       id="fproGoalNum"></span> <span id="fproTurn">운동회수:</span> <span
+       id="fprice" class="numberic"></span> <span>￦ </span>
+     </p>
+    </div>
+   </div>
+   <div class="middle two">
+    <div class="alineCenter">
+     <span id="reviewScore" class="star-prototype3"></span>
+     <p class="evalNum">
+      <b><span id="reviewScore"></span>점</b>
+     </p>
+     <p class="evalEnp">
+      (<span id="reviewCount"></span>개의 평가)
+     </p>
+    </div>
+   </div>
+
+   <!-- 본문 따라다니는 navbar -> name id(#) 잘 활용하기 -->
+   <div id="navbar" class="middle">
+    <a href="#navExam" class="navLink">프로그램설명</a> <a href="#navPrice"
+     class="navLink">가격정보</a> <a href="#navNum" class="navLink">기수정보</a>
+    <a href="#navEval" class="navLink">프로그램평가</a>
+   </div>
+   <!-- 프로그램 설명-->
+   <div class="middle three">
+    <div id="navExam">
+     <h3 class="subH3Font">프로그램 설명</h3>
+    </div>
+    <div id="examContent">
+     <div id="fdescription" class="pExam exFont"></div>
+
+     <div class="ExamImage">
+      <div class="slideshow-container">
+       <div id="detailImg"></div>
+       <a class="prev">&#10094;</a> <a class="next">&#10095;</a>
+      </div>
+     </div>
+    </div>
+   </div>
+   <!-- 가격정보 -->
+   <div class="middle four">
+    <div id="navPrice" class="navPriceSub">
+     <h3 class="subH3Font">가격정보</h3>
+    </div>
+    <div class="PriceContent">
+     <ul class="PriceContentSub1">
+      <li>
+       <div>
+        <strong><span id="fproType">[</span>] <span id="fName"></span></strong>
+       </div>
+       <div class="priceRight">
+        <div>
+         <div class="priceSubLeft">
+          <!--<a class="numMinus"><b>↓</b></a>
+                <span><b>1</b></span>
+                <a class="numPlus"><b>↑</b></a>-->
+         </div>
+         <div class="priceSubRight">
+          <b id="fprice" class="numberic"></b> 원
+         </div>
+        </div>
+       </div>
+      </li>
+      <!-- <li>
+          <div class="priceLeft">
+            <label><input type="checkbox"> 개인 락커룸 3개월권</label>
+          </div>
+          <div class="priceRight">
+            <div>
+              <div class="priceSubLeft">
+                <a class="numMinus"><b>↓</b></a>
+                <span><b>1</b></span>
+                <a class="numPlus"><b>↑</b></a>
+              </div>
+              <div class="priceSubRight"><b>3,000</b>원</div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="priceLeft">
+            <label><input type="checkbox"> 운동복 대여 3개월권</label>
+          </div>
+          <div class="priceRight">
+            <div>
+              <div class="priceSubLeft">
+                <a class="numMinus"><b>↓</b></a>
+                <span><b>1</b></span>
+                <a class="numPlus"><b>↑</b></a>
+              </div>
+              <div class="priceSubRight"><b>2,000</b>원</div>
+            </div>
+          </div>
+        </li> -->
+     </ul>
+     <div class="PriceContentSub2">
+      <h4>
+       <span>결제하기 </span> <span>( </span> <span id="fprice"
+        class="numberic"></span> <span>원</span> <span> )</span>
+      </h4>
+     </div>
+    </div>
+   </div>
+   <!-- 기수 정보 -->
+   <div class="middle five">
+    <div id="navNum" class="navNumSub">
+     <h3 class="subH3Font">기수정보</h3>
+    </div>
+    <table>
+     <thead>
+      <tr>
+       <th class="firstNoline">회차</th>
+       <th>기간</th>
+       <th>성공인원</th>
+       <th class="lastNoline">만족도</th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td class="firstNoline">1</td>
+       <td>2017-02-20 ~ 2017-05-14</td>
+       <td>20/25</td>
+       <td class="lastNoline">4.5/5.0</td>
+      </tr>
+      <tr>
+       <td class="firstNoline">2</td>
+       <td>2018-03-20 ~ 2018-05-20</td>
+       <td>22/25</td>
+       <td class="lastNoline">4.5/5.0</td>
+      </tr>
+     </tbody>
+    </table>
+   </div>
+   <!-- 서비스 평가 -->
+   <div class="middle six">
+    <div id="navEval" class="navEvalSub">
+     <h3 class="subH3Font">프로그램 평가</h3>
+    </div>
+    <div>
+     <div class="EvalContent1">
+      <span id="reviewScore" class="star-prototype"></span>
+      <div class="EvalContent1-score">
+       <p class="evalEnp">
+        <span id="reviewCount"></span>개의 평가
+       </p>
+      </div>
+     </div>
+     <!-- 댓글입력 창 -->
+     <div class="commentInput">
+
+      <div class="userName">
+       <div class="userNameCircle"></div>
+       <div id="uName" class="userNameContent"></div>
+      </div>
+      <div class="userContent">
+       <textarea id="fContent" rows="5" cols="82"
+        placeholder="정직한 프로그램 후기를 남겨주세요^^"></textarea>
+      </div>
+      <div class="formInput">
+       <div class="starInput">
+        <span class="star-input"> <span class="input"> <input
+          type="radio" name="star-input" value="1" id="p1"> <label
+          for="p1">1</label> <input type="radio" name="star-input"
+          value="2" id="p2"> <label for="p2">2</label> <input
+          type="radio" name="star-input" value="3" id="p3"> <label
+          for="p3">3</label> <input type="radio" name="star-input"
+          value="4" id="p4"> <label for="p4">4</label> <input
+          type="radio" name="star-input" value="5" id="p5"> <label
+          for="p5">5</label>
+        </span> <output for="star-input">
+          <b>0</b>점
+         </output>
+        </span>
+       </div>
+       <button id="updBtn" class="commentRegister" type="button">등록</button>
+      </div>
+     </div>
+     <!-- 댓글 리스트 -->
+     <div class="EvalContent2">
+      <div id="cm-load">
+       <ul id="comment1"></ul>
+       <div id="cm-btn-wrap" class="btn-wrap commentPlus">
+        <a id="moreBtn" class="button">더보기</a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+
+  <div class="aside">
+   <!-- 강사 정보 -->
+   <div class="asideProfile">
+    <div class="ProfileDiv">
+     <div class="proImg">
+       <div id="ftrainerImg" class="imgCircle"></div>
+     </div>
+     <div class="proName">
+      <h2 id="ftrainerName"></h2>
+      <div></div>
+     </div>
+     <div class="proTime">
+      <h5>
+       연락가능시간 : <span id="ftrainerTime"></span>
+      </h5>
+     </div>
+     <div class="proCommuni">
+      <div class="CommuniDiv">
+       <div class="follow box">
+        <a class="fas fa-user-plus redColor"
+         onclick="colorRedFunction();"></a>
+       </div>
+       <div class="inq box">
+        <a id="msgBtn" class="far fa-envelope"></a>
+       </div>
+      </div>
+     </div>
+     <div class="proInfo">
+      <div class="left">
+       <h5>
+        <span>11</span>건
+       </h5>
+       <h6>총작업개수</h6>
+      </div>
+      <div class="left">
+       <h5>
+        <span>100</span>점
+       </h5>
+       <h6>만족도</h6>
+      </div>
+      <div class="left">
+       <h5>
+        <span>30</span>분
+       </h5>
+       <h6>평균 응답시간</h6>
+      </div>
+     </div>
+    </div>
+    <div class="prolect">
+     <h3>
+      <span id="ftrainerName"></span>님의 다른 프로그램
+     </h3>
+     <div id="lectBox" class="lectBox"></div>
+    </div>
+   </div>
+   <!-- 결제하기 -->
+   <div class="asideCost">
+    <h2 id="payment">
+     <span>결제하기</span>( <span id="fprice" class="numberic"></span><span>원
+      )</span>
+    </h2>
+   </div>
+   
+   <!-- 강의 일정 -->
+   <div class="asideDate">
+    <h4>
+     <i class="far fa-calendar-alt"></i> 일정
+    </h4>
+    <div id="date" class="tab">
+     <button class="tablinks2 day0" id="defaultOpen2">월</button>
+     <button class="tablinks2 day1">화</button>
+     <button class="tablinks2 day2">수</button>
+     <button class="tablinks2 day3">목</button>
+     <button class="tablinks2 day4">금</button>
+     <button class="tablinks2 day5">토</button>
+     <button class="tablinks2 day6">일</button>
+    </div>
+    <div id="day"></div>
+   </div>
+  
+   <!-- 강의 장소 -->
+   <div class="asidePosition">
+    <h4>
+     <i class="fas fa-map-marker-alt"></i> 장소
+    </h4>
+    <div class="tab">
+     <button class="tablinks1" id="defaultOpen1">강남</button>
+    </div>
+    <div id="cityName1" class="tabcontent1">
+     <h6 class="tapMargin">상세주소</h6>
+     <h5 class="tapMargin" id="faddress"></h5>
+    </div>
+   </div>
+   <div class="asidePosition">
+   <div id="map"></div>
+   </div>
+   </div>
+
+  <!-- add 모달 -->
+  <div id="myAddModal" class="modal">
+   <div class="modal-content">
+    <div class="modal-header">
+     <span class="close"><i class="far fa-times-circle"></i></span>
+    </div>
+    <div class="add-body"></div>
+   </div>
+  </div>
+  <!-- add 모달 끝! -->
+
+
+
+ </div>
+ <div id="footer"></div>
+
+ <script id="detail-image" type="text/x-handlebars-template">
+{{#each list}}
+<div class="mySlides fade">
+  <div class="numbertext"><span id="slideOr-{{@key}}"></span> / <span id="slideLen"></span></div>
+  <img src="../../../files/{{path}}_600x600.jpg">
+</div>
+{{/each}}
+</script>
+ <script id="lectList" type="text/x-handlebars-template">
+{{#each list}}
+<a href="DetailPage.html?no={{no}}">
+ <div class="lectList">
+  <div class="imgBox">
+    <img class="card-img" src="../../../files/{{medias.[0].path}}_50x50.jpg"/>
+  </div>
+  <div class="subjectBox">
+   <h5>{{name}}</h5>
+  </div>
+  <div class="evalBox">
+   <span class="startDate">
+    {{startDate}} 시작</span>
+    <span class="score-{{@key}}"></span>
+  </div>
+  <div class="priceBox">
+   <p>
+    <span class="numberic">{{price}}</span>원
+   </p>
+  </div>
+ </div>
+</a>
+{{/each}}
+</script>
+ <script id="dayday" type="text/x-handlebars-template">
+{{#each list}}
+<div id="day-{{@key}}" class="tabcontent2">
+  <h6 class="tapMargin">가능 시간</h6>
+  <h5 class="tapMargin">{{time}}</h5>
+</div>
+{{/each}}
+</script>
+ <script id="commentList" type="text/x-handlebars-template">
+{{#each list}}
+ <li class="cm-load cmt-section-{{user.userNo}}" data-userNo="{{user.userNo}}"
+    onmouseover=showCmtMenu(this) onmouseout=hideCmtMenu(this)>
+  <div class="commentImg">
+    <img id="cmImg-{{@key}}" src="../../../files/{{user.userPath}}_50x50.jpg"></div>
+  <div class="commentDate">
+   {{reviewDate}} <span>｜</span> </div>
+  <div class="commentEval">
+   <span class="star-prototype2">{{grade}}</span> (<span class="grade">{{grade}}</span>)
+  </div>
+  <div class="commentContent">{{review}}</div>
+  <div class="commentName">{{user.name}}</div>
+  <div onclick=cmtEdit(this) name={{programNo}} class="cmt-edit">
+     <i class="fas fa-pen">수정</i></div>
+  <div onclick=cmtDelete(this) name={{programNo}} class="cmt-delete">
+     <i class="fas fa-trash-alt">삭제</i></div>
+ </li>
+{{/each}}
+</script>
+ <!-- add -->
+ <script id="add-template" type="text/x-handlebars-template">
+<div>
+  <div class="modal-body">
+   <div class="originalImg"></div>
+   <ul class="memberInfoList" style="margin-left: 20px;">
+    <li class="modalName">
+     <div class="contentName">이름</div>
+     <div id="mName" class="modalContent">{{member}}</div>
+    </li>
+    <li class="modaPhone">
+     <div class="contentName">받는사람</div>
+     <div id="mName-send" class="modalContent">{{trainer}}</div>
+    </li>
+   </ul>
+  </div>
+  <div class="modal-body2">
+   <input id="fTitle" class="modalContent-titl" type="text"
+    placeholder="제목을 입력하세요."><br>
+   <textarea id="fContent" class="modalContent-cont"
+    placeholder="내용을 입력하세요."></textarea>
+
+   <span class="modal-ok">
+    <button id="addBtn" class="sm-btn-1">보내기</button>
+   </span>
+  </div>
+ </div>
+</script>
+
+ <script src="../../node_modules/handlebars/dist/handlebars.min.js"></script>
+ <script src="../../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+ <script src="../../js/common.js"></script>
+ <script
+  src="//dapi.kakao.com/v2/maps/sdk.js?appkey=952b22a683523a137feaf2c7d49f44e9&libraries=services"></script>
+ <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+ <script src="../../js/trainer/jquery.number.js"></script>
+ <script src="../../js/programDetail/DetailPage.js"></script>
+ <script src="../../js/programDetail/DetailPage2.js"></script>
+ <script src="../../js/header/header.js"></script>
+ <script src="../../js/footer/footer.js"></script>
+
+</body>
+</html>

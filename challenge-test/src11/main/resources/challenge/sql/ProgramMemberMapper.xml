@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace 이름은 SQL을 찾을 때 사용하는 그룹명이다.
+     따라서 SQL 문을 사용하는 DAO 클래스 이름과 같게 하면
+     유지보수할 때 알아보기 쉽다.
+     단순히 알아보기 쉬울 뿐만 아니라
+     스프링 프레임워크와 연동할 때 DAO 객체를 자동 생성할 수 있다.
+-->
+<mapper namespace="challenge.dao.ProgramMemberDao">
+  <resultMap type="ProgramMember" id="ProgramMemberMap">
+    <id column="pno" property="programNo"/>
+    <id column="uno" property="userNo"/>
+    <result column="pgrade" property="grade"/>
+    <result column="prv" property="review"/>
+    <result column="prvdt" property="reviewDate"/>
+    <result column="payday" property="paymentDay"/>
+    <result column="ptype" property="userType"/>
+    
+    <association property="program" javaType="Program">
+        <id column="pno" property="no"/>
+        <result column="pname" property="name"/>
+	    <result column="sdt" property="startDate"/>
+	    <result column="edt" property="endDate"/>
+	    <result column="pgoal" property="proGoal"/>
+	    <result column="pgoal_n" property="proGoalNum"/>
+        <result column="trnno" property="trainerNo"/>
+        <result column="bas_addr" property="address"/>
+        <result column="maxqty" property="maxQty"/>
+        <result column="pprice" property="price"/>
+        <result column="pth" property="proTh"/>
+        <result column="ptover" property="proTurn"/>
+        <result column="trnno" property="trainerNo"/>
+    </association>
+    <association property="user" javaType="User">
+        <id column="uno" property="userNo"/>
+        <result column="mail" property="email"/>
+        <result column="uname" property="name"/>
+        <result column="sex" property="sex"/>
+        <result column="uphon" property="userPhone"/>
+        <result column="upath" property="userPath"/>
+    </association>
+    <collection property="diarys" ofType="Diary">
+        <id column="dno" property="dno"/>
+        <result column="dchek" property="dcheck"/>
+    </collection>
+  </resultMap>
+
+  
+   <insert id="insert" parameterType="ProgramMember">
+    INSERT INTO PMEMB (pno,uno,payday,ptype) 
+    VALUES (#{programNo},#{userNo},now(),#{userType})
+  </insert>
+  
+   
+   
+  <select id="pNameList" parameterType="int" resultMap="ProgramMemberMap">
+  	SELECT p.pno, p.trnno, p.pname
+	FROM PROG p 
+    WHERE p.trnno = #{value}
+  </select>
+  
+  <!-- 회원이 수강중인 프로그램 목록 -->
+  <select id="lectList" parameterType="int" resultMap="ProgramMemberMap">
+  	SELECT pm.pno, pm.uno, 
+  	       p.pname, p.trnno, p.sdt, p.edt, payday, p.bas_addr, p.maxqty, p.pprice, p.pth
+	FROM PMEMB pm 
+		INNER JOIN PROG p ON pm.pno = p.pno
+	WHERE pm.uno = #{value}
+  </select>
+    
+  <select id="selectList" parameterType="int" resultMap="ProgramMemberMap">
+	SELECT u.uno, p.pno, pm.uno, u.mail, u.uname, u.sex, p.pname, p.trnno
+	FROM PMEMB pm 
+		INNER JOIN USER u 
+	    ON pm.uno = u.uno 
+	    INNER JOIN PROG p 
+	    ON pm.pno = p.pno
+    WHERE p.trnno = #{value}
+<!--     order by pono desc -->
+  </select>
+  
+  <select id="selectListWithProgram" parameterType="map" resultMap="ProgramMemberMap">
+	SELECT u.uno, p.pno, u.mail, u.uname, u.sex, p.pname, u.upath
+	FROM PMEMB pm 
+		INNER JOIN USER u 
+	    ON pm.uno = u.uno 
+	    INNER JOIN PROG p 
+	    ON pm.pno = p.pno 
+	WHERE p.pno = #{arg0}
+	AND p.trnno = #{arg1}
+  </select>
+
+  <!-- 파라미터의 타입이 primitive type이나 wrapper 클래스, String 클래스인 경우
+       값을 꺼낼 때 프로퍼티 이름을 마음대로 해도 된다.
+  -->
+  <select id="selectOne" parameterType="map" resultMap="ProgramMemberMap">
+	SELECT u.uno, u.upath, u.utype, u.uname, u.uphon, u.sex, p.pno, p.pname, 
+	p.sdt, p.edt, p.pgoal, p.ptover, p.pgoal_n
+	FROM PMEMB pm
+		INNER JOIN USER u
+		ON pm.uno = u.uno
+	    INNER JOIN PROG p
+		ON pm.pno = p.pno
+	WHERE u.uno = #{arg0}
+	AND p.pno = #{arg1}
+  </select>
+	<update id="updateReview" parameterType="ProgramMember">
+		update PMEMB set
+		pgrade=#{grade},
+		prv=#{review},
+		prvdt=now()
+		where pno=#{programNo} and uno=#{userNo}
+	</update>
+	
+	<update id="deleteReview" parameterType="ProgramMember">
+        update PMEMB set
+        pgrade=null,
+        prv=null,
+        prvdt=null
+        where pno=#{programNo} and uno=#{userNo}
+    </update>
+
+	<select id="reviewList" parameterType="map" resultMap="ProgramMemberMap">
+		SELECT pm.pno, pm.pgrade, pm.prv, pm.prvdt, pm.uno,
+		       u.uname, u.upath
+		FROM PMEMB pm
+            INNER JOIN USER u ON pm.uno = u.uno
+		WHERE pm.pno = #{programNo} and length(pm.prvdt) > 0
+		ORDER BY pm.prvdt desc;
+	</select>
+	
+	<select id="reviewCount" parameterType="int" resultType="int">
+         select count(*)
+         from PMEMB
+         where pno=#{programNo} and length(prvdt) > 0
+    </select>
+    
+    <select id="reviewScore" parameterType="int" resultType="int">
+         select COALESCE(sum(pgrade), 0)
+         from PMEMB
+         where pno=#{programNo} and length(prvdt) > 0
+    </select>
+    
+    <select id="pmemberCount" parameterType="int" resultType="int">
+         select count(*)
+         from PMEMB
+         where pno=#{programNo}
+    </select>
+</mapper>

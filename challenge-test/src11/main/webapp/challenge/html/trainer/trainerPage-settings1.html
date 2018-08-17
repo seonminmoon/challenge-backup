@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+<title>회원페이지</title>
+<link rel="stylesheet" href="../../css/trainer/template/sm-trainerPage.css">
+<link rel="stylesheet" href="../../css/trainer/trainerPage-settings1.css">
+<link rel="stylesheet" href="../../css/common.css">
+<link rel="stylesheet" href="../../css/fileupload.css">
+<link rel="stylesheet" href="../../css/member/sm-memberPage.css">
+<link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
+<link rel="stylesheet" href="../../node_modules/sweetalert2/dist/sweetalert2.min.css">
+</head>
+<body>
+<div id="subMenu"></div>
+<div id="sm-back">
+<div class="sm-container">
+  <h2>계정 설정</h2>
+
+<div class="sm-mypage">
+  <div class="sm-profile" id="cssRemove">
+	</div><!-- .profile -->
+
+
+    <div class="sm-mypage-body">
+          <!-- 프로젝트 등록 서브 메뉴 -->
+          <div class="settingsSubMenu">
+            <ul>
+              <li id="settingsSubMenu-fist"><a>나의 정보</a></li>
+            </ul>
+          </div>
+          <!-- 프로젝트 등록 본문-->
+          <div class="settingsContent">
+            <div class="settingsImg">
+              <!--
+              <img id="images-div" >
+        <div id="imgBox"></div> 
+         -->
+         <div id='images-div' class="originalImg"></div>
+              <div>
+                <input id="fileupload" class="upload-hidden" type="file" name="files" multiple>
+                <button class="sm-btn-2" type="button"
+                  style="margin: 20px 30px;">이미지 수정</button>
+              </div>
+            </div>
+            <div class="settingsList">
+              <ul>
+                <li class="ucpEmail">
+                  <div id="sm-email" class="contentName">이메일</div>
+                  <div class="ucContet">
+                    <input id="email"class="inputText" type="email">
+                    <div class="inputCheckbox">
+                      <input type="checkbox">수신동의
+                    </div>
+                  </div>
+                </li>
+                <li class="ucpPassword1">
+                  <div id="sm-pwd" class="contentName">비밀번호</div>
+                  <div class="ucContet">
+                    <input class="inputText pwd" type="password">
+                  </div>
+                </li>
+                <li class="ucpPassword2">
+                  <div class="contentName">비밀번호 확인</div>
+                  <div class="ucContet">
+                    <input class="inputText pwd" type="password">
+                  </div>
+                </li>
+                <li class="ucpPhone">
+                  <div class="contentName">휴대전화</div>
+                  <div class="ucContet">
+                    <input id="phone" class="inputText pwd" type="tel">
+                    <div class="inputCheckbox">
+                      <input type="checkbox">수신동의
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- 다음 단계 버튼 -->
+          <div class="nextBox">
+            <button type="button" id="exitButton">계정 탈퇴</button>
+            <button id='upload-btn' type='button'>등록</button>
+                      </div>
+        </div>
+        <!-- mypage-body -->
+
+
+      </div>
+      <!-- mypage -->
+    </div>
+    <!--.container-->
+
+    <!-- 푸터 시작 -->
+    <div id="footer"></div>
+    <!-- 푸터 종료 -->
+
+
+  </div>
+  <!-- back -->
+<div id="footer"></div>
+<script src="../../js/common.js"></script>
+<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../../node_modules/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+<script src="../../node_modules/blueimp-load-image/js/load-image.all.min.js"></script>
+<script src="../../node_modules/blueimp-canvas-to-blob/js/canvas-to-blob.js"></script>
+<script src="../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+<script src="../../node_modules/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+<script src="../../node_modules/blueimp-file-upload/js/jquery.fileupload.js"></script>
+<script src="../../node_modules/blueimp-file-upload/js/jquery.fileupload-process.js"></script> 
+<script src="../../node_modules/blueimp-file-upload/js/jquery.fileupload-image.js"></script>  
+<script src="../../js/trainer/trainer-template.js"></script>
+<script src="../../js/footer/footer.js"></script>
+<script src="../../js/trainer/trainerPage-settings.js"></script>
+<script src="../../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+
+</body>
+</html>

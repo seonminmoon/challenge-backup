@@ -1,0 +1,292 @@
+@charset "UTF-8";
+/* right sideMenu CSS 시작*/
+
+#cj-sideMenu {
+  right: 368px;
+  /* height: 55%; */
+  border: 1px solid grey;
+  width: 200px;
+  min-height: 300px;
+  /* float:right; */
+  position: fixed;
+  overflow: hidden;
+}
+
+/*이미지 */
+
+.cj-img {
+  position: relative;
+  border: 1px solid grey;
+    border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  
+}
+
+.cj-img-form {
+  display: inline;
+  border: 1px solid red;
+}
+
+/*이름 */
+
+/*링크이름 검은색 밑줄제거*/
+
+.cj_name>a:link {
+  color: black;
+  text-decoration: none;
+}
+
+.user-name>a:link {
+  color: black;
+  text-decoration: none;
+}
+
+.members-name {
+	margin:0;
+	    margin-top: 5px;
+}
+
+.avatar-name {
+  display: inline-block;
+  float: right;
+  margin-right: 53px;
+  margin-top: -10px;
+}
+
+#cj-sideMenu-item ul li {
+  list-style: none;
+}
+
+.user-form {
+height: 25px;
+  overflow: hidden;
+      padding: 10px;
+}
+
+#cj-sideMenu-item ul {
+  padding: 7px 0 0 0;
+}
+
+.user-img {
+  float: left;
+}
+
+.user-name {
+	display:inline-block;
+  float: left;
+  margin-left: 15px;
+}
+
+/* 스크롤바 표현 위아래*/
+
+.user-listform {
+  height: 176px;
+  background-color: #EEEEEE;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 200px;
+  flex-direction: column;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  /* border: 1px solid #eeeeee; */
+}
+
+/*스크롤바 이미지표현*/
+
+#style-1::-webkit-scrollbar {
+  background-color: #F5F5F5;
+}
+
+#style-1::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+  background-color: #555;
+}
+
+/*맨위로 버튼*/
+
+.user-list-bottom {
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+    padding-left: 88px;
+    padding-top: 4px;
+    padding-bottom: 2px;
+    margin: 0;
+}
+
+a:link {
+  color: black;
+  text-decoration: none;
+}
+
+.fas {
+  color: black;
+}
+
+#MOVE_TOP_BTN {
+  font-size: 14px;
+  color: black;
+}
+
+.state {
+  text-align: center;
+}
+
+.state p {
+  font-size: 14px;
+  /* border-bottom: 1px solid grey; */
+  /* border: 0.1px solid black; */
+}
+
+.cj-click {
+padding-top: 6px;
+    display: inline-block;
+    float: right;
+    margin-right: 8px;
+    padding-left: 15px;
+}
+
+/*유저네임 링크색깔*/
+
+.user-name a:link {
+  color: black;
+  text-decoration: none;
+}
+
+#cj-sideMenu-item h4 {
+    color: grey;
+    padding: 3px 0px;
+    font-size: 14px;
+}
+
+#cj-sideMenu-item hr {
+  opacity: 0.3;
+}
+
+.cj-sidetitle h4 {
+  color: grey;
+}
+
+/*내 프로필*/
+
+body {
+  margin: 20px;
+}
+
+#card-user {
+  transition: all 0.6s ease;
+  display: inline-block;
+  cursor: pointer;
+  width: 198px;
+  height: 90px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #EEEEEE;
+  overflow: hidden;
+  /* padding: 20px; */
+}
+
+.pure-toggle {
+  /* border: 1px solid grey; */
+}
+
+#card-user .header {
+  transition: all 0.6s ease;
+  display: inline-block;
+  width: 100%;
+  height: 30px;
+  background-color: black;
+}
+
+#card-user .header h4 {
+  /* width: 100%; */
+}
+
+#card-user .avatar {
+  transition: all 0.6s ease;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: #ecf0f1;
+  border: 5px solid #ecf0f1;
+  display: inline-block;
+  margin-top: -10px;
+  margin-left: 33px;
+  overflow: hidden;
+}
+
+#card-user .avatar img {
+  width: 100%;
+  height: 100%;
+}
+
+#card-user .text {
+  padding: 0 8%;
+  width: 250px;
+  height: 150px;
+}
+
+#card-user .text h3 {
+  /* margin: 7px 0; */
+  transition: all 0.6s ease;
+  /* width: 150px; */
+}
+
+#card-user .text p {
+  padding: 10%;
+  line-height: 1.4em;
+  text-align: justify;
+  margin: 20px 0 30px 0;
+}
+
+#card-user .text span {
+  overflow: left;
+  /* padding: 0 30%; */
+}
+
+
+.memberList {
+	text-align: center;
+margin: 0;
+}
+.cj-text {
+  padding: 20px 0 0 0;
+}
+
+.profile-text p {
+  padding: 0px 0 0 40px;
+  border-top: 1px solid #efefef;
+}
+
+/*프로필 끝*/
+
+.side-goal {
+  text-align: center;
+}
+
+
+.card-user ul {
+    padding: 0;
+}
+
+#cj-sideMenu-item ul {
+    padding: 0;
+    margin: 0;
+}
+
+#cj-sideMenu-item {
+}
+
+#sh-sideMenu-item {
+	     border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+#sh-mainContainer {
+  float: none;
+  min-height: 600px;
+  position: relative;
+  background-color: #fff;
+}
+/* right sideMenu CSS 끝*/

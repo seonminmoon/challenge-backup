@@ -1,0 +1,66 @@
+<!-- sideMenu 시작 -->
+
+<div id="cj-sideMenu-item">
+  <ul>
+    <li>
+      <!-- <h4>내 프로필</h4> -->
+      <input type="checkbox" id="pure-toggle" hidden="">
+      <label id="card-user" class="pure-toggle" for="pure-toggle">
+                <div class="header">
+                </div>
+                <div class="avatar">
+                  <img id="side-user-img" src="" alt="...">
+                </div>
+
+                <div class="avatar-name">
+                    <h3 class="tl-user-name-json"></h3>
+                </div>
+              </label>
+    </li>
+  </ul>
+  <div id="members" class="cj-sidetitle">
+    <h4 class="memberList">회원 리스트</h4>
+    <!-- <hr> -->
+  </div>
+  
+  <!-- 회원 리스트 Handlebars -->
+  <div class="user-listform" id="style-1"></div>
+  
+</div>
+<ul class="user-list-bottom">
+  <a id="MOVE_TOP_BTN" href="#">
+             TOP
+          </a>
+
+  <!-- <a id="MOVE_DOWN_BTN" href="#">
+            <i class="fas fa-arrow-alt-circle-down"></i>
+          </a> -->
+
+</ul>
+</div>
+<!-- sideMenu 종료 -->
+
+
+<!-- 회원 리스트 Handlebars -->
+  <script id="ml-template" type="text/x-handlebars-template">
+    {{#each list}}
+    <ul>
+      <li>
+        <div class="user-form">
+          <div class="user-img">
+            <img class="cj-img" src="../../../files/{{user.userPath}}" >
+          </div>
+          <div class="user-name">
+            <p class="members-name" >{{user.name}}</p>
+          </div>
+
+          <div class="cj-click">
+            <a href="#"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+
+      </li>
+    </ul>
+    {{/each}}
+  </script>
+

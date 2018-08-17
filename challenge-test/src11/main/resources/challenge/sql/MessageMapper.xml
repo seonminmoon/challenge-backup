@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace 이름은 SQL을 찾을 때 사용하는 그룹명이다.
+     따라서 SQL 문을 사용하는 DAO 클래스 이름과 같게 하면
+     유지보수할 때 알아보기 쉽다.
+     단순히 알아보기 쉬울 뿐만 아니라 
+     스프링 프레임워크와 연동할 때 DAO 객체를 자동 생성할 수 있다. 
+-->
+<mapper namespace="challenge.dao.MessageDao">
+  <resultMap type="Message" id="MessageMap">
+    <id column="msgno" property="no"/>
+    <result column="mstitl" property="title"/>
+    <result column="msdir" property="direct"/>
+    <result column="mscont" property="content"/>
+    <result column="msdate" property="msgDate"/>
+    
+    <association property="trainer" javaType="Trainer">
+        <id column="t_uno" property="userNo" />
+        <result column="utype" property="userType" />
+        <!-- utype? msdir이 1번일 때, userNo를 t.uno/u.uno 두 가지 경우로 받아야해서 -->
+        <result column="t_uname" property="name" />
+    </association>
+    <association property="member" javaType="Member">
+        <id column="u_uno" property="userNo" />
+        <result column="utype" property="userType" />
+        <result column="u_uname" property="name" />
+    </association>
+    
+  </resultMap>
+    
+  
+  <!-- SQL 문 id를 설정할 때 SQL문을 사용하는 메서드 이름과 같게하면
+       유지보수할 때 알아보기 쉽다. 
+       알아보기 쉬울 뿐만 아니라
+       스프링 프레임워크와 연동할 때 DAO객체를 자동생성하고 
+       그 메서드를 자동생성할 때 사용할 수 있다.
+  -->
+
+
+  <select id="sendMsgList" 
+          resultMap="MessageMap" 
+          parameterType="map">
+	select 
+	  ms.msgno, 
+	  ms.mstitl, 
+	  ms.mscont, 
+	  ms.msdir,
+	  ms.msdate, 
+	  u.utype,
+	  u.uno as u_uno,
+	  u.uname as u_uname, 
+	  t.uno as t_uno, 
+	  t.uname as t_uname
+	from MSG ms
+	left outer join USER u on ms.uno = u.uno
+	left outer join USER t on ms.trnno = t.uno
+   <!-- 방향1번: 멤버는 보낸메시지, 트레이너는 받은메시지 -->
+     <choose>
+         <when test="utype == 1"> <!-- 멤버의 보낸메시지 -->
+           where u.uno = #{userNo}
+           and ms.msdir = 1
+         </when>
+         <otherwise>  <!-- 트레이너의 받은 메시지 -->
+           where t.uno = #{userNo}
+           and ms.msdir = 1
+         </otherwise>
+     </choose>
+   order by msgno desc
+   limit #{startRowNo}, #{pageSize}
+  </select>
+  
+    <select id="receiveMsgList" 
+          resultMap="MessageMap" 
+          parameterType="map">
+    select 
+      ms.msgno, 
+      ms.mstitl, 
+      ms.mscont, 
+      ms.msdir,
+      ms.msdate, 
+      u.uno as u_uno, 
+      u.uname as u_uname, 
+      t.uno as t_uno, 
+      t.uname as t_uname
+    from MSG ms
+    left outer join USER u on ms.uno = u.uno
+    left outer join USER t on ms.trnno = t.uno
+   <!-- 방향2번: 멤버는 받은메시지, 트레이너는 보낸메시지 -->
+        <choose>
+         <when test="utype == 1"> <!-- 멤버의 받은메시지 -->
+           where u.uno = #{userNo}
+           and ms.msdir = 2
+         </when>
+         <otherwise>  <!-- 트레이너의 보낸 메시지 -->
+           where t.uno = #{userNo}
+           and ms.msdir = 2
+         </otherwise>
+     </choose>
+   order by msgno desc
+   limit #{startRowNo}, #{pageSize}
+  </select>
+  
+  
+  <insert id="insert" parameterType="Message"
+          useGeneratedKeys="true" keyColumn="msgno" keyProperty="msgno">
+    insert into MSG(msgno, mstitl, msdir, mscont, msdate, trnno, uno) 
+    values(#{no}, #{title}, #{direct}, #{content}, now(), #{trainer.userNo}, #{member.userNo});
+  </insert>
+  
+  <!-- 파라미터의 타입이 primitive type이나 wrapper 클래스, String 클래스인 경우
+       값을 꺼낼 때 프로퍼티 이름을 마음대로 해도 된다.
+  -->
+  <select id="selectOne" parameterType="int" resultMap="MessageMap">
+select 
+      ms.msgno, 
+      ms.mstitl, 
+      ms.mscont, 
+      ms.msdate, 
+      ms.msdir,
+      u.uno as u_uno, 
+      u.uname as u_uname, 
+      t.uno as t_uno, 
+      t.uname as t_uname
+    from MSG ms
+    left outer join USER u on ms.uno = u.uno
+    left outer join USER t on ms.trnno = t.uno
+   where msgno = #{value}
+  </select>
+  
+  <!-- 
+  <select id="selectOne" parameterType="int" resultMap="MessageMap">
+   select msgno, mstitl, msdir, mscont, uname, msdate, t.trnno, ms.uno
+   from USER u, TRN t, MSG ms, MEMB m
+   where u.uno = t.trnno 
+   AND m.uno = ms.uno
+   AND t.trnno = ms.trnno
+   AND msgno = #{value}
+  </select>
+  
+   -->
+
+  <delete id="delete" parameterType="int">
+    delete from MSG where msgno=#{value}
+  </delete>
+  
+  
+</mapper>

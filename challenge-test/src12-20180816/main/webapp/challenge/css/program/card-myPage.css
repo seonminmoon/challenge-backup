@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+.card {
+      margin: 5px 0px 0px 95px;
+      width: 650px;
+}
+
+.card-body {
+      width: 450px;
+}
+
+.chat-btn {
+    float: right;
+    width: 130px;
+    background-color: #1B3453;
+    border: none;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.chat-btn:hover {
+    background-color: white;
+    color:#1B3453;
+    border:1px solid #1B3453;
+}

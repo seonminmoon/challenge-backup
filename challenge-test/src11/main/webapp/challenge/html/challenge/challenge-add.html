@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+<title>회원페이지</title>
+<link rel="stylesheet" href="../../css/challenge/template/sm-trainerPage.css">
+<link rel="stylesheet" href="../../css/challenge/challenge-add.css">
+<link rel="stylesheet" href="../../css/common.css">
+<link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
+
+<!-- 서버에 연결할 때 지울 부분 -->
+<link rel="stylesheet" href="../../css/header/header_white.css">
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web:900" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/footer/footer.css">
+</head>
+<body>
+
+  <div class="sm-top-bar-white">
+    <div class="sm-container">
+      <div id="sh_top_layout">
+        <header class="sh_top_wrap">
+          <a href="#">
+            <div class="sh_top_logo_wrap">
+              <h1 id="sh_logo_img"><img id="sh_logo" src="../../img/header/red-logo.png" alt=""></h1>
+              <div class="sh_logo_name">
+                <h1 id="sh_logo_h1" style="font-family:'Titillium Web';"><i>CHALLENGE</i></h1>
+              </div>
+            </div>
+          </a>
+
+
+          <!-- 드롭다운 서브메뉴 시작-->
+          <div class="sh_top_utile_wrap">
+            <ul class="sh_top_link">
+              <li class="sh_top_menu">
+                <form id="sh_content">
+                  <input type="text" name="sh-input" class="sh-input" placeholder="">
+                  <button class="sh-searchBtn" type="reset"></button>
+                </form>
+              </li>
+              <li class="sh_top_menu sh_dropdown">
+                <a class="sh_menu sh_after" href="#">커뮤니티</a>
+                <div class="sh_dropdown-content">
+                  <ul id="sh_sub-menu-ul">
+                    <li><a class="sh_menu sh_after" href="#">명예의전당</a></li>
+                    <li><a class="sh_menu sh_after" href="#">비포&애프터</a></li>
+                    <li><a class="sh_menu sh_after" href="#">질문과답변</a></li>
+                    <li><a class="sh_menu sh_after" href="#">자유게시판</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="sh_top_menu sh_dropdown">
+                <a class="sh_menu sh_after " href="#">프로그램</a>
+                <div class="sh_dropdown-content">
+                  <ul id="sh_sub-menu-ul">
+                    <li><a class="sh_menu sh_after" href="#">추천프로그램</a></li>
+                    <li><a class="sh_menu sh_after" href="#">인기프로그램</a></li>
+                    <li><a class="sh_menu sh_after" href="#">진행중인프로그램</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="sh_top_menu sh_dropdown sh_top_menu_user">
+                <a href="#"><i id="sh-bell-icon" class="fas fa-bell"></i></a>
+                <div id="sh-msg-dropdown-content" class="sh_dropdown-content">
+                  <ul id="sh_sub-menu-ul">
+                    <div id="sh-msgbox-top" class="sh-msgbox">
+                      <ul>
+                        <li>알림(<span>0</span>)</li>
+                      </ul>
+                    </div>
+                    <div id="sh-msgbox-msg">
+                        <ul>
+                          <li>메세지가 없습니다.</li>
+                        </ul>
+                    </div>
+                    <div class="sh-msgbox"><span id="sh-msgbox-more">더보기</span></div>
+                  </ul>
+                </div>
+              </li>
+              <li id="sh_top_menu_user" class="sh_top_menu sh_dropdown">
+                <a href="#">
+                  <div class="sh-user-inline-block">
+                    <i id="sh-user-icon" class="fas fa-user-circle"></i>
+                  </div>
+                  <div id="sh-user-name-div" class="sh-user-inline-block">
+                    <span id="sh-user-name">SUHYEON PARK</span>
+                  </div>
+                  <div class="sh-user-inline-block">
+                    <i id="sh-user-icon-tri" class="fas fa-caret-down"></i>
+                  </div>
+                </a>
+                <div class="sh_dropdown-content">
+                  <ul id="sh_sub-menu-ul">
+                    <li><a class="sh_menu sh_after" href="#">마이페이지</a></li>
+                    <li><a class="sh_menu sh_after" href="#">운동관리</a></li>
+                    <li><a class="sh_menu sh_after" href="#">메시지</a></li>
+                    <li><a class="sh_menu sh_after" href="#">운동후기</a></li>
+                    <li><a class="sh_menu sh_after" href="#">계정설정</a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <!-- 드롭다운 서브메뉴 종료-->
+        </header>
+      </div>
+
+
+
+
+
+            <!-- 상단 메뉴바 시작 -->
+        <div class="sm-menubar">
+          <ul>
+            <li class="sm_after"><a href="#" id="sm-current">관리자
+              <i class="fas fa-angle-down" style="color:#666666;"></i></a>
+               <ul>
+                  <li><a href="#">챌린지 수정</a></li>
+                  <li><a href="#">챌린지 등록</a></li>
+                 <!--<li><a href="#">챌린지 운동일지</a></li> -->
+               </ul>
+            </li>
+            <li class="sm_after"><a href="#"></a>
+            </li>
+            <!-- <li class="sm_after"><a href="#">수익관리
+              <i class="fas fa-angle-down" style="color:#666666;"></i></a>
+              <ul>
+                <li><a href="https://kmong.com/">수입 관리</a></li>
+                <li><a href="https://kmong.com/">통계</a></li>
+              </ul>
+            </li> -->
+            <li class="sm_after"><a href="#">메시지</a>
+            </li>
+            <li class="sm_after"><a href="#">계정설정</a></li>
+         </ul>
+      </div><!-- 상단 메뉴바 종료 -->
+    </div><!-- container -->
+  </div><!-- top-bar-white -->
+
+
+
+
+<div id="sm-back">
+<div class="sm-container">
+  <h2>관리자</h2>
+
+<div class="sm-mypage">
+  <div class="sm-profile">
+        <div style="text-align: center;">
+            <img src="../../cj/img/img1.jpg" style="margin-left: 30px; border-radius:60px; width:120px; height:120px;">
+      <button id="sm-btn-2" type="button" style="position:relative; top:-10px; right:40px; width:30px; height:30px; border-radius:15px; padding:0px;font-size:14px;"><span>2</span></button>
+      <br>
+            사용자이름<br>
+      <button id="sm-btn-2" type="button" style="margin-top:10px; margin-bottom:20px;">프로필관리</button>
+        </div>
+    <!-- ************* 이부분만 템플릿에서 다르니까 이것만 짤라서 쓰면된다!!!! ********************************************* -->
+    <div class="sm-menu" style="border-left:none;"><i class="fas fa-chalkboard"></i><br>챌린지 관리</div>
+    <div class="sm-menu" style="border-bottom:1px solid gray;"><i class="fas fa-angle-double-up"></i><br>챌린지 등록</div>
+    <!-- <div class="sm-menu" style="border-left:none; border-right:1px solid gray;"><i class="fas fa-dumbbell"></i><br>챌린지 운동일지</div> -->
+    </div><!-- .profile -->
+
+
+    <div class="sm-mypage-body">
+      <!-- 프로젝트 등록 서브 메뉴 -->
+      <div class="uploadSubMenu">
+        <ul>
+          <li id="uploadSubMenu-fist"><a href="trainerPageChallenge-upload1.html">① 등록 및 수정</a></li>
+        </ul>
+      </div>
+      <!-- 프로젝트 등록 본문-->
+      <div class="uploadContent">
+      <ul>
+        <li class="ucChallenge" id="notPadding">
+          <div class="contentName">챌린지 주제</div>
+          <div class="ucContet">
+            <div class="challengeProgram">
+            <input id="aTitle" type="text" placeholder="챌린지 주제를 정해주세요.">
+            </div>
+          </div>
+        </li>
+       <!--  <li class="ucDate">
+          <div class="contentName">챌린지 기간</div>
+          <div class="ucContet">
+            <div class="challengeDate">
+              <input type="date">
+              <div class="fontStyle1"> ~ </div>
+              <input type="date">
+            </div>
+          </div>
+        </li> -->
+
+        <li class="ucContent">
+          <div class="contentName">내용</div>
+          <div class="ucContet">
+      <textarea  id="content" cols="70" rows="20" ></textarea>
+      <!-- <textarea id="editor"></textarea> -->
+           </div>
+
+        </li>
+        <!-- <li class="ucNum">
+          <div class="contentName">인원</div>
+          <div class="ucContet">
+            <div class="minNum">
+              <h5>최소인원</h5>
+              <div class="maxSelect">
+                <input type="number" min="1" max="9999">
+              </div>
+            </div>
+            <div class="maxNum">
+              <h5>최대인원</h5>
+              <div class="minSelect">
+                <input type="number" min="1" max="9999">
+              </div>
+            </div>
+          </div>
+        </li> -->
+        <li class="ucmainImage">
+          <div class="contentName">메인 이미지</div>
+          <div class="ucContet">
+            <!-- <div id="mainImg">
+              <div class="imgIcon"><i class="far fa-image"></i></div>
+              <div class="imgtext">
+                <div class="subText1">
+                  999 * 999px 사이즈의<br>
+                  메인 이미지를 등록해 주세요.
+                </div>
+                <div class="subText2">
+                  (5MB 이하의 jpg.jpeg.png 형식)
+                </div>
+              </div>
+            </div> -->
+            <br>
+            <figure class="uploadpreview">
+                     <img/>
+                 <input type="file" id="path"/>
+               <figcaption contenteditable></figcaption>
+           </figure>
+          </div>
+        </li>
+          <!-- <li>
+          <div class="contentName">프로젝트 이미지</div>
+          <div class="ucContet">
+            <div class="proimg">
+            <div class="imgIcon"><i class="far fa-image"></i></div>
+          </div>
+          <div class="proimg">
+            <div class="imgIcon"><i class="far fa-image"></i></div>
+            <ul class="gallery">
+              <li><a href="../img/page1.jpg" data-lightbox="roadtrip"
+                title="이미지"><img src="../img/page1_thumb.jpg"/></a></li>
+              <li><a href="../img/page2.jpg" data-lightbox="roadtrip"
+                title="이미지2"><img src="../img/page2_thumb.jpg"/></a></li>
+           </ul>
+         </div>
+          <div class="projectfile">
+            <br><input type="file">
+            <div id="projectimg">
+          </div>
+          </div>
+        </div>
+      </li> -->
+    </ul>
+      </div>
+      <!-- 다음 단계 버튼 -->
+      <div class="nextBox">
+        <button id="addButn" type="button">등록</button>
+      </div>
+    </div><!-- mypage-body -->
+
+
+</div><!-- mypage -->
+</div><!--.container-->
+
+<!-- Footer -->
+<!--<div id="footer">
+</div>-->
+<!-- 서버 연결했을 때 지울 부분 -->
+<div id="sh_foot_layout">
+  <footer class="sh_foot_wrap">
+    <div class="sh_foot_logo"></div>
+    <div class="sh_foot_utile_wrap">
+      <ul class="sh_foot_link">
+        <li> <img id="sh_foot-logo-img" src="../../img/footer/white-logo.png" alt="sh-footer-logo"> </li>
+        <li><a href="#">직원검색</a></li>
+        <li><a href="#">사이트맵</a></li>
+        <li><a href="#">이메일집단수집거부</a></li>
+        <li><a href="#">개인정보취급방침</a></li>
+      </ul>
+    </div>
+    <address>우) 21990 인천광역시 연수구 송도미래로 26(송도동 213-3)  <span class="tel">Tel: 032)770-8400</span> <span class="fax">Fax: 032)770-8709</span> </address>
+    <p class="copy">COPYRIGHT (C) KOREA POLAR RESEARCH INSTITUTE ALL RIGHT RESERVED</p>
+  </footer>
+</div>
+<!-- 푸터 종료 -->
+
+
+</div><!-- back -->
+<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+
+<script src="../../node_modules/@ckeditor/ckeditor5-build-classic/build/ckeditor.js"></script>
+<script src="../../js/common.js"></script>
+<script src="../../js/challenge/image_upload.js"></script>
+<!-- <script src="../../js/header/header_white_login.js"></script> -->
+<script src="../../js/footer/footer.js"></script>
+<script src="../../js/challenge/trainerPageChallenge-upload.js"></script>
+
+<!-- 서버에 올릴 때 지울 부분 -->
+<script src="../../js/header/header_event.js"></script>
+
+
+  
+    <script>
+    $("#addButn").click(() => {
+    
+    $.ajax({
+    	type : "post",
+    	url : "../../../json/challenge/add",
+    	data : {
+    		title: $(aTitle).val(),
+    		content: $(content).val()
+    		}
+    
+    }).done(function(){
+        location.href="challenge-list.html"
+    });
+    });
+    </script>
+
+<!-- <script>
+    ClassicEditor
+        .create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script> -->
+
+
+</body>
+</html>

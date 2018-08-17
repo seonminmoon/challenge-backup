@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="challenge.dao.DiaryDao">
+  <resultMap type="Diary" id="DiaryMap">
+    <id column="dno" property="dno"/>
+    <result column="dcont" property="content"/>
+    <result column="dchek" property="dcheck"/>
+    <result column="pno" property="pno"/>
+    <result column="uno" property="uno"/>
+    <result column="plno" property="no"/>
+    <result column="pltover" property="planTurn"/>
+    <result column="pldt" property="planDate"/>
+    <result column="pltitl" property="planTitl"/>
+    <result column="plcont" property="planContent"/>
+	<association property="program" javaType="Program">
+		<id column="pno" property="no"/>
+		<result column="sdt" property="startDate"/>
+		<result column="edt" property="endDate"/>
+		<result column="pname" property="name"/>
+		<result column="ptover" property="proTurn"/>
+	</association>
+  </resultMap>
+
+  <select id="selectList" parameterType="map" resultMap="DiaryMap">
+	SELECT p.pname, p.sdt, p.edt, p.ptover, pl.pno, pl.plno, pl.pldt, pl.pltover,
+		   d.dno, d.dcont, d.dchek, d.uno
+    FROM PLAN pl
+		INNER JOIN PROG p
+		on pl.pno = p.pno
+		INNER JOIN DIARY d
+		on pl.plno = d.plno
+	WHERE p.pno = #{arg0}
+		AND d.uno = #{arg1}
+	ORDER BY pl.pltover
+  </select>
+  
+  <insert id="insert" parameterType="Diary" 
+  	useGeneratedKeys="true" keyColumn="dno" keyProperty="dno">
+  	INSERT INTO DIARY (dcont, dchek, plno, pno, uno) 
+	VALUES (#{content}, #{dcheck}, #{no},
+			#{program.no}, #{uno})
+  </insert>
+
+  <select id="selectOne" parameterType="int" resultMap="DiaryMap">
+	SELECT pl.pno, pl.pltover, pl.pldt, pl.pltitl, d.dcont, d.dchek, d.dno, d.uno
+    FROM PLAN pl
+		INNER JOIN DIARY d
+		on pl.plno = d.plno
+	WHERE d.dno = #{value}
+	
+  </select>
+  
+  <update id="update" parameterType="Diary">
+  	UPDATE DIARY SET
+		dcont=#{content},
+		dchek=#{dcheck}
+	WHERE dno=#{dno}
+  </update>
+  
+    <!-- 출석률 합 js파일에서 목표가 출석일 경우 회차랑 나눠서 출석률 평균 나타낼 것임 -->
+  <select id="selectListWithDcheck" parameterType="map" resultMap="DiaryMap">
+	  SELECT uno, pno, dchek
+	  FROM DIARY
+	  WHERE uno = #{arg0}
+      AND pno = #{arg1}
+  </select>
+  
+</mapper>

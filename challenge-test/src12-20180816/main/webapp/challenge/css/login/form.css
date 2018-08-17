@@ -1,0 +1,272 @@
+@charset "UTF-8";
+
+body {
+	margin: 0 scroll;
+	height: 100%;
+	font-family: 'NanumSquareRound', sans-serif !important;
+	/* text-align: center; */
+	font-size: 18px;
+	color: #666666;
+	overflow:auto; 
+}
+
+.container {
+	margin: 0 auto;
+	width: 1200px;
+	/* height: 950px; */
+	/* height: 950px; */
+	/* height: 900px;  */
+	/* border: solid #FF0000; */
+    /* overflow-x:hidden; */
+   /*  margin-position: fixed; */
+    
+	 
+}
+
+form.memberform, form.trainerform {
+	/* margin: 0 auto; */
+	/*width: 50%;*/
+	/*padding: 200px;*/
+	/* border: dashed #FFFF00; */
+	/*padding: 50px;*/
+	 
+	
+}
+
+fieldset {
+	margin: 0 auto;
+	/* border: solid #0000FF; */
+	/*padding: 20px;*/
+	width: 50%;
+	margin-top: 30px;
+	border-radius: 10px;
+	margin-bottom: 30px;
+	
+}
+
+legend {
+	color: #1B3453;
+	font-size: 25px;
+	font-weight: bold;
+}
+
+table {
+	margin: 0 auto;
+	/* border: solid #008000; */
+	/* padding: 20px; */
+	/*  width:100%; */
+}
+
+.txtar {
+	border: 1px solid #EEEEEE;
+	border-radius: 4px;
+	resize: vertical;
+	resize: none;
+	color: #666666;
+}
+
+.terms {
+	border: 1px solid #EEEEEE;
+	/* border-radius: 4px; */
+	resize: vertical;
+	resize: none;
+	color: #666666;
+	margin-bottom: 10px;
+}
+
+input.name, input.email, .password, .time, .account, .bankname {
+	border-radius: 4px;
+	border: 2px solid #EEEEEE;
+	/*resize: vertical;*/
+	/*width:150px;*/
+	color: #666666;
+	margin-bottom: 10px;
+	padding: 5px 0;
+	width: 170px;
+}
+
+input.file {
+	border-radius: 4px;
+	border: 2px solid #EEEEEE;
+	/*resize: vertical;*/
+	/*width:150px;*/
+	color: #666666;
+	margin-bottom: 10px;
+	width: 170px;
+}
+
+select.email, select.phone, .phone {
+	border-radius: 4px;
+	border: 2px solid #EEEEEE;
+	color: #666666;
+	margin-bottom: 10px;
+	padding: 5px 0;
+	width: 70px;
+}
+
+.button1, .button2 {
+	background-color: #DD1F26;
+	border: none;
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 16px;
+	cursor: pointer;
+	border-radius: 6px;
+	width: 100px;
+	padding: 7px;
+	margin: 5px 15px;;
+}
+
+.agree {
+	display: block;
+	position: relative;
+	padding-left: 35px;
+	/* margin-bottom: 12px; */
+	cursor: pointer;
+	font-size: 14px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	padding-bottom: 10px;
+}
+
+/* Hide the browser's default checkbox */
+.agree input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+	position: absolute;
+	top: -3px;
+	left: 5px;
+	height: 15px;
+	width: 15px;
+	/*  background-color: #ffffff; */
+	/*  border:0.3px solid black; */
+	border: 2px solid #EEEEEE;
+}
+
+/* On mouse-over, add a grey background color */
+/* .agree:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+ */
+/* When the checkbox is checked, add a blue background */
+.agree input:checked ~ .checkmark {
+	background-color: #DD1F26;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+	content: " ";
+	position: absolute;
+	display: none;
+}
+
+/* Show the checkmark when checked */
+.agree input:checked ~ .checkmark:after {
+	display: block;
+}
+
+/* Style the checkmark/indicator */
+.agree .checkmark:after {
+	top: 0px;
+	left: 4px;
+	width: 5px;
+	height: 10px;
+	border: solid white;
+	border-width: 0 3px 3px 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+	*
+}
+
+.gen {
+	display: inline-block;
+	position: relative;
+	padding-left: 35px;
+	/* margin-bottom: 12px; */
+	cursor: pointer;
+	/*  font-size: 20px; */
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	/* padding-bottom: 0px; */
+	padding-bottom: 7px;
+}
+
+/* Hide the browser's default radio button */
+.gen input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+}
+
+/* Create a custom radio button */
+.gcheckmark {
+	position: absolute;
+	top: -2px;
+	left: 8px;
+	height: 16px;
+	width: 16px;
+	/* background-color: #ffffff; */
+	border-radius: 50%;
+	border: 2px solid #eeeeee;
+}
+
+/* On mouse-over, add a grey background color */
+/* .gen:hover input ~ .gcheckmark {
+    background-color: #ccc; red;
+} */
+
+/* When the radio button is checked, add a blue background */
+.gen input:checked ~ .gcheckmark {
+	background-color: #DD1F26;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.gcheckmark:after {
+	content: "";
+	position: absolute;
+	display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.gen input:checked ~ .gcheckmark:after {
+	display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.gen .gcheckmark:after {
+	top: 5px;
+	left: 5px;
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background: white;
+}
+
+/*
+ ::-webkit-input-placeholder {
+ opacity: 0.3;
+ }*/
+/* #footer {
+	margin-top: 0;
+	bottom: 0;
+	margin-bottom: 0;
+	position: fixed;
+	width: 100%;
+} */
+
+.footer {
+	bottom: 0;
+    position: fixed;
+    width: 100%;
+	
+}

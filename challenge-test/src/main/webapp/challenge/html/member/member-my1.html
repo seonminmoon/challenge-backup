@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+<title>회원페이지</title>
+<link rel="stylesheet" href="../../css/common.css">
+<link rel="stylesheet" href="../../css/member/ksy-mypage.css">
+<link rel="stylesheet" href="../../css/member/sm-memberPage.css">
+<link rel="stylesheet" href="../../css/member/sm-following.css">
+<link rel="stylesheet"
+  href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
+</head>
+<body>
+
+  <div class="sm-top-bar-white" style="z-index: 2;">
+    <div class="sm-container">
+      <div id="header"></div><!-- 헤더 종료-->
+      <div id="mb-menu"></div><!-- 상단 메뉴바 종료 -->
+    </div><!-- container -->
+  </div><!-- top-bar-white -->
+
+
+  <div id="sm-back">
+    <div class="sm-container">
+      <h2 id="subName">
+        <b>마이페이지</b>
+      </h2>
+      <div class="sm-sm-mypage">
+        <!-- profile 시작 -->
+        <div class="sm-profile">
+          <div style="text-align: center;">
+            <img id="profile-photo"
+              style="border-radius: 60px; width: 120px; height: 120px;">
+
+            <p id="profile-name" style="margin: 8px 0px 3px 0px;"></p>
+			<!-- <a href="../_chat/chat-channel.html"> -->
+            <button id="myBtn" class="sm-fw-btn"
+              style="margin-top: 10px; margin-bottom: 20px;">나의 팔로잉</button>
+            </a>
+          </div>
+        </div>
+        <!-- profile 끝 -->
+        <div class="sm-mypage-body">
+		<div class="tabbed">
+          <ul id="programTarget">
+            <li class="targetTab">근력량</li>
+            <li class="targetTab">체지방량</li>
+            <li class="targetTab active">몸무게</li>
+          </ul>
+        </div>
+        </div>
+        <!-- mypage-body -->
+
+
+      </div>
+      <!-- mypage -->
+    </div>
+    <!--.container-->
+
+    <!-- 푸터 시작 -->
+    <div id="footer"></div>
+    <!-- 푸터 종료 -->
+
+  </div>
+  <!-- back -->
+  <script src="../../node_modules/handlebars/dist/handlebars.min.js"></script>
+  <script src="../../js/common.js"></script>
+  <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="../../js/header/header.js"></script>
+  <script src="../../js/footer/footer.js"></script>
+  <script src="../../js/member/member-my.js"></script>
+  <script src="../../js/member/mb-menu.js"></script>
+</body>
+</html>

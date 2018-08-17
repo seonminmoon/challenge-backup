@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+<title>회원페이지</title>
+<link rel="stylesheet" href="../../css/common.css">
+<link rel="stylesheet" href="../../css/member/ksy-mypage.css">
+<link rel="stylesheet" href="../../css/member/member-my.css">
+<link rel="stylesheet" href="../../css/member/sm-memberPage.css">
+<link rel="stylesheet" href="../../css/member/sm-following.css">
+<link rel="stylesheet"
+  href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
+<link href="https://fonts.googleapis.com/css?family=Titillium+Web:900"
+  rel="stylesheet">
+    <script src="../../node_modules/handlebars/dist/handlebars.min.js"></script>
+  <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+
+  <div class="sm-top-bar-white" style="z-index: 2;">
+    <div class="sm-container">
+      <div id="header"></div><!-- 헤더 종료-->
+      <div id="mb-menu"></div><!-- 상단 메뉴바 종료 -->
+    </div><!-- container -->
+  </div><!-- top-bar-white -->
+
+
+  <div id="sm-back">
+    <div class="sm-container">
+      <h2 id="subName">
+        <b>마이페이지</b>
+      </h2>
+      <div class="sm-sm-mypage">
+        <!-- profile 시작 -->
+        <div class="sm-profile">
+          <div style="text-align: center;">
+            <img id="profile-photo"
+              style="border-radius: 60px; width: 120px; height: 120px;">
+
+            <p id="profile-name" style="margin: 8px 0px 3px 0px;"></p>
+            <button id="myBtn" class="sm-fw-btn"
+              style="margin-top: 10px; margin-bottom: 20px;">나의
+              팔로잉</button>
+            <div id="myModal" class="modal" style="z-index: 8;">
+
+              <div class="modal-content">
+                <div class="modal-body">
+                  <span class="close">×</span>
+                  <h3>
+                    <b>나의 팔로잉</b>
+                  </h3>
+                  <div
+                    style="display: block; height: 300px; margin-bottom: 50px;">
+                    <div class="sm-card sm-c-s">
+                      <img class="profile-img"
+                        src="../../img/member/user02.jpg"><br>
+                      해동검도<input type="checkbox">
+                    </div>
+                    <div class="sm-card sm-c-s">
+                      <img class="profile-img"
+                        src="../../img/member/user02.jpg"><br>
+                      해동검도<input type="checkbox">
+                    </div>
+                    <div class="sm-card sm-c-s">
+                      <img class="profile-img"
+                        src="../../img/member/user02.jpg"><br>
+                      해동검도<input type="checkbox">
+                    </div>
+                    <div class="sm-card sm-c-s">
+                      <img class="profile-img"
+                        src="../../img/member/user02.jpg"><br>
+                      해동검도<input type="checkbox">
+                    </div>
+                    <div class="sm-card sm-c-s">
+                      <img class="profile-img"
+                        src="../../img/member/user02.jpg"><br>
+                      해동검도<input type="checkbox">
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button id="myBtn" class="sm-fw-btn"
+                    style="margin-top: 10px; margin-bottom: 20px;">전체선택</button>
+                  <button id="myBtn" class="sm-fw-btn"
+                    style="margin-top: 10px; margin-bottom: 20px;">삭제하기</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- profile 끝 -->
+
+
+
+        <div class="sm-mypage-bar">
+          <ul>
+            <li><b>진행중인 운동</b><span>1개</span></li>
+            <li><b>나의 히스토리</b><span>22개</span></li>
+            <li><b>내가 쓴 리뷰</b><span>3개</span></li>
+          </ul>
+        </div><!-- mypage-bar -->
+
+        <div class="sm-mypage-body">
+          <div class="sm-tab">
+            <button class="sm-tablinks active"
+              onclick="openCity(event, 'sm-tab1')">알림</button>
+            <button class="sm-tablinks"
+              onclick="openCity(event, 'sm-tab2')"
+              style="border-left: none;">내가 쓴 글</button>
+            <button class="sm-tablinks"
+              onclick="openCity(event, 'sm-tab3')"
+              style="border-left: none;">내가 쓴 댓글</button>
+          </div>
+
+          <div id="sm-tab1" class="sm-tabcontent sm-current">
+            <!-- 팔로우 소식 -->
+            <div class="sm-tab-down">
+
+<div class="sm-alam">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  <strong>2018-08-08</strong>
+  <i class="fas fa-angle-right"></i>
+   '<span>해동검도</span>'에서 메시지가 도착했습니다!
+</div>
+
+<div class="sm-alam">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  <strong>2018-08-08</strong>
+  <i class="fas fa-angle-right"></i>
+  '<span>해동검도</span>'에서 메시지가 도착했습니다!
+</div>
+
+<div class="sm-alam">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  <strong>2018-08-08</strong>
+  <i class="fas fa-angle-right"></i>
+   '<span>해동검도</span>'에서 메시지가 도착했습니다!
+</div>
+<div class="sm-alam">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  <strong>2018-08-08</strong>
+  <i class="fas fa-angle-right"></i>
+   '<span>해동검도</span>'에서 메시지가 도착했습니다!
+</div>
+<div class="sm-alam">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  <strong>2018-08-08</strong>
+  <i class="fas fa-angle-right"></i>
+   '<span>해동검도</span>'에서 메시지가 도착했습니다!
+</div>
+            </div>
+          </div>
+
+          <div id="sm-tab2" class="sm-tabcontent">
+            <!-- 내가 쓴 글 -->
+            <div class="sm-tab-down">
+              <table id="listbody"></table><!-- handlebars가 뿌려줄 위치! -->
+            </div>
+          </div>
+
+          <div id="sm-tab3" class="sm-tabcontent">
+            <!-- 내가 쓴 댓글 -->
+            <div class="sm-tab-down">
+                <div>
+                <p>3개월 다리라인  <i class="fas fa-angle-right" style="margin:10px; color:gray;"></i></p>
+                <span>정말 괜찮은 수업이었던것 같습니다!! 다리라인이 확실히 달라졌어요</span>
+                </div>
+            </div>
+          </div>
+
+          <div style="height:400px; float:right">
+            <a href="../timeline/timeline.html">
+            <button class="sm-btn-2" style="width:200px; margin-bottom:10px">타임라인으로 바로가기</button><br>
+            </a>
+            
+            <a href="../_chat/chat-channel.html">
+            <button class="sm-btn-2" style="width:200px;">트레이너와 1:1 채팅하기</button>
+            </a>
+          </div>
+        </div>
+        <!-- mypage-body -->
+
+
+      </div>
+      <!-- mypage -->
+    </div>
+    <!--.container-->
+
+    <!-- 푸터 시작 -->
+    <div id="footer"></div>
+    <!-- 푸터 종료 -->
+
+  </div>
+  <!-- back -->
+
+
+
+  <script id="my-template" type="text/x-handlebars-template">
+{{#each list}}
+            <tr style="color:gray; height:10px;">
+              <td>{{type}}</td>
+              <td colspan="2"><i class="fas fa-angle-right" style="margin:10px; color:gray;"></i>
+                <span>{{createdDate}}</span>
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><p>{{title}}</p></td>
+            </tr>
+{{/each}}
+</script>
+
+
+  <script src="../../js/common.js"></script>
+  <script src="../../js/header/header.js"></script>
+  <script src="../../js/footer/footer.js"></script>
+  <script src="../../js/member/mb-menu.js"></script>
+  <script src="../../js/member/sm-following.js"></script>
+  <script src="../../js/member/my-tab.js"></script>
+  <script src="../../js/member/my-post.js"></script>
+</body>
+</html>

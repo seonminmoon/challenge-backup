@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+<title>트레이너페이지</title>
+<link rel="stylesheet" href="../../css/trainer/template/sm-trainerPage.css">
+<link rel="stylesheet" href="../../node_modules/sweetalert2/dist/sweetalert2.min.css">
+<link rel="stylesheet" href="../../css/trainer/trainerPage-memberManage.css">
+<link rel="stylesheet" href="../../css/member/msgAddModal.css">
+<link rel="stylesheet" href="../../css/common.css">
+<link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
+<link rel="stylesheet" href="../../css/pagination.css">
+<style type="text/css">
+</style>
+</head>
+<body>
+<div id="subMenu"></div>
+<div id="sm-back">
+<div class="sm-container">
+  <h2>회원 관리</h2>
+
+<div class="sm-mypage">
+  <div class="sm-profile">
+		<div style="text-align: center;">
+			<img id="fPath" style="border-radius:60px; width:120px; height:120px;">
+      <br>
+			<span id="tName"></span><br>
+      <button id="sm-btn-2" type="button" style="margin-top:10px; margin-bottom:20px;">프로필관리</button>
+		</div>
+	</div><!-- .profile -->
+
+
+    <div class="sm-mypage-body">
+      <!-- 서브 메뉴 -->
+      <div class="mangeSubMenu">
+        <div class="tabbed">
+          <ul id="programList"></ul>
+        </div>
+        <div class="arrow">
+          <div class="arrowLeft"><i class="fas fa-chevron-circle-left"></i></div>
+          <div class="arrowRight"><i class="fas fa-chevron-circle-right"></i></div>
+        </div>
+      </div>
+      <!-- 회원 관리 -->
+      <div class="manageContent">
+        <div class="memberName">
+          <div class="rightBox">
+          <input id="userName" type="text" placeholder="회원명을 입력해 주세요.">
+          <button type="button" name="button">검색</button>
+        </div>
+        </div>
+        <div class="memberTable">
+          <table class="demo-table">
+            <thead>
+              <tr>
+                <th>프로그램명</th>
+                <th>이메일</th>
+                <th>회원이름</th>
+                <th>성별</th>
+              </tr>
+            </thead>
+            <tbody id="memberList"></tbody>
+          </table>
+        </div>
+	                <!-- pagenation -->
+	    <div class="sm-pagination" id="pagination">
+	      <a class="sm-pagination-button sm-pagination-side" href="#"><i class="fas fa-angle-left"></i></a>
+	      <a class="sm-pagination-button pageActive">1</a>
+	      <a class="sm-pagination-button">2</a>
+	      <a class="sm-pagination-button">3</a>
+	      <a class="sm-pagination-button">4</a>
+	      <a class="sm-pagination-button sm-pagination-button-end" href="#">5</a>
+	      <a class="sm-pagination-button sm-pagination-side" href="#"><i class="fas fa-angle-right"></i></a>
+	    </div>
+      </div>
+      
+       <div id="myModal" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <div class="modal-header">
+              <span class="close"><i class="far fa-times-circle"></i></span>
+            </div>
+            <div class="modal-body"></div>
+          </div>
+      </div>
+      
+        <!-- add 모달 -->
+        <div id="myAddModal" class="sm-modal">
+          <div class="modal-content">
+            <div class="modal-header">
+              <span class="addClose"><i
+                class="far fa-times-circle"></i></span>
+            </div>
+            <div class="add-body"></div>
+          </div>
+        </div>
+        <!-- add 모달 끝! -->
+      
+      
+    </div><!-- mypage-body -->
+</div><!-- mypage -->
+</div><!--.container-->
+</div><!-- back -->
+<div id="footer"></div>
+  <script src="../../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+<script src="../../node_modules/handlebars/dist/handlebars.min.js"></script>
+<script src="../../js/common.js"></script>
+<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../../js/trainer/trainer-template.js"></script>
+<script src="../../js/header/header.js"></script>
+<script src="../../js/footer/footer.js"></script>
+<script id="li-template" type="text/x-handlebars-template">
+{{#each list}}
+	<li class="tabSelect">
+		<a data-pno="{{program.no}}" data-trnNo="{{program.trainerNo}}">{{program.name}}</a>
+	</li>
+{{/each}}
+<li class="tabSelect active">
+	<a>전체</a>
+</li>
+</script>
+<script id="member-template" type="text/x-handlebars-template">
+{{#each list}}
+<tr class="trSelect" data-uno="{{user.userNo}}" data-pno="{{program.no}}">
+	<td><a>{{program.name}}</a></td>
+	<td><a>{{user.email}}</a></td>
+	<td><a>{{user.name}}</a></td>
+	<td><a>{{user.sex}}</a></td>
+</tr>
+{{/each}}
+</script>
+<!-- 출석, 출석률, 목표달성률 부터는 다른 핸들바스 쓸꺼임 일단 임시로 값을 넣어두겠다... -->
+<script id="view-template" type="text/x-handlebars-template">
+<div id="topContentBox">
+  <div class="memberInfo1">
+    <div class="originalImg"><img src="../../../files/{{usersPath}}"/></div>
+  </div>
+  <div class="memberInfo2">
+  <ul class="memberInfoList">
+    <li class="modalName">
+      <div class="contentName">이름</div>
+      <div id="mName" class="modalContent">{{usersName}}</div>
+    </li>
+    <li class="modalSex">
+      <div class="contentName">성별</div>
+      <div id="mSex" class="modalContent">{{usersSex}}</div>
+    </li>
+    <li class="modaPhone">
+      <div class="contentName">연락처</div>
+      <div id="mTel" class="modalContent">{{usersphon}}</div>
+    </li>
+    <li class="modalProgram">
+      <div class="contentName">참여 프로그램</div>
+      <div id="mProgram" class="modalContent">{{name}}</div>
+    </li>
+       <li class="modalProgram">
+         <div class="contentName">프로그램 시작일</div>
+         <div id="mDate1" class="modalContent">{{startDate}}</div>
+       </li>
+       <li class="modalProgram">
+         <div class="contentName">프로그램 종료일</div>
+         <div id="mDate2" class="modalContent">{{endDate}}</div>
+       </li>
+    <li class="modalTarget">
+      <div class="contentName">목표</div>
+      <div id="mTarget" class="modalContent">{{proGoal}}</div>
+    </li>
+    <li class="attendanceRate">
+      <div class="contentName styleBox">출석률</div>
+      <div class="modalContent cssBox">
+      <div class="skillBox">
+        <div id="mAttend" class="skills attend"></div>
+      </div>
+      </div>
+    </li>
+    <li class="targetRate">
+      <div class="contentName styleBox">목표 달성률</div>
+      <div class="modalContent cssBox">
+        <div class="skillBox">
+          <div id="mTargetPer" class="skills target"></div>
+        </div>
+      </div>
+    </li>
+  </ul>
+  </div>
+<div class="memberButtons">
+        <ul>
+          <li><a class="msgSend">메시지</a></li>
+        </ul>
+      </div>
+</div>
+</script>
+
+
+<!-- add -->
+  <script id="add-template" type="text/x-handlebars-template">
+  <div>
+  <div class="modal-body">
+    <div class="originalImg"></div>
+    <ul class="msgInfoList">
+      <li class="modalName">
+        <div class="msgName">이름</div>
+        <div id="mName" class="modalContent">{{trainer}}</div>
+      </li>
+      <li class="modaPhone">
+        <div class="msgName">받는사람</div>
+        <div id="mName-send" class="modalContent">{{member}}</div>
+      </li>
+    </ul>
+  </div>
+  <div class="modal-body2">
+  <input id="fTitle" class="modalContent-titl" type="text" placeholder="제목을 입력하세요."><br>
+  <textarea id="fContent" class="modalContent-cont" placeholder="내용을 입력하세요."></textarea>
+  
+    <span class="modal-ok">
+    <button id="addBtn" class="sm-btn-1">보내기</button>
+    <button id="resetBtn" class="sm-btn-1">취소하기</button>
+    </span>
+  </div>
+  </div>
+</script>
+<script src="../../js/trainer/memberList.js"></script>
+</body>
+</html>

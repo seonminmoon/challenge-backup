@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>로그인</title>
+<link rel="stylesheet" href="../../css/common.css">
+<link rel="stylesheet" href="../../css/login/login.css">
+<link rel="stylesheet"
+    href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
+    <link rel="stylesheet"
+    href="../../node_modules/sweetalert2/dist/sweetalert2.css">
+
+</head>
+
+<body>
+    <header id="header"></header>
+    <div class="container">
+        <div class="omb_login">
+            <h1 class="omb_authTitle">로그인</h1>
+            <hr>
+            <div class="login-aa">
+                <form class="omb_loginForm" action="" autocomplete="off"
+                    method="POST">
+                    <input id="fId" onkeyup="enterkey();" type="text" class="form-control" name="email"
+                        placeholder="이메일 주소"> <input id="fPassword" onkeyup="enterkey();"
+                        type="password" class="form-control" name="password"
+                        placeholder="비밀번호">
+                    <div class="login-row">
+                        <span class="login-left"><input id="fSaveId"
+                            class="form-check-input" type="checkbox"><label
+                            for="fSaveId">아이디 저장</label></span> <span class="login-right"><a
+                            href="#" class="findpw">비밀번호 찾기</a></span>
+                    </div>
+                    <button id="loginBtn" class="loginBtn" type="button" name="button">로그인</button>
+                    <div class="join">
+                        <a href="member3.html">
+                            <div class="joinBtn joinUser">
+                                <span class="outLo">&nbsp;회원으로 가입하기</span>
+                            </div>
+                        </a> <a href="trainerform.html">
+                            <div class="joinBtn joinTrainer">
+                                <span class="outLo">트레이너로 가입하기</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="oror">or</div>
+                    <div class="login-row">
+                        
+                            
+                            
+                            <!-- <div id="naverIdLogin">
+                             </div> -->
+                             <!-- <div id="naverIdLogin"> <a id="naverLogin"  href="#" role="button"><img src="https://static.nid.naver.com/oauth/big_g.PNG"
+                             width="300" height="49">
+                             </a>
+                           </div> -->
+                             <!-- <a id="kakao-login-btn1" href="#" role="button"><img src="../../img/login/kakao1.png"></a> -->
+                             <a id="kakao-login-btn">
+                             
+                            </a>
+                            <!-- <a href="http://developers.kakao.com/logout"></a> -->
+                            
+                            <br>
+                            <div id="fb"class="rounded fb-login-button form-group fb-custom-btn" data-width="300" data-height="70"
+                data-max-rows="2" data-size="large" data-button-type="login_with"
+                data-show-faces="false" data-auto-logout-link="false"
+                data-use-continue-as="false" data-scope="public_profile,email"
+                data-onlogin="checkLoginState()" ></div>
+               
+                
+                            <!-- <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="false"></div> -->
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer id="footer"></footer> 
+
+
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+    <script src="../../js/common.js"></script>
+    <script src="../../js/header/header.js"></script>
+    <script src="../../js/footer/footer.js"></script>
+
+    <script src="../../js/login/login.js"></script>
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js" charset="utf-8"></script>
+    
+
+
+    <script type='text/javascript'>
+    
+    // 사용할 앱의 JavaScript 키를 설정해 주세요.
+      Kakao.init('6810e2ea252d47b9b3bd1d1125653956');  //여기서 아까 발급받은 키 중 javascript키를 사용해준다.
+
+      //function loginWithKakao() {
+     Kakao.Auth.createLoginButton({
+          container: '#kakao-login-btn',
+          size: 'large',
+          success: function(authObj) {
+                console.log(authObj.access_token)
+                $.getJSON(
+                        '../../../json/auth/kakaoLogin', 
+                        {'accessToken': authObj.access_token}, 
+                        function(result) {
+                            console.log(result)
+                          if (result.status == 'success') {
+                           console.log('로그인 성공');
+                           location.href = "../main/main.html"
+                          } else {
+                        	  swal('로그인을 실패했습니다!  </code></pre> 카카오톡에서 이메일정보를 가져오지 못했습니다');
+                          } // else 끝
+                    });
+          }
+          });
+     // }
+        
+    
+    // 이부분 손봐야댐
+     function autoServerLogin(accessToken) {
+        
+         $.getJSON(
+             '../../../json/auth/facebookLogin', 
+             {'accessToken': accessToken}, 
+             function(result) {
+                 console.log(result)
+               if (result.status == 'success') {
+                   console.log('로그인 성공');
+                   location.href = "../main/main.html"
+               } else {
+            	   swal('로그인을 실패했습니다!  </code></pre> 페이스북에서 정보를 가져오지 못했습니다'); 
+            	
+                     
+               } //else 끝
+         });
+     }
+     
+    
+  // 페이스북 로그인을 수행한 후에 그 결과에 따라 작업을 수행한다.
+  function statusChangeCallback(response) {
+    console.log(response);
+
+    if (response.status === 'connected') { // 로그인이 정상적으로 되었을 때,
+    	autoServerLogin(response.authResponse.accessToken);
+    	console.log("로그인 되었음!");
+    } else { // 로그인이 되지 않았을 때,
+        console.log("로그인 되지 않았음");
+    }
+  }
+    
+  function checkLoginState() {
+      FB.getLoginStatus(function(response) { 
+        statusChangeCallback(response);
+      });
+  }
+
+  window.fbAsyncInit = function() {
+      console.log("window. 호출됨")
+    FB.init({
+      appId      : '1983230101709022', // 개발자가 등록한 앱 ID
+      cookie     : true,  
+      xfbml      : true,  
+      version    : 'v3.0' 
+    });
+    
+    FB.AppEvents.logPageView();  
+    
+  };
+  
+  
+  
+
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v3.1&appId=1983230101709022&autoLogAppEvents=1';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+  
+  /* FB.logout(function(response) { // 로그아웃
+    }); */
+    
+    //디비에 입력
+    
+    
+    // 네이버 아이디
+    /* var naverLogin = new naver.LoginWithNaverId(
+        {
+            clientId: "53ySFh6l7hMZUH4Hycd0",
+            callbackUrl:"http://localhost:8888/challenge-project/challenge/html/login/callback.html",
+            isPopup: false,  팝업을 통한 연동처리 여부 
+            callbackHandle: true,
+             loginButton: {color: "green", type: 3, height: 63 }
+        }
+    ); */
+    
+    /* 설정정보를 초기화하고 연동을 준비 
+     naverLogin.init(); 
+    */
+ 
+    
+    
+
+</script>
+
+</body>
+
+</html>

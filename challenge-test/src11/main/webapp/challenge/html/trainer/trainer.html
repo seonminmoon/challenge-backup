@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset='UTF-8'>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>트레이너</title>
+<style>
+@import
+	url(../../node_modules/@fortawesome/fontawesome-free/css/all.css) screen
+	;
+
+@import url(../../css/program/card1.css) screen;
+
+@import url(../../css/trainer/trainer.css) screen;
+
+@import url(../../css/common.css) screen;
+
+@import url(../../css/trainer/als_demo.css) screen;
+</style>
+</head>
+
+<body>
+ <header id="header"></header>
+ <div class="tr1">
+   <div class="tr1-co-center">
+    <div id="fuserPath"></div>
+    <div id="tr-img"></div>
+    <div id="fname" class="tr-name"></div>
+    <div>상담 가능시간 <span id="ftime"></span></div>
+   </div>
+ </div>
+
+ <div class="container">
+
+  <div id="navbar" class="line-table">
+   <div class="line-20">성공률 : 97.8%</div>
+   <div id="fproCount" class="line-20">총 프로그램 : </div>
+   <div class="line-20 tr-arrow-main">
+    <a href="#">메시지 보내기</a> <span class="tr-arrow"></span>
+   </div>
+   <div id="fproType" class="line-20">운동 종목 : </div>
+   <div class="line-20">최근 프로그램 : 1 개월 전</div>
+  </div>
+
+  <div class="tr-title tr-body">해동근력님의 서비스</div>
+  <div class="trBody">
+   <div class="tr-left">
+    <div class="tr2">
+
+    <div class="tr2-pro">
+     <div id="lista1" class="als-container">
+      <span class="als-prev"><img
+       src="../../img/trainer/thin_left_arrow_333.png" alt="prev"
+       title="previous" /></span>
+      <div class="als-viewport">
+       <ul class="als-wrapper" id="program">
+
+       </ul>
+      </div>
+      <span class="als-next"><img
+       src="../../img/trainer/thin_right_arrow_333.png" alt="next"
+       title="next" /></span>
+     </div>
+    </div>
+   </div>
+
+    <div class="tr3">
+     <div class="tr-title inline-block">해동근력님의 받은 평가</div>
+     <div class="inline-block">
+      <span class="star-prototype"></span>
+     </div>
+     <div id="freviewCount" class="inline-block">(</div>
+     )
+
+     <div id="tr3-eval" class="tr3-evaluation">
+      <ul id="tr3-ul"></ul>
+      <div id="tr-plus-btn" class="tr-plus">
+       <div id="moreBtn" class="button">5개 더보기</div>
+      </div>
+     </div>
+    </div>
+
+   </div>
+   <div class="tr-right">
+    <div class="tr4">
+     <div class="tr-title">소개</div>
+     <div class="tr4-intro">
+      <span id="fintroduce"></span>
+     </div>
+     <div class="tr-title">경력사항</div>
+     <div id="fcareer" class="tr4-career"></div>
+    </div>
+
+    <div>
+     <div class="tr5"></div>
+    </div>
+
+   </div>
+  </div>
+ </div>
+ <!--container-->
+
+ <footer id="footer"></footer>
+
+
+<script id="cardBody1" type="text/x-handlebars-template">
+{{#each list}}
+<div class="card" id="card">
+    <a href="../program/DetailPage.html?no={{no}}">
+    <!-- 카드 헤더 -->
+    <div class="card-header">
+      <img class="card-img" src="../../../files/{{medias.[0].path}}_200x200.jpg"/>
+      <div class="ribbon"><span>성공 %</span></div>
+      <div class="card-trainer tr-{{@key}}">
+      </div>
+    </div>
+    <!--  카드 바디 -->
+    <div class="card-body">
+      <p class="title"><span class="card-body-title">{{name}}</span>
+      <span class="card-body-degree">[{{proTh}}기]</span></p>
+      <p class="card-body-price">
+         <span class="numberic-{{@key}}">{{price}}</span>원</p>
+      <span class="card-body-local-{{@key}}">{{address}}</span>
+      <span class="card-body-number"><span class="pnum-{{@key}}"></span>/{{maxQty}}명</span>
+      <p><span class="star-prototype score-{{@key}}"></span></p>
+      <!--  카드 바디 푸터 -->
+      <div class="card-footer">
+      <span class="card-footer-review">리뷰 <span class="review-{{@key}}"></span>개</span>
+      <span class="card-footer-date">{{startDate}} (D<span id="dday-{{@key}}"></span>)</span>
+    </div>
+    </a>
+</div>
+</div>
+{{/each}}
+</script>
+
+ <script id="commentList" type="text/x-handlebars-template">
+{{#each list}}
+ <li class="tr3-li">
+  <div class="tr3-left">
+   <div class="commentImg">
+    <img id="cmImg-{{@key}}" src="../../../files/{{user.userPath}}_50x50.jpg"></div>
+  </div>
+  <div class="tr3-right">
+   <div><span class="commentDate">{{reviewDate}} ｜</span>
+  <span class="commentEval">
+   <span class="star-prototype2">{{grade}}</span> (<span class="grade">{{grade}}</span>)
+  </span>
+   </div>
+  <div class="commentContent">{{review}}</div>
+  <div class="commentName">{{user.name}}</div>
+  </div>
+ </li>
+{{/each}}
+</script>
+
+ <script src="../../node_modules/handlebars/dist/handlebars.min.js"></script>
+ <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+ <script src="../../js/common.js"></script>
+ <script src="../../js/header/header.js"></script>
+ <script src="../../js/trainer/trainer.js"></script>
+ <script src="../../js/trainer/jquery.als-1.7.min.js"></script>
+ <script src="../../js/footer/footer.js"></script>
+
+</body>
+
+</html>

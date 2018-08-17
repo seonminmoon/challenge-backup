@@ -1,0 +1,8 @@
+@charset "UTF-8";
+
+.graphBox {
+  width: 85%;
+  margin-left: 5%;
+  margin-top: 20px;
+  height: 500px;
+}
