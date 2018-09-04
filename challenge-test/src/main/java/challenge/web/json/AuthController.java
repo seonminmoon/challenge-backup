@@ -47,6 +47,7 @@ public class AuthController {
     
     @GetMapping("/loginUser")
     public User loginUser(HttpSession session) {
+        System.out.println(session.getAttribute("loginUser"));
         return (User) session.getAttribute("loginUser");
     }
 
@@ -78,7 +79,18 @@ public class AuthController {
         if (userService.isExist(email, password)) { // 로그인 성공!
             System.out.println("존재합니다!");
 //            session.setAttribute("loginUser", userService.getWithId(email));
-            model.addAttribute("loginUser", userService.getWithId(email));
+            
+            int userType = userService.userTypeChecker(email, password);
+            System.out.println("userType은 " + userType);
+            
+            if (userType == 1) {
+                model.addAttribute("loginUser", userService.getWithId(email));
+            } else if (userType == 2) {
+                model.addAttribute("loginUser", userService.getWithIdTrainer(email));
+            } else {
+                return null;
+            }
+            
             // If 로그인한 유저가 유저?회원?트레이너?피멤브? 어떤거냐에 따라 세션에 넣어주기. 유형
             result.put("state", "success");
         } else { // 로그인 실패!

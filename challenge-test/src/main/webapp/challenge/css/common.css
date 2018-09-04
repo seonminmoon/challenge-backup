@@ -44,7 +44,7 @@
     url("font/NanumSquareRoundEB.ttf") format("truetype"); /* Safari, Android, iOS */
 }
 
-body {
+body, pre {
   font-family: 'NanumSquareRound',sans-serif;
 }
 .container {

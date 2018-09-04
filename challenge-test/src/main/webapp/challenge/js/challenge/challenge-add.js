@@ -41,6 +41,7 @@ $('#fileupload').fileupload({
     console.log(data)
     console.log('done()...');
     console.log(data.result);
+    location.href="../../html/main/main.html"
   }
 });
 

@@ -19,23 +19,23 @@
  <div class="sm-black-top text-center">
 
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
-   <!-- 동그라미 아이콘 -->
-   <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-
-   </ol>
 
    <!-- 상단 이미지 슬라이드 -->
    <div class="carousel-inner" role="listbox" style="height: 600px;">
+		<video id="mainVideo" autoplay loop>
+			  <source src="../../img/main/mainVideo2.mp4" type="video/mp4">
+		</video>
+    <!-- 
     <div class="item active">
-     <img src="../../img/main/hong.png" alt="1" style="height: 800px;">
+    
+     <img src="../../img/main/main6.jpg" alt="1" style="height: 800px;">
      <div class="carousel-caption"></div>
     </div>
     <div class="item">
      <img src="../../img/main/hong3.png" alt="3" style="height: 850px;">
      <div class="carousel-caption"></div>
     </div>
+      -->
    </div>
   </div>
  </div>
@@ -197,7 +197,7 @@
 
       <input type="button" id="sm-btn-1" value="트레이너로 시작하기"
        style="width: 160px; font-size: 14px;"
-       onclick="location.href='../login/trainerform.html'">
+       onclick="location.href='../login/trainerform2.html'">
      </div>
     </div>
     <div class="col-sm-5">
@@ -209,7 +209,7 @@
       </p>
       <input type="button" id="sm-btn-1" value="회원으로 시작하기"
        style="width: 160px; font-size: 14px;"
-       onclick="location.href='../login/member.html'">
+       onclick="location.href='../login/member3.html'">
      </div>
     </div>
    </div>
@@ -239,7 +239,7 @@
 {{#each list}}
  <a href='../challenge/challenge.html?no={{no}}'>
   <div class="main-card">
-   <img src="../../img/{{path}}" alt="Notebook" style="width: 100%;">
+   <img src="../../img/{{path}}.jpg" alt="Notebook" style="width: 100%;">
    <div class="content">
     <h3>
      <b>{{title}}</b>
@@ -256,7 +256,7 @@
   <div class="challenge-photo">
    <a href='../program/DetailPage.html?no={{no}}'> <img
     class="challenge-photo-img"
-    src='../../../files/{{medias.[0].path}}_600x600.jpg'>
+    src='../../../files/{{medias.[0].path}}.jpg'>
    </a>
   </div>
   <div class="challenge-title">

@@ -47,10 +47,10 @@
         <div id="sh-Class-Daily">
           <div id="sh-Class-Daily-item">
             <div class="sh-Class-Contents">
+	              <h1 id="sh-Class-Title"></h1>
+	              <span id="sh-class-dots"></span>
 
-              <h1 id="sh-Class-Title"></h1>
-              <span id="sh-class-dots"></span>
-              <span id="sh-class-more"></span>
+	              <span id="sh-class-more"><pre id="preTag"></pre></span>
             </div>
 
             <div onclick="shClassFunction()" id="shClassDiv">▼</div>
@@ -150,7 +150,7 @@
       <!--글쓴이 시작 -->
       <section class="sh-tl-card-primary">
         <div data-cardNo={{no}} onmouseover=showPostMenu(this) onmouseout=hidePostMenu(this) class="sh-tl-user">
-          <img class="sh-tl-user-img" src="../../../files/{{progMemb.user.userPath}}">
+          <img class="sh-tl-user-img" src="../../../files/{{progMemb.user.userPath}}.jpg">
           <h1 class="sh-tl-user-name">{{progMemb.user.name}}</h1>
           <h6 class="sh-tl-post-date">{{createdDate}}</h6>
           <div onclick=postEdit(this) name={{no}} class="sh-tl-post-edit"><i class="fas fa-pen">수정</i></div>
@@ -160,7 +160,7 @@
       <!-- 글쓴이 종료-->
       <!-- 글내용 시작-->
       <div class="sh-tl-card-content">
-        <p class="sh-tl-card-content-inside">{{content}}</p>
+        <pre><p class="sh-tl-card-content-inside">{{content}}</p></pre>
       </div>
       <div id="img{{no}}"></div>
       <!-- 글내용 종료 -->
@@ -171,7 +171,7 @@
           <a class="sh-like-clicked lk-clicked{{no}}" id="sh-tl-CountedClicks" href="#!"><span data-no="okok" class="lk{{no}} hi" >{{no}}</span> 명이 좋아합니다.</a>
           <a href="#!"></a>
         </div>
-        <div class="sh-tl-card-bottom">
+        <div class="sh-tl-card-bottom"> 
           <div class="sh-tl-like sh-tl-card-bottom-items">
             <a onclick="TlAddClick({{no}})" class="sh-like-clicked lk-thumbs{{no}}" href="#!"><i class="far fa-thumbs-up"></i><span>     좋아요</span></a>
           </div>
@@ -212,7 +212,7 @@
       <!--글쓴이 시작 -->
       <section class="sh-tl-card-primary">
         <div data-cardNo={{no}} onmouseover=showPostMenu(this) onmouseout=hidePostMenu(this) class="sh-tl-user">
-          <img class="sh-tl-user-img" src="../../../files/{{progMemb.user.userPath}}">
+          <img class="sh-tl-user-img" src="../../../files/{{progMemb.user.userPath}}.jpg">
           <h1 class="sh-tl-user-name">{{progMemb.user.name}}</h1>
           <h6 class="sh-tl-post-date">{{createdDate}}</h6>
           <div onclick=postEdit(this) name={{no}} class="sh-tl-post-edit"><i class="fas fa-pen">수정</i></div>
@@ -247,7 +247,7 @@
       <!-- 댓글쓰기 시작-->
       <section class="sh-tl-card-reply-write">
         <div class="sh-tl-reply-user">
-          <img class="sh-tl-user-img" src="../../../files/{{progMemb.user.userPath}}">
+          <img class="sh-tl-user-img" src="../../../files/{{progMemb.user.userPath}}.jpg">
           <div class="sh-tl-review-write">
             <textarea id="{{no}}" class="sh-tl-cmt{{no}} sh-tl-review-title  sh_tl_reply_textarea" placeholder="댓글을 입력하세요" onkeydown="resize(this)" onkeyup="resize(this)"></textarea>
             <div class="sh-tl-img-upload"><button onclick="cmtFunction({{no}})" class="sh-tl-reply-btn" type="submit">게시</button> </div>
@@ -272,7 +272,7 @@
     {{#each list}}
     <section class="sh-tl-cmt-section{{no}} sh-tl-card-reply-load">
       <div class="sh-tl-reply-user">
-        <img class="sh-tl-user-img" src="../../../files/{{progMemb.user.userPath}}">
+        <img class="sh-tl-user-img" src="../../../files/{{progMemb.user.userPath}}.jpg">
         <div data-userNo="{{progMemb.user.userNo}}" onmouseover=showCmtMenu(this) onmouseout=hideCmtMenu(this) class="sh-tl-review-write">
           <div readonly class="sh-tl-review-content  sh-tl-reply-content">
             <span class="sh-cmt-name">{{progMemb.user.name}}</span><span class="sh-cmt-content"> {{content}}</span>
@@ -294,7 +294,7 @@
     <section id="tl-card{{no}}" class="sh-tl-modal-content sh-tl-card-primary sh-tl-card-header sh-tl-review-hidden">
       <div class="sh-tl-user">
         <span onclick="closeModal(this)" class="sh-tl-modal-close">&times;</span>
-        <img class="sh-tl-user-img" src="../../../files/{{progMemb.user.userPath}}">
+        <img class="sh-tl-user-img" src="../../../files/{{progMemb.user.userPath}}.jpg">
         <h1 class="tl-user-name-json sh-tl-user-name">{{progMemb.user.name}}</h1>
       </div>
       <div class="sh-tl-review-write">

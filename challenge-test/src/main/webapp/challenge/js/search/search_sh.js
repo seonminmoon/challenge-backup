@@ -57,6 +57,8 @@ function paginationNum(e) {
 		var pageNo = $(e).html();
 		$.getJSON(serverRoot + "/json/program/pagingListCard/" + pageNo + "/9", (data) => {
 			$('#aaa').html(cardBodyFn({list:data}));
+		}).done(function(data) {
+			loadCards(data);
 		})
 
 	} else if ($(e).hasClass('keywordList')) {
@@ -67,6 +69,8 @@ function paginationNum(e) {
 		var pageNo = $(e).html();
 		$.getJSON(serverRoot + "/json/program/pagingListKeyword/" + keyword + "/" +pageNo+ "/9", (data) => {
 			$('#aaa').html(cardBodyFn({list:data}));
+		}).done(function(data) {
+			loadCards(data);
 		})
 
 	} else if ($(e).hasClass('proGoalList')) {
@@ -76,6 +80,8 @@ function paginationNum(e) {
 		var pageNo = $(e).html();
 		$.getJSON(serverRoot + "/json/program/pagingListChallenge/" + pageNo + "/9", (data) => {
 			$('#aaa').html(cardBodyFn({list:data}));
+		}).done(function(data) {
+			loadCards(data);
 		})
 	}
 }
@@ -86,6 +92,7 @@ var searchEvent = function searchEvent(e) {
 	if (e != null) {  // 프로그램 목표 sideMenu 클릭시 검색 이벤트 
 		keyword = $(e).attr("data-pgoal");
 		$.getJSON(serverRoot + "/json/program/listCardWithProgoal/" + keyword, (data) => {
+			console.log(data);
 			console.log("프로그램 목표로 검색 들어옴 사이드바 클릭")
 			console.log(keyword)
 			$('#aaa').html("");
@@ -93,7 +100,8 @@ var searchEvent = function searchEvent(e) {
 			paginationUI(data)
 			$('.sm-pagination-button').attr('data-pgoal', keyword);
 			$('.sm-pagination-button').addClass('proGoalList');
-		}).done(function() {
+		})
+		.done(function() {
 			var proGoal = $('.sm-pagination-button').attr('data-pgoal');
 			console.log(proGoal)
 			$.getJSON(serverRoot + "/json/program/pagingListProgoal/" + proGoal + "/1/9", (data) => { // 1페이지 불러오기
@@ -150,7 +158,7 @@ $('#keyword-search-button').click(function() {
 
 function trImg(no, i) {
 	$.getJSON(serverRoot + "/json/trainer/" + no, (data) => {
-		$("<img/>").attr('src', '../../../files/'+data.userPath)
+		$("<img/>").attr('src', '../../../files/'+data.userPath+'.jpg')
 		.appendTo('.tr-'+i+'').addClass('trainer-img');
 	})
 }

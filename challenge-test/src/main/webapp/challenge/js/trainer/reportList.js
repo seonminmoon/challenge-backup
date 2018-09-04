@@ -7,9 +7,6 @@ var ptover;
 var pageNum = 1;
 var pageSize = 12;
 
-//var pageTemplateSrc = $("#pagenationList").html();
-//var pagetemplateFn = Handlebars.compile(pageTemplateSrc);
-
 // li-template 트레이너가 관리하는 프로그램 이름 목록
 var liTemplateSrc = $("#li-template").html();
 var templateFn = Handlebars.compile(liTemplateSrc);
@@ -66,7 +63,7 @@ $(document).ready(function() {
 	$.ajax(serverRoot + "/json/trainer/" + userInfo.userNo, {
 		dataType: "json",	
 	    success(data) {
-			 $('#fPath').attr('src', '../../../files/' + data.userPath);
+			 $('#fPath').attr('src', '../../../files/' + data.userPath+'.jpg');
 			 $('#tName').html(data.name);
 	    },
 	    error() {
@@ -131,26 +128,7 @@ $(document.body).on('click', '.programTab', function(event) {
 	    }	
 	});
 	
-//	// 페이징 처리 pageActive
-//	$.ajax(serverRoot + "/json/plan/count/" + pno, {
-//		dataType: "json",	
-//	    success(data) {
-//			 //var lastPage = parseInt(data[data.length-1].planTurn/12) + 1;
-//			 //console.log(lastPage);
-//			 $('#pagination').html(pagetemplateFn({
-//				 list: data}));
-//			 
-//			 for(var i = 0; i < data.length; i++) {
-//				 if($('.selectedPage').attr('data-num') == i) {
-//					 console.log(i);
-//					 console.log(data.length);
-//				 }
-//			 }
-//	    },
-//	    error() {
-//	        window.alert("페이징 실패!");
-//	    }	
-//	});
+
 });
 
 // 모달 관련 이벤트

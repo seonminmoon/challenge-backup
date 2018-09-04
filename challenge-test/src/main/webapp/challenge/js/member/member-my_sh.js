@@ -44,7 +44,7 @@ var muscleInfo = new Array();
 		for (var i = 0; i < data.length; i++) {
 			muscleInfo.push({
 				"date" : data[i].bdate,
-				"value" : data[i].weight
+				"value" : data[i].muscle
 			})
 		}
 		console.log(muscleInfo)

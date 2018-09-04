@@ -141,42 +141,6 @@ $(document.body).on('click','.addModal', function(event){
 
 
 
-/*
- 
- var viewTemplateSrc = $("#view-template").html();
-var viewtemplateFn = Handlebars.compile(viewTemplateSrc);
-
-$(document.body).on('click','.viewSelect', function(event){
-	event.preventDefault();
-
-	var msgno = $(this).attr("data-msgno");
-	console.log(msgno)
-	$.ajax(serverRoot + "/json/message/" + msgno, {
-		dataType: "json",	
-	    success(data) {
-			 $('.view-body').html(viewtemplateFn({
-				 console.log(data)
-				 "trainer.name": data.trainer.name,
-				 title: data.title,
-				 content: data.content,
-				 msgDate: data.msgDate
-				 }));
-			$('#myModal').css("display", "block");
-	    },
-	    error() {
-	        window.alert("실행 오류!");
-	    }	
-	});
-	
-	$(document.body).on('click','.close', function(){
-		$('#myModal').css("display", "none");
-	})
-});
-
- */
-
-
-
 
 
 

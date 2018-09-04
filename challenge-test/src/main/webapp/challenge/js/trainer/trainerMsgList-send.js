@@ -65,6 +65,7 @@ $(document.body).on('click','.viewSelect', function(event){
 				 title: data.title,
 				 content: data.content,
 				 msgDate: data.msgDate,
+				 userPath: data.trainer.userPath,
 				 }));
 			$('#myModal').css("display", "block");
 	    },

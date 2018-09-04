@@ -1,8 +1,10 @@
 @charset "UTF-8";
 .pay-0-img img {
 	width:120px;
-	height:90px;
+	height:120px;
 }
+
+
 img {
   border: 0;
  border-radius: 50%;

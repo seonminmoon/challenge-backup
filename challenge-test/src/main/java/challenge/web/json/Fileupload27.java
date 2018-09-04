@@ -87,6 +87,10 @@ public class Fileupload27 {
                 .size(200,200)
                 .outputFormat("jpg")
                 .toFile(path.getCanonicalFile() + "_200x200");
+                Thumbnails.of(path)
+                .size(200,200)
+                .outputFormat("jpg")
+                .toFile(path.getCanonicalFile() + ".jpg");
                 
             } catch (Exception e) {
                 e.printStackTrace();

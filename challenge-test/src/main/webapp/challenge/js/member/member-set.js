@@ -10,7 +10,7 @@ $.ajax({
    console.log(data);
    $('#email').val(data.email);
    $('#phone').val(data.userPhone);
-   $("<img>").attr('src', '../../../files/'+ data.userPath+'_200x200.jpg').css('border-radius', '50%').appendTo('#images-div');
+   $("<img>").attr('src', '../../../files/'+ data.userPath + ".jpg").css('border-radius', '50%').appendTo('#images-div');
 });
 
 

@@ -3,11 +3,6 @@ window.onscroll = function() {
 	myFunction()
 };
 
-/*
-1. offsetTop => sh-mainContainer부터 top까지 거리
-2.sh-contentCol의 padding값(27)만큼 더함
- */
-
 var sh_Class_Daily = document.getElementById("sh-Class-Daily");
 var diff = document.getElementById("sh-mainContainer");
 var sticky = (diff.offsetTop + 104);
@@ -32,10 +27,12 @@ function shClassFunction() {
 		dots.css("display", "inline");
 		divText.html("▼");
 		moreText.css("display","none");
+		$(".sh-Class-Contents").css("padding", "20px 20px 0px 20px");
 	} else {
 		dots.css("display", "none");
 		divText.html("▲");
 		moreText.css("display","inline");
+		$(".sh-Class-Contents").css("padding", "20px 20px 20px 20px");
 	}
 }
 	
@@ -133,7 +130,7 @@ function reloadCard(pageCount) {
 			loadComments(data[i].no)
 			timelineLikeCount(data[i].no)
 			if (data[i].picture) {
-				$("#img" + data[i].no).append("<img src='../../../files/" + data[i].picture + "_600x600.jpg'>");
+				$("#img" + data[i].no).append("<img src='../../../files/" + data[i].picture + "'style=\"width:600px\"'>");
 			}
 		}
 		console.log(userInfo.userPath)
@@ -487,4 +484,4 @@ $('#MOVE_TOP_BTN').click(function () {
 
 
 //---------------------리뷰 작성자-------------------
-$('.sh-tl-user-img-load').attr("src", "../../../files/" + userInfo.userPath);
+$('.sh-tl-user-img-load').attr("src", "../../../files/" + userInfo.userPath + ".jpg");

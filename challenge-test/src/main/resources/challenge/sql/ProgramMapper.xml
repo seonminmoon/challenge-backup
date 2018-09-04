@@ -77,6 +77,7 @@
          right outer join PROG p on m.pno=p.pno
          left outer join TRN t on p.trnno=t.trnno
     where pgoal = #{programGoal}
+    group by pno, pname
     limit #{startRowNo}, #{pageSize} 
   </select>
   
@@ -124,11 +125,8 @@
   
    <select id="listCardWithProgoal"
           resultMap="ProgramMap" parameterType="string">
-    select p.pno, p.pname, p.pth, p.pprice, p.bas_addr, p.maxqty, p.sdt, p.trnno, p.ptype, p.det_addr, p.pgoal,
-           m.pmedno, m.ppath, m.pmtype
-    from PMED m
-         right outer join PROG p on m.pno=p.pno
-         left outer join TRN t on p.trnno=t.trnno
+    select p.pno, p.pname, p.pth, p.pprice, p.bas_addr, p.maxqty, p.sdt, p.trnno, p.ptype, p.det_addr, p.pgoal
+    from PROG p
     where pgoal = #{value}
     <!-- limit #{startRowNo}, #{pageSize} -->
   </select>
@@ -136,7 +134,7 @@
   
   <select id="selectPrice"
           resultMap="ProgramMap" parameterType="map">
-	select Max(m.ppath),p.pno, p.pname, p.pth, p.pprice, p.bas_addr, p.maxqty, p.sdt, p.trnno, p.ptype, p.det_addr, p.pgoal,m.pmedno,m.pmtype  from PMED m
+	select Max(m.ppath) as ppath,p.pno, p.pname, p.pth, p.pprice, p.bas_addr, p.maxqty, p.sdt, p.trnno, p.ptype, p.det_addr, p.pgoal,m.pmedno,m.pmtype  from PMED m
     right outer join PROG p on m.pno=p.pno
     left outer join TRN t on p.trnno=t.trnno
 	where p.pprice BETWEEN #{minPrice} AND #{maxPrice}
@@ -147,7 +145,7 @@
   <select id="pList"
           resultMap="ProgramMap" parameterType="map">
 	
-	select Max(m.ppath),p.pno, p.pname, p.pth, p.pprice, p.bas_addr, p.maxqty, p.sdt, p.trnno, p.ptype, p.det_addr, p.pgoal,m.pmedno,m.pmtype  from PMED m
+	select Max(m.ppath) as ppath, p.pno, p.pname, p.pth, p.pprice, p.bas_addr, p.maxqty, p.sdt, p.trnno, p.ptype, p.det_addr, p.pgoal,m.pmedno,m.pmtype  from PMED m
     right outer join PROG p on m.pno=p.pno
     left outer join TRN t on p.trnno=t.trnno
     where p.pprice BETWEEN #{minPrice} AND #{maxPrice} 

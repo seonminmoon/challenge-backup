@@ -27,16 +27,31 @@ public class UserServiceImpl implements UserService {
     }
     
     @Override
+    public User getWithIdTrainer(String id) {
+        User user = userDao.selectOneWithIdTrainer(id); 
+        return user;
+    }
+    
+    @Override
     public boolean isExist(String email, String password) {
         HashMap<String,Object> params = new HashMap<>();
         params.put("email", email);
         params.put("password", password);
         
-        System.out.println("UserServiceImpl의 아이디 : " + email + ", 비번 : " + password);
-        
-        System.out.println(userDao.count(params));
-        
         return userDao.count(params) > 0 ? true : false;
+    }
+    
+    @Override
+    public int userTypeChecker(String email, String password) {
+        
+        HashMap<String,Object> params = new HashMap<>();
+        params.put("email", email);
+        params.put("password", password);
+        
+        System.out.println(userDao.userTypeChecker(params));
+        
+        
+        return userDao.userTypeChecker(params);
     }
     
     @Override
@@ -82,4 +97,8 @@ public class UserServiceImpl implements UserService {
         // TODO Auto-generated method stub
         return userDao.getEmail(user);
     }
+
+
+
+
 }

@@ -5,7 +5,7 @@ if (location.href.split("?").length > 1) {
   $.getJSON(serverRoot + "/json/challenge/" + no, (data) => {
     $(ftitle).append(data.title);
     $(fcontent).append(data.content);
-    $(fpath).attr('src', '../../../files/' + data.path);
+    $(fpath).attr('src', '../../../files/' + data.path + '.jpg');
   });
   
   //프로그램 리스트 가져오기

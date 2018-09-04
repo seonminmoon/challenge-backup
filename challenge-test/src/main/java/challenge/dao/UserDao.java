@@ -15,7 +15,9 @@ public interface UserDao {
     int updateNotimg(User user);
     User selectOne(int userNo);
     User selectOneWithId(String email);
+    User selectOneWithIdTrainer(String id);
     User selectOneWithPassword(Map<String,Object> params);
     int count(Map<String,Object> params);
     User getEmail(String user);
+    int userTypeChecker(Map<String,Object> params);
 }

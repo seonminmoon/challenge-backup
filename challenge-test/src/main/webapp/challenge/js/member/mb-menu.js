@@ -6,6 +6,6 @@ $.get(serverRoot + "/challenge/html/member/mb-menu.html", (data) => {
 //회원정보 읽어오기
 $(document).ready(function () {
 	$('#profile-name').html(userInfo.name);
-	$('#profile-photo').attr("src","../../../files/" + userInfo.userPath);
+	$('#profile-photo').attr("src","../../../files/" + userInfo.userPath + ".jpg");
 	//$("<img>").attr('src', '../../../files/'+ userInfo.userPath).css('border-radius', '50%').appendTo('#images-div');
 });

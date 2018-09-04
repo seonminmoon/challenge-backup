@@ -28,7 +28,7 @@ $.ajax(serverRoot + "/json/programMember/pList/" + userInfo.userNo, {
 		$.ajax(serverRoot + "/json/trainer/" + userInfo.userNo, {
 			dataType: "json",	
 		    success(data) {
-				 $('#fPath').attr('src', '../../../files/' + data.userPath);
+				 $('#fPath').attr('src', '../../../files/' + data.userPath+'.jpg');
 				 $('#tName').html(data.name);
 		    },
 		    error() {
@@ -246,12 +246,13 @@ $(document.body).on('click','.trSelect', function(event){
 			success(data) {
 				$('.add-body').html(addtemplateFn({
 				 member:  data[0].user.name,
+				 usersPath: data[0].user.userPath,
 				 /*
 				 title: data.title,
 				 content: data.content,
 				 msgDate: data.msgDate,
 				 */
-				 trainer: userInfo.name,
+				 trainer: userInfo.name
 				 }));
 				$('#myAddModal').css("display", "block");
 			}

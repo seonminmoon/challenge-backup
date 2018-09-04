@@ -21,14 +21,14 @@ $(document).ready(function() {
 
 function proImg(no, i) {
   $.getJSON(serverRoot + "/json/programMedia/list?no=" + no, (data) => {
-    $("<img/>").attr('src', '../../../files/'+data[0].path+'_200x200.jpg')
+    $("<img/>").attr('src', '../../../files/'+data[0].path+'.jpg')
     .appendTo('.ch-'+i+'').addClass('card-img');
   })
 }
 
 function trImg(no, i) {
   $.getJSON(serverRoot + "/json/trainer/" + no, (data) => {
-    $("<img/>").attr('src', '../../../files/'+data.userPath+'_50x50.jpg')
+    $("<img/>").attr('src', '../../../files/'+data.userPath+'.jpg')
     .appendTo('.tr-'+i+'').addClass('trainer-img');
   })
 }

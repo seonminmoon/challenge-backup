@@ -16,7 +16,9 @@ public interface UserService {
     int updateNotimg(User user);
     int delete(int userNo);
     User getWithId(String id);
+    User getWithIdTrainer(String id);
     boolean isExist(String id, String password);
     User getEmail(String user);
+    int userTypeChecker(String email, String password);
 }
 

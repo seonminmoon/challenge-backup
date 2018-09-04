@@ -27,24 +27,7 @@ $("#msgBtn-del").click(function(){
 	            chkArray.push(chk[i].value);
 	        }
 	      }
-		  /*
-	  	if (confirm("삭제하시겠습니까?") == true){
-	  		//console.log(chkArray)
-	  		for (var i = 0; i <chkArray.length; i++) {
-	    		$.ajax({
-	    			type: 'POST',
-	    			url: serverRoot +'/json/message/delete',
-	    			data: {no : chkArray[i]}
-	    		});
-	  		}
-	  			
-	  		chkArray = new Array();
-	  		chk = "";
-	        location.reload(true);
-	  	} else { // 삭제 취소
-	  		location.reload(true);
-	  	}
-	  	*/
+		
 		  swal({
 			  title: '정말 삭제하시겠습니까?',
 			  type: 'warning',

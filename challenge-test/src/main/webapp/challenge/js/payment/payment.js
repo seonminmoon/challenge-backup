@@ -10,13 +10,13 @@ if (location.href.split("?").length > 1) {
 	var no = location.href.split("?")[1].split("=")[1];
 	$.getJSON(serverRoot + "/json/program/" + no, (data) => {
 		console.log(data);
-		$("<img>").attr('src','../../../files/'+ data.medias[0].path).appendTo('#program-img');
+		$("<img>").attr('src','../../../files/'+ data.medias[0].path + ".jpg").appendTo('#program-img');
 		$('.project-title').append("<b>"+data.name+"</b>");
 		
 		var num = data.price;
 		$('.p-price').append(addComma(num)+" 원");
 		$('.p-trainer').append(data.user.name);
-		$("<img>").attr('src','../../../files/'+ data.user.userPath+'_50x50.jpg').appendTo('#trainer-img');
+		$("<img style='width:50px; height:50px;'>").attr('src','../../../files/'+ data.user.userPath+'.jpg').appendTo('#trainer-img');
 		
 	}); 
 

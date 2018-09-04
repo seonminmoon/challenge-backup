@@ -74,10 +74,10 @@
     <div class="tr4">
      <div class="tr-title">소개</div>
      <div class="tr4-intro">
-      <span id="fintroduce"></span>
+      <pre id="fintroduce"></pre>
      </div>
      <div class="tr-title">경력사항</div>
-     <div id="fcareer" class="tr4-career"></div>
+     <pre id="fcareer" class="tr4-career"></pre>
     </div>
 
     <div>
@@ -110,7 +110,7 @@
     <a href="../program/DetailPage.html?no={{no}}">
     <!-- 카드 헤더 -->
     <div class="card-header">
-      <img class="card-img" src="../../../files/{{medias.[0].path}}_200x200.jpg"/>
+      <img class="card-img" src="../../../files/{{medias.[0].path}}.jpg"/>
       <div id="card-{{@key}}" class="ribbon"></div>
       <div class="card-trainer tr-{{@key}}">
       </div>
@@ -140,7 +140,7 @@
  <li class="tr3-li">
   <div class="tr3-left">
    <div class="commentImg">
-    <img id="cmImg-{{@key}}" src="../../../files/{{user.userPath}}_50x50.jpg"></div>
+    <img id="cmImg-{{@key}}" src="../../../files/{{user.userPath}}.jpg"></div>
   </div>
   <div class="tr3-right">
    <div><span class="commentDate">{{reviewDate}} ｜</span>

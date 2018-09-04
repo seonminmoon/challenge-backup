@@ -63,22 +63,22 @@
                             <tbody>
                                 <tr>
                                     <td><span> <i class="fas fa-bullhorn"
-                                            style="margin: 0 6px 0 0;"></i>공지사항 제목이 들어갈곳입니다
+                                            style="margin: 0 6px 0 0;"></i>공지사항입니다. 필독해주세요
                                     </span></td>
                                 </tr>
                                 <tr>
                                     <td><span> <i class="fas fa-bullhorn"
-                                            style="margin: 0 6px 0 0;"></i>공지사항 제목이 들어갈곳입니다
+                                            style="margin: 0 6px 0 0;"></i>CHALLENGE 회원 분들에게..
                                     </span></td>
                                 </tr>
                                 <tr>
                                     <td><span> <i class="fas fa-bullhorn"
-                                            style="margin: 0 6px 0 0;"></i>공지사항 제목이 들어갈곳입니다
+                                            style="margin: 0 6px 0 0;"></i>8월 20일자 공지입니다.
                                     </span></td>
                                 </tr>
                                 <tr>
                                     <td><span> <i class="fas fa-bullhorn"
-                                            style="margin: 0 6px 0 0;"></i>공지사항 제목이 들어갈곳입니다
+                                            style="margin: 0 6px 0 0;"></i>회원 정지목록 리스트입니다.
                                     </span></td>
                                 </tr>
                             </tbody>
@@ -138,7 +138,21 @@
 
 
 			<div class="jh-left-board">
-			    <div id="common-table"></div>
+			    <div id="common-table">
+			    <table class="chall-table">
+		<thead class="chall-thead">
+			<tr>
+				<th width="10%">번호</th>
+				<th width="15%">게시판</th>
+				<th width="35%">제목</th>
+				<th width="15%">작성자</th>
+				<th width="10%">조회수</th>
+				<th width="15%">작성일</th>
+			</tr>
+		</thead>
+		<tbody id="listbody" class="chall-tbody"></tbody>
+	</table>
+			    </div>
 			   
 
             <!-- pagination 시작 -->
@@ -162,11 +176,7 @@
 	<!--hf-wrapper-->
 	 </main>
 	<div id="footer"></div>
-
-	<script src="../../node_modules/handlebars/dist/handlebars.min.js"></script>
-	<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
-	<script src="../../js/common.js"></script>
-	<script src="../../js/table.js"></script>
+<!-- 	<script src="../../js/table.js"></script> -->
 	<script id="tr-template" type="text/x-handlebars-template">
 {{#each list}}
 <tr>
@@ -179,6 +189,13 @@
 </tr>
 {{/each}}
 </script>
+    <script src="../../node_modules/handlebars/dist/handlebars.min.js"></script>
+	<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="../../js/common.js"></script>
+	<script src="../../js/header/header.js"></script>
+	<script src="../../js/footer/footer.js"></script>
+	<script src="../../js/pagination.js"></script>
+	<script src="../../js/community/community-list.js"></script>
 	<script>
     $("#writeBtn").click(() => {
             if (userInfo == null) {
@@ -192,10 +209,6 @@
     { location.href="community-write.html";}
     ); */
     </script>
-	<script src="../../js/header/header.js"></script>
-	<script src="../../js/footer/footer.js"></script>
-	<script src="../../js/community/community-list.js"></script>
-	<script src="../../js/pagination.js"></script>
 
 </body>
 

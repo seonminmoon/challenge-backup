@@ -67,7 +67,7 @@ $(document).ready(function() {
 	$.ajax(serverRoot + "/json/programMember/lList/" + userInfo.userNo, {
 		dataType: "json",	
 	    success() {
-			 $('#fPath').attr('src', '../../../files/' + userInfo.userPath);
+			 $('#fPath').attr('src', '../../../files/' + userInfo.userPath + ".jpg");
 			 $('#mName').html(userInfo.name);
 	    },
 	    error() {

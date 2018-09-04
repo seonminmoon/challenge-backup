@@ -44,7 +44,6 @@
     inner join USER u on c.uno=u.uno 
     inner join POST p on c.CMUNO=p.PONO
     order by pono desc
-    limit 1,14
     <!-- limit #{startRowNo}, #{pageSize} -->
     
   </select>

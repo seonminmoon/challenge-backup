@@ -20,6 +20,23 @@
 	        <result column="trnno" property="trainerNo"/>
 	    </collection>
 	  </resultMap>
+	  
+	   <resultMap type="Trainer" id="TrainerMap">
+        <id column="uno" property="userNo"/>
+        <result column="mail" property="email"/>
+        <result column="uname" property="name"/>
+        <result column="upath" property="userPath"/>
+        <result column="uphon" property="userPhone" />
+        <result column="utype" property="userType"/>
+        <collection property="programs" ofType="Program">
+            <id column="pno" property="no"/>
+            <result column="pname" property="name"/>
+            <result column="pth" property="proTh"/>
+            <result column="ptover" property="proTurn"/>
+            <result column="pdesc" property="description"/>
+            <result column="trnno" property="trainerNo"/>
+        </collection>
+      </resultMap>
 
 
     <resultMap type="User" id="UserMap">
@@ -62,6 +79,18 @@
 		    left outer join PROG p on pm.pno = p.pno
 		    where u.mail = #{value};
     </select>
+    
+
+    <select id="selectOneWithIdTrainer" parameterType="String"
+        resultMap="TrainerMap">
+            select u.uno, u.uname, u.mail, u.upath,u.uphon, u.utype, pm.uno,
+            pm.pno, pm.ptype, p.pname, p.pth, p.ptover, p.pdesc, p.trnno
+            from USER u
+            left outer join PMEMB pm on u.uno = pm.uno
+            left outer join PROG p on pm.pno = p.pno
+            where u.mail = #{value};
+    </select>
+
 
 
     <select id="selectOneWithPassword" parameterType="map"
@@ -74,6 +103,12 @@
     <select id="count" parameterType="map" resultType="int">
         select
         count(*)
+        from USER
+        where mail=#{email} and pwd=password(#{password})
+    </select>
+    
+    <select id="userTypeChecker" parameterType="map" resultType="int">
+        select utype
         from USER
         where mail=#{email} and pwd=password(#{password})
     </select>

@@ -70,7 +70,9 @@
      <h3 class="subH3Font">프로그램 설명</h3>
     </div>
     <div id="examContent">
-     <div id="fdescription" class="pExam exFont"></div>
+     <pre>
+        <div id="fdescription" class="pExam exFont"></div>
+     </pre>
 
      <div class="ExamImage">
       <div class="slideshow-container">
@@ -104,36 +106,7 @@
         </div>
        </div>
       </li>
-      <!-- <li>
-          <div class="priceLeft">
-            <label><input type="checkbox"> 개인 락커룸 3개월권</label>
-          </div>
-          <div class="priceRight">
-            <div>
-              <div class="priceSubLeft">
-                <a class="numMinus"><b>↓</b></a>
-                <span><b>1</b></span>
-                <a class="numPlus"><b>↑</b></a>
-              </div>
-              <div class="priceSubRight"><b>3,000</b>원</div>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="priceLeft">
-            <label><input type="checkbox"> 운동복 대여 3개월권</label>
-          </div>
-          <div class="priceRight">
-            <div>
-              <div class="priceSubLeft">
-                <a class="numMinus"><b>↓</b></a>
-                <span><b>1</b></span>
-                <a class="numPlus"><b>↑</b></a>
-              </div>
-              <div class="priceSubRight"><b>2,000</b>원</div>
-            </div>
-          </div>
-        </li> -->
+
      </ul>
      <div class="PriceContentSub2">
       <h4>
@@ -336,7 +309,7 @@
 {{#each list}}
 <div class="mySlides fade">
   <div class="numbertext"><span id="slideOr-{{@key}}"></span> / <span id="slideLen"></span></div>
-  <img src="../../../files/{{path}}">
+  <img src="../../../files/{{path}}.jpg">
 </div>
 {{/each}}
 </script>
@@ -345,7 +318,7 @@
 <a href="DetailPage.html?no={{no}}">
  <div class="lectList">
   <div class="imgBox">
-    <img class="card-img" src="../../../files/{{medias.[0].path}}_50x50.jpg"/>
+    <img class="card-img" src="../../../files/{{medias.[0].path}}.jpg"/>
   </div>
   <div class="subjectBox">
    <h5>{{name}}</h5>
@@ -377,7 +350,7 @@
  <li class="cm-load cmt-section-{{user.userNo}}" data-userNo="{{user.userNo}}"
     onmouseover=showCmtMenu(this) onmouseout=hideCmtMenu(this)>
   <div class="commentImg">
-    <img id="cmImg-{{@key}}" src="../../../files/{{user.userPath}}_50x50.jpg"></div>
+    <img id="cmImg-{{@key}}" src="../../../files/{{user.userPath}}.jpg"></div>
   <div class="commentDate">
    {{reviewDate}} <span>｜</span> </div>
   <div class="commentEval">
@@ -396,7 +369,7 @@
  <script id="add-template" type="text/x-handlebars-template">
 <div>
   <div class="modal-body">
-   <div class="originalImg"></div>
+   <div class="originalImg"><img class="originalImg" src="../../../files/{{usersPath}}.jpg"></div>
    <ul class="memberInfoList" style="margin-left: 20px;">
     <li class="modalName">
      <div class="contentName">이름</div>
@@ -411,7 +384,7 @@
   <div class="modal-body2">
    <input id="fTitle" class="modalContent-titl" type="text"
     placeholder="제목을 입력하세요."><br>
-   <textarea id="fContent" class="modalContent-cont"
+   <textarea id="fContent2" class="modalContent-cont"
     placeholder="내용을 입력하세요."></textarea>
 
    <span class="modal-ok">

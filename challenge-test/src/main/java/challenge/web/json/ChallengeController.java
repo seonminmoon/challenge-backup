@@ -32,25 +32,20 @@ public class ChallengeController {
 
     @RequestMapping("add")
     @ResponseStatus(HttpStatus.CREATED)
-    public Object add(Challenge challenge, MultipartFile[] files) throws Exception {
+    public Object add(Challenge challenge, MultipartFile files) throws Exception {
         System.out.println(files);
-        System.out.println(files.length);
         String filesDir = sc.getRealPath("/files");
         
-        ArrayList<String> medias = new ArrayList<>();
-        for (int i = 0; i  < files.length; i++) {
-            String filename = UUID.randomUUID().toString();
-            try {
-                File path = new File(filesDir + "/" + filename);
-                files[i].transferTo(path);
-                medias.add(filename);
-                
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+        String filename = UUID.randomUUID().toString();
+        try {
+            File path = new File(filesDir + "/" + filename);
+            files.transferTo(path);
+            
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         
-        challenge.setPath(medias.get(0));
+        challenge.setPath(filename);
         challengeService.add(challenge);
         return challenge;
     }

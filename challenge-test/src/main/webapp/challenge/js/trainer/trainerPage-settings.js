@@ -9,7 +9,7 @@ $.ajax({
 	
 	$('#email').val(userInfo.email);
 	$('#phone').val(userInfo.userPhone);
-	$("<img>").attr('src', '../../../files/'+ userInfo.userPath+'_200x200.jpg').css('border-radius', '50%').appendTo('#images-div');
+	$("<img>").attr('src', '../../../files/'+ userInfo.userPath+'.jpg').css('border-radius', '50%').appendTo('#images-div');
 
 });
 
@@ -86,7 +86,7 @@ $("#upload-btn").click(() => {
 		}).done(function() {
 
 			alert('회원님 정보가 수정되었습니다');
-			location.href = "http://localhost:8888/challenge-project/challenge/html/member/member-set.html";
+			location.href = "http://localhost:8888/challenge-project/challenge/html/trainer/trainerPage-settings1.html";
 		});
 	}else{ //이미지 수정을 안하고 다른것만 수정했을때
 		$.ajax({
@@ -104,7 +104,7 @@ $("#upload-btn").click(() => {
 		}).done(function() {
 
 			alert('회원님 정보가 수정되었습니다');
-			location.href = "http://localhost:8888/challenge-project/challenge/html/member/member-set.html";
+			location.href = "http://localhost:8888/challenge-project/challenge/html/trainer/trainerPage-settings1.html";
 		});
 	}
 });
@@ -130,7 +130,7 @@ $(document).ready(function () {
 			}).done(function() {
 
 				alert('비밀번호 변경 완료');
-				location.href = "member-set.html";
+				location.href = "trainerPage-settings1.html";
 			});
 
 		}

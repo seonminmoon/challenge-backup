@@ -168,7 +168,12 @@
 	padding: 0 10px 45px 10px;
 }
 
+#fintroduce {
+	white-space: pre-wrap;
+}
+
 .tr4-career {
+	white-space: pre-wrap;
 	padding: 0 10px 20px 10px;
 }
 

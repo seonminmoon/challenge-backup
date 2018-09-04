@@ -21,12 +21,6 @@
     		}
     	})
     	
-//    	, function() {
-//    		if(data.responseText == "loginNeed") {
-//    		}
-//    	})
-    	
-    	
     });
 
 var addedPostCount = 0;
@@ -38,7 +32,7 @@ $(document).ready(function() {
   console.log(userInfo.programs[0].name)
   $("#sh-Class-Title").html(userInfo.programs[0].name);
   
-  $("#sh-class-more").html(userInfo.programs[0].description);
+  $("#preTag").html(userInfo.programs[0].description);
   
   // 스크롤 위치 맨 위로 고정
   $("body").scrollTop(0);
@@ -83,10 +77,10 @@ function loadCards(pageCount) {
       timelineLikeCount(data[i].no);
       if (data[i].picture) {
     	  // 얘는 타임라인 카드의 이미지임.
-        $("#img" + data[i].no).append("<img src='../../../files/" + data[i].picture + "_600x600.jpg'>");
-      } 
+        $("#img" + data[i].no).append("<img src='../../../files/" + data[i].picture + "' style=\"width:600px\"'>");
+      }  
     }
-    $('.sh-tl-user-img-load').attr("src", "../../../files/" + userInfo.userPath);
+    $('.sh-tl-user-img-load').attr("src", "../../../files/" + userInfo.userPath + ".jpg");
   });
 }
 
@@ -104,7 +98,7 @@ function loadOneCard(postNo) {
 		  loadComments(data.no);
 		  timelineLikeCount(data.no);
 		  if(data.picture) {
-			  $("#img" + data.no).append("<img src='../../../files/" + data.picture + "_600x600.jpg'>");
+			  $("#img" + data.no).append("<img src='../../../files/" + data.picture + "' style=\"width:600px\"'>");
 		  }
 		  
 		  $('.sh-tl-card-modal').attr("class","sh-tl-card-modal" + postNo + " sh-tl-card sh-card");

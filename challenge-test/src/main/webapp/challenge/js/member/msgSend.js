@@ -60,6 +60,7 @@ $(document.body).on('click','.viewSelect', function(event){
 	    success: function(data) {
 			 $('.view-body').html(viewtemplateFn({
 				 userName: userInfo.name,
+				 imgPath: userInfo.userPath,
 				 title: data.title,
 				 content: data.content,
 				 msgDate: data.msgDate,

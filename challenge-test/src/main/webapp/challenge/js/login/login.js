@@ -18,10 +18,6 @@ function enterkey() {
 }
 
 $("#loginBtn").click(() => {
-		/*
-		console.log($("#fId").val())
-		console.log($("#fPassword").val())
-		*/
 	    var data = {
 	        email : $("#fId").val(),
 	        password: $("#fPassword").val()
@@ -39,21 +35,11 @@ $("#loginBtn").click(() => {
 	});
 
 
-/*$(document).ready(function(){
-//	$('#kakao-login-btn').css("display","none");
-	$('#kakao-login-btn1').on('click',function(){
-		$('#kakao-login-btn').trigger("click");
-	});	
-	
-});*/
-  //
 $(document).ready(function(){
 $('#naverLogin').on('click', function() {
 $('#naverIdLogin').trigger('click')
 }); 
 }); 
-	/*$('#naverIdLogin').trigger('click');
-});	*/
 
 
 

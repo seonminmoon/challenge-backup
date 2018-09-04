@@ -4,7 +4,7 @@ $.getJSON(serverRoot + "/json/program/listProgram/" + userInfo.userNo, (data) =>
   $(cardWide).html(cardBodyFn({list:data}));
 }).done(function(data) {
   
-  $('.trainer-img').attr('src', '../../../files/'+userInfo.userPath);
+  $('.trainer-img').attr('src', '../../../files/'+userInfo.userPath+'.jpg');
 
   var i;
   for (i = 0; i < data.length; i++) {
@@ -92,7 +92,7 @@ function dday(startDate, i) {
 $.ajax(serverRoot + "/json/trainer/" + userInfo.userNo, {
   dataType: "json", 
     success(data) {
-     $('#fPath').attr('src', '../../../files/' + data.userPath);
+     $('#fPath').attr('src', '../../../files/' + data.userPath+'.jpg');
      $('#tName').html(data.name);
     },
     error() {
